@@ -61,6 +61,9 @@ jobs:
         run: |
           set -e
 
+          echo "Instalando dependencias (Polars)..."
+          pip install polars
+
           echo "Ejecutando calculadora WCA..."
 
           python calculadora_rangos_mundial_wca.py
