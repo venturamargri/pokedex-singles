@@ -1,4 +1,3 @@
-```python
 import os
 import glob
 import csv
@@ -573,4 +572,3 @@ for archivo in sorted(
         f"   {os.path.basename(archivo)} "
         f"({tamaño:,} bytes)"
     )
-```
