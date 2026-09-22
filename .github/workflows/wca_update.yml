@@ -14,26 +14,46 @@ jobs:
 
     steps:
       - name: 1. Clonar repositorio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 2. Configurar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: 3. Descargar base de datos WCA
         run: |
-          EXPORT_URL=$(curl -s https://www.worldcubeassociation.org/api/v0/export/public | grep -o '"tsv_url":"[^"]*"' | cut -d'"' -f4)
-          wget -O WCA_export.tsv.zip "$EXPORT_URL"
-          unzip WCA_export.tsv.zip
+          set -e
+
+          echo "Obteniendo URL del export WCA..."
+
+          EXPORT_URL=$(curl -fsSL \
+            https://www.worldcubeassociation.org/api/v0/export/public \
+            | python -c "import sys, json; print(json.load(sys.stdin)['tsv_url'])")
+
+          echo "URL del export: $EXPORT_URL"
+
+          echo "Descargando export..."
+          curl -fL "$EXPORT_URL" -o WCA_export.tsv.zip
+
+          echo "Descomprimiendo..."
+          unzip -o WCA_export.tsv.zip
+
+          echo "Eliminando ZIP temporal..."
+          rm WCA_export.tsv.zip
 
       - name: 4. Ejecutar script de Python
-        run: python calculadora_rangos_mundial_wca.py
+        run: |
+          python calculadora_rangos_mundial_wca.py
 
       - name: 5. Guardar los nuevos rankings en GitHub
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
           git add ranking_*.txt
-          git commit -m "Actualización automática de rankings WCA [skip ci]" || echo "No hay cambios nuevos que guardar"
+
+          git commit -m "Actualización automática de rankings WCA [skip ci]" \
+            || echo "No hay cambios nuevos que guardar"
+
           git push
