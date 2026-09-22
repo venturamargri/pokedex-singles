@@ -145,7 +145,7 @@ print("🔎 Buscando archivos TSV de la WCA...")
 
 ruta_personas = buscar_tsv("Persons")
 ruta_resultados = buscar_tsv("Results")
-ruta_intentos = buscar_tsv("ResultAttempts")
+ruta_intentos = buscar_tsv("result_attempts")
 ruta_paises = buscar_tsv("Countries")
 ruta_continentes = buscar_tsv("Continents")
 
