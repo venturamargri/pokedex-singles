@@ -23,7 +23,7 @@ jobs:
 
       - name: 3. Descargar base de datos WCA
         run: |
-          EXPORT_URL=$(curl -s https://www.worldcubeassociation.org/api/v0/export/public | jq -r '.tsv_url')
+          EXPORT_URL=$(curl -s https://www.worldcubeassociation.org/api/v0/export/public | grep -o '"tsv_url":"[^"]*"' | cut -d'"' -f4)
           wget -O WCA_export.tsv.zip "$EXPORT_URL"
           unzip WCA_export.tsv.zip
 
