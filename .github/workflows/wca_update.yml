@@ -22,12 +22,10 @@ jobs:
           python-version: '3.10'
 
       - name: 3. Descargar base de datos WCA
-        run: |
-          EXPORT_URL=$(curl -s https://www.worldcubeassociation.org/api/v0/export/public | jq -r '.jq_url || .tsv_url')
-          # Usamos la API pública oficial de la WCA
-          EXPORT_URL=$(curl -s https://www.worldcubeassociation.org/api/v0/export/public | jq -r '.tsv_url')
-          wget -O WCA_export.tsv.zip "$EXPORT_URL"
-          unzip WCA_export.tsv.zip
+            run: |
+              EXPORT_URL=$(curl -s https://www.worldcubeassociation.org/api/v0/export/public | jq -r '.tsv_url')
+              wget -O WCA_export.tsv.zip "$EXPORT_URL"
+              unzip WCA_export.tsv.zip
 
       - name: 4. Ejecutar script de Python
         run: python calculadora_rangos_mundial_wca.py
