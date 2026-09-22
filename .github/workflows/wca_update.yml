@@ -1,0 +1,37 @@
+name: Actualizar Pokédex WCA
+
+on:
+  schedule:
+    - cron: '0 3 * * 4' # Se ejecuta automáticamente todos los jueves a las 03:00 AM
+  workflow_dispatch: # Te pone un botón en GitHub para ejecutarlo a mano cuando quieras
+
+jobs:
+  generar-y-desplegar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Clonar mi código
+        uses: actions/checkout@v3
+
+      - name: 2. Preparar entorno Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 3. Descargar última Base de Datos oficial de la WCA
+        run: |
+          wget https://www.worldcubeassociation.org/export/results/WCA_export.tsv.zip
+          unzip WCA_export.tsv.zip
+          # Esto dejará WCA_export_Results.tsv y WCA_export_Countries.tsv listos para tu script
+
+      - name: 4. Ejecutar mi script de Python (Crear rankings)
+        run: python calculadora_rangos_wca_todos.py
+
+      - name: 5. Subir la web actualizada a Netlify
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: '.'
+          production-deploy: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
