@@ -2,8 +2,8 @@ name: Actualizar Pokédex WCA
 
 on:
   schedule:
-    - cron: '0 3 * * 4' # Se ejecuta automáticamente todos los jueves a las 03:00 AM
-  workflow_dispatch: # Te pone un botón en GitHub para ejecutarlo a mano cuando quieras
+    - cron: '0 3 * * 4'
+  workflow_dispatch:
 
 jobs:
   generar-y-desplegar:
@@ -20,16 +20,11 @@ jobs:
 
       - name: 3. Descargar última Base de Datos oficial de la WCA
         run: |
-          # 1. Preguntamos a la API oficial cuál es el enlace válido de hoy
           EXPORT_URL=$(curl -s https://www.worldcubeassociation.org/api/v0/export/public | jq -r '.tsv_url')
-          
-          # 2. Descargamos el archivo desde ese nuevo enlace dinámico
           wget -O WCA_export.tsv.zip "$EXPORT_URL"
-          
-          # 3. Lo descomprimimos
           unzip WCA_export.tsv.zip
 
-      - name: 4. Ejecutar mi script de Python (Crear rankings)
+      - name: 4. Ejecutar mi script de Python
         run: python calculadora_rangos_wca_todos.py
 
       - name: 5. Subir la web actualizada a Netlify
