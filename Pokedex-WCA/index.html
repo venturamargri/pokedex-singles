@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Singles</title>
+    <link rel="manifest" href="manifest.json">
+    <script>
+        const isLocalhost = Boolean(
+            window.location.hostname === 'localhost' ||
+            window.location.hostname === '127.0.0.1' ||
+            window.location.hostname.startsWith('192.168.') ||
+            window.location.hostname.startsWith('10.')
+        );
+
+        if ('serviceWorker' in navigator && !isLocalhost) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(() => console.log("Service Worker registrado con éxito (Modo Producción)."))
+                    .catch(err => console.log("Error al registrar Service Worker:", err));
+            });
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #121212; --panel: #1e1e1e; --text: #fff; --text-muted: #aaa;
+            --input-bg: #333; --border: #555; --hover: #2a2a2a;
+        }
+        body.light-mode {
+            --bg: #f5f5f5; --panel: #ffffff; --text: #333; --text-muted: #666;
+            --input-bg: #fff; --border: #ccc; --hover: #f0f0f0;
+        }
+        
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; text-align: center; margin: 0; transition: background 0.3s, color 0.3s; }
+        
+        h1.main-title { color: #4CAF50; margin-top: 0; cursor: pointer; user-select: none; transition: opacity 0.2s; }
+        h1.main-title:hover { opacity: 0.8; }
+        
+        #theme-btn { position: absolute; top: 20px; right: 20px; background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 1.2em; transition: 0.2s; }
+        #theme-btn:hover { transform: scale(1.1); }
+
+        .tab-container { display: flex; justify-content: center; margin-bottom: 20px; background: var(--panel); padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 5px; }
+        .tab-btn { background-color: var(--input-bg); color: var(--text); border: 1px solid var(--border); padding: 10px 20px; margin: 0; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.3s; }
+        .tab-btn:hover { background-color: var(--hover); }
+        .tab-btn.active { background-color: #4CAF50; color: white; border-color: #4CAF50; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .controls { background: var(--panel); padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative; }
+        input, select, button.action-btn { padding: 10px; margin: 5px; border-radius: 4px; border: 1px solid var(--border); font-size: 16px; background-color: var(--input-bg); color: var(--text); }
+        
+        /* Botones secundarios (gris/tema actual) */
+        button.btn-secondary { background-color: var(--input-bg); color: var(--text); border: 1px solid var(--border); transition: 0.2s; cursor: pointer; border-radius: 4px; }
+        button.btn-secondary:hover { background-color: var(--hover); border-color: #4CAF50; }
+
+        input[type="search"]::-webkit-search-cancel-button { cursor: pointer; }
+        input:focus, select:focus { border-color: #4CAF50; outline: none; }
+        button.action-btn { background-color: #4CAF50; color: white; border: none; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        button.action-btn:hover { background-color: #45a049; }
+        
+        #btn-scrollTop {
+            display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99;
+            font-size: 1.5em; font-weight: bold; border: none; outline: none;
+            background-color: #4CAF50; color: white; cursor: pointer;
+            width: 50px; height: 50px; border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4); transition: background-color 0.3s, transform 0.2s;
+        }
+        #btn-scrollTop:hover { background-color: #45a049; transform: scale(1.1); }
+
+        .chips-container { margin-top: 10px; }
+        .chip { display: inline-block; padding: 4px 10px; margin: 0 4px; background: var(--input-bg); color: var(--text-muted); border: 1px solid var(--border); border-radius: 16px; font-size: 0.8em; cursor: pointer; transition: 0.2s; }
+        .chip:hover { background: #4CAF50; color: #fff; border-color: #4CAF50; }
+
+        .opciones-extra { margin-top: 15px; font-size: 1em; color: var(--text-muted); }
+        .opciones-extra input { transform: scale(1.3); margin-right: 8px; cursor: pointer; }
+        .opciones-extra label { cursor: pointer; user-select: none; }
+
+        .loading { color: #4CAF50; font-weight: bold; font-size: 1.2em; }
+        .error { color: #f44336; font-weight: bold; }
+        .stats { font-size: 1.2em; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 8px; max-width: 1200px; margin: 0 auto; }
+        .card { padding: 10px 5px; border-radius: 6px; font-weight: bold; font-size: 0.9em; text-align: center; cursor: pointer; transition: transform 0.1s; border: 2px solid transparent; }
+        .card:active { transform: scale(0.95); }
+        
+        .got { background-color: #2e7d32; color: #fff; border: 2px solid #4CAF50; }
+        .streak { background-color: #8e24aa; color: #fff; box-shadow: 0 0 10px rgba(142, 36, 170, 0.4); border: 2px solid #ab47bc; }
+        .miss { background-color: var(--input-bg); color: var(--text-muted); border: 2px solid var(--border); }
+        .bisagra { background-color: #d32f2f; color: #fff; border: 2px solid #b71c1c; box-shadow: 0 0 10px rgba(211, 47, 47, 0.6); }
+        .got.strong { background-color: #154018; border: 2px solid #2e7d32; }
+        .streak.strong { background-color: #4a148c; border: 2px solid #380b6e; }
+
+        table { width: 100%; max-width: 1000px; margin: 0 auto; border-collapse: collapse; background: var(--panel); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background-color: #333; color: #4CAF50; }
+        tr:hover { background-color: var(--hover); }
+        
+        /* Enlaces normales y perfiles */
+        a { color: #64b5f6; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; color: #90caf9; }
+        .profile-link { color: #4CAF50; font-size: 1.1em; transition: 0.2s; }
+        .profile-link:hover { color: #81c784; }
+
+        .rank-badges { white-space: nowrap; text-align: center; line-height: 1.8; }
+
+        .clickable-cell { cursor: pointer; transition: background 0.2s; }
+        .clickable-cell:hover { background-color: var(--hover) !important; }
+        .link-rank { cursor: pointer; padding: 3px 6px; border-radius: 4px; transition: 0.2s; border: 1px solid transparent; }
+        .link-rank:hover { background-color: #4CAF50; color: #fff; border: 1px solid #81c784; }
+
+        #modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+        #modal-box { background: var(--panel); padding: 25px; border-radius: 12px; border: 2px solid #4CAF50; max-width: 80%; max-height: 80vh; overflow-y: auto; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.6); }
+        #modal-texto { font-size: 1.2em; margin-bottom: 20px; line-height: 1.5; color: var(--text); }
+        #modal-texto a { color: #ffd54f; display: block; margin: 5px 0; }
+        #modal-texto a:hover { color: #ffe082; }
+        .modal-btn { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1em; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <button id="theme-btn" onclick="toggleTheme()" title="Modo Claro/Oscuro">☀️</button>
+    
+    <h1 class="main-title" onclick="window.location.href = window.location.pathname" title="Volver al inicio">Pokedex Singles</h1>
+    
+    <div class="tab-container">
+        <button id="btn-tab-pokedex" class="tab-btn active" onclick="openTab('tab-pokedex')">Pokédex de Singles</button>
+        <button id="btn-tab-top1000" class="tab-btn" onclick="openTab('tab-top1000')">Rankings Globales</button>
+        <button id="btn-tab-competidor" class="tab-btn" onclick="openTab('tab-competidor')">Rango por Competidor</button>
+    </div>
+
+    <div id="modal-overlay" onclick="cerrarPopUp()">
+        <div id="modal-box" onclick="event.stopPropagation()">
+            <div id="modal-texto"></div>
+            <button class="modal-btn" onclick="cerrarPopUp()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- PESTAÑA 1 -->
+    <div id="tab-pokedex" class="tab-content active">
+        <div class="controls">
+            <input type="search" id="wcaIdPokedex" placeholder="WCA ID (Ej: 2014LOPE04)" onkeyup="manejarEnter(event, 'btnGenPokedex')">
+            <select id="eventIdPokedex" onchange="actualizarURL()">
+                <option value="333" selected>3x3x3</option>
+                <option value="222">2x2x2</option>
+                <option value="444">4x4x4</option>
+                <option value="555">5x5x5</option>
+                <option value="666">6x6x6</option>
+                <option value="777">7x7x7</option>
+                <option value="333bf">3x3x3 Blindfolded</option>
+                <option value="333oh">3x3x3 One-Handed</option>
+                <option value="clock">Clock</option>
+                <option value="minx">Megaminx</option>
+                <option value="pyram">Pyraminx</option>
+                <option value="skewb">Skewb</option>
+                <option value="sq1">Square-1</option>
+            </select>
+            <button id="btnGenPokedex" class="action-btn" onclick="generarPokedex()">Generar Pokédex</button>
+            <div class="chips-container" id="chips-pokedex"></div>
+            <div class="opciones-extra">
+                <input type="checkbox" id="checkBisagra" onchange="if(document.getElementById('resPokedex').innerHTML !== '') generarPokedex()">
+                <label for="checkBisagra">Mostrar Tiempo Bisagra</label>
+            </div>
+        </div>
+        <div id="resPokedex"></div>
+    </div>
+
+    <!-- PESTAÑA 2 -->
+    <div id="tab-top1000" class="tab-content">
+        <div class="controls">
+            <select id="eventIdTop" onchange="actualizarURL()">
+                <option value="333" selected>3x3x3</option>
+                <option value="222">2x2x2</option>
+                <option value="444">4x4x4</option>
+                <option value="555">5x5x5</option>
+                <option value="666">6x6x6</option>
+                <option value="777">7x7x7</option>
+                <option value="333bf">3x3x3 Blindfolded</option>
+                <option value="333oh">3x3x3 One-Handed</option>
+                <option value="clock">Clock</option>
+                <option value="minx">Megaminx</option>
+                <option value="pyram">Pyraminx</option>
+                <option value="skewb">Skewb</option>
+                <option value="sq1">Square-1</option>
+                <option value="444bf">4x4x4 Blindfolded</option>
+                <option value="555bf">5x5x5 Blindfolded</option>
+            </select>
+            <select id="countryTop" onchange="filtrarTop()">
+                <option value="Todos" selected>Todos los resultados</option>
+                <optgroup label="--- Continentes ---" id="group-continents"></optgroup>
+                <optgroup label="--- Países ---" id="group-countries"></optgroup>
+            </select>
+            <button class="action-btn" onclick="cargarTop1000()">Ver Ranking</button>
+            <br>
+            <input type="search" id="searchNameTop" placeholder="🔍 Filtrar por nombre o WCA ID" oninput="filtrarTop()" style="margin-top: 15px; width: 60%;">
+        </div>
+        <div id="resTop1000"></div>
+    </div>
+
+    <!-- PESTAÑA 3 -->
+    <div id="tab-competidor" class="tab-content">
+        <div class="controls">
+            <input type="search" id="wcaIdCompetidor" placeholder="WCA ID (Ej: 2014LOPE04)" onkeyup="manejarEnter(event, 'btnGenCompetidor')">
+            <button id="btnGenCompetidor" class="action-btn" onclick="cargarCompetidor()">Ver Todos los Rangos</button>
+            <div class="chips-container" id="chips-competidor"></div>
+        </div>
+        <div id="resCompetidor"></div>
+    </div>
+
+    <button id="btn-scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Volver arriba">↑</button>
+
+    <script>
+        const apiCache = new Map();
+        let datosRankingGlobal = [];
+        let renderLimit = 50; 
+        let filtradosTop = [];
+
+        const wcaContinents = ["_Africa", "_Asia", "_Europe", "_North America", "_Oceania", "_South America"];
+        const wcaCountries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bolivia", "Bosnia and Herzegovina", "Brazil", "Brunei", "Bulgaria", "Cambodia", "Canada", "Chile", "China", "Colombia", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Guatemala", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Malaysia", "Malta", "Mauritius", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Myanmar", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Palestine", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "Spain", "Sri Lanka", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Thailand", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam"];
+        
+        const grpCont = document.getElementById('group-continents');
+        wcaContinents.forEach(c => {
+            let opt = document.createElement('option');
+            opt.value = c; opt.textContent = c.replace('_', '🌍 ');
+            grpCont.appendChild(opt);
+        });
+        const grpCoun = document.getElementById('group-countries');
+        wcaCountries.forEach(p => {
+            let opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            grpCoun.appendChild(opt);
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.getElementById('theme-btn');
+            btn.innerText = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+        }
+
+        function openTab(tabName, shouldUpdateUrl = true) {
+            Array.from(document.getElementsByClassName("tab-content")).forEach(el => el.classList.remove("active"));
+            Array.from(document.getElementsByClassName("tab-btn")).forEach(el => el.classList.remove("active"));
+            document.getElementById(tabName).classList.add("active");
+            document.getElementById('btn-' + tabName).classList.add("active");
+            if(shouldUpdateUrl) actualizarURL();
+            document.getElementById('btn-scrollTop').style.display = 'none';
+        }
+
+        function actualizarURL() {
+            const tab = document.querySelector('.tab-btn.active').id.replace('btn-tab-', '');
+            let wcaid = "", ev = "";
+            if(tab === 'pokedex') { wcaid = document.getElementById('wcaIdPokedex').value; ev = document.getElementById('eventIdPokedex').value; }
+            if(tab === 'top1000') { ev = document.getElementById('eventIdTop').value; }
+            if(tab === 'competidor') { wcaid = document.getElementById('wcaIdCompetidor').value; }
+            history.replaceState(null, '', `?tab=${tab}&wcaid=${wcaid}&ev=${ev}`);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            dibujarRecientes();
+            const params = new URLSearchParams(window.location.search);
+            const tab = params.get('tab');
+            const wcaid = params.get('wcaid');
+            const ev = params.get('ev');
+            
+            if (ev) { document.getElementById('eventIdPokedex').value = ev; document.getElementById('eventIdTop').value = ev; }
+            if (wcaid) { document.getElementById('wcaIdPokedex').value = wcaid; document.getElementById('wcaIdCompetidor').value = wcaid; }
+            
+            if (tab) {
+                openTab('tab-' + tab, false);
+                if (wcaid && tab === 'pokedex') generarPokedex();
+                if (wcaid && tab === 'competidor') cargarCompetidor();
+                if (tab === 'top1000') cargarTop1000();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            const btnScroll = document.getElementById('btn-scrollTop');
+            const isTab1 = document.getElementById('tab-pokedex').classList.contains('active');
+            const isTab2 = document.getElementById('tab-top1000').classList.contains('active');
+            
+            if (isTab2) {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 300) {
+                    if(renderLimit < filtradosTop.length) { renderLimit += 50; pintarTablaTop(); }
+                }
+            }
+            if ((isTab1 || isTab2) && window.scrollY > 400) { btnScroll.style.display = 'block'; } 
+            else { btnScroll.style.display = 'none'; }
+        });
+
+        function guardarReciente(wcaId) {
+            let recents = JSON.parse(localStorage.getItem('wcaRecents') || '[]');
+            recents = recents.filter(id => id !== wcaId); 
+            recents.unshift(wcaId);
+            if(recents.length > 5) recents.pop();
+            localStorage.setItem('wcaRecents', JSON.stringify(recents));
+            dibujarRecientes();
+        }
+
+        function dibujarRecientes() {
+            let recents = JSON.parse(localStorage.getItem('wcaRecents') || '[]');
+            let html = recents.map(id => `<button class="chip" onclick="usarReciente('${id}')">${id}</button>`).join('');
+            document.getElementById('chips-pokedex').innerHTML = html;
+            document.getElementById('chips-competidor').innerHTML = html;
+        }
+
+        function usarReciente(id) {
+            const activeTab = document.querySelector('.tab-btn.active').id;
+            if(activeTab === 'btn-tab-pokedex') { document.getElementById('wcaIdPokedex').value = id; generarPokedex(); }
+            if(activeTab === 'btn-tab-competidor') { document.getElementById('wcaIdCompetidor').value = id; cargarCompetidor(); }
+        }
+
+        document.addEventListener('keydown', (e) => { if(e.key === 'Escape') cerrarPopUp(); });
+
+        /* --- NUEVAS FUNCIONES DE NAVEGACIÓN RÁPIDA --- */
+        function irAPokedex(wcaId, eventId) {
+            openTab('tab-pokedex');
+            document.getElementById('wcaIdPokedex').value = wcaId;
+            document.getElementById('eventIdPokedex').value = eventId;
+            generarPokedex();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function irARanking(eventId, country) {
+            openTab('tab-top1000');
+            document.getElementById('eventIdTop').value = eventId;
+            const dropCountry = document.getElementById('countryTop');
+            const opciones = Array.from(dropCountry.options).map(o => o.value);
+            dropCountry.value = opciones.includes(country) ? country : "Todos"; 
+            cargarTop1000();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function irACompetidor(wcaId) {
+            openTab('tab-competidor');
+            document.getElementById('wcaIdCompetidor').value = wcaId;
+            cargarCompetidor();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        /* ------------------------------------------- */
+
+        function manejarEnter(e, btnId) { if(e.key === 'Enter') { document.getElementById(btnId).click(); } }
+        
+        function formatCS(cs) {
+            if (cs < 6000) return (cs / 100).toFixed(2);
+            let m = Math.floor(cs / 6000);
+            let s_val = (cs % 6000) / 100;
+            let s_str = s_val.toFixed(2);
+            if (s_val < 10) s_str = "0" + s_str;
+            return `${m}:${s_str}`;
+        }
+        function formatStrSeconds(secStr) { return formatCS(Math.round(parseFloat(secStr) * 100)); }
+
+        function calcularRachas(arrayTiempos) {
+            if(arrayTiempos.length === 0) return null;
+            let rachas = [];
+            let rActual = {min: arrayTiempos[0], max: arrayTiempos[0]};
+            for (let i = 1; i < arrayTiempos.length; i++) {
+                if (arrayTiempos[i] === rActual.max + 1) rActual.max = arrayTiempos[i];
+                else { rachas.push(rActual); rActual = {min: arrayTiempos[i], max: arrayTiempos[i]}; }
+            }
+            rachas.push(rActual);
+
+            let mejorRacha = {min: -1, max: -1, rango: -1};
+            for(let r of rachas) {
+                let rng = r.max - r.min;
+                if(rng > mejorRacha.rango) mejorRacha = {min: r.min, max: r.max, rango: rng};
+            }
+            return mejorRacha;
+        }
+
+        function mostrarPopUp(compsStr) {
+            let comps = compsStr.split(',');
+            let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank">${c}</a>`).join('');
+            document.getElementById('modal-texto').innerHTML = '🏆 <b>Logrado en:</b><br><br>' + htmlLinks;
+            document.getElementById('modal-overlay').style.display = 'flex';
+        }
+        function mostrarPopUpFallo() {
+            document.getElementById('modal-texto').innerHTML = '❌ Tiempo no conseguido aún';
+            document.getElementById('modal-overlay').style.display = 'flex';
+        }
+        function cerrarPopUp() { document.getElementById('modal-overlay').style.display = 'none'; }
+
+        async function fetchWCA(wcaId) {
+            if(apiCache.has(wcaId)) return apiCache.get(wcaId);
+            const [resResults, resPerson] = await Promise.all([
+                fetch(`https://www.worldcubeassociation.org/api/v0/persons/${wcaId}/results`),
+                fetch(`https://www.worldcubeassociation.org/api/v0/persons/${wcaId}`)
+            ]);
+            if(!resResults.ok || !resPerson.ok) throw new Error("No se pudo encontrar el WCA ID.");
+            const data = await resResults.json();
+            const personData = await resPerson.json();
+            const payload = { data, personName: personData.person.name };
+            apiCache.set(wcaId, payload);
+            return payload;
+        }
+
+        async function generarPokedex() {
+            const wcaId = document.getElementById('wcaIdPokedex').value.trim().toUpperCase();
+            const eventId = document.getElementById('eventIdPokedex').value;
+            const resDiv = document.getElementById('resPokedex');
+            const mostrarBisagra = document.getElementById('checkBisagra').checked;
+
+            if(!wcaId) return;
+            actualizarURL();
+            resDiv.innerHTML = "<p class='loading'>Conectando con la API WCA...</p>";
+
+            try {
+                const { data, personName } = await fetchWCA(wcaId);
+                guardarReciente(wcaId);
+                
+                let tiemposConseguidos = new Map(); 
+                
+                data.slice().reverse().forEach(comp => {
+                    if(comp.event_id === eventId) {
+                        let nombreComp = comp.competition_id;
+                        if(comp.attempts) {
+                            comp.attempts.forEach(i => { 
+                                if(i > 0) {
+                                    if(!tiemposConseguidos.has(i)) tiemposConseguidos.set(i, new Set());
+                                    tiemposConseguidos.get(i).add(nombreComp);
+                                }
+                            });
+                        }
+                        if(comp.best > 0) {
+                            if(!tiemposConseguidos.has(comp.best)) tiemposConseguidos.set(comp.best, new Set());
+                            tiemposConseguidos.get(comp.best).add(nombreComp);
+                        }
+                    }
+                });
+
+                if(tiemposConseguidos.size === 0) {
+                    resDiv.innerHTML = `<p class='error'>No hay marcas oficiales para ${personName} (${wcaId}) en esta categoría.</p>`;
+                    return;
+                }
+
+                const arrayTiempos = Array.from(tiemposConseguidos.keys()).sort((a, b) => a - b);
+                const racha = calcularRachas(arrayTiempos);
+                
+                const minVal = arrayTiempos[0], maxVal = arrayTiempos[arrayTiempos.length - 1];
+                const totalPosibles = maxVal - minVal + 1;
+                const porcentaje = ((tiemposConseguidos.size / totalPosibles) * 100).toFixed(1);
+                const nombreEvento = document.getElementById('eventIdPokedex').options[document.getElementById('eventIdPokedex').selectedIndex].text;
+                const antirrango = maxVal - minVal;
+
+                let hingeTimes = new Set();
+                let affectedTimes = new Set();
+
+                if (mostrarBisagra) {
+                    let bestPotentialRango = racha.rango;
+                    for (let v = minVal; v <= maxVal; v++) {
+                        if (!tiemposConseguidos.has(v)) {
+                            let simArray = [...arrayTiempos, v].sort((a,b) => a-b);
+                            let simRacha = calcularRachas(simArray);
+                            if (simRacha.rango > bestPotentialRango) {
+                                bestPotentialRango = simRacha.rango;
+                                hingeTimes.clear();
+                                hingeTimes.add(v);
+                            } else if (simRacha.rango === bestPotentialRango && simRacha.rango > racha.rango) {
+                                hingeTimes.add(v);
+                            }
+                        }
+                    }
+                    for (let h of hingeTimes) {
+                        let left = h; while(tiemposConseguidos.has(left - 1)) left--;
+                        let right = h; while(tiemposConseguidos.has(right + 1)) right++;
+                        for (let a = left; a <= right; a++) { if (a !== h) affectedTimes.add(a); }
+                    }
+                }
+
+                /* Modificado para incluir los enlaces de Perfil y el botón a Pestaña 3 */
+                let statsHtml = `
+                    <div class="stats">
+                        <div style="margin-bottom: 8px;">
+                            <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
+                            <button class="btn-secondary" style="padding: 4px 8px; font-size: 0.7em; margin-left: 10px;" onclick="irACompetidor('${wcaId}')">Ver todos sus eventos</button>
+                        </div>
+                        <strong>Evento:</strong> ${nombreEvento}<br>
+                        <strong>Completado:</strong> ${tiemposConseguidos.size} / ${totalPosibles} (${porcentaje}%) <br>
+                        <strong>Antirrango:</strong> <span style="color: #4CAF50;">${formatCS(antirrango)}s</span><br>
+                        <div style="margin-top: 5px;">
+                            <strong>Rango:</strong> <span style="color: #ce93d8;">${formatCS(racha.rango)}s (${formatCS(racha.min)} - ${formatCS(racha.max)})</span>
+                            <button class="action-btn" style="padding: 4px 10px; font-size: 0.8em; margin-left: 10px;" onclick="scrollToRango()">Mostrar Rango</button>
+                        </div>
+                    </div>
+                    <div class="grid">`;
+
+                for(let v = minVal; v <= maxVal; v++) {
+                    let tv = formatCS(v);
+                    
+                    let isBisagra = hingeTimes.has(v);
+                    let isAffected = affectedTimes.has(v);
+                    
+                    let compsArray = tiemposConseguidos.has(v) ? Array.from(tiemposConseguidos.get(v)) : [];
+                    let compsStrData = compsArray.join(','); 
+                    let tooltipMsg = compsArray.join(', ');
+
+                    let tooltip = tiemposConseguidos.has(v) ? `title="${tooltipMsg}"` : `title="No conseguido"`;
+                    let accionClick = tiemposConseguidos.has(v) ? `onclick="mostrarPopUp('${compsStrData}')"` : `onclick="mostrarPopUpFallo()"`;
+                    
+                    let cssClass = 'miss';
+                    if (isBisagra) {
+                        cssClass = 'bisagra';
+                    } else if (v >= racha.min && v <= racha.max) {
+                        cssClass = isAffected ? 'streak strong' : 'streak';
+                    } else if (tiemposConseguidos.has(v)) {
+                        cssClass = isAffected ? 'got strong' : 'got';
+                    }
+                    
+                    let scrollClass = (v === racha.min) ? ` inicio-rango` : "";
+                    
+                    statsHtml += `<div class='card ${cssClass}${scrollClass}' ${tooltip} ${accionClick}>${tv}</div>`;
+                }
+                resDiv.innerHTML = statsHtml + `</div>`;
+            } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+        }
+
+        function scrollToRango() {
+            const element = document.querySelector('.inicio-rango');
+            if (element) {
+                const y = element.getBoundingClientRect().top + window.scrollY - 150;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
+        }
+
+        async function cargarTop1000() {
+            const eventId = document.getElementById('eventIdTop').value;
+            const resDiv = document.getElementById('resTop1000');
+            actualizarURL();
+            resDiv.innerHTML = `<p class='loading'>Cargando ranking...</p>`;
+
+            try {
+                const response = await fetch(`ranking_${eventId}.txt`);
+                if(!response.ok) throw new Error(`Falta el archivo ranking_${eventId}.txt. Ejecuta Python y crea el servidor local.`);
+                const text = await response.text();
+                
+                datosRankingGlobal = [];
+                const regex = /^(\d+)\.\s+(.*?)\s+\(([A-Z0-9]+)\.\s+(.*?)\.\s+(.*?)\)\s+-\s+([0-9.]+)s\s+\((.*?)\)/i;
+
+                text.split('\n').forEach(line => {
+                    let match = line.trim().match(regex);
+                    if(match) {
+                        datosRankingGlobal.push({ posGlobal: match[1], nombre: match[2], wcaId: match[3], pais: match[4], continente: match[5], rangoText: match[6], rangoLimites: match[7] });
+                    }
+                });
+                
+                if(datosRankingGlobal.length === 0) throw new Error("El archivo existe pero el formato es incorrecto. Vuelve a generar el .txt con Python.");
+                filtrarTop();
+            } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+        }
+
+        function filtrarTop() {
+            const eventId = document.getElementById('eventIdTop').value; 
+            const paisFiltro = document.getElementById('countryTop').value;
+            const searchVal = document.getElementById('searchNameTop').value.toLowerCase().trim();
+            const resDiv = document.getElementById('resTop1000');
+            
+            let filtradosRegion = datosRankingGlobal;
+            
+            if(paisFiltro !== "Todos") {
+                if(paisFiltro.startsWith('_')) {
+                    filtradosRegion = filtradosRegion.filter(d => d.continente === paisFiltro);
+                } else {
+                    filtradosRegion = filtradosRegion.filter(d => d.pais === paisFiltro);
+                }
+            }
+            
+            let current_nat_rank = 1;
+            let last_rango_val = -1;
+            
+            filtradosRegion.forEach((d, i) => {
+                let rVal = parseFloat(d.rangoText);
+                if (rVal !== last_rango_val) {
+                    current_nat_rank = i + 1;
+                    last_rango_val = rVal;
+                }
+                d.posLocalCalc = current_nat_rank; 
+            });
+            
+            filtradosTop = filtradosRegion;
+            if (searchVal) {
+                filtradosTop = filtradosTop.filter(d => d.nombre.toLowerCase().includes(searchVal) || d.wcaId.toLowerCase().includes(searchVal));
+            }
+
+            renderLimit = 50; 
+            pintarTablaTop();
+        }
+
+        function pintarTablaTop() {
+            const eventId = document.getElementById('eventIdTop').value; 
+            const paisFiltro = document.getElementById('countryTop').value;
+            const resDiv = document.getElementById('resTop1000');
+            
+            let html = `<div class="stats">Mostrando ${filtradosTop.length} resultados para: <strong style="color:var(--text);">${paisFiltro.replace('_','🌍 ')}</strong></div>`;
+            html += `<table><tr><th># (Global)</th><th>Nombre</th><th>WCA ID</th><th>País</th><th>Rango Actual</th></tr>`;
+            
+            let limit = Math.min(renderLimit, filtradosTop.length);
+            for(let i=0; i < limit; i++) {
+                let d = filtradosTop[i];
+                let posDisplay = paisFiltro === "Todos" ? d.posGlobal : `<b>${d.posLocalCalc}</b> <span style="font-size:0.8em; color:var(--text-muted);">(WR: ${d.posGlobal})</span>`;
+                
+                let limitsSplit = d.rangoLimites.split('-');
+                let formattedLimits = limitsSplit.length === 2 ? `${formatStrSeconds(limitsSplit[0])} - ${formatStrSeconds(limitsSplit[1])}` : d.rangoLimites;
+
+                html += `
+                    <tr>
+                        <td>${posDisplay}</td>
+                        <td>${d.nombre}</td>
+                        <td><a href="https://www.worldcubeassociation.org/persons/${d.wcaId}" target="_blank">${d.wcaId}</a></td>
+                        <td>${d.pais}</td>
+                        <td class="clickable-cell" title="Ver Pokédex de ${d.nombre}" onclick="irAPokedex('${d.wcaId}', '${eventId}')">
+                            <span style="color:#ce93d8; font-weight:bold;">${formatStrSeconds(d.rangoText)}s</span> <span style="font-size:0.8em; color:var(--text-muted);">(${formattedLimits})</span>
+                        </td>
+                    </tr>`;
+            }
+            html += `</table>`;
+            
+            if(renderLimit < filtradosTop.length) {
+                html += `<p style="color:var(--text-muted); margin-top:20px;">↓ Haz scroll para cargar más ↓</p>`;
+            }
+            resDiv.innerHTML = html;
+        }
+
+        async function cargarCompetidor() {
+            const wcaId = document.getElementById('wcaIdCompetidor').value.trim().toUpperCase();
+            const resDiv = document.getElementById('resCompetidor');
+            
+            if(!wcaId) return;
+            actualizarURL();
+            resDiv.innerHTML = "<p class='loading'>Escaneando historial completo y cruzando rankings locales...</p>";
+
+            const orden = ['333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf'];
+
+            try {
+                const { data, personName } = await fetchWCA(wcaId);
+                guardarReciente(wcaId);
+                
+                let evtMap = {};
+                data.forEach(c => {
+                    let ev = c.event_id;
+                    if(['333fm', '333mbf'].includes(ev)) return;
+                    if(!evtMap[ev]) evtMap[ev] = new Set();
+                    if(c.attempts) c.attempts.forEach(i => { if(i > 0) evtMap[ev].add(i); });
+                    if(c.best > 0) evtMap[ev].add(c.best);
+                });
+
+                let resultados = [];
+                for (let ev of Object.keys(evtMap)) {
+                    let arr = Array.from(evtMap[ev]).sort((a,b) => a-b);
+                    if(arr.length === 0) continue;
+                    let racha = calcularRachas(arr);
+                    resultados.push({ev, racha, global: "-", national: "-", continental: "-", country: "Todos", continent: "Todos"});
+                }
+
+                if(resultados.length === 0) {
+                    resDiv.innerHTML = `<p class='error'>No se encontraron marcas válidas para ${personName} (${wcaId}).</p>`;
+                    return;
+                }
+
+                resultados.sort((a, b) => orden.indexOf(a.ev) - orden.indexOf(b.ev));
+
+                await Promise.all(resultados.map(async (r) => {
+                    if(r.racha.rango === 0) return;
+                    try {
+                        const resArchivo = await fetch(`ranking_${r.ev}.txt`);
+                        if (resArchivo.ok) {
+                            const txt = await resArchivo.text();
+                            const lines = txt.split('\n');
+                            
+                            let userIndex = lines.findIndex(l => l.includes(`(${wcaId}.`));
+                            
+                            if (userIndex !== -1) {
+                                let match = lines[userIndex].match(/^(\d+)\.\s+(.*?)\s+\(([A-Z0-9]+)\.\s+(.*?)\.\s+(.*?)\)\s+-\s+([0-9.]+)s/i);
+                                if (match) {
+                                    r.global = match[1]; 
+                                    let userCountry = match[4];
+                                    let userContinent = match[5];
+                                    r.country = userCountry; 
+                                    r.continent = userContinent;
+                                    let userRango = parseFloat(match[6]);
+                                    
+                                    let countNat = 1;
+                                    let countCont = 1;
+                                    for (let i = 0; i < userIndex; i++) {
+                                        if (lines[i].includes(`. ${userCountry}.`)) {
+                                            let matchLine = lines[i].match(/-\s+([0-9.]+)s/);
+                                            if (matchLine && parseFloat(matchLine[1]) > userRango) countNat++;
+                                        }
+                                        if (lines[i].includes(`. ${userContinent})`)) {
+                                            let matchLine = lines[i].match(/-\s+([0-9.]+)s/);
+                                            if (matchLine && parseFloat(matchLine[1]) > userRango) countCont++;
+                                        }
+                                    }
+                                    r.national = countNat;
+                                    r.continental = countCont;
+                                }
+                            }
+                        }
+                    } catch (e) {}
+                }));
+
+                /* Modificado el título para que sea un enlace al perfil */
+                let tableHtml = `<h2 style="margin-bottom: 15px;">
+                    <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
+                </h2>`;
+                tableHtml += `<table><tr><th>Evento</th><th>Rango Actual</th><th style="text-align:center;">Ranking (🌍 / 🗺️ / 📍)</th></tr>`;
+                
+                resultados.forEach(r => {
+                    let rankHtml = "";
+                    if (r.racha.rango === 0) {
+                        rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">Sin rango (0.00s)</span>`;
+                    } else if (r.global !== "-") {
+                        rankHtml = `
+                            <span class="link-rank" onclick="irARanking('${r.ev}', 'Todos')" title="Ir al Top Mundial de ${r.ev.toUpperCase()}">🌍 #${r.global}</span> <br> 
+                            <span class="link-rank" onclick="irARanking('${r.ev}', '${r.continent}')" title="Ir al Ranking de ${r.continent.replace('_','')}">🗺️ #${r.continental}</span> <br>
+                            <span class="link-rank" onclick="irARanking('${r.ev}', '${r.country}')" title="Ir al Ranking Nacional de ${r.country}">📍 #${r.national}</span>
+                        `;
+                    } else {
+                        rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">No indexado</span>`;
+                    }
+                    
+                    /* Celdas de evento y rango hechas clickables para saltar a la Pestaña 1 */
+                    tableHtml += `
+                        <tr>
+                            <td class="clickable-cell" onclick="irAPokedex('${wcaId}', '${r.ev}')" title="Ver Pokédex de ${r.ev.toUpperCase()}" style="font-weight:bold; text-transform:uppercase; color: #64b5f6;">${r.ev}</td>
+                            <td class="clickable-cell" onclick="irAPokedex('${wcaId}', '${r.ev}')" title="Ver Pokédex de ${r.ev.toUpperCase()}">
+                                <span style="color:#ce93d8; font-weight:bold;">${formatCS(r.racha.rango)}s</span> 
+                                <span style="font-size:0.8em; color:var(--text-muted);">(${formatCS(r.racha.min)} - ${formatCS(r.racha.max)})</span>
+                            </td>
+                            <td class="rank-badges">${rankHtml}</td>
+                        </tr>`;
+                });
+                resDiv.innerHTML = tableHtml + `</table>`;
+            } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+        }
+    </script>
+</body>
+</html>
