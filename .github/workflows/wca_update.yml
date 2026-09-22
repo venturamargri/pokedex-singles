@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: 1. Clonar repositorio
         uses: actions/checkout@v4
 
@@ -31,29 +32,67 @@ jobs:
             https://www.worldcubeassociation.org/api/v0/export/public \
             | python -c "import sys, json; print(json.load(sys.stdin)['tsv_url'])")
 
-          echo "URL del export: $EXPORT_URL"
+          echo "URL:"
+          echo "$EXPORT_URL"
 
+          echo ""
           echo "Descargando export..."
-          curl -fL "$EXPORT_URL" -o WCA_export.tsv.zip
 
-          echo "Descomprimiendo..."
+          curl -fL \
+            "$EXPORT_URL" \
+            -o WCA_export.tsv.zip
+
+          echo ""
+          echo "Descomprimiendo export..."
+
           unzip -o WCA_export.tsv.zip
 
-          echo "Eliminando ZIP temporal..."
+          echo ""
+          echo "TSV descargados:"
+
+          find . -maxdepth 1 -type f -name "*.tsv" -printf "%f\n" | sort
+
+          echo ""
+          echo "Eliminando ZIP..."
+
           rm WCA_export.tsv.zip
 
-      - name: 4. Ejecutar script de Python
+      - name: 4. Ejecutar calculadora
         run: |
+          set -e
+
+          echo "Ejecutando calculadora WCA..."
+
           python calculadora_rangos_mundial_wca.py
+
+          echo ""
+          echo "Rankings generados:"
+
+          ls -lah ranking_*.txt
 
       - name: 5. Guardar los nuevos rankings en GitHub
         run: |
+          set -e
+
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+          echo "Añadiendo únicamente los rankings..."
+
           git add ranking_*.txt
 
-          git commit -m "Actualización automática de rankings WCA [skip ci]" \
-            || echo "No hay cambios nuevos que guardar"
+          if git diff --cached --quiet; then
+            echo "No hay cambios nuevos que guardar."
+          else
+            git commit -m "Actualización automática de rankings WCA [skip ci]"
+            git push
+          fi
 
-          git push
+      - name: 6. Limpiar archivos TSV temporales
+        if: always()
+        run: |
+          echo "Eliminando archivos TSV temporales..."
+
+          rm -f ./*.tsv
+
+          echo "Limpieza terminada."
