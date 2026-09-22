@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pokedex-singles-v2'; // Subimos la versión
+const CACHE_NAME = 'pokedex-singles-v3'; // Subimos la versión
 const assets = ['/', '/index.html', '/manifest.json'];
 
 // 1. Instalar y forzar que la nueva versión tome el control al instante
