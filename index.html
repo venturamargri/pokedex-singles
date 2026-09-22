@@ -208,6 +208,11 @@
         <div id="resCompetidor"></div>
     </div>
 
+    <!-- Texto sutil de última actualización -->
+    <div style="text-align: center; margin-top: 40px; padding-bottom: 25px; font-size: 0.85em; color: var(--text-muted);">
+        Última actualización de datos: <span id="fecha-update">Consultando...</span>
+    </div>
+
     <button id="btn-scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Volver arriba">↑</button>
 
     <script>
@@ -218,6 +223,21 @@
 
         const wcaContinents = ["_Africa", "_Asia", "_Europe", "_North America", "_Oceania", "_South America"];
         const wcaCountries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bolivia", "Bosnia and Herzegovina", "Brazil", "Brunei", "Bulgaria", "Cambodia", "Canada", "Chile", "China", "Colombia", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Guatemala", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Malaysia", "Malta", "Mauritius", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Myanmar", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Palestine", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "Spain", "Sri Lanka", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Thailand", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam"];
+
+        // --- OBTENER FECHA DE ÚLTIMA ACTUALIZACIÓN ---
+        fetch('https://api.github.com/repos/venturamargri/pokedex-singles/commits?path=ranking_333.txt&per_page=1')
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.length > 0) {
+                    const fecha = new Date(data[0].commit.author.date);
+                    const opciones = { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+                    document.getElementById('fecha-update').innerText = fecha.toLocaleDateString('es-ES', opciones);
+                }
+            })
+            .catch(() => {
+                document.getElementById('fecha-update').innerText = 'Desconocida';
+            });
+        // ---------------------------------------------
         
         const grpCont = document.getElementById('group-continents');
         wcaContinents.forEach(c => {
@@ -239,6 +259,20 @@
         }
 
         function openTab(tabName, shouldUpdateUrl = true) {
+            // Comprueba si el navegador soporta las transiciones mágicas
+            if (!document.startViewTransition) {
+                ejecutarCambioDePestana(tabName, shouldUpdateUrl);
+                return;
+            }
+        
+            // Si lo soporta, hace un fundido cruzado automático
+            document.startViewTransition(() => {
+                ejecutarCambioDePestana(tabName, shouldUpdateUrl);
+            });
+        }
+        
+        // He sacado tu código original a una sub-función para que quede limpio
+        function ejecutarCambioDePestana(tabName, shouldUpdateUrl) {
             Array.from(document.getElementsByClassName("tab-content")).forEach(el => el.classList.remove("active"));
             Array.from(document.getElementsByClassName("tab-btn")).forEach(el => el.classList.remove("active"));
             document.getElementById(tabName).classList.add("active");
@@ -530,7 +564,7 @@
             resDiv.innerHTML = `<p class='loading'>Cargando ranking...</p>`;
 
             try {
-                const response = await fetch(`ranking_${eventId}.txt`);
+                const response = await fetch(`ranking_${eventId}.txt?v=${Date.now()}`);
                 if(!response.ok) throw new Error(`Falta el archivo ranking_${eventId}.txt. Ejecuta Python y crea el servidor local.`);
                 const text = await response.text();
                 
@@ -662,7 +696,7 @@
                 await Promise.all(resultados.map(async (r) => {
                     if(r.racha.rango === 0) return;
                     try {
-                        const resArchivo = await fetch(`ranking_${r.ev}.txt`);
+                        const resArchivo = await fetch(`ranking_${r.ev}.txt?v=${Date.now()}`);
                         if (resArchivo.ok) {
                             const txt = await resArchivo.text();
                             const lines = txt.split('\n');
