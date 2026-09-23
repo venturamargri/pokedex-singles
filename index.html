@@ -457,6 +457,116 @@
         }
         function cerrarPopUp() { document.getElementById('modal-overlay').style.display = 'none'; }
 
+        function mostrarHistorialBisagras(wcaId, eventId) {
+            const payload = apiCache.get(wcaId);
+            if (!payload) return;
+            const data = payload.data;
+            
+            let tiemposSet = new Set();
+            let historial = [];
+            
+            // Invertimos los datos para viajar desde el primer campeonato de su vida hasta el actual
+            let compsInversas = data.slice().reverse();
+            
+            for (let comp of compsInversas) {
+                if (comp.event_id !== eventId) continue;
+                
+                let intentos = [];
+                if (comp.attempts) {
+                    intentos = comp.attempts.filter(x => x > 0);
+                }
+                // Si la WCA no tiene los intentos de una ronda antigua, usamos al menos el best
+                if (comp.best > 0 && intentos.length === 0) {
+                    intentos = [comp.best];
+                }
+                
+                // Procesamos CADA SOLVE en orden cronológico real
+                for (let int of intentos) {
+                    if (tiemposSet.has(int)) continue; // Ya lo tiene de antes
+                    
+                    if (tiemposSet.size > 0) {
+                        // Calcula las bisagras teóricas justo un segundo ANTES de este solve
+                        let { bestRango, hingeTimes, maxRangoActual } = calcularHingeTimesAvanzado(tiemposSet);
+                        
+                        // Si el solve que acaba de hacer coincide con la bisagra teórica
+                        if (hingeTimes.has(int)) {
+                            historial.unshift({
+                                tiempo: int,
+                                comp: comp.competition_id,
+                                rangoAntiguo: maxRangoActual,
+                                rangoNuevo: bestRango,
+                                aumento: bestRango - maxRangoActual
+                            });
+                        }
+                    }
+                    // Actualizamos el tablero interno y pasamos al siguiente solve
+                    tiemposSet.add(int);
+                }
+            }
+            
+            // Construir el diseño minimalista que pediste
+            let html = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Historial de Bisagras</h2>`;
+            if (historial.length === 0) {
+                html += `<p style="color: var(--text-muted);"><b>Racha Perfecta</b><br><br>Este competidor es tan consistente que nunca ha necesitado rellenar una bisagra para expandir su rango máximo.</p>`;
+            } else {
+                html += `<div style="text-align: left; max-height: 60vh; overflow-y: auto; padding-right: 5px;">`;
+                historial.forEach(h => {
+                    html += `
+                        <div style="margin-bottom: 20px; border-left: 3px solid #ce93d8; padding-left: 12px;">
+                            <strong style="color: #ce93d8; font-size: 1.3em;">${formatCS(h.tiempo)}s</strong><br>
+                            <span style="font-size: 1.05em; font-weight: bold; color: var(--text);">${h.comp}</span><br>
+                            <span style="color: var(--text-muted);">Rango: ${formatCS(h.rangoAntiguo)}s &rarr; ${formatCS(h.rangoNuevo)}s <b style="color:#4CAF50;">(+${formatCS(h.aumento)}s)</b></span>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+            
+            document.getElementById('modal-texto').innerHTML = html;
+            document.getElementById('modal-overlay').style.display = 'flex';
+        }
+
+        // El cerebro matemático ultrarrápido (O(S)) que detecta huecos sin congelar el móvil
+        function calcularHingeTimesAvanzado(tiemposSet) {
+            let arr = Array.from(tiemposSet).sort((a, b) => a - b);
+            let rachas = [];
+            let rActual = {min: arr[0], max: arr[0]};
+            
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] === rActual.max + 1) rActual.max = arr[i];
+                else { rachas.push(rActual); rActual = {min: arr[i], max: arr[i]}; }
+            }
+            rachas.push(rActual);
+            
+            let maxRangoActual = Math.max(...rachas.map(r => r.max - r.min));
+            let bestRango = maxRangoActual;
+            let hingeTimes = new Set();
+            
+            for (let i = 0; i < rachas.length - 1; i++) {
+                let r1 = rachas[i];
+                let r2 = rachas[i+1];
+                let gap = r2.min - r1.max - 1;
+                
+                if (gap === 1) { // Hueco perfecto de 1 centésima (Fusión Masiva)
+                    let v = r1.max + 1;
+                    let nuevoRango = (r1.max - r1.min) + (r2.max - r2.min) + 2;
+                    if (nuevoRango > bestRango) { bestRango = nuevoRango; hingeTimes.clear(); hingeTimes.add(v); } 
+                    else if (nuevoRango === bestRango && nuevoRango > maxRangoActual) { hingeTimes.add(v); }
+                } else if (gap > 1) { // Extensiones de rachas existentes
+                    let vDer = r1.max + 1;
+                    let nRangoDer = (r1.max - r1.min) + 1;
+                    if (nRangoDer > bestRango) { bestRango = nRangoDer; hingeTimes.clear(); hingeTimes.add(vDer); } 
+                    else if (nRangoDer === bestRango && nRangoDer > maxRangoActual) { hingeTimes.add(vDer); }
+                    
+                    let vIzq = r2.min - 1;
+                    let nRangoIzq = (r2.max - r2.min) + 1;
+                    if (nRangoIzq > bestRango) { bestRango = nRangoIzq; hingeTimes.clear(); hingeTimes.add(vIzq); } 
+                    else if (nRangoIzq === bestRango && nRangoIzq > maxRangoActual) { hingeTimes.add(vIzq); }
+                }
+            }
+            return { bestRango, hingeTimes, maxRangoActual };
+        }
+
         async function fetchWCA(wcaId) {
             if(apiCache.has(wcaId)) return apiCache.get(wcaId);
             const [resResults, resPerson] = await Promise.all([
@@ -556,6 +666,7 @@
                         <div style="margin-top: 5px;">
                             <strong>Rango:</strong> <span style="color: #ce93d8;">${formatCS(racha.rango)}s (${formatCS(racha.min)} - ${formatCS(racha.max)})</span>
                             <button class="action-btn" style="padding: 4px 10px; font-size: 0.8em; margin-left: 10px;" onclick="scrollToRango()">Mostrar Rango</button>
+                            <button class="btn-secondary" style="padding: 4px 10px; font-size: 0.8em; margin-left: 5px;" onclick="mostrarHistorialBisagras('${wcaId}', '${eventId}')">📖 Historial</button>
                         </div>
                     </div>
                     <div class="grid">`;
