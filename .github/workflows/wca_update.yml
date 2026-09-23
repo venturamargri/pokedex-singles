@@ -25,77 +25,71 @@ jobs:
       - name: 3. Descargar base de datos WCA
         run: |
           set -e
-
           echo "Obteniendo URL del export WCA..."
-
           EXPORT_URL=$(curl -fsSL \
             https://www.worldcubeassociation.org/api/v0/export/public \
             | python -c "import sys, json; print(json.load(sys.stdin)['tsv_url'])")
-
           echo "URL:"
           echo "$EXPORT_URL"
-
+          
           echo ""
           echo "Descargando export..."
-
-          curl -fL \
-            "$EXPORT_URL" \
-            -o WCA_export.tsv.zip
-
+          curl -fL "$EXPORT_URL" -o WCA_export.tsv.zip
+          
           echo ""
           echo "Descomprimiendo export..."
-
           unzip -o WCA_export.tsv.zip
-
+          
           echo ""
           echo "TSV descargados:"
-
           find . -maxdepth 1 -type f -name "*.tsv" -printf "%f\n" | sort
-
+          
           echo ""
           echo "Eliminando ZIP..."
-
           rm WCA_export.tsv.zip
 
-      - name: 4. Ejecutar calculadora
+      - name: 4. Ejecutar calculadora individual (TXT)
         run: |
           set -e
-
           echo "Instalando dependencias (Polars)..."
           pip install polars
-
+          
           echo "Ejecutando calculadora WCA..."
-
           python calculadora_rangos_mundial_wca.py
-
+          
           echo ""
           echo "Rankings generados:"
-
           ls -lah ranking_*.txt
 
-      - name: 5. Guardar los nuevos rankings en GitHub
+      - name: 5. Ejecutar generador colectivo (JSON)
         run: |
           set -e
+          echo "Ejecutando generador colectivo WCA..."
+          python generador_colectivo.py
+          
+          echo ""
+          echo "JSONs colectivos generados:"
+          ls -lah collective_*.json
 
+      - name: 6. Guardar los nuevos datos en GitHub
+        run: |
+          set -e
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-          echo "Añadiendo únicamente los rankings..."
-
-          git add ranking_*.txt
-
+          
+          echo "Añadiendo rankings txt y datos colectivos json..."
+          git add ranking_*.txt collective_*.json
+          
           if git diff --cached --quiet; then
             echo "No hay cambios nuevos que guardar."
           else
-            git commit -m "Actualización automática de rankings WCA [skip ci]"
+            git commit -m "Actualización automática de rankings WCA y Pokédex Colectiva [skip ci]"
             git push
           fi
 
-      - name: 6. Limpiar archivos TSV temporales
+      - name: 7. Limpiar archivos TSV temporales
         if: always()
         run: |
           echo "Eliminando archivos TSV temporales..."
-
           rm -f ./*.tsv
-
           echo "Limpieza terminada."
