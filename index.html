@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex Singles</title>
+    <title>Pokédex Singles</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="manifest" href="manifest.json">
     <script>
@@ -606,7 +606,7 @@
 
             try {
                 const response = await fetch(`ranking_${eventId}.txt?v=${Date.now()}`);
-                if(!response.ok) throw new Error(`Falta el archivo ranking_${eventId}.txt. Ejecuta Python y crea el servidor local.`);
+                if(!response.ok) throw new Error(`Ranking no disponible`);
                 const text = await response.text();
                 
                 datosRankingGlobal = [];
