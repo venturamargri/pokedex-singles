@@ -16,7 +16,7 @@
 
         if ('serviceWorker' in navigator && !isLocalhost) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('sw.js')
                     .then(() => console.log("Service Worker registrado con éxito (Modo Producción)."))
                     .catch(err => console.log("Error al registrar Service Worker:", err));
             });
