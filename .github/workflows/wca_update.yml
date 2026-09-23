@@ -48,7 +48,17 @@ jobs:
           echo "Eliminando ZIP..."
           rm WCA_export.tsv.zip
 
-      - name: 4. Ejecutar calculadora individual (TXT)
+      - name: 4. Ejecutar generador colectivo (JSON)
+        run: |
+          set -e
+          echo "Ejecutando generador colectivo WCA..."
+          python generador_colectivo.py
+          
+          echo ""
+          echo "JSONs colectivos generados:"
+          ls -lah collective_*.json
+
+      - name: 5. Ejecutar calculadora individual (TXT)
         run: |
           set -e
           echo "Instalando dependencias (Polars)..."
@@ -60,16 +70,6 @@ jobs:
           echo ""
           echo "Rankings generados:"
           ls -lah ranking_*.txt
-
-      - name: 5. Ejecutar generador colectivo (JSON)
-        run: |
-          set -e
-          echo "Ejecutando generador colectivo WCA..."
-          python generador_colectivo.py
-          
-          echo ""
-          echo "JSONs colectivos generados:"
-          ls -lah collective_*.json
 
       - name: 6. Guardar los nuevos datos en GitHub
         run: |
