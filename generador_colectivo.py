@@ -1,32 +1,60 @@
 import csv
 import json
+import os
+import glob
 from collections import defaultdict
 
 EVENTOS_VALIDOS = {'333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf'}
 
+# ==========================================
+# FUNCIÓN PARA ENCONTRAR LOS TSV DINÁMICAMENTE
+# ==========================================
+def encontrar_archivo(nombre_base):
+    patrones = [
+        f"WCA_export_{nombre_base}.tsv",
+        f"WCA_export_{nombre_base.lower()}.tsv",
+        f"{nombre_base}.tsv",
+        f"{nombre_base.lower()}.tsv"
+    ]
+    for p in patrones:
+        if os.path.exists(p):
+            return p
+            
+    coincidencias = glob.glob(f"*{nombre_base}*.tsv", recursive=False)
+    if coincidencias: return coincidencias[0]
+    
+    coincidencias_min = glob.glob(f"*{nombre_base.lower()}*.tsv", recursive=False)
+    if coincidencias_min: return coincidencias_min[0]
+    
+    return f"WCA_export_{nombre_base.lower()}.tsv"
+
 def procesar_datos():
+    # Asignación dinámica de archivos a prueba de fallos
+    COMPETITIONS_FILE = encontrar_archivo("Competitions")
+    COUNTRIES_FILE = encontrar_archivo("Countries")
+    RESULTS_FILE = encontrar_archivo("Results")
+
     # 1. Leer competiciones para obtener las fechas
     comps = {}
-    print("Leyendo competiciones...")
-    with open('WCA_export_Competitions.tsv', 'r', encoding='utf-8') as f:
+    print(f"Leyendo competiciones desde {COMPETITIONS_FILE}...")
+    with open(COMPETITIONS_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
-            # Creamos una fecha YYYY-MM-DD ordenable
             date_str = f"{row['year']}-{row['month'].zfill(2)}-{row['day'].zfill(2)}"
             comps[row['id']] = date_str
 
     # 2. Leer la tabla de países para cruzar País -> Continente
     paises_continentes = {}
-    print("Mapeando países a continentes...")
-    with open('WCA_export_Countries.tsv', 'r', encoding='utf-8') as f:
+    print(f"Mapeando países a continentes desde {COUNTRIES_FILE}...")
+    with open(COUNTRIES_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
             paises_continentes[row['id']] = row['continentId']
 
     # 3. Leer resultados masivos
-    print("Procesando resultados masivos...")
+    print(f"Procesando resultados masivos desde {RESULTS_FILE}...")
     resultados_brutos = defaultdict(list)
-    with open('WCA_export_Results.tsv', 'r', encoding='utf-8') as f:
+    with open(RESULTS_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
             if row['eventId'] not in EVENTOS_VALIDOS: continue
@@ -34,7 +62,7 @@ def procesar_datos():
             
             wca_id = row['personId']
             pais = row['personCountryId']
-            continente = paises_continentes.get(pais, "Unknown") # <-- El cruce ocurre aquí
+            continente = paises_continentes.get(pais, "Unknown")
             comp_id = row['competitionId']
             fecha = comps.get(comp_id, "9999-99-99")
             best = int(row['best'])
@@ -48,7 +76,6 @@ def procesar_datos():
     for evento, solves in resultados_brutos.items():
         print(f"Calculando Pokédex y Hall of Fame para {evento}...")
         
-        # El secreto: Ordenar cronológicamente todo el evento desde 2003 hasta hoy
         solves.sort(key=lambda x: x['fecha'])
         
         datos_colectivos = {
@@ -57,7 +84,6 @@ def procesar_datos():
             'Nacional': defaultdict(lambda: {'tiempos': {}, 'hall_of_fame': defaultdict(int)})
         }
         
-        # Detectar a los descubridores
         for s in solves:
             t = s['time']
             p = s['pais']
@@ -94,7 +120,7 @@ def procesar_datos():
                     datos_colectivos['Nacional'][p]['tiempos'][t]['comps'].append(s['comp_id'])
                     datos_colectivos['Nacional'][p]['hall_of_fame'][persona] += 1
 
-        # Limpiar y ordenar el Hall of Fame para que no pese demasiado el JSON
+        # Limpiar y ordenar el Hall of Fame para que el JSON sea ligero
         datos_colectivos['Mundial']['hall_of_fame'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame'].items(), key=lambda x: x[1], reverse=True)[:100])
         
         for c_key in datos_colectivos['Continental']:
@@ -103,7 +129,7 @@ def procesar_datos():
         for p_key in datos_colectivos['Nacional']:
             datos_colectivos['Nacional'][p_key]['hall_of_fame'] = dict(sorted(datos_colectivos['Nacional'][p_key]['hall_of_fame'].items(), key=lambda x: x[1], reverse=True)[:50])
 
-        # Guardar archivo maestro
+        # Guardar en la raíz (donde Git lo espera)
         with open(f'collective_{evento}.json', 'w', encoding='utf-8') as f:
             json.dump(datos_colectivos, f)
             
