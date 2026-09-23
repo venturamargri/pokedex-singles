@@ -518,7 +518,7 @@
                     html += `
                         <div style="margin-bottom: 20px; border-left: 3px solid #ce93d8; padding-left: 12px;">
                             <strong style="color: #ce93d8; font-size: 1.3em;">${formatCS(h.tiempo)}s</strong><br>
-                            <span style="font-size: 1.05em; font-weight: bold; color: var(--text);">${h.comp}</span><br>
+                            <a href="https://www.worldcubeassociation.org/competitions/${h.comp}" target="_blank" style="font-size: 1.05em; font-weight: bold;">${h.comp}</a>
                             <span style="color: var(--text-muted); display: inline-block;">Rango: ${formatCS(h.rangoAntiguo)}s &rarr; ${formatCS(h.rangoNuevo)}s <b style="color:#4CAF50;">(+${formatCS(h.aumento)}s)</b></span>
                         </div>
                     `;
