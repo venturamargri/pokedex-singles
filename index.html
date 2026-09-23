@@ -874,6 +874,14 @@
             }
         }
 
+        function scrollToRango() {
+            const element = document.querySelector('.inicio-rango');
+            if (element) {
+                const y = element.getBoundingClientRect().top + window.scrollY - 150;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
+        }    
+        
         async function cargarTop1000() {
             const modo = document.getElementById('agrupacionSelect').value;
             const eventId = document.getElementById('eventIdTop').value;
