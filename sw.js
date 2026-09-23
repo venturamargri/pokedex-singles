@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pokedex-singles-v4';
+const CACHE_NAME = 'pokedex-singles-v5';
 const assets = [
     '/pokedex-singles/', 
     '/pokedex-singles/index.html', 
