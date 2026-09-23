@@ -25,9 +25,10 @@ def procesar_datos():
     COMPETITIONS_FILE = encontrar_archivo("Competitions")
     COUNTRIES_FILE = encontrar_archivo("Countries")
     RESULTS_FILE = encontrar_archivo("Results")
+    ATTEMPTS_FILE = encontrar_archivo("result_attempts") or encontrar_archivo("ResultAttempts")
 
     comps = {}
-    print(f"Leyendo competiciones...")
+    print("Leyendo competiciones...")
     with open(COMPETITIONS_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
@@ -35,40 +36,64 @@ def procesar_datos():
             comps[row['id']] = date_str
 
     paises_continentes = {}
-    print(f"Mapeando continentes...")
+    print("Mapeando continentes...")
     with open(COUNTRIES_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
             paises_continentes[row['id']] = row['continent_id']
 
-    print(f"Procesando resultados (Escaneando todos los intentos individuales)...")
+    print("Procesando tabla principal de Results...")
     resultados_brutos = defaultdict(list)
+    result_info = {}
+    
     with open(RESULTS_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
-            if row['event_id'] not in EVENTOS_VALIDOS: continue
+            ev = row['event_id']
+            if ev not in EVENTOS_VALIDOS: continue
             
+            res_id = row['id']
             wca_id = row['person_id']
             pais = row['person_country_id']
             continente = paises_continentes.get(pais, "Unknown")
             comp_id = row['competition_id']
             fecha = comps.get(comp_id, "9999-99-99")
+            pname = row['person_name']
             
-            # --- ARREGLO GRAVE: Leer todos los intentos de la ronda, no solo el 'best' ---
-            intentos_ronda = set()
-            for col in ['value1', 'value2', 'value3', 'value4', 'value5', 'best']:
-                val = row.get(col, '0')
-                if val.lstrip('-').isdigit(): 
-                    v = int(val)
-                    if v > 0: intentos_ronda.add(v)
+            # Memoria optimizada: Guardamos los datos estructurales del resultado
+            result_info[res_id] = (ev, wca_id, pais, continente, comp_id, fecha, pname)
             
-            if not intentos_ronda: continue
-
-            for t in intentos_ronda:
-                resultados_brutos[row['event_id']].append({
-                    'time': t, 'wca_id': wca_id, 'pais': pais, 'continente': continente, 
-                    'comp_id': comp_id, 'fecha': fecha, 'personName': row['person_name']
+            # Rescatar el 'best' oficial por si acaso
+            b = int(row.get('best', '0'))
+            if b > 0:
+                resultados_brutos[ev].append({
+                    'time': b, 'wca_id': wca_id, 'pais': pais, 'continente': continente, 
+                    'comp_id': comp_id, 'fecha': fecha, 'personName': pname
                 })
+
+    # --- LA CLAVE MAESTRA: LEER LA TABLA DE INTENTOS ---
+    if ATTEMPTS_FILE and os.path.exists(ATTEMPTS_FILE):
+        print(f"Procesando tabla secundaria de Intentos ({ATTEMPTS_FILE})...")
+        with open(ATTEMPTS_FILE, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f, delimiter='\t')
+            for row in reader:
+                res_id = row['result_id']
+                # Cruzamos el intento con la información del competidor y torneo
+                if res_id in result_info:
+                    val = row.get('value', '0')
+                    if val.lstrip('-').isdigit():
+                        v = int(val)
+                        if v > 0:
+                            info = result_info[res_id]
+                            resultados_brutos[info[0]].append({
+                                'time': v, 'wca_id': info[1], 'pais': info[2], 'continente': info[3],
+                                'comp_id': info[4], 'fecha': info[5], 'personName': info[6]
+                            })
+    else:
+        print("AVISO: No se encontró la tabla result_attempts. Faltarán tiempos.")
+
+    # Liberar la RAM 
+    result_info.clear()
 
     for evento, solves in resultados_brutos.items():
         print(f"Calculando {evento}...")
@@ -120,7 +145,7 @@ def procesar_datos():
                 datos_colectivos['Nacional'][p]['tiempos'][t]['comps'].append(s['comp_id'])
                 datos_colectivos['Nacional'][p]['hall_of_fame_individuals'][persona] += 1
 
-        # --- ARREGLO HALL OF FAME: Ordenamos todos sin borrar a nadie (Sin los limitadores [:50]) ---
+        # Sin límites restrictivos para el Hall of Fame
         datos_colectivos['Mundial']['hall_of_fame_individuals'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_individuals'].items(), key=lambda x: x[1], reverse=True))
         datos_colectivos['Mundial']['hall_of_fame_countries'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_countries'].items(), key=lambda x: x[1], reverse=True))
         datos_colectivos['Mundial']['hall_of_fame_continents'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_continents'].items(), key=lambda x: x[1], reverse=True))
