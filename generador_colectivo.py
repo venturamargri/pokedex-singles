@@ -49,7 +49,7 @@ def procesar_datos():
     with open(COUNTRIES_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
-            paises_continentes[row['id']] = row['continentId']
+            paises_continentes[row['id']] = row['continent_id']  # <-- COLUMNA CORREGIDA
 
     # 3. Leer resultados masivos
     print(f"Procesando resultados masivos desde {RESULTS_FILE}...")
@@ -57,25 +57,26 @@ def procesar_datos():
     with open(RESULTS_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
-            if row['eventId'] not in EVENTOS_VALIDOS: continue
+            if row['event_id'] not in EVENTOS_VALIDOS: continue  # <-- COLUMNA CORREGIDA
             if int(row['best']) <= 0: continue
             
-            wca_id = row['personId']
-            pais = row['personCountryId']
+            wca_id = row['person_id']  # <-- COLUMNA CORREGIDA
+            pais = row['person_country_id']  # <-- COLUMNA CORREGIDA
             continente = paises_continentes.get(pais, "Unknown")
-            comp_id = row['competitionId']
+            comp_id = row['competition_id']  # <-- COLUMNA CORREGIDA
             fecha = comps.get(comp_id, "9999-99-99")
             best = int(row['best'])
             
-            resultados_brutos[row['eventId']].append({
+            resultados_brutos[row['event_id']].append({
                 'time': best, 'wca_id': wca_id, 'pais': pais, 'continente': continente, 
-                'comp_id': comp_id, 'fecha': fecha, 'personName': row['personName']
+                'comp_id': comp_id, 'fecha': fecha, 'personName': row['person_name']  # <-- COLUMNA CORREGIDA
             })
 
     # 4. Generar el JSON Colectivo por Evento
     for evento, solves in resultados_brutos.items():
         print(f"Calculando Pokédex y Hall of Fame para {evento}...")
         
+        # El secreto: Ordenar cronológicamente todo el evento desde 2003 hasta hoy
         solves.sort(key=lambda x: x['fecha'])
         
         datos_colectivos = {
@@ -84,6 +85,7 @@ def procesar_datos():
             'Nacional': defaultdict(lambda: {'tiempos': {}, 'hall_of_fame': defaultdict(int)})
         }
         
+        # Detectar a los descubridores
         for s in solves:
             t = s['time']
             p = s['pais']
