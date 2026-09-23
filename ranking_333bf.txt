@@ -3,820 +3,820 @@
 1. Stanley Chapel (2016CHAP04. USA. _North America) - 0.14s (17.63-17.77) | AR: 188.19s
 2. Arthur Garcin (2014GARC27. France. _Europe) - 0.08s (23.97-24.05) | AR: 231.05s
 3. Krzysztof Bober (2013BOBE01. Poland. _Europe) - 0.07s (17.68-17.75) | AR: 246.58s
-4. Charlie Eggins (2019EGGI02. Australia. _Oceania) - 0.06s (14.72-14.78) | AR: 55.92s
-4. Jens Haber (2018HABE02. Germany. _Europe) - 0.06s (18.36-18.42) | AR: 38.07s
-4. Tommy Cherry (2015CHER07. USA. _North America) - 0.06s (14.98-15.04) | AR: 343.69s
 4. Noah Kraft (2016KRAF01. Germany. _Europe) - 0.06s (24.39-24.45) | AR: 236.24s
-8. Dominik Kobinski (2019KOBI01. Poland. _Europe) - 0.05s (22.29-22.34) | AR: 132.60s
+4. Jens Haber (2018HABE02. Germany. _Europe) - 0.06s (18.36-18.42) | AR: 38.07s
+4. Charlie Eggins (2019EGGI02. Australia. _Oceania) - 0.06s (14.72-14.78) | AR: 55.92s
+4. Tommy Cherry (2015CHER07. USA. _North America) - 0.06s (14.98-15.04) | AR: 343.69s
 8. Simon Praschl (2021PRAS02. Austria. _Europe) - 0.05s (17.82-17.87) | AR: 255.67s
-8. Stanisław Szyszka (2016SZYS02. Poland. _Europe) - 0.05s (21.24-21.29) | AR: 260.00s
-8. Martin Vædele Egdal (2013EGDA02. Denmark. _Europe) - 0.05s (21.13-21.18) | AR: 244.08s
-8. Graham Siggins (2016SIGG01. USA. _North America) - 0.05s (19.99-20.04) | AR: 268.59s
-8. Jeff Park (2015PARK08. USA. _North America) - 0.05s (17.85-17.90) | AR: 232.36s
 8. Michael Tripodi (2021TRIP01. Australia. _Oceania) - 0.05s (22.41-22.46) | AR: 34.90s
-15. Ben Baron (2016BARO04. Israel. _Europe) - 0.04s (21.08-21.12) | AR: 181.63s
-15. Kamil Przybylski (2016PRZY01. Poland. _Europe) - 0.04s (20.07-20.11) | AR: 47.38s
-15. Mark Boyanowski (2014BOYA01. USA. _North America) - 0.04s (28.39-28.43) | AR: 132.90s
+8. Jeff Park (2015PARK08. USA. _North America) - 0.05s (17.85-17.90) | AR: 232.36s
+8. Graham Siggins (2016SIGG01. USA. _North America) - 0.05s (19.99-20.04) | AR: 268.59s
+8. Martin Vædele Egdal (2013EGDA02. Denmark. _Europe) - 0.05s (21.13-21.18) | AR: 244.08s
+8. Stanisław Szyszka (2016SZYS02. Poland. _Europe) - 0.05s (21.24-21.29) | AR: 260.00s
+8. Dominik Kobinski (2019KOBI01. Poland. _Europe) - 0.05s (22.29-22.34) | AR: 132.60s
 15. Theodore Chan (2016CHAN25. Singapore. _Asia) - 0.04s (20.38-20.42) | AR: 172.35s
-15. Radomił Baran (2020BARA02. Poland. _Europe) - 0.04s (25.22-25.26) | AR: 65.24s
-15. Fletcher Berry (2018BERR01. USA. _North America) - 0.04s (25.05-25.09) | AR: 121.16s
-15. Shivam Bansal (2011BANS02. India. _Asia) - 0.04s (31.57-31.61) | AR: 372.64s
-15. Kacper Paweł Dworak (2020DWOR01. Poland. _Europe) - 0.04s (47.65-47.69) | AR: 164.58s
-15. Wojciech Rogoziński (2019ROGO04. Poland. _Europe) - 0.04s (24.75-24.79) | AR: 164.92s
-15. Daniel Wallin (2013WALL03. Sweden. _Europe) - 0.04s (23.47-23.51) | AR: 171.44s
-15. Kaijun Lin (林恺俊) (2013LINK01. China. _Asia) - 0.04s (24.21-24.25) | AR: 42.65s
-15. Guido Dipietro (2013DIPI01. Argentina. _South America) - 0.04s (24.39-24.43) | AR: 227.49s
-15. Yifan Wang (王逸帆) (2017WANY29. China. _Asia) - 0.04s (16.20-16.24) | AR: 182.88s
 15. Anto Kam (甘浩東) (2017TUNG13. Hong Kong. _Asia) - 0.04s (18.96-19.00) | AR: 63.19s
-29. Berta García Parra (2014PARR02. Spain. _Europe) - 0.03s (24.61-24.64) | AR: 257.32s
-29. Gianfranco Huanqui (2013HUAN29. Peru. _South America) - 0.03s (18.68-18.71) | AR: 279.84s
-29. Manuel Gutman (2017GUTM01. Argentina. _South America) - 0.03s (15.96-15.99) | AR: 122.16s
-29. Rémi Esturoune (2010ESTU01. France. _Europe) - 0.03s (76.66-76.69) | AR: 112.23s
-29. Arkadiusz Żynel (2018ZYNE01. Poland. _Europe) - 0.03s (48.57-48.60) | AR: 145.68s
-29. Mengfei Shen (沈梦非) (2018SHEN07. China. _Asia) - 0.03s (26.89-26.92) | AR: 215.73s
-29. Liam Chen (2014CHEN37. USA. _North America) - 0.03s (19.59-19.62) | AR: 101.74s
-29. Rowe Hessler (2007HESS01. USA. _North America) - 0.03s (23.63-23.66) | AR: 381.67s
-29. Ryan Pilat (2016PILA03. USA. _North America) - 0.03s (21.16-21.19) | AR: 365.92s
-29. Marius Chaudesaygues (2022CHAU04. France. _Europe) - 0.03s (23.81-23.84) | AR: 199.29s
-29. Yucheng Chen (陈裕铖) (2015CHEN49. China. _Asia) - 0.03s (32.21-32.24) | AR: 193.10s
+15. Fletcher Berry (2018BERR01. USA. _North America) - 0.04s (25.05-25.09) | AR: 121.16s
+15. Guido Dipietro (2013DIPI01. Argentina. _South America) - 0.04s (24.39-24.43) | AR: 227.49s
+15. Yifan Wang (王逸帆) (2017WANY29. China. _Asia) - 0.04s (18.02-18.06) | AR: 182.88s
+15. Mark Boyanowski (2014BOYA01. USA. _North America) - 0.04s (28.39-28.43) | AR: 132.90s
+15. Kamil Przybylski (2016PRZY01. Poland. _Europe) - 0.04s (20.95-20.99) | AR: 47.38s
+15. Radomił Baran (2020BARA02. Poland. _Europe) - 0.04s (25.22-25.26) | AR: 65.24s
+15. Ben Baron (2016BARO04. Israel. _Europe) - 0.04s (21.08-21.12) | AR: 181.63s
+15. Shivam Bansal (2011BANS02. India. _Asia) - 0.04s (31.57-31.61) | AR: 372.64s
+15. Daniel Wallin (2013WALL03. Sweden. _Europe) - 0.04s (23.47-23.51) | AR: 171.44s
+15. Kacper Paweł Dworak (2020DWOR01. Poland. _Europe) - 0.04s (47.65-47.69) | AR: 164.58s
+15. Kaijun Lin (林恺俊) (2013LINK01. China. _Asia) - 0.04s (24.21-24.25) | AR: 42.65s
+15. Wojciech Rogoziński (2019ROGO04. Poland. _Europe) - 0.04s (24.75-24.79) | AR: 164.92s
 29. Jan Bentlage (2010BENT01. Germany. _Europe) - 0.03s (73.82-73.85) | AR: 290.64s
-29. Billie Hammill (2015HAMM01. United Kingdom. _Europe) - 0.03s (124.29-124.32) | AR: 236.26s
-29. Linus Frész (2011FRES01. Germany. _Europe) - 0.03s (50.68-50.71) | AR: 239.96s
-29. Ryan Eckersley (2019ECKE02. United Kingdom. _Europe) - 0.03s (27.31-27.34) | AR: 104.25s
+29. Arkadiusz Żynel (2018ZYNE01. Poland. _Europe) - 0.03s (48.57-48.60) | AR: 145.68s
 29. Charles Daloz-Baltenberger (2018DALO01. France. _Europe) - 0.03s (16.00-16.03) | AR: 441.09s
-29. Jonathan Dammann (2021DAMM01. France. _Europe) - 0.03s (30.38-30.41) | AR: 104.36s
-29. Ben Stokes (2018STOK01. United Kingdom. _Europe) - 0.03s (21.66-21.69) | AR: 193.14s
 29. Adrian Dębski (2017DEBS01. Poland. _Europe) - 0.03s (22.27-22.30) | AR: 291.71s
-29. Quentin Rivault (2017RIVA09. France. _Europe) - 0.03s (21.47-21.50) | AR: 171.87s
-29. Mikołaj Morawski (2021MORA01. Poland. _Europe) - 0.03s (21.97-22.00) | AR: 84.01s
+29. Gianfranco Huanqui (2013HUAN29. Peru. _South America) - 0.03s (18.68-18.71) | AR: 279.84s
+29. Ryan Eckersley (2019ECKE02. United Kingdom. _Europe) - 0.03s (27.31-27.34) | AR: 104.25s
+29. Rowe Hessler (2007HESS01. USA. _North America) - 0.03s (23.63-23.66) | AR: 381.67s
+29. Mengfei Shen (沈梦非) (2018SHEN07. China. _Asia) - 0.03s (26.89-26.92) | AR: 215.73s
 29. Cornelius Dieckmann (2009DIEC01. Germany. _Europe) - 0.03s (76.40-76.43) | AR: 196.84s
-29. István Kocza (2005KOCZ01. Hungary. _Europe) - 0.03s (63.84-63.87) | AR: 394.63s
 29. Evan Liu (2009LIUE01. USA. _North America) - 0.03s (65.78-65.81) | AR: 287.44s
-53. Bence Barát (2008BARA01. Hungary. _Europe) - 0.02s (59.06-59.08) | AR: 157.87s
-53. Hill Pong Yong Feng (2017FENG10. Malaysia. _Asia) - 0.02s (23.31-23.33) | AR: 80.82s
-53. Wilfrid Py (2016PYWI01. France. _Europe) - 0.02s (68.37-68.39) | AR: 346.75s
-53. Xin Shi (石欣) (2010SHIX01. China. _Asia) - 0.02s (26.95-26.97) | AR: 276.78s
-53. Michał Bogdan (2012BOGD01. Poland. _Europe) - 0.02s (30.99-31.01) | AR: 197.40s
-53. William Jensen (2016JENS09. Sweden. _Europe) - 0.02s (39.51-39.53) | AR: 290.69s
-53. Nevins Chan Pak Hoong (陈百鸿) (2010CHAN20. Malaysia. _Asia) - 0.02s (101.81-101.83) | AR: 242.58s
-53. Liren Sun (孙立仁) (2017SUNL03. China. _Asia) - 0.02s (28.51-28.53) | AR: 137.24s
-53. Oliver Fritz (2014FRIT02. Germany. _Europe) - 0.02s (23.44-23.46) | AR: 257.55s
-53. Shenghai Fang (方胜海) (2016FANG01. China. _Asia) - 0.02s (36.55-36.57) | AR: 101.59s
-53. Konstantin Jaehne (2015JAEH01. Germany. _Europe) - 0.02s (52.44-52.46) | AR: 488.93s
-53. Flurin König (2019KONI03. Switzerland. _Europe) - 0.02s (52.07-52.09) | AR: 134.85s
-53. Hari Anirudh (2013ANIR01. India. _Asia) - 0.02s (40.76-40.78) | AR: 134.09s
-53. Andy Wong (2017WONG13. USA. _North America) - 0.02s (20.28-20.30) | AR: 85.75s
-53. Étienne Aubry (2018AUBR01. France. _Europe) - 0.02s (49.83-49.85) | AR: 236.49s
-53. Oleg Gritsenko (2011GRIT01. Russia. _Europe) - 0.02s (42.85-42.87) | AR: 165.44s
-53. Zhe Wang (王哲) (2019WANZ21. China. _Asia) - 0.02s (27.74-27.76) | AR: 155.04s
-53. Marcin Kowalczyk (2011KOWA01. Poland. _Europe) - 0.02s (36.36-36.38) | AR: 106.85s
-53. Arthur Cambon (2021CAMB01. France. _Europe) - 0.02s (55.43-55.45) | AR: 270.81s
-53. Sebastiano Tronto (2011TRON02. Italy. _Europe) - 0.02s (37.12-37.14) | AR: 55.17s
-53. Elliott Kobelansky (2019KOBE03. Canada. _North America) - 0.02s (15.86-15.88) | AR: 144.07s
-53. Sukant Koul (2014KOUL01. India. _Asia) - 0.02s (22.29-22.31) | AR: 140.99s
-53. Walker Welch (2011WELC01. USA. _North America) - 0.02s (79.83-79.85) | AR: 333.19s
-53. Josete Sánchez (2015SANC18. Spain. _Europe) - 0.02s (63.31-63.33) | AR: 187.53s
-53. Guoliang Wang (王国梁) (2017WAGU02. China. _Asia) - 0.02s (27.31-27.33) | AR: 278.25s
-53. Mason Langenderfer (2013LANG03. USA. _North America) - 0.02s (25.86-25.88) | AR: 330.35s
-53. Rodolphe Rouyrre (2020ROUY01. France. _Europe) - 0.02s (43.30-43.32) | AR: 106.92s
-53. Tom Nelson (2013NELS01. New Zealand. _Oceania) - 0.02s (36.96-36.98) | AR: 103.51s
-53. Jérôme Carlier (2016CARL02. Belgium. _Europe) - 0.02s (36.55-36.57) | AR: 141.99s
-53. Jack Cai (2014CAIJ02. Australia. _Oceania) - 0.02s (25.15-25.17) | AR: 91.91s
-53. Patryk Milewczyk (2014MILE01. Poland. _Europe) - 0.02s (96.55-96.57) | AR: 452.88s
+29. Ryan Pilat (2016PILA03. USA. _North America) - 0.03s (21.16-21.19) | AR: 365.92s
+29. Yucheng Chen (陈裕铖) (2015CHEN49. China. _Asia) - 0.03s (32.21-32.24) | AR: 193.10s
+29. Linus Frész (2011FRES01. Germany. _Europe) - 0.03s (50.68-50.71) | AR: 239.96s
+29. Ben Stokes (2018STOK01. United Kingdom. _Europe) - 0.03s (24.47-24.50) | AR: 193.14s
+29. Jonathan Dammann (2021DAMM01. France. _Europe) - 0.03s (30.38-30.41) | AR: 104.36s
+29. Marius Chaudesaygues (2022CHAU04. France. _Europe) - 0.03s (23.81-23.84) | AR: 199.29s
+29. Quentin Rivault (2017RIVA09. France. _Europe) - 0.03s (21.47-21.50) | AR: 171.87s
+29. Rémi Esturoune (2010ESTU01. France. _Europe) - 0.03s (76.66-76.69) | AR: 112.23s
+29. Liam Chen (2014CHEN37. USA. _North America) - 0.03s (19.59-19.62) | AR: 101.74s
+29. Billie Hammill (2015HAMM01. United Kingdom. _Europe) - 0.03s (124.29-124.32) | AR: 236.26s
+29. Manuel Gutman (2017GUTM01. Argentina. _South America) - 0.03s (15.96-15.99) | AR: 122.16s
+29. István Kocza (2005KOCZ01. Hungary. _Europe) - 0.03s (63.84-63.87) | AR: 394.63s
+29. Berta García Parra (2014PARR02. Spain. _Europe) - 0.03s (24.61-24.64) | AR: 257.32s
+29. Mikołaj Morawski (2021MORA01. Poland. _Europe) - 0.03s (21.97-22.00) | AR: 84.01s
+53. Wilfrid Py (2016PYWI01. France. _Europe) - 0.02s (49.28-49.30) | AR: 346.75s
+53. Callum James Goodyear (2012GOOD02. United Kingdom. _Europe) - 0.02s (87.44-87.46) | AR: 818.26s
+53. Ivo Stoutjesdijk (2019STOU02. Netherlands. _Europe) - 0.02s (23.67-23.69) | AR: 152.40s
+53. Álvaro Aguilar Salobreña (2015SALO01. Spain. _Europe) - 0.02s (74.32-74.34) | AR: 280.65s
 53. Callum Hales-Jepp (2012HALE01. United Kingdom. _Europe) - 0.02s (94.70-94.72) | AR: 198.35s
-53. Ivo Stoutjesdijk (2019STOU02. Netherlands. _Europe) - 0.02s (20.94-20.96) | AR: 152.40s
-53. Abhijeet Ghodgaonkar (अभिजीत घोडगावकर) (2013GHOD01. India. _Asia) - 0.02s (37.02-37.04) | AR: 264.35s
-53. Karol Piskorek (2021PISK01. Poland. _Europe) - 0.02s (27.06-27.08) | AR: 28.11s
-53. Magdalena Pabisz (2017PABI01. Poland. _Europe) - 0.02s (111.64-111.66) | AR: 128.42s
-53. Carter Kucala (2015KUCA01. USA. _North America) - 0.02s (24.82-24.84) | AR: 360.29s
-53. Phillip Maxwell (2017MAXW01. Indonesia. _Asia) - 0.02s (18.43-18.45) | AR: 131.43s
-53. Tobias Peter (2014PETE03. Switzerland. _Europe) - 0.02s (57.94-57.96) | AR: 193.20s
-53. Matteo Provasi (2009PROV01. Italy. _Europe) - 0.02s (146.28-146.30) | AR: 210.62s
-53. Riley Woo (2007WOOR01. USA. _North America) - 0.02s (32.89-32.91) | AR: 436.81s
-53. Maxime Madrzyk (2018MADR02. France. _Europe) - 0.02s (23.63-23.65) | AR: 97.13s
-53. Adam Devere (2018DEVE02. United Kingdom. _Europe) - 0.02s (26.41-26.43) | AR: 153.97s
-53. Parker Trager (2016TRAG01. USA. _North America) - 0.02s (76.15-76.17) | AR: 298.58s
+53. Konstantin Jaehne (2015JAEH01. Germany. _Europe) - 0.02s (39.77-39.79) | AR: 488.93s
+53. Bálint Csengő (2019CSEN01. Hungary. _Europe) - 0.02s (27.11-27.13) | AR: 140.78s
+53. Michał Bogdan (2012BOGD01. Poland. _Europe) - 0.02s (30.99-31.01) | AR: 197.40s
+53. Oliver Fritz (2014FRIT02. Germany. _Europe) - 0.02s (26.67-26.69) | AR: 257.55s
+53. Maxime Madrzyk (2018MADR02. France. _Europe) - 0.02s (20.23-20.25) | AR: 97.13s
+53. Ezra Hirschi (2019HIRS01. Switzerland. _Europe) - 0.02s (24.73-24.75) | AR: 47.51s
+53. Abhijeet Ghodgaonkar (अभिजीत घोडगावकर) (2013GHOD01. India. _Asia) - 0.02s (27.42-27.44) | AR: 264.35s
+53. Jonghyun Choi (최종현) (2016CHOI13. Korea. _Asia) - 0.02s (29.33-29.35) | AR: 145.26s
+53. Marcin Kowalczyk (2011KOWA01. Poland. _Europe) - 0.02s (36.36-36.38) | AR: 106.85s
 53. Nicolas Campanario (2022CAMP02. Argentina. _South America) - 0.02s (19.51-19.53) | AR: 293.04s
-53. Helmer Ewert (2015EWER01. Sweden. _Europe) - 0.02s (58.81-58.83) | AR: 206.24s
-53. Hippolyte Moreau (2008MORE02. France. _Europe) - 0.02s (91.45-91.47) | AR: 187.65s
-53. Ezra Hirschi (2019HIRS01. Switzerland. _Europe) - 0.02s (23.40-23.42) | AR: 47.51s
+53. Liren Sun (孙立仁) (2017SUNL03. China. _Asia) - 0.02s (28.51-28.53) | AR: 137.24s
+53. Elliott Kobelansky (2019KOBE03. Canada. _North America) - 0.02s (17.57-17.59) | AR: 144.07s
+53. Jérôme Carlier (2016CARL02. Belgium. _Europe) - 0.02s (36.55-36.57) | AR: 141.99s
+53. Gregor Billing (2012BILL01. Germany. _Europe) - 0.02s (36.19-36.21) | AR: 194.49s
+53. Tom Nelson (2013NELS01. New Zealand. _Oceania) - 0.02s (36.96-36.98) | AR: 103.51s
+53. Max Hilliard (2015HILL09. USA. _North America) - 0.02s (24.77-24.79) | AR: 324.15s
+53. Tobias Peter (2014PETE03. Switzerland. _Europe) - 0.02s (26.24-26.26) | AR: 193.20s
+53. Riley Woo (2007WOOR01. USA. _North America) - 0.02s (32.89-32.91) | AR: 436.81s
+53. Hari Anirudh (2013ANIR01. India. _Asia) - 0.02s (28.39-28.41) | AR: 134.09s
+53. Yedidya Nisim Shimoni (2022SHIM03. Israel. _Europe) - 0.02s (71.11-71.13) | AR: 201.18s
+53. Walker Welch (2011WELC01. USA. _North America) - 0.02s (79.83-79.85) | AR: 333.19s
+53. Nevins Chan Pak Hoong (陈百鸿) (2010CHAN20. Malaysia. _Asia) - 0.02s (99.92-99.94) | AR: 242.58s
+53. Swami Srinivasan (2015SRIN02. Australia. _Oceania) - 0.02s (37.32-37.34) | AR: 329.19s
+53. Keita Hayakawa (早川慶太) (2022HAYA03. Japan. _Asia) - 0.02s (18.37-18.39) | AR: 13.55s
+53. Mattia Rigo (2019RIGO01. Italy. _Europe) - 0.02s (27.29-27.31) | AR: 66.87s
+53. Phillip Maxwell (2017MAXW01. Indonesia. _Asia) - 0.02s (18.67-18.69) | AR: 131.43s
+53. Vivek Prasad Mada (2012MADA01. India. _Asia) - 0.02s (64.25-64.27) | AR: 466.01s
+53. Jack Cai (2014CAIJ02. Australia. _Oceania) - 0.02s (21.33-21.35) | AR: 91.91s
+53. JiHun Yim (임지훈) (2023YIMJ01. Korea. _Asia) - 0.02s (24.60-24.62) | AR: 45.97s
+53. William Jensen (2016JENS09. Sweden. _Europe) - 0.02s (39.51-39.53) | AR: 290.69s
+53. Niklas Aasen Eliasson (2021ELIA01. Norway. _Europe) - 0.02s (28.93-28.95) | AR: 344.35s
+53. Rodolphe Rouyrre (2020ROUY01. France. _Europe) - 0.02s (43.30-43.32) | AR: 106.92s
+53. Adam Devere (2018DEVE02. United Kingdom. _Europe) - 0.02s (26.41-26.43) | AR: 153.97s
+53. Flurin König (2019KONI03. Switzerland. _Europe) - 0.02s (52.07-52.09) | AR: 134.85s
+53. Mason Langenderfer (2013LANG03. USA. _North America) - 0.02s (23.37-23.39) | AR: 330.35s
 53. Harry Savage (2013SAVA01. United Kingdom. _Europe) - 0.02s (50.98-51.00) | AR: 292.79s
 53. Jake Klassen (2016KLAS01. Canada. _North America) - 0.02s (21.34-21.36) | AR: 29.30s
-53. Dániel Varga (2008VARG01. Hungary. _Europe) - 0.02s (141.21-141.23) | AR: 214.29s
-53. Jong-Ho Jeong (정종호) (2008JONG03. Korea. _Asia) - 0.02s (44.66-44.68) | AR: 255.92s
-53. Bálint Csengő (2019CSEN01. Hungary. _Europe) - 0.02s (26.90-26.92) | AR: 140.78s
-53. Keita Hayakawa (早川慶太) (2022HAYA03. Japan. _Asia) - 0.02s (18.37-18.39) | AR: 13.55s
-53. Kevin Liu (2023LIUK02. USA. _North America) - 0.02s (33.06-33.08) | AR: 79.85s
-53. Viktor Zenk (2016ZENK01. Sweden. _Europe) - 0.02s (70.72-70.74) | AR: 223.70s
-53. Swami Srinivasan (2015SRIN02. Australia. _Oceania) - 0.02s (37.32-37.34) | AR: 329.19s
-53. Vivek Prasad Mada (2012MADA01. India. _Asia) - 0.02s (64.25-64.27) | AR: 466.01s
-53. Max Hilliard (2015HILL09. USA. _North America) - 0.02s (22.80-22.82) | AR: 324.15s
-53. Niklas Aasen Eliasson (2021ELIA01. Norway. _Europe) - 0.02s (35.96-35.98) | AR: 344.35s
-53. Firstian Fushada (符逢城) (2015FUSH01. Indonesia. _Asia) - 0.02s (29.05-29.07) | AR: 184.43s
-53. Olivier Vos (2016VOSO01. Netherlands. _Europe) - 0.02s (19.77-19.79) | AR: 175.78s
-53. Israel Fraga da Silva (2012SILV22. Brazil. _South America) - 0.02s (24.70-24.72) | AR: 73.67s
 53. Iker Carrasco Ruiz (2016RUIZ05. Spain. _Europe) - 0.02s (17.00-17.02) | AR: 82.66s
-53. Jonghyun Choi (최종현) (2016CHOI13. Korea. _Asia) - 0.02s (29.33-29.35) | AR: 145.26s
-53. Daniel Vædele Egdal (2013EGDA01. Denmark. _Europe) - 0.02s (56.63-56.65) | AR: 765.24s
-53. Jordi Lleixà López (2023LOPE09. Spain. _Europe) - 0.02s (32.18-32.20) | AR: 59.77s
 53. Witali Bułatow (2015BUAT01. Poland. _Europe) - 0.02s (43.17-43.19) | AR: 163.75s
-53. Yedidya Nisim Shimoni (2022SHIM03. Israel. _Europe) - 0.02s (71.11-71.13) | AR: 201.18s
-53. Gregor Billing (2012BILL01. Germany. _Europe) - 0.02s (39.38-39.40) | AR: 194.49s
-53. Elias Chong (2022CHON03. Australia. _Oceania) - 0.02s (22.09-22.11) | AR: 93.32s
-53. Sergio Chaparro Díaz-Cano (2023DIAZ45. Spain. _Europe) - 0.02s (75.69-75.71) | AR: 97.79s
-53. JiHun Yim (임지훈) (2023YIMJ01. Korea. _Asia) - 0.02s (24.60-24.62) | AR: 45.97s
-53. Callum James Goodyear (2012GOOD02. United Kingdom. _Europe) - 0.02s (87.44-87.46) | AR: 818.26s
-53. Noa Arthurs (2012ARTH01. USA. _North America) - 0.02s (33.16-33.18) | AR: 105.28s
-53. François Courtès (2008COUR01. France. _Europe) - 0.02s (73.75-73.77) | AR: 360.54s
-53. Tomasz Cepil (2018CEPI01. Poland. _Europe) - 0.02s (25.94-25.96) | AR: 105.23s
-53. Sora Wenjie Xu (徐文杰) (2016XUWE02. China. _Asia) - 0.02s (38.90-38.92) | AR: 356.03s
-53. Olli Vikstedt (2014VIKS01. Finland. _Europe) - 0.02s (46.50-46.52) | AR: 179.13s
-53. Eskil Munthe (2022MUNT02. Sweden. _Europe) - 0.02s (24.49-24.51) | AR: 141.62s
+53. Oleg Gritsenko (2011GRIT01. Russia. _Europe) - 0.02s (42.95-42.97) | AR: 165.44s
+53. Dániel Varga (2008VARG01. Hungary. _Europe) - 0.02s (143.60-143.62) | AR: 214.29s
+53. Bence Barát (2008BARA01. Hungary. _Europe) - 0.02s (51.15-51.17) | AR: 157.87s
 53. Brayden Thompson (2022THOM14. USA. _North America) - 0.02s (16.25-16.27) | AR: 297.19s
 53. Will Cerne (2015CERN01. USA. _North America) - 0.02s (22.66-22.68) | AR: 279.30s
-53. Marcel Ručigaj (2016RUCI01. Slovenia. _Europe) - 0.02s (53.18-53.20) | AR: 195.79s
-53. Mattia Rigo (2019RIGO01. Italy. _Europe) - 0.02s (28.56-28.58) | AR: 66.87s
-53. Manu Dutheil (2018DUTH01. France. _Europe) - 0.02s (28.47-28.49) | AR: 121.01s
+53. Josete Sánchez (2015SANC18. Spain. _Europe) - 0.02s (47.24-47.26) | AR: 187.53s
+53. Carter Kucala (2015KUCA01. USA. _North America) - 0.02s (24.82-24.84) | AR: 360.29s
+53. Viktor Zenk (2016ZENK01. Sweden. _Europe) - 0.02s (70.72-70.74) | AR: 223.70s
 53. Andreas Pohl (2012POHL01. Germany. _Europe) - 0.02s (52.69-52.71) | AR: 255.15s
-53. Andrew Tao (2022TAOA01. USA. _North America) - 0.02s (20.97-20.99) | AR: 117.19s
+53. Étienne Aubry (2018AUBR01. France. _Europe) - 0.02s (49.83-49.85) | AR: 236.49s
+53. Manu Dutheil (2018DUTH01. France. _Europe) - 0.02s (28.47-28.49) | AR: 121.01s
 53. Przemysław Rogalski (2013ROGA02. Poland. _Europe) - 0.02s (96.01-96.03) | AR: 387.13s
-53. Matteo Dummar (2017DUMM01. Italy. _Europe) - 0.02s (38.52-38.54) | AR: 354.04s
-53. Brandon Lin (林博浩) (2011LINB01. USA. _North America) - 0.02s (28.02-28.04) | AR: 216.78s
+53. Arthur Cambon (2021CAMB01. France. _Europe) - 0.02s (55.43-55.45) | AR: 270.81s
+53. Sora Wenjie Xu (徐文杰) (2016XUWE02. China. _Asia) - 0.02s (38.90-38.92) | AR: 356.03s
+53. Elias Chong (2022CHON03. Australia. _Oceania) - 0.02s (22.09-22.11) | AR: 93.32s
+53. Hill Pong Yong Feng (2017FENG10. Malaysia. _Asia) - 0.02s (23.31-23.33) | AR: 80.82s
+53. Olivier Vos (2016VOSO01. Netherlands. _Europe) - 0.02s (19.30-19.32) | AR: 175.78s
 53. Noah Swor (2017SWOR01. USA. _North America) - 0.02s (16.37-16.39) | AR: 143.20s
+53. Andy Wong (2017WONG13. USA. _North America) - 0.02s (20.28-20.30) | AR: 85.75s
+53. Karol Piskorek (2021PISK01. Poland. _Europe) - 0.02s (27.06-27.08) | AR: 28.11s
+53. Helmer Ewert (2015EWER01. Sweden. _Europe) - 0.02s (58.81-58.83) | AR: 206.24s
+53. Sergio Chaparro Díaz-Cano (2023DIAZ45. Spain. _Europe) - 0.02s (75.69-75.71) | AR: 97.79s
+53. Sebastiano Tronto (2011TRON02. Italy. _Europe) - 0.02s (37.12-37.14) | AR: 55.17s
+53. Parker Trager (2016TRAG01. USA. _North America) - 0.02s (76.15-76.17) | AR: 298.58s
+53. Olli Vikstedt (2014VIKS01. Finland. _Europe) - 0.02s (46.50-46.52) | AR: 179.13s
+53. Tomasz Cepil (2018CEPI01. Poland. _Europe) - 0.02s (25.94-25.96) | AR: 105.23s
+53. Xin Shi (石欣) (2010SHIX01. China. _Asia) - 0.02s (26.95-26.97) | AR: 276.78s
+53. Guoliang Wang (王国梁) (2017WAGU02. China. _Asia) - 0.02s (24.91-24.93) | AR: 278.25s
+53. François Courtès (2008COUR01. France. _Europe) - 0.02s (73.75-73.77) | AR: 360.54s
+53. Jordi Lleixà López (2023LOPE09. Spain. _Europe) - 0.02s (32.18-32.20) | AR: 59.77s
+53. Noa Arthurs (2012ARTH01. USA. _North America) - 0.02s (33.16-33.18) | AR: 105.28s
+53. Daniel Vædele Egdal (2013EGDA01. Denmark. _Europe) - 0.02s (56.63-56.65) | AR: 765.24s
+53. Hippolyte Moreau (2008MORE02. France. _Europe) - 0.02s (91.45-91.47) | AR: 187.65s
+53. Matteo Dummar (2017DUMM01. Italy. _Europe) - 0.02s (38.52-38.54) | AR: 354.04s
+53. Matteo Provasi (2009PROV01. Italy. _Europe) - 0.02s (146.28-146.30) | AR: 210.62s
 53. Lorenzo Mauro (2014MAUR06. Italy. _Europe) - 0.02s (28.22-28.24) | AR: 118.81s
 53. James Macdiarmid (2015MACD03. New Zealand. _Oceania) - 0.02s (19.99-20.01) | AR: 188.34s
-53. Álvaro Aguilar Salobreña (2015SALO01. Spain. _Europe) - 0.02s (74.32-74.34) | AR: 280.65s
-147. Jules Desjardin (2010DESJ01. France. _Europe) - 0.01s (97.85-97.86) | AR: 191.09s
-147. Kyra Joiner (2015JOIN01. USA. _North America) - 0.01s (58.55-58.56) | AR: 298.23s
-147. Dušan Zakelšek (2012ZAKE02. Slovenia. _Europe) - 0.01s (100.07-100.08) | AR: 241.69s
-147. Felix Williams (2023WILL26. Australia. _Oceania) - 0.01s (28.13-28.14) | AR: 58.82s
-147. Tim Reynolds (2005REYN01. USA. _North America) - 0.01s (145.62-145.63) | AR: 364.61s
-147. Vishwanath Jeyaraman (2016JEYA01. India. _Asia) - 0.01s (24.02-24.03) | AR: 186.91s
-147. Yeon Kyun Park (박연균) (2016PARK10. Korea. _Asia) - 0.01s (24.07-24.08) | AR: 83.59s
-147. Joris Mühlsteff (2008MHLS01. Netherlands. _Europe) - 0.01s (130.32-130.33) | AR: 96.27s
-147. Michael Conard (2013CONA01. USA. _North America) - 0.01s (108.67-108.68) | AR: 226.31s
-147. Martin Fröhlich (2023FROH01. Austria. _Europe) - 0.01s (25.77-25.78) | AR: 106.87s
-147. Max Siauw (2017SIAU02. USA. _North America) - 0.01s (53.24-53.25) | AR: 177.93s
-147. Zak Kenny (2016KENN01. Australia. _Oceania) - 0.01s (102.76-102.77) | AR: 151.05s
-147. Zeke Mackay (2015MACK06. USA. _North America) - 0.01s (57.82-57.83) | AR: 304.45s
-147. Chester Lian (2009LIAN03. Malaysia. _Asia) - 0.01s (73.58-73.59) | AR: 88.85s
-147. Stephane Tahon (2018TAHO01. France. _Europe) - 0.01s (192.41-192.42) | AR: 203.92s
-147. Jefferson Durango (2014ARGA02. Colombia. _South America) - 0.01s (25.32-25.33) | AR: 36.04s
-147. Marcin Chmielewski (2023CHMI01. Poland. _Europe) - 0.01s (24.56-24.57) | AR: 67.26s
-147. Yuhei Takagi (高木佑平) (2008TAKA01. Japan. _Asia) - 0.01s (40.40-40.41) | AR: 242.34s
-147. Namuun Natsagdorj (2019NATS02. Mongolia. _Asia) - 0.01s (90.06-90.07) | AR: 112.33s
-147. Timothy Goh (2016GOHT01. USA. _North America) - 0.01s (36.06-36.07) | AR: 129.40s
-147. Yuxin Wang (王宇欣) (2009WANG62. China. _Asia) - 0.01s (37.61-37.62) | AR: 169.37s
-147. Jamie Otsu (2021OTSU01. Australia. _Oceania) - 0.01s (121.60-121.61) | AR: 158.74s
-147. Grzegorz Jałocha (2012JALO01. Poland. _Europe) - 0.01s (37.92-37.93) | AR: 115.66s
-147. Tyler Rose (2022ROSE07. USA. _North America) - 0.01s (126.93-126.94) | AR: 267.66s
-147. Shikai Jiang (江侍锴) (2012JIAN07. China. _Asia) - 0.01s (132.30-132.31) | AR: 131.97s
-147. Piotr Tokarski (2013TOKA01. Poland. _Europe) - 0.01s (140.83-140.84) | AR: 174.48s
-147. Jason White (2016WHIT16. USA. _North America) - 0.01s (60.54-60.55) | AR: 298.63s
-147. Chris Chi (2014CHIC01. USA. _North America) - 0.01s (54.99-55.00) | AR: 212.50s
-147. Christopher Morris (2013MORR03. United Kingdom. _Europe) - 0.01s (24.76-24.77) | AR: 308.67s
-147. Aris Raksamani (อริศม์ รักษมณี) (2017RAKS01. Thailand. _Asia) - 0.01s (45.35-45.36) | AR: 218.61s
-147. Adrien Neveu (2018NEVE02. France. _Europe) - 0.01s (29.25-29.26) | AR: 408.13s
-147. Willem Klose (2017KLOS01. Germany. _Europe) - 0.01s (36.36-36.37) | AR: 148.29s
-147. Šimon Borovský (2019BORO03. Slovakia. _Europe) - 0.01s (39.90-39.91) | AR: 152.60s
-147. William Gan Wei Ren (颜伟仁) (2014RENW01. Malaysia. _Asia) - 0.01s (80.57-80.58) | AR: 195.40s
-147. Leia Jiang (2014JIAN10. USA. _North America) - 0.01s (55.23-55.24) | AR: 159.35s
-147. Hamza Zaidi (2017ZAID01. India. _Asia) - 0.01s (31.15-31.16) | AR: 124.03s
-147. Chih-Chuan Yang (楊智全) (2018YANG92. Taiwan. _Asia) - 0.01s (24.61-24.62) | AR: 119.81s
-147. Amanda Sugiharto (2017SUGI03. Indonesia. _Asia) - 0.01s (141.67-141.68) | AR: 159.09s
-147. Szabolcs Szántai (2016SZAN01. Hungary. _Europe) - 0.01s (81.14-81.15) | AR: 119.62s
-147. Grigorii Alekseev (2015ALEK01. Russia. _Europe) - 0.01s (26.35-26.36) | AR: 79.34s
-147. Simone Santarsiero (2009SANT01. Italy. _Europe) - 0.01s (132.33-132.34) | AR: 236.19s
-147. Kiagus Ahmad Haikal Hafif Hamidy (2018HAMI06. Indonesia. _Asia) - 0.01s (50.61-50.62) | AR: 90.09s
-147. Saiyam Jain (2015JAIN21. India. _Asia) - 0.01s (49.04-49.05) | AR: 682.71s
-147. Kalin Doherty (2021DOHE02. Ireland. _Europe) - 0.01s (40.12-40.13) | AR: 204.42s
-147. Louis de Mendonça (2013MEND03. United Kingdom. _Europe) - 0.01s (73.39-73.40) | AR: 187.98s
-147. Daniel Evans (2016EVAN06. United Kingdom. _Europe) - 0.01s (135.85-135.86) | AR: 359.65s
-147. David Karalli (داود قراعلي) (2020KARA01. USA. _North America) - 0.01s (27.31-27.32) | AR: 153.46s
-147. Bhargav Narasimhan (2011NARA02. India. _Asia) - 0.01s (107.59-107.60) | AR: 164.87s
-147. Thomas Strasser (2022STRA10. Austria. _Europe) - 0.01s (24.38-24.39) | AR: 235.95s
-147. Diego Meneghetti (2012MENE01. Brazil. _South America) - 0.01s (31.56-31.57) | AR: 371.71s
-147. William Phommaha (2015PHOM01. France. _Europe) - 0.01s (48.90-48.91) | AR: 102.51s
-147. Szymon Ruksza (2013RUKS01. Poland. _Europe) - 0.01s (71.53-71.54) | AR: 180.37s
-147. Austin Reed (2011REED01. USA. _North America) - 0.01s (77.14-77.15) | AR: 271.78s
-147. Enda Loftus (2021LOFT01. Ireland. _Europe) - 0.01s (65.84-65.85) | AR: 523.23s
-147. Simon Bourigault (2007BOUR01. France. _Europe) - 0.01s (95.40-95.41) | AR: 132.48s
-147. Natán Riggenbach (2011RIGG03. Peru. _South America) - 0.01s (105.37-105.38) | AR: 263.47s
-147. Nikhil Soares (2015SOAR01. India. _Asia) - 0.01s (72.72-72.73) | AR: 376.97s
-147. Ng Jia Quan (黄佳铨) (2015QUAN03. Malaysia. _Asia) - 0.01s (26.05-26.06) | AR: 247.14s
-147. Radosław Opoka (2013OPOK01. Poland. _Europe) - 0.01s (32.46-32.47) | AR: 187.08s
-147. Elijah Brown (2015BROW03. USA. _North America) - 0.01s (142.60-142.61) | AR: 361.07s
-147. Fabrizio Cirnigliaro (2008CIRN01. Italy. _Europe) - 0.01s (142.83-142.84) | AR: 209.42s
-147. Gianluca Placenti (2012PLAC01. Italy. _Europe) - 0.01s (150.56-150.57) | AR: 190.26s
-147. Martin Fronescu (2013FRON01. Romania. _Europe) - 0.01s (109.06-109.07) | AR: 220.21s
-147. Sinpei Araki (荒木慎平) (2006ARAK01. Japan. _Asia) - 0.01s (101.18-101.19) | AR: 141.47s
-147. Ida Exner (2017EXNE01. Denmark. _Europe) - 0.01s (165.23-165.24) | AR: 272.42s
-147. Enzo Mattos (2015MATT05. Brazil. _South America) - 0.01s (124.26-124.27) | AR: 368.69s
-147. Braden Richards (2017RICH02. USA. _North America) - 0.01s (87.07-87.08) | AR: 164.99s
-147. Levin Houghton (2016HOUG01. Switzerland. _Europe) - 0.01s (41.77-41.78) | AR: 226.48s
-147. Marco Rota (2009ROTA01. Italy. _Europe) - 0.01s (87.83-87.84) | AR: 401.78s
-147. Clara Lafourcade (2014LAFO02. France. _Europe) - 0.01s (81.61-81.62) | AR: 198.92s
-147. Casey Ngo (2017NGOC03. USA. _North America) - 0.01s (140.14-140.15) | AR: 318.19s
-147. Jan Fonš (2017FONS04. Czech Republic. _Europe) - 0.01s (29.04-29.05) | AR: 224.78s
-147. Pedro Azevedo (2018AZEV03. Portugal. _Europe) - 0.01s (93.86-93.87) | AR: 338.56s
-147. Kevin Arturo Huamán Ruiz (2014RUIZ10. Peru. _South America) - 0.01s (101.50-101.51) | AR: 344.85s
-147. Gabriele Bacchieri (2014BACC01. Italy. _Europe) - 0.01s (70.08-70.09) | AR: 585.96s
-147. Thai Bui (2018BUIT01. USA. _North America) - 0.01s (31.83-31.84) | AR: 151.16s
-147. Sébastien Auroux (2008AURO01. Germany. _Europe) - 0.01s (150.02-150.03) | AR: 251.68s
-147. Alexia Plantivaux (2019PLAN02. France. _Europe) - 0.01s (47.04-47.05) | AR: 211.54s
-147. Muxi Yan (2022YANM02. Spain. _Europe) - 0.01s (72.64-72.65) | AR: 233.62s
-147. Kyeongmin Choi (최경민) (2017CHOI07. Korea. _Asia) - 0.01s (83.96-83.97) | AR: 213.22s
-147. Luke Meszar (2016MESZ01. USA. _North America) - 0.01s (28.93-28.94) | AR: 174.94s
-147. Reto Bubendorf (2012BUBE01. Finland. _Europe) - 0.01s (91.92-91.93) | AR: 233.59s
-147. Emanuel Victor Araújo dos Santos (2022SANT05. Brazil. _South America) - 0.01s (315.20-315.21) | AR: 269.00s
-147. Naoto Kobayashi (小林直登) (2017SHIN02. Japan. _Asia) - 0.01s (34.55-34.56) | AR: 94.46s
-147. Stone Amsbaugh (2018AMSB02. USA. _North America) - 0.01s (68.47-68.48) | AR: 317.73s
-147. Ramses Amaya (2014AMAY01. Colombia. _South America) - 0.01s (33.02-33.03) | AR: 207.37s
-147. Javier Tirado Ortiz (2009TIRA01. Spain. _Europe) - 0.01s (169.40-169.41) | AR: 240.42s
-147. Manu Vereecken (2010VERE01. Belgium. _Europe) - 0.01s (76.50-76.51) | AR: 374.20s
-147. Aaron Soley (2017SOLE01. USA. _North America) - 0.01s (114.59-114.60) | AR: 232.14s
-147. Luke Garrett (2017GARR05. USA. _North America) - 0.01s (41.04-41.05) | AR: 204.92s
-147. Raymond Goslow (2014GOSL01. USA. _North America) - 0.01s (77.15-77.16) | AR: 214.64s
-147. Steve Clarke (2015CLAR13. United Kingdom. _Europe) - 0.01s (136.85-136.86) | AR: 252.59s
-147. Jason Ostdiek (2017OSTD02. USA. _North America) - 0.01s (52.53-52.54) | AR: 180.15s
-147. Misael Gómez Soria (2014SORI01. Mexico. _North America) - 0.01s (147.53-147.54) | AR: 101.31s
-147. Daniel Anker Hermansen (2017HERM01. Denmark. _Europe) - 0.01s (33.31-33.32) | AR: 122.81s
-147. Jesús Lindo García (2013GARC08. Spain. _Europe) - 0.01s (124.99-125.00) | AR: 726.97s
-147. Hui Cai (蔡辉) (2018CAIH01. China. _Asia) - 0.01s (36.60-36.61) | AR: 60.44s
-147. Clément Gallet (2004GALL02. France. _Europe) - 0.01s (209.65-209.66) | AR: 365.08s
-147. Tiago Eche (2022ECHE01. France. _Europe) - 0.01s (53.18-53.19) | AR: 191.29s
-147. Lorenzo Vigani Poli (2007POLI01. Italy. _Europe) - 0.01s (194.71-194.72) | AR: 325.44s
-147. Arnau Tous Mateu (2016MATE04. Spain. _Europe) - 0.01s (117.41-117.42) | AR: 218.35s
-147. Tianyu Zhao (赵天愉) (2014ZHAO12. China. _Asia) - 0.01s (34.64-34.65) | AR: 66.30s
-147. Joshua Gao (2023GAOJ02. USA. _North America) - 0.01s (23.68-23.69) | AR: 87.87s
-147. Erik Akkersdijk (2005AKKE01. Netherlands. _Europe) - 0.01s (116.81-116.82) | AR: 323.49s
-147. Cary Huang (2015HUAN48. USA. _North America) - 0.01s (44.59-44.60) | AR: 203.18s
-147. Corey Sakowski (2011SAKO01. USA. _North America) - 0.01s (69.12-69.13) | AR: 223.65s
-147. Arun Kannan (2014KANN02. India. _Asia) - 0.01s (199.04-199.05) | AR: 260.34s
-147. Ivan Zabrodin (2012ZABR01. Russia. _Europe) - 0.01s (105.34-105.35) | AR: 304.55s
-147. Gabriel Barrios (2014BARR02. Guatemala. _North America) - 0.01s (21.21-21.22) | AR: 225.50s
-147. Caleb Lalik (2023LALI01. USA. _North America) - 0.01s (47.37-47.38) | AR: 92.75s
-147. Anders Berggren (2011BERG02. Sweden. _Europe) - 0.01s (187.30-187.31) | AR: 508.36s
-147. Will Callan (2012CALL01. USA. _North America) - 0.01s (130.02-130.03) | AR: 237.35s
-147. Joshua Feran (2011FERA01. USA. _North America) - 0.01s (107.85-107.86) | AR: 180.98s
-147. Oliver Wheat (2016WHEA01. United Kingdom. _Europe) - 0.01s (64.87-64.88) | AR: 321.94s
-147. Steven Kearns (2015KEAR01. United Kingdom. _Europe) - 0.01s (46.88-46.89) | AR: 176.20s
-147. Timothy Huynh (2017HUYN02. USA. _North America) - 0.01s (101.77-101.78) | AR: 368.00s
-147. Matteo Colombo (2009COLO03. Italy. _Europe) - 0.01s (62.65-62.66) | AR: 107.80s
-147. Daniel Goodman (2013GOOD01. USA. _North America) - 0.01s (75.95-75.96) | AR: 286.52s
-147. Jacob Ambrose (2010AMBR01. USA. _North America) - 0.01s (88.12-88.13) | AR: 541.12s
-147. Takuma Shirahase (白波瀬拓磨) (2007SHIR01. Japan. _Asia) - 0.01s (52.27-52.28) | AR: 286.80s
-147. Elvin Thorsen (2016THOR08. Sweden. _Europe) - 0.01s (119.46-119.47) | AR: 340.85s
-147. Amy Smith (2019SMIT36. Australia. _Oceania) - 0.01s (38.96-38.97) | AR: 201.70s
-147. Thiago de Oliveira Rodrigues (2019RODR38. Brazil. _South America) - 0.01s (90.41-90.42) | AR: 191.13s
-147. Cham J. Chambers (2017CHAM09. United Kingdom. _Europe) - 0.01s (48.05-48.06) | AR: 166.75s
-147. Vincent Hartanto Utomo (2010UTOM01. Indonesia. _Asia) - 0.01s (52.47-52.48) | AR: 237.63s
-147. Cale Schoon (2014SCHO02. USA. _North America) - 0.01s (35.34-35.35) | AR: 82.68s
-147. Jack McDougall (2020MCDO01. New Zealand. _Oceania) - 0.01s (54.19-54.20) | AR: 163.71s
-147. Szymon Grodzki (2020GROD01. Poland. _Europe) - 0.01s (43.90-43.91) | AR: 184.05s
-147. Dhruv Ambastha (2016AMBA02. India. _Asia) - 0.01s (20.81-20.82) | AR: 253.11s
-147. Ethan Jan (2014JANE02. USA. _North America) - 0.01s (97.07-97.08) | AR: 309.30s
-147. Pauline Bonnaudet (2009BONN01. France. _Europe) - 0.01s (82.33-82.34) | AR: 173.85s
-147. Manuel Prieto de Antón (2015ANTO04. Spain. _Europe) - 0.01s (115.90-115.91) | AR: 223.13s
-147. Paul Mirza (2020MIRZ01. Germany. _Europe) - 0.01s (106.64-106.65) | AR: 66.26s
-147. Masato Fujiwara (藤原正人) (2019FUJI07. Japan. _Asia) - 0.01s (20.15-20.16) | AR: 24.86s
-147. Hongjie Zhang (张鸿杰) (2018ZHAH02. China. _Asia) - 0.01s (24.19-24.20) | AR: 80.71s
-147. Yi Qu (曲熠) (2021QUYI01. China. _Asia) - 0.01s (52.90-52.91) | AR: 198.50s
-147. Kaius Young (2017YOUN10. USA. _North America) - 0.01s (66.06-66.07) | AR: 99.84s
-147. Anawin Chaichana (อนาวิล ชัยชนะ) (2023CHAI02. Thailand. _Asia) - 0.01s (30.68-30.69) | AR: 99.31s
-147. Simon Kellum (2016KELL12. USA. _North America) - 0.01s (79.97-79.98) | AR: 344.07s
-147. Roberto Carcamo (2020CARC01. USA. _North America) - 0.01s (96.30-96.31) | AR: 145.03s
-147. Leonardo Ezequiel Cruz (2018CRUZ11. Argentina. _South America) - 0.01s (31.72-31.73) | AR: 65.42s
-147. Wojciech Szatanowski (2011SZAT01. Poland. _Europe) - 0.01s (129.39-129.40) | AR: 422.64s
-147. Myles Jarman (2016JARM01. Australia. _Oceania) - 0.01s (93.04-93.05) | AR: 240.48s
-147. John Axel B. Gordo (2023GORD04. Philippines. _Asia) - 0.01s (23.01-23.02) | AR: 56.91s
-147. Carlos Pedro Casado de Achával (2012ACHA01. Argentina. _South America) - 0.01s (185.74-185.75) | AR: 239.30s
-147. Angel David Alvarado Sandoval (2022SAND19. Colombia. _South America) - 0.01s (29.65-29.66) | AR: 58.87s
-147. Luis Sinhue Medina Salas (2014SALA15. Mexico. _North America) - 0.01s (109.67-109.68) | AR: 265.82s
-147. Krishanth Thangarathan (2019THAN05. India. _Asia) - 0.01s (73.79-73.80) | AR: 149.77s
-147. Neel Gore (2016GORE02. USA. _North America) - 0.01s (28.03-28.04) | AR: 295.34s
-147. Ryan DeLine (2012DELI01. USA. _North America) - 0.01s (120.45-120.46) | AR: 87.30s
-147. Maxime Lefebvre (2019LEFE02. France. _Europe) - 0.01s (103.67-103.68) | AR: 336.24s
-147. Alexander Olleta del Molino (2008OLLE01. Spain. _Europe) - 0.01s (71.45-71.46) | AR: 142.37s
-147. Zhi Qiao (乔智) (2009QIAO03. China. _Asia) - 0.01s (32.72-32.73) | AR: 213.01s
-147. Jose Sánchez García (2022GARC19. Spain. _Europe) - 0.01s (46.66-46.67) | AR: 93.62s
-147. Daniel Gracia Ortiz (2009ORTI01. Spain. _Europe) - 0.01s (70.31-70.32) | AR: 179.51s
-147. Xinyu Wang (王欣宇) (2017WANX08. China. _Asia) - 0.01s (131.11-131.12) | AR: 24.01s
-147. Simone Bentlage (2014OHLE01. Germany. _Europe) - 0.01s (120.36-120.37) | AR: 260.29s
-147. Lucius Leong (2022LEON11. Australia. _Oceania) - 0.01s (81.29-81.30) | AR: 192.80s
-147. Yurii Riabov (Юрій Рябов) (2018RIAB01. Ukraine. _Europe) - 0.01s (106.28-106.29) | AR: 151.58s
-147. Ivan Krueger (2016KRUE01. USA. _North America) - 0.01s (117.09-117.10) | AR: 280.45s
-147. David McLean (2017MCLE03. Australia. _Oceania) - 0.01s (106.31-106.32) | AR: 218.64s
-147. Alistair Miller (2017MILL12. United Kingdom. _Europe) - 0.01s (51.82-51.83) | AR: 95.10s
-147. Chenhao Sun (孙晨皓) (2018SUNC02. China. _Asia) - 0.01s (30.98-30.99) | AR: 138.54s
-147. Putian Ye (叶溥天) (2021YEPU01. China. _Asia) - 0.01s (57.06-57.07) | AR: 432.37s
-147. Hiroto Fujita (藤田浩斗) (2012FUJI01. Japan. _Asia) - 0.01s (46.79-46.80) | AR: 58.96s
-147. Mark Rivers (2015RIVE05. United Kingdom. _Europe) - 0.01s (64.77-64.78) | AR: 280.61s
-147. James Hildreth (2009HILD01. USA. _North America) - 0.01s (88.27-88.28) | AR: 312.53s
-147. Mateusz Szwugier (2014SZWU01. Poland. _Europe) - 0.01s (129.98-129.99) | AR: 200.62s
-147. Eddie Artze (2020ARTZ01. USA. _North America) - 0.01s (103.09-103.10) | AR: 288.65s
-147. Ethan Davis (2016DAVI02. USA. _North America) - 0.01s (21.81-21.82) | AR: 270.83s
-147. Komahal Eswaran (2022ESWA01. India. _Asia) - 0.01s (158.14-158.15) | AR: 231.00s
-147. Henrik Buus Aagaard (2006BUUS01. Denmark. _Europe) - 0.01s (100.65-100.66) | AR: 296.29s
-147. Zakarya Otair (2021OTAI01. Jordan. _Asia) - 0.01s (22.80-22.81) | AR: 87.39s
-147. Roberts Dreijers (2018DREI02. Latvia. _Europe) - 0.01s (101.86-101.87) | AR: 206.57s
-147. Benjamin Bjerring Bach (2023BACH04. Denmark. _Europe) - 0.01s (142.06-142.07) | AR: 180.57s
-147. Roman Strakhov (2012STRA02. Russia. _Europe) - 0.01s (34.88-34.89) | AR: 89.75s
-147. Alexis Tremellat (2022TREM02. France. _Europe) - 0.01s (37.75-37.76) | AR: 332.49s
-147. Raúl Cuevas Castillo (2018CAST11. Spain. _Europe) - 0.01s (56.37-56.38) | AR: 417.84s
-147. Calix Tang (2015TANG04. USA. _North America) - 0.01s (20.65-20.66) | AR: 35.37s
-147. Bill Wang (2010WANG68. Canada. _North America) - 0.01s (41.05-41.06) | AR: 157.79s
-147. Jakub Drobný (2016DROB01. Slovakia. _Europe) - 0.01s (114.63-114.64) | AR: 134.12s
-147. Sora Sato (2018SATO01. Australia. _Oceania) - 0.01s (92.28-92.29) | AR: 294.66s
-147. Dieter Amberger (2016AMBE02. Austria. _Europe) - 0.01s (81.18-81.19) | AR: 165.20s
-147. Maxim Chechnev (2011CHEC01. Russia. _Europe) - 0.01s (91.12-91.13) | AR: 659.44s
-147. Eric Che (2022CHEE02. USA. _North America) - 0.01s (42.37-42.38) | AR: 141.00s
-147. Tristan Patrick (2016PATR03. USA. _North America) - 0.01s (109.91-109.92) | AR: 437.17s
-147. Andrés Hisashi Suzuki Cabrera (2016SUZU03. Peru. _South America) - 0.01s (75.59-75.60) | AR: 168.78s
-147. Yuki Yamamoto (山本祐輝) (2010YAMA04. Japan. _Asia) - 0.01s (40.32-40.33) | AR: 422.45s
-147. David Quispe (2018QUIS04. Peru. _South America) - 0.01s (24.62-24.63) | AR: 34.13s
-147. Asset Agabekov (2018AGAB03. Kazakhstan. _Asia) - 0.01s (44.44-44.45) | AR: 184.87s
-147. Riccardo Ripoldi (2022RIPO01. Italy. _Europe) - 0.01s (30.76-30.77) | AR: 95.53s
-147. Valerio Locatelli (2018LOCA01. Italy. _Europe) - 0.01s (76.98-76.99) | AR: 138.92s
-147. Joey Gouly (2007GOUL01. United Kingdom. _Europe) - 0.01s (108.92-108.93) | AR: 180.40s
-147. Eli Rogers (2022ROGE05. USA. _North America) - 0.01s (55.06-55.07) | AR: 256.62s
-147. Lucas Garron (2006GARR01. Germany. _Europe) - 0.01s (150.01-150.02) | AR: 470.98s
-147. Alexander Claros (2015CLAR02. Argentina. _South America) - 0.01s (92.23-92.24) | AR: 103.34s
-147. Lennon Hughes (2017HUGH04. Australia. _Oceania) - 0.01s (55.39-55.40) | AR: 300.38s
-147. Draco Tong (2020TONG02. USA. _North America) - 0.01s (98.33-98.34) | AR: 277.69s
-147. Ben Ridley (2016RIDL01. United Kingdom. _Europe) - 0.01s (64.23-64.24) | AR: 140.70s
-147. Jair José Vicente Rodríguez Zenil (2011ZENI01. Mexico. _North America) - 0.01s (212.75-212.76) | AR: 188.49s
-147. Rasmus Heggvik Aune (2020AUNE01. Norway. _Europe) - 0.01s (20.51-20.52) | AR: 199.93s
-147. Renan da Cunha Santos (2017SANT12. Brazil. _South America) - 0.01s (137.71-137.72) | AR: 381.42s
-147. Tuval Stone (2022STON03. Israel. _Europe) - 0.01s (85.36-85.37) | AR: 365.34s
-147. Aditya Arunkumar (2021ARUN01. USA. _North America) - 0.01s (57.06-57.07) | AR: 203.65s
-147. Andrew Tan Jing Bang (2019BANG01. Singapore. _Asia) - 0.01s (33.11-33.12) | AR: 218.82s
-147. Karol Zakrzewski (2014ZAKR01. Poland. _Europe) - 0.01s (100.88-100.89) | AR: 184.83s
-147. Miles Greco (2022GREC01. USA. _North America) - 0.01s (38.54-38.55) | AR: 307.05s
-147. Jiachi Han (韩佳池) (2014HANJ02. China. _Asia) - 0.01s (54.86-54.87) | AR: 295.25s
-147. Sukh-Erdene Mandakh (2017MAND10. Mongolia. _Asia) - 0.01s (38.45-38.46) | AR: 120.72s
-147. Nathan Daviaud (2017DAVI29. France. _Europe) - 0.01s (75.33-75.34) | AR: 66.55s
-147. Aleksander Sołonczak (2022SOLO01. Poland. _Europe) - 0.01s (130.75-130.76) | AR: 243.62s
-147. Antoine Cantin (2010CANT02. Canada. _North America) - 0.01s (26.93-26.94) | AR: 332.87s
-147. Nikolai Masson (Николай Массон) (2011MASS01. Russia. _Europe) - 0.01s (86.06-86.07) | AR: 363.04s
-147. Dominika Warchoł (2021WARC01. Poland. _Europe) - 0.01s (105.31-105.32) | AR: 145.71s
-147. Thiago Han (2022HANT01. Brazil. _South America) - 0.01s (23.60-23.61) | AR: 29.17s
-147. Sean Moran (2016MORA24. United Kingdom. _Europe) - 0.01s (106.95-106.96) | AR: 212.65s
-147. Ainesh Sevellaraja (2012SEVE01. Malaysia. _Asia) - 0.01s (32.31-32.32) | AR: 103.31s
-147. Jake Brown (2020BROW01. United Kingdom. _Europe) - 0.01s (60.74-60.75) | AR: 191.19s
-147. Will Russo (2015RUSS03. USA. _North America) - 0.01s (54.87-54.88) | AR: 184.03s
-147. Kevin Matthews (2010MATT02. Canada. _North America) - 0.01s (48.16-48.17) | AR: 252.40s
-147. Alejandro Isaza (2015ISAZ01. Colombia. _South America) - 0.01s (242.43-242.44) | AR: 218.18s
-147. Daniel Partridge (2022PART02. United Kingdom. _Europe) - 0.01s (51.64-51.65) | AR: 128.62s
-147. Pedro Santos Guimarães (2007GUIM01. Brazil. _South America) - 0.01s (73.63-73.64) | AR: 107.06s
-147. Shun-Hsin Chang (張舜欣) (2011JHAN01. Taiwan. _Asia) - 0.01s (121.33-121.34) | AR: 200.70s
-147. Thor Muto Asmund (2017ASMU01. Denmark. _Europe) - 0.01s (89.13-89.14) | AR: 141.99s
-147. Tomas Kristiansson (2007KRIS01. Sweden. _Europe) - 0.01s (59.41-59.42) | AR: 449.78s
-147. Kai-Wen Wang (王楷文) (2015WANG09. Taiwan. _Asia) - 0.01s (21.01-21.02) | AR: 320.92s
-147. Tim Habermaas (2007HABE01. Germany. _Europe) - 0.01s (121.33-121.34) | AR: 155.28s
-147. Jonathan Blöcher (2018BLOC01. Germany. _Europe) - 0.01s (39.04-39.05) | AR: 239.48s
-147. Thodoris Iatrou (2022IATR01. Greece. _Europe) - 0.01s (47.32-47.33) | AR: 187.88s
-147. Oleksandr Ivanchak (Олександр Іванчак) (2015IVAN03. Ukraine. _Europe) - 0.01s (28.01-28.02) | AR: 152.99s
-147. Jia-Hong Lu (陸嘉宏) (2007LUJI01. Taiwan. _Asia) - 0.01s (44.03-44.04) | AR: 140.09s
-147. Angelo Zhang (2014ZHAN01. USA. _North America) - 0.01s (23.17-23.18) | AR: 105.09s
-147. Adam Śmigaj (2021SMIG01. Poland. _Europe) - 0.01s (26.88-26.89) | AR: 97.45s
-147. Ishaan Agrawal (2015AGRA03. USA. _North America) - 0.01s (24.42-24.43) | AR: 58.90s
-147. Alexander Botz (2013BOTZ01. Germany. _Europe) - 0.01s (103.13-103.14) | AR: 208.66s
-147. Philippe Virouleau (2008VIRO01. France. _Europe) - 0.01s (126.52-126.53) | AR: 341.01s
-147. Cendy Cahyo Rahmat (2010RAHM02. Indonesia. _Asia) - 0.01s (99.21-99.22) | AR: 190.36s
-147. Etienne Vellard (2025VELL02. France. _Europe) - 0.01s (136.42-136.43) | AR: 393.84s
-147. Nathan Seeto (2012SEET01. Australia. _Oceania) - 0.01s (101.63-101.64) | AR: 120.07s
-147. Gert van Hout (2018HOUT01. Netherlands. _Europe) - 0.01s (135.17-135.18) | AR: 162.44s
-147. Gaurav Bachani (2017BACH09. India. _Asia) - 0.01s (75.55-75.56) | AR: 437.94s
-147. Jiaye Cheng (程嘉烨) (2026CHEN19. China. _Asia) - 0.01s (28.91-28.92) | AR: 42.78s
-147. Jaye Sloan (2022SLOA01. United Kingdom. _Europe) - 0.01s (21.32-21.33) | AR: 243.41s
-147. Mattheo de Wit (2015WITM01. Netherlands. _Europe) - 0.01s (33.20-33.21) | AR: 206.97s
-147. Maksymilian Gala (2022GALA01. Poland. _Europe) - 0.01s (109.15-109.16) | AR: 177.52s
-147. Victor Valentin Glyrskov (2014GLYR01. Denmark. _Europe) - 0.01s (20.65-20.66) | AR: 99.26s
-147. Hồ Phú Nhật (2023NHAT01. Vietnam. _Asia) - 0.01s (32.87-32.88) | AR: 68.87s
-147. Ian Guevarra Santos (2024SANT11. Philippines. _Asia) - 0.01s (19.13-19.14) | AR: 15.58s
-147. Timo Forsthofer (2018FORS03. Germany. _Europe) - 0.01s (32.83-32.84) | AR: 69.41s
-147. Paweł Duraj (2016DURA09. Poland. _Europe) - 0.01s (80.25-80.26) | AR: 364.49s
-147. Kacper Rafalski (2024RAFA06. Poland. _Europe) - 0.01s (20.23-20.24) | AR: 47.00s
-147. Jolo Endona (2014ENDO01. Philippines. _Asia) - 0.01s (26.79-26.80) | AR: 188.49s
-147. Michał Pleskowicz (2009PLES01. Poland. _Europe) - 0.01s (93.46-93.47) | AR: 368.50s
-147. Charlie Harrison (2017HARR08. United Kingdom. _Europe) - 0.01s (22.46-22.47) | AR: 119.93s
-147. Lars Vennike Nielsson (2008NIEL01. Denmark. _Europe) - 0.01s (170.77-170.78) | AR: 201.07s
-147. Ryan Wu (2017WURY01. Canada. _North America) - 0.01s (82.42-82.43) | AR: 184.55s
-147. Akula Pavan Kumar (2011KUMA01. India. _Asia) - 0.01s (173.03-173.04) | AR: 257.23s
-147. Vasco Vasconcelos (2008VASC01. Portugal. _Europe) - 0.01s (66.99-67.00) | AR: 129.79s
-147. Kit Clement (2008CLEM01. USA. _North America) - 0.01s (79.29-79.30) | AR: 432.56s
-147. Adam Marcellus Kelly (2016KELL10. USA. _North America) - 0.01s (26.92-26.93) | AR: 189.55s
-147. Victor Chenu (2013CHEN22. France. _Europe) - 0.01s (74.52-74.53) | AR: 348.65s
-147. Tam Quan (2016QUAN03. Australia. _Oceania) - 0.01s (48.05-48.06) | AR: 244.92s
-147. Dorian Chan (2023DORI01. Hong Kong. _Asia) - 0.01s (62.29-62.30) | AR: 177.64s
-147. Damir Zhanataev (2017ZHAD01. Kazakhstan. _Asia) - 0.01s (68.33-68.34) | AR: 232.83s
-147. Aldo Feandri (2009FEAN01. Indonesia. _Asia) - 0.01s (68.85-68.86) | AR: 359.11s
-147. Jiaji Shi (施家吉) (2025SHIJ05. China. _Asia) - 0.01s (62.47-62.48) | AR: 79.38s
-147. Alan Żeromski (2018ZERO01. Poland. _Europe) - 0.01s (29.94-29.95) | AR: 105.41s
-147. Xavier Courteau-Laing (2021COUR01. New Zealand. _Oceania) - 0.01s (48.45-48.46) | AR: 187.14s
-147. Frederick Zheng (2018ZHEN45. USA. _North America) - 0.01s (69.86-69.87) | AR: 161.83s
-147. Tommy Kiprillis (2014KIPR01. Australia. _Oceania) - 0.01s (104.88-104.89) | AR: 188.34s
-147. Ádám Barta (2009BART02. Hungary. _Europe) - 0.01s (26.19-26.20) | AR: 55.51s
-147. Henri Gerber (2014GERB01. Germany. _Europe) - 0.01s (54.74-54.75) | AR: 143.89s
-147. Bartłomiej Owczarek (2013OWCZ01. Poland. _Europe) - 0.01s (99.27-99.28) | AR: 243.82s
-147. Ilona Ansel (2016ANSE02. France. _Europe) - 0.01s (21.65-21.66) | AR: 118.68s
-147. Rían Burke (2019BURK05. Ireland. _Europe) - 0.01s (169.06-169.07) | AR: 305.39s
-147. Joey Mait (2016MAIT02. USA. _North America) - 0.01s (49.78-49.79) | AR: 348.66s
-147. Laura Freitas Martín (2018MART18. Spain. _Europe) - 0.01s (115.95-115.96) | AR: 265.16s
-147. Justin Sui (2022SUIJ01. USA. _North America) - 0.01s (79.54-79.55) | AR: 190.76s
-147. Felix Christian Schmidt (2022SCHM01. Germany. _Europe) - 0.01s (109.31-109.32) | AR: 362.04s
-147. Shifei Dai (代时飞) (2015DAIS01. China. _Asia) - 0.01s (128.88-128.89) | AR: 192.70s
-147. Yinghao Wang (王鹰豪) (2010WANG07. China. _Asia) - 0.01s (117.84-117.85) | AR: 220.67s
-147. Jimi Naysmith (2022NAYS02. United Kingdom. _Europe) - 0.01s (184.28-184.29) | AR: 137.20s
-147. Korakot Inkaew (กรกฎ อิ่นแก้ว) (2017INKA01. Thailand. _Asia) - 0.01s (48.02-48.03) | AR: 186.66s
-147. Serban Stelian (2019STEL01. Romania. _Europe) - 0.01s (51.46-51.47) | AR: 172.53s
-147. Anonymous (2017ANON13. Poland. _Europe) - 0.01s (29.15-29.16) | AR: 235.32s
-147. Tien Tran (2018TRAN09. USA. _North America) - 0.01s (22.68-22.69) | AR: 33.66s
-147. Rasmus Händén (2016HAND04. Sweden. _Europe) - 0.01s (198.21-198.22) | AR: 827.30s
-147. Nathan Benson (2022BENS01. USA. _North America) - 0.01s (99.70-99.71) | AR: 114.47s
-147. Tiago Morais (2023MORA20. Portugal. _Europe) - 0.01s (41.06-41.07) | AR: 243.01s
-147. Oana-Simona Vrabie (2022VRAB01. Romania. _Europe) - 0.01s (117.03-117.04) | AR: 204.44s
-147. Luis Fernando Aldás Cuestas (2017CUES02. Ecuador. _South America) - 0.01s (94.84-94.85) | AR: 236.30s
-147. Julian David (2010DAVI06. Canada. _North America) - 0.01s (72.31-72.32) | AR: 177.66s
-147. Luchen Zhang (张录辰) (2007LUCH02. China. _Asia) - 0.01s (83.43-83.44) | AR: 177.19s
-147. Igor Aipkin (2017AIPK01. Uzbekistan. _Asia) - 0.01s (61.50-61.51) | AR: 182.52s
-147. Zachary White (2010WHIT05. USA. _North America) - 0.01s (236.10-236.11) | AR: 350.87s
-147. Kévin Ky (2022KYKE01. France. _Europe) - 0.01s (108.75-108.76) | AR: 490.67s
-147. Alexis Fedeler (2015FEDE01. Germany. _Europe) - 0.01s (115.60-115.61) | AR: 135.02s
-147. Paolo Marino (2021MARI04. Italy. _Europe) - 0.01s (112.58-112.59) | AR: 236.38s
-147. Theo Goluboff (2017GOLU01. Argentina. _South America) - 0.01s (32.56-32.57) | AR: 86.21s
-147. Leo Guernion (2013GUER03. France. _Europe) - 0.01s (28.86-28.87) | AR: 749.14s
-147. Hans Lin (2018LINH02. Australia. _Oceania) - 0.01s (20.79-20.80) | AR: 69.34s
-147. Kasper Warberg Borg (2020BORG01. Denmark. _Europe) - 0.01s (196.08-196.09) | AR: 545.30s
-147. Nolan Lata Yiu (2016YIUN01. USA. _North America) - 0.01s (24.94-24.95) | AR: 215.19s
-147. Henrik Olsson (2009OLSS01. Sweden. _Europe) - 0.01s (88.52-88.53) | AR: 270.76s
-147. Ruohan Qiu (邱若寒) (2012QIUR01. China. _Asia) - 0.01s (89.56-89.57) | AR: 149.25s
-147. Bradley Sampson (2008SAMP01. USA. _North America) - 0.01s (86.18-86.19) | AR: 341.85s
-147. Yifan Cheng (程依凡) (2018CHEY36. China. _Asia) - 0.01s (58.85-58.86) | AR: 141.78s
-147. Hubert Hanusiak (2013HANU01. Poland. _Europe) - 0.01s (271.58-271.59) | AR: 271.63s
-147. Serhii Mormul (Сергій Мормуль) (2012MORM01. Ukraine. _Europe) - 0.01s (132.50-132.51) | AR: 139.53s
-147. Leo Johansson (2022JOHA08. Sweden. _Europe) - 0.01s (104.63-104.64) | AR: 161.46s
-147. Pavlo Bondar (Павло Бондар) (2018BOND03. Ukraine. _Europe) - 0.01s (49.26-49.27) | AR: 277.06s
-147. Jakob Gunnarsson (2015GUNN01. Sweden. _Europe) - 0.01s (19.51-19.52) | AR: 260.54s
-147. Mikus Lembergs (2017LEMB02. Latvia. _Europe) - 0.01s (56.17-56.18) | AR: 466.96s
-147. Ignacy Samselski (2022SAMS03. Poland. _Europe) - 0.01s (72.56-72.57) | AR: 181.93s
-147. Angelo Melera (2022MELE01. Switzerland. _Europe) - 0.01s (111.07-111.08) | AR: 385.24s
-147. Adel Mosallami (2018MOSA01. Philippines. _Asia) - 0.01s (28.33-28.34) | AR: 70.24s
-147. Nakai Velasquez (2008VELA01. USA. _North America) - 0.01s (437.83-437.84) | AR: 275.20s
-147. Peter Hugosson-Miller (2021HUGO01. Sweden. _Europe) - 0.01s (283.39-283.40) | AR: 577.04s
-147. Valentin Hoffmann (2011HOFF02. France. _Europe) - 0.01s (55.28-55.29) | AR: 506.13s
-147. Vidar Norstein Klungre (2008KLUN01. Norway. _Europe) - 0.01s (74.84-74.85) | AR: 322.55s
-147. Andrey Koposov (Андрей Копосов) (2020KOPO01. Russia. _Europe) - 0.01s (30.49-30.50) | AR: 215.45s
-147. Grzegorz Pacewicz (2014PACE01. Poland. _Europe) - 0.01s (72.41-72.42) | AR: 220.04s
-147. Yan Xuan (宣炎) (2009XUAN03. China. _Asia) - 0.01s (113.05-113.06) | AR: 106.17s
-147. Ge Shi (石歌) (2024GESH01. China. _Asia) - 0.01s (64.89-64.90) | AR: 167.52s
+53. Brandon Lin (林博浩) (2011LINB01. USA. _North America) - 0.02s (28.02-28.04) | AR: 216.78s
+53. Kevin Liu (2023LIUK02. USA. _North America) - 0.02s (33.06-33.08) | AR: 79.85s
+53. Marcel Ručigaj (2016RUCI01. Slovenia. _Europe) - 0.02s (53.18-53.20) | AR: 195.79s
+53. Shenghai Fang (方胜海) (2016FANG01. China. _Asia) - 0.02s (36.55-36.57) | AR: 101.59s
+53. Andrew Tao (2022TAOA01. USA. _North America) - 0.02s (20.97-20.99) | AR: 117.19s
+53. Israel Fraga da Silva (2012SILV22. Brazil. _South America) - 0.02s (24.70-24.72) | AR: 73.67s
+53. Magdalena Pabisz (2017PABI01. Poland. _Europe) - 0.02s (111.64-111.66) | AR: 128.42s
+53. Patryk Milewczyk (2014MILE01. Poland. _Europe) - 0.02s (96.55-96.57) | AR: 452.88s
+53. Eskil Munthe (2022MUNT02. Sweden. _Europe) - 0.02s (24.49-24.51) | AR: 141.62s
+53. Zhe Wang (王哲) (2019WANZ21. China. _Asia) - 0.02s (27.74-27.76) | AR: 155.04s
+53. Firstian Fushada (符逢城) (2015FUSH01. Indonesia. _Asia) - 0.02s (29.05-29.07) | AR: 184.43s
+53. Jong-Ho Jeong (정종호) (2008JONG03. Korea. _Asia) - 0.02s (44.66-44.68) | AR: 255.92s
+53. Sukant Koul (2014KOUL01. India. _Asia) - 0.02s (22.29-22.31) | AR: 140.99s
+147. Roman Strakhov (2012STRA02. Russia. _Europe) - 0.01s (55.63-55.64) | AR: 89.75s
 147. Sheng Cao (曹晟) (2011CAOS01. China. _Asia) - 0.01s (41.55-41.56) | AR: 185.00s
-147. Bruno Lezama (2014LEZA02. Uruguay. _South America) - 0.01s (92.30-92.31) | AR: 448.70s
-147. Jeremy Benik (2016BENI05. USA. _North America) - 0.01s (83.05-83.06) | AR: 113.96s
-147. Abdullah Gulab (2014GULA02. Pakistan. _Asia) - 0.01s (145.78-145.79) | AR: 169.15s
-147. Adrián Ramírez (2013RAMI02. Guatemala. _North America) - 0.01s (307.91-307.92) | AR: 1059.88s
-147. Emilio Alberto Rodríguez Jiménez (2018JIME14. Mexico. _North America) - 0.01s (34.04-34.05) | AR: 213.04s
-147. Ping-Yueh Huang (黃品越) (2012HUAN12. Taiwan. _Asia) - 0.01s (19.30-19.31) | AR: 154.67s
-147. Tomoya Firman (2015FIRM01. Australia. _Oceania) - 0.01s (27.54-27.55) | AR: 122.18s
-147. Jael Riggenbach (2011RIGG02. Peru. _South America) - 0.01s (59.06-59.07) | AR: 379.67s
-147. Sophie Gilbert (2022GILB05. United Kingdom. _Europe) - 0.01s (48.20-48.21) | AR: 140.01s
-147. Yichuan Xie (谢逸川) (2016XIEY08. China. _Asia) - 0.01s (22.27-22.28) | AR: 54.83s
-147. Sergio Torrijos Santano (2013SANT13. Spain. _Europe) - 0.01s (145.76-145.77) | AR: 197.65s
-147. Gibran Kwan (2019KWAN01. Philippines. _Asia) - 0.01s (112.11-112.12) | AR: 206.66s
-147. Alessio Pandin (2021PAND01. Italy. _Europe) - 0.01s (133.98-133.99) | AR: 187.48s
-147. Lev Golub (Лев Голуб) (2014HOLU01. Ukraine. _Europe) - 0.01s (53.22-53.23) | AR: 296.74s
-147. Louis Cormier (2010CORM02. Canada. _North America) - 0.01s (156.14-156.15) | AR: 159.70s
-147. Sreeram Venkatarao (2008VENK01. USA. _North America) - 0.01s (30.38-30.39) | AR: 326.18s
-147. Yuheng Wu (吴雨衡) (2018WUYU03. China. _Asia) - 0.01s (108.94-108.95) | AR: 224.01s
-147. Matheus Casassa (2017VIAN01. Brazil. _South America) - 0.01s (189.70-189.71) | AR: 277.04s
-147. Mar Gallego Vicente (2013VICE01. Spain. _Europe) - 0.01s (198.72-198.73) | AR: 283.37s
-147. Clément Cherblanc (2014CHER05. France. _Europe) - 0.01s (73.62-73.63) | AR: 253.99s
-147. Dennis Rosero (2010ROSE03. Colombia. _South America) - 0.01s (292.62-292.63) | AR: 420.08s
-147. Jacob Turrubiartes (2018TURR01. USA. _North America) - 0.01s (42.47-42.48) | AR: 116.57s
-147. Jia-Wei Liu (劉家瑋) (2012LIUJ06. Taiwan. _Asia) - 0.01s (49.75-49.76) | AR: 277.48s
-147. Ting Sheng Bao Yang (2008BAOY01. Spain. _Europe) - 0.01s (177.67-177.68) | AR: 243.86s
-147. David Miguel-Santiago (2022MIGU02. USA. _North America) - 0.01s (89.28-89.29) | AR: 198.13s
-147. Dallas McNeil (2017MCNE01. Australia. _Oceania) - 0.01s (131.13-131.14) | AR: 149.76s
-147. Jakov Srečković (2021SREC01. Croatia. _Europe) - 0.01s (21.42-21.43) | AR: 74.99s
-147. AJ Nicholls (2015NICH04. United Kingdom. _Europe) - 0.01s (140.05-140.06) | AR: 249.38s
-147. Tias Claeys (2024CLAE02. Belgium. _Europe) - 0.01s (67.21-67.22) | AR: 142.77s
-147. Yanyan Zuo (左艳艳) (2019ZUOY01. China. _Asia) - 0.01s (143.62-143.63) | AR: 159.92s
-147. Yuhang Sun (孙煜航) (2019SUNY09. China. _Asia) - 0.01s (41.17-41.18) | AR: 118.23s
-147. Wojciech Knott (2011KNOT01. Poland. _Europe) - 0.01s (177.12-177.13) | AR: 221.35s
-147. Taku Yanai (矢内拓) (2012YANA01. Japan. _Asia) - 0.01s (30.77-30.78) | AR: 80.90s
-147. Weston Mizumoto (2008MIZU01. USA. _North America) - 0.01s (111.16-111.17) | AR: 235.52s
-147. Bohdan Pylypchak (Богдан Пилипчак) (2017PYLY01. Ukraine. _Europe) - 0.01s (51.22-51.23) | AR: 62.78s
-147. Samuel Moliver (2017MOLI05. Australia. _Oceania) - 0.01s (46.67-46.68) | AR: 310.29s
-147. Ben Timmons (2017TIMM01. Ireland. _Europe) - 0.01s (54.22-54.23) | AR: 211.93s
-147. Erik Tjong Kim Sang (2018SANG01. Netherlands. _Europe) - 0.01s (156.23-156.24) | AR: 361.72s
-147. Christian Sachgau (2018SACH03. Germany. _Europe) - 0.01s (177.13-177.14) | AR: 288.86s
-147. Chunyu Zhang (张春雨) (2011ZHAN24. China. _Asia) - 0.01s (89.46-89.47) | AR: 201.64s
-147. Noah Feld (2015FELD01. USA. _North America) - 0.01s (98.17-98.18) | AR: 248.29s
-147. Anqi Yu (2018YUAN02. Bulgaria. _Europe) - 0.01s (51.27-51.28) | AR: 201.74s
-147. Ahsanul Insan Hamid (2011HAMI01. Indonesia. _Asia) - 0.01s (27.74-27.75) | AR: 61.12s
-147. Felipe Santamaría Ruiz (2022RUIZ03. Venezuela. _South America) - 0.01s (95.88-95.89) | AR: 431.30s
-147. Ilya Tsiareshka (2012TERE01. Belarus. _Europe) - 0.01s (258.71-258.72) | AR: 497.35s
-147. Noémie Delaby (2017THIO01. France. _Europe) - 0.01s (105.04-105.05) | AR: 124.45s
-147. Keegan Joyce (2024JOYC01. USA. _North America) - 0.01s (118.39-118.40) | AR: 243.30s
-147. Matthew Simpson (2017SIMP04. Canada. _North America) - 0.01s (263.92-263.93) | AR: 0.01s
-147. Thomas Reinke (2018REIN04. USA. _North America) - 0.01s (40.28-40.29) | AR: 208.33s
-147. Fabio Schwandt (2014SCHW02. United Kingdom. _Europe) - 0.01s (44.69-44.70) | AR: 210.48s
-147. Roberto Antonio Ocmin Baráybar (2011BARA01. Peru. _South America) - 0.01s (30.24-30.25) | AR: 330.31s
-147. Jakub Majchrzak (2021MAJC01. Poland. _Europe) - 0.01s (69.28-69.29) | AR: 104.85s
-147. Bernhard Brodowsky (2016BROD01. Germany. _Europe) - 0.01s (53.71-53.72) | AR: 373.33s
-147. Maksymilian Misiak (2017MISI01. Poland. _Europe) - 0.01s (59.83-59.84) | AR: 75.84s
-147. Jianing Luo (罗佳宁) (2019LUOJ04. China. _Asia) - 0.01s (17.81-17.82) | AR: 222.79s
-147. Jimmy Kingston (2023KING02. USA. _North America) - 0.01s (57.34-57.35) | AR: 538.87s
-147. Timo Norrkniivilä (2017NORR01. Finland. _Europe) - 0.01s (30.62-30.63) | AR: 142.16s
-147. István Márián (2010MARI02. Hungary. _Europe) - 0.01s (98.01-98.02) | AR: 125.54s
-147. Shalem Birzavit Meneses Pérez (2018PERE05. Mexico. _North America) - 0.01s (193.74-193.75) | AR: 444.15s
-147. Linh Son Luu (2021LUUL01. Germany. _Europe) - 0.01s (102.63-102.64) | AR: 449.55s
-147. Marlon de V. Marques (2014MARQ02. Brazil. _South America) - 0.01s (74.79-74.80) | AR: 538.92s
-147. Alexander Bóna (2023ALEX03. Hungary. _Europe) - 0.01s (23.77-23.78) | AR: 79.27s
-147. Alvin Hiu Yeung Cheng (鄭曉洋) (2019YEUN01. Hong Kong. _Asia) - 0.01s (22.93-22.94) | AR: 78.46s
-147. Delphine Tran (2017TRAN24. France. _Europe) - 0.01s (72.02-72.03) | AR: 168.98s
-147. Chi-Lun Hung (洪啟倫) (2010HONG01. Taiwan. _Asia) - 0.01s (45.24-45.25) | AR: 195.73s
-147. Shaden Smith (2008SMIT01. USA. _North America) - 0.01s (185.59-185.60) | AR: 350.58s
-147. Daniel Mullen (2016MULL04. USA. _North America) - 0.01s (97.05-97.06) | AR: 245.79s
-147. Vicenzo Guerino Cecchini (2015CECC01. Brazil. _South America) - 0.01s (56.80-56.81) | AR: 250.07s
-147. Rodrigo Zarate (2014ZARA01. Peru. _South America) - 0.01s (33.03-33.04) | AR: 482.37s
-147. Luca Rizzi (2015RIZZ02. Switzerland. _Europe) - 0.01s (126.71-126.72) | AR: 248.54s
-147. Hyeok Yang (양혁) (2017YANG75. Korea. _Asia) - 0.01s (89.82-89.83) | AR: 110.51s
-147. Zicong Liu (刘子聪) (2024LIUZ11. China. _Asia) - 0.01s (19.94-19.95) | AR: 44.02s
-147. Emmet Hobbs (2016HOBB01. Australia. _Oceania) - 0.01s (112.60-112.61) | AR: 258.89s
-147. Vladimir Sergeev (2017SERG03. Russia. _Europe) - 0.01s (32.70-32.71) | AR: 97.31s
-147. David Vujasić (2015VUJA01. Croatia. _Europe) - 0.01s (101.46-101.47) | AR: 157.56s
-147. Lingjie Xia (夏灵洁) (2024XIAL01. China. _Asia) - 0.01s (34.86-34.87) | AR: 30.22s
-147. Timo Günthardt (2019GUNT04. Switzerland. _Europe) - 0.01s (34.80-34.81) | AR: 226.32s
-147. Beatriz Hernandes Bernardes (2022BERN01. Brazil. _South America) - 0.01s (67.17-67.18) | AR: 144.07s
-147. Johanna Szczesny (2022SZCZ03. Germany. _Europe) - 0.01s (127.69-127.70) | AR: 144.75s
-147. Heejun Kim (김희준) (2018KIMH02. Korea. _Asia) - 0.01s (24.37-24.38) | AR: 82.51s
-147. Valérie Le Gall (2023GALL30. France. _Europe) - 0.01s (69.92-69.93) | AR: 88.65s
-147. Jimbo Cai (2023CAIJ01. Canada. _North America) - 0.01s (22.21-22.22) | AR: 118.92s
-147. Naomi Solnick (2024SOLN01. USA. _North America) - 0.01s (23.56-23.57) | AR: 90.57s
-147. Shantanu Modak (2014MODA01. Singapore. _Asia) - 0.01s (41.79-41.80) | AR: 267.56s
-147. Knut Skaug Haraldsen (2016HARA02. Norway. _Europe) - 0.01s (98.59-98.60) | AR: 288.39s
-147. Abhinav Agarwal (2025AGAR02. USA. _North America) - 0.01s (75.30-75.31) | AR: 106.41s
-147. Ben Yu (2011YUBE01. USA. _North America) - 0.01s (66.88-66.89) | AR: 286.20s
-147. Daniel James (2012JAME04. India. _Asia) - 0.01s (100.10-100.11) | AR: 398.42s
-147. Brayden Adams (2018ADAM06. USA. _North America) - 0.01s (70.55-70.56) | AR: 82.97s
-147. Dennis Preciado (2022PREC01. Peru. _South America) - 0.01s (46.92-46.93) | AR: 229.37s
-147. Emmett O'Leary-Liu (2019OLEA02. USA. _North America) - 0.01s (107.87-107.88) | AR: 184.55s
-147. Oliver Castledine (2018CAST08. United Kingdom. _Europe) - 0.01s (83.58-83.59) | AR: 207.92s
-147. Modest Podzolkin (2017PODZ01. Ukraine. _Europe) - 0.01s (87.31-87.32) | AR: 525.55s
-147. Christian Montoya (2018MONT03. Peru. _South America) - 0.01s (59.75-59.76) | AR: 265.17s
-147. Evan Chin (2017CHIN03. USA. _North America) - 0.01s (46.78-46.79) | AR: 253.08s
-147. Levi André Tallaksen (2015TALL01. Norway. _Europe) - 0.01s (69.86-69.87) | AR: 186.08s
-147. Achim Spies (2021SPIE01. Germany. _Europe) - 0.01s (110.80-110.81) | AR: 270.53s
-147. Aiki Yaginuma (柳沼愛輝) (2022YAGI03. Japan. _Asia) - 0.01s (75.10-75.11) | AR: 217.44s
-147. Walter Pereira Rodrigues de Souza (2010SOUZ01. Brazil. _South America) - 0.01s (116.00-116.01) | AR: 208.75s
-147. Paul Mahvi (2012MAHV01. USA. _North America) - 0.01s (183.78-183.79) | AR: 209.15s
-147. Alex Butera (2021BUTE03. Australia. _Oceania) - 0.01s (75.15-75.16) | AR: 463.42s
-147. Raymos Castillo (2017CAST41. USA. _North America) - 0.01s (74.44-74.45) | AR: 329.29s
-147. Bpaul Paul (2014PAUL05. Australia. _Oceania) - 0.01s (22.17-22.18) | AR: 89.43s
-147. Yang Hu (胡扬) (2012HUYA01. China. _Asia) - 0.01s (78.54-78.55) | AR: 250.86s
-147. Tiago Zamberlan (2016ZAMB05. Brazil. _South America) - 0.01s (29.52-29.53) | AR: 150.60s
-147. Lucas Déglise (2015DEGL01. France. _Europe) - 0.01s (88.40-88.41) | AR: 278.76s
-147. Brandon Mikel (2011MIKE01. USA. _North America) - 0.01s (103.78-103.79) | AR: 176.21s
-147. Simon Westlund (2008WEST02. Sweden. _Europe) - 0.01s (85.46-85.47) | AR: 209.33s
-147. Sergio Bulux (2014BULU01. Guatemala. _North America) - 0.01s (83.39-83.40) | AR: 145.57s
-147. Haotian Shi (史浩天) (2024SHIH06. China. _Asia) - 0.01s (26.42-26.43) | AR: 39.70s
-147. Nicolas Gertner Kilian (2013GERT01. France. _Europe) - 0.01s (75.95-75.96) | AR: 259.81s
-147. Shuto Ueno (上野柊斗) (2008UENO01. Japan. _Asia) - 0.01s (53.13-53.14) | AR: 321.34s
-147. Victor Tang Yao Jun (湯曜駿) (2015JUNV01. Hong Kong. _Asia) - 0.01s (52.84-52.85) | AR: 134.78s
-147. Rafael Rodriguez Santana (2012SANT12. Spain. _Europe) - 0.01s (109.81-109.82) | AR: 257.79s
-147. Georgiy Titov (2013TITO02. Ukraine. _Europe) - 0.01s (118.78-118.79) | AR: 167.84s
-147. Eddy Deturche (2014DETU01. France. _Europe) - 0.01s (45.94-45.95) | AR: 116.89s
-147. Marcos Ferreira Semolini (2017SEMO02. Brazil. _South America) - 0.01s (27.26-27.27) | AR: 205.37s
-147. Hannah Minas (2017MINA04. Switzerland. _Europe) - 0.01s (58.52-58.53) | AR: 135.29s
-147. Aniketh Arya (2015ARYA03. India. _Asia) - 0.01s (120.76-120.77) | AR: 187.74s
-147. Kai Jiptner (2007JIPT01. Germany. _Europe) - 0.01s (53.49-53.50) | AR: 189.08s
-147. Daniel Baeza (2023BAEZ06. Guatemala. _North America) - 0.01s (43.89-43.90) | AR: 61.10s
-147. Lim Zhe Hsien (林哲贤) (2023HSIE09. Singapore. _Asia) - 0.01s (26.97-26.98) | AR: 222.95s
-147. Kristian Holme (2013HOLM01. Norway. _Europe) - 0.01s (43.20-43.21) | AR: 278.88s
-147. Israel Machado Soares (2011SOAR01. Brazil. _South America) - 0.01s (123.38-123.39) | AR: 142.23s
-147. James Molloy (2011MOLL01. United Kingdom. _Europe) - 0.01s (107.12-107.13) | AR: 334.80s
-147. Mohammed Aiman Koli (2017KOLI01. India. _Asia) - 0.01s (31.51-31.52) | AR: 157.98s
-147. Aharon Campoli Tono (2014TONO01. Brazil. _South America) - 0.01s (232.13-232.14) | AR: 339.60s
-147. Benjamin Buchner (2018BUCH03. Canada. _North America) - 0.01s (83.41-83.42) | AR: 51.58s
-147. Marcus Kamen (2015KAME02. USA. _North America) - 0.01s (196.79-196.80) | AR: 158.13s
-147. Akula Sai Kumar (2012KUMA02. India. _Asia) - 0.01s (312.40-312.41) | AR: 269.43s
-147. Artur Udatsnoi (2023UDAT01. Estonia. _Europe) - 0.01s (54.33-54.34) | AR: 286.82s
-147. Matt Mao (2023MAOS01. China. _Asia) - 0.01s (53.91-53.92) | AR: 125.62s
-147. Michel Ye (2012YEMI01. France. _Europe) - 0.01s (202.26-202.27) | AR: 464.94s
-147. James Quinn (2016QUIN01. USA. _North America) - 0.01s (52.06-52.07) | AR: 413.82s
-147. Julien Blin (2023BLIN01. France. _Europe) - 0.01s (113.94-113.95) | AR: 234.65s
-147. Zain Behzaad (2019BEHZ01. India. _Asia) - 0.01s (33.10-33.11) | AR: 200.04s
-147. Francisco Huertas Molina (2018MOLI03. Spain. _Europe) - 0.01s (103.36-103.37) | AR: 179.77s
-147. Matt Prestwich (2016PRES04. United Kingdom. _Europe) - 0.01s (81.93-81.94) | AR: 364.46s
-147. Tomoaki Sakuma (佐久間智章) (2022SAKU01. Japan. _Asia) - 0.01s (26.84-26.85) | AR: 120.55s
-147. Takayuki Ookusa (大艸尊之) (2006OOKU01. Japan. _Asia) - 0.01s (91.58-91.59) | AR: 116.30s
-147. Joshua Chau (2021CHAU01. Australia. _Oceania) - 0.01s (31.77-31.78) | AR: 32.24s
-147. Kai Yamamoto (山本快) (2021YAMA01. Japan. _Asia) - 0.01s (68.61-68.62) | AR: 137.37s
-147. Jesse Arnon (2024ARNO02. Israel. _Europe) - 0.01s (52.27-52.28) | AR: 109.28s
-147. Dmitry Karyakin (2010KARY02. Russia. _Europe) - 0.01s (66.40-66.41) | AR: 280.70s
-147. Mike Hughey (2007HUGH01. USA. _North America) - 0.01s (94.59-94.60) | AR: 246.53s
-147. Alessandro Nicolì (2012NICO02. Italy. _Europe) - 0.01s (136.52-136.53) | AR: 216.55s
-147. Zongwen Mu (牟宗文) (2015MUZO01. China. _Asia) - 0.01s (105.78-105.79) | AR: 71.22s
-147. Alwin Rölz (2016ROLZ01. Switzerland. _Europe) - 0.01s (168.08-168.09) | AR: 399.35s
-147. Bastien Ferraud (2022FERR16. France. _Europe) - 0.01s (100.19-100.20) | AR: 106.91s
-147. Igor Tarasov (2016TARA04. Ukraine. _Europe) - 0.01s (68.26-68.27) | AR: 177.59s
-147. Zhihuang Chen (陈志煌) (2013CHEN46. China. _Asia) - 0.01s (56.37-56.38) | AR: 92.82s
-147. Kate Grahame (2018GRAH05. USA. _North America) - 0.01s (58.15-58.16) | AR: 388.20s
-147. Ziyi Xu (徐梓翼) (2023XUZI01. China. _Asia) - 0.01s (30.60-30.61) | AR: 207.36s
-147. Lucas Ichiro Yunomae (2014YUNO01. Brazil. _South America) - 0.01s (154.04-154.05) | AR: 390.26s
-147. Fabian Settelen (2015SETT01. Switzerland. _Europe) - 0.01s (87.41-87.42) | AR: 398.36s
-147. Albert Garriga Gea (2019GEAA01. Spain. _Europe) - 0.01s (134.42-134.43) | AR: 210.95s
-147. Adam Bermingham (2020BERM02. Ireland. _Europe) - 0.01s (87.54-87.55) | AR: 171.62s
-147. Hassan Khanani (2018KHAN26. USA. _North America) - 0.01s (38.01-38.02) | AR: 139.58s
-147. Charlie Stark (2014STAR05. United Kingdom. _Europe) - 0.01s (133.83-133.84) | AR: 491.12s
-147. Alexandre Carlier (2012CARL03. France. _Europe) - 0.01s (212.20-212.21) | AR: 165.43s
-147. James Moore (2016MOOR07. New Zealand. _Oceania) - 0.01s (70.51-70.52) | AR: 125.78s
-147. William Carey (2019CARE02. Ireland. _Europe) - 0.01s (75.08-75.09) | AR: 371.45s
-147. Jared Blanco (2021BLAN02. USA. _North America) - 0.01s (29.83-29.84) | AR: 29.44s
-147. Cedric Meysing (2017MEYS02. Germany. _Europe) - 0.01s (59.33-59.34) | AR: 213.89s
-147. Matthew Dickman (2013DICK01. USA. _North America) - 0.01s (155.54-155.55) | AR: 221.28s
-147. Diego Alejandro Casas Jimenez (2014JIME05. Colombia. _South America) - 0.01s (134.58-134.59) | AR: 304.87s
-147. Pavel Yushkevich (2013YUSH01. Belarus. _Europe) - 0.01s (211.00-211.01) | AR: 84.38s
-147. Tyler Williams (2017WILL05. Australia. _Oceania) - 0.01s (114.96-114.97) | AR: 223.25s
-147. Max Kwok U Sam (郭愉琛) (2018SAMK01. Macau. _Asia) - 0.01s (140.06-140.07) | AR: 199.59s
-147. Auric Cui (2022CUIA01. Australia. _Oceania) - 0.01s (62.84-62.85) | AR: 135.05s
-147. Pankaj More (2013MORE11. India. _Asia) - 0.01s (190.33-190.34) | AR: 362.29s
-147. Sergio Bodega Herráiz (2014HERR08. Spain. _Europe) - 0.01s (110.11-110.12) | AR: 290.17s
-147. Rodrigo Pueblas Núñez (2014NUNE05. Spain. _Europe) - 0.01s (100.19-100.20) | AR: 268.23s
-147. Anton Piau (2008PIAU01. France. _Europe) - 0.01s (262.87-262.88) | AR: 293.37s
-147. Jode Brewster (2016JONE04. Australia. _Oceania) - 0.01s (70.66-70.67) | AR: 112.01s
-147. Yongtao Sun (孙永涛) (2013SUNY02. China. _Asia) - 0.01s (92.07-92.08) | AR: 193.41s
-147. Ming Dao Ting (2018TING05. Australia. _Oceania) - 0.01s (100.09-100.10) | AR: 189.15s
-147. Xun Zhao (赵洵) (2015ZHAO07. China. _Asia) - 0.01s (79.11-79.12) | AR: 79.85s
-147. Juan Ignacio Caneppa (2019CANE02. Argentina. _South America) - 0.01s (96.32-96.33) | AR: 176.51s
-147. Atharva R. Bhat (2017BHAT02. India. _Asia) - 0.01s (159.00-159.01) | AR: 509.62s
-147. Oleh Toporovych (2018TOPO01. Ukraine. _Europe) - 0.01s (78.80-78.81) | AR: 205.60s
-147. Jayden McNeill (2012MCNE01. Australia. _Oceania) - 0.01s (83.18-83.19) | AR: 404.26s
-147. Shenghui Yuan (苑盛辉) (2023YUAN19. China. _Asia) - 0.01s (25.79-25.80) | AR: 64.34s
-147. Feliks Zemdegs (2009ZEMD01. Australia. _Oceania) - 0.01s (64.38-64.39) | AR: 135.59s
-147. Nipun Das (2017DASN01. USA. _North America) - 0.01s (30.96-30.97) | AR: 168.96s
-147. Paul Luciw (2015LUCI02. France. _Europe) - 0.01s (111.40-111.41) | AR: 283.65s
-147. Ko Youngjin (고영진) (2007YOUN04. Korea. _Asia) - 0.01s (41.99-42.00) | AR: 219.37s
-147. Ethan Rusnak (2015RUSN01. Canada. _North America) - 0.01s (82.73-82.74) | AR: 180.81s
-147. Muhammad Fitri Hakim Bin Dzulkarnain (2017DZUL02. Malaysia. _Asia) - 0.01s (236.39-236.40) | AR: 203.02s
-147. Cyril Teichmann (2017TEIC01. Czech Republic. _Europe) - 0.01s (63.82-63.83) | AR: 327.09s
-147. Majk Tomas (2022TOMA05. Poland. _Europe) - 0.01s (47.31-47.32) | AR: 230.09s
-147. Zehao Huang (黄泽浩) (2019HUAZ03. China. _Asia) - 0.01s (78.68-78.69) | AR: 35.92s
-147. Fernando Israel Zúñiga Macedo (2014MACE02. Mexico. _North America) - 0.01s (39.66-39.67) | AR: 116.39s
-147. Harry Owen (2017OWEN01. United Kingdom. _Europe) - 0.01s (143.26-143.27) | AR: 180.13s
-147. Yoav Atsmon (2022ATSM01. Israel. _Europe) - 0.01s (82.56-82.57) | AR: 287.17s
-147. Simon Lim (林少秋) (2008LIMS01. Philippines. _Asia) - 0.01s (47.21-47.22) | AR: 231.39s
-147. Akito Takei (武井章人) (2017TAKE01. Japan. _Asia) - 0.01s (27.63-27.64) | AR: 81.17s
-147. Carson Claud (2015CLAU02. USA. _North America) - 0.01s (110.77-110.78) | AR: 382.90s
-147. Timothy Castle (2016CAST48. USA. _North America) - 0.01s (20.47-20.48) | AR: 267.69s
-147. Jayce Li (2019LIJA01. Canada. _North America) - 0.01s (57.20-57.21) | AR: 91.12s
-147. Ole Nikolai Gjerset (2011GJER02. Norway. _Europe) - 0.01s (156.73-156.74) | AR: 370.87s
-147. DongJae Lee (2018LEED01. Korea. _Asia) - 0.01s (28.95-28.96) | AR: 304.94s
-147. Gonzalo Orellana Barrasa (2010OREL02. Spain. _Europe) - 0.01s (155.57-155.58) | AR: 193.47s
-147. Thomas Patterson (2014PATT02. United Kingdom. _Europe) - 0.01s (29.78-29.79) | AR: 308.66s
-147. Brendan Bakker (貝庭笙) (2015BAKK01. USA. _North America) - 0.01s (56.51-56.52) | AR: 64.53s
-147. Guilherme Santana (2019CAMP10. Brazil. _South America) - 0.01s (85.19-85.20) | AR: 203.54s
-147. Anthony Gerard Álvarez Ludeña (2018LUDE01. Ecuador. _South America) - 0.01s (75.70-75.71) | AR: 192.18s
-147. Antonie Paterakis (2012PATE01. Netherlands. _Europe) - 0.01s (97.10-97.11) | AR: 274.69s
-147. Riley Dexter (2016DEXT01. Australia. _Oceania) - 0.01s (75.73-75.74) | AR: 174.22s
-147. Radosław Drozdowicz (2012DROZ02. Poland. _Europe) - 0.01s (155.71-155.72) | AR: 159.26s
-147. Yu Nakajima (中島悠) (2007NAKA03. Japan. _Asia) - 0.01s (62.55-62.56) | AR: 164.19s
-147. Enoch Gray (2012GRAY01. USA. _North America) - 0.01s (43.90-43.91) | AR: 135.54s
-147. Mohamed Bilal (2019BILA03. India. _Asia) - 0.01s (96.26-96.27) | AR: 301.70s
-147. Marco Giordano (2019GIOR02. Italy. _Europe) - 0.01s (122.51-122.52) | AR: 227.89s
-147. Bowen Deng (邓博文) (2009DENG01. China. _Asia) - 0.01s (99.65-99.66) | AR: 315.86s
-147. Mats Bergsten (2008BERG04. Sweden. _Europe) - 0.01s (116.21-116.22) | AR: 421.58s
-147. Jungwoo Kim (김정우) (2014KIMJ02. Korea. _Asia) - 0.01s (42.82-42.83) | AR: 223.47s
-147. Alex Rosado Saez de Langarica (2023LANG03. Spain. _Europe) - 0.01s (82.73-82.74) | AR: 121.84s
-147. Nathan Phillips (2021PHIL05. USA. _North America) - 0.01s (51.49-51.50) | AR: 227.25s
-147. Steven Morrise (2024MORR14. USA. _North America) - 0.01s (92.30-92.31) | AR: 219.32s
-147. Yiwei Liu (刘伊玮) (2012LIUY03. China. _Asia) - 0.01s (33.02-33.03) | AR: 128.71s
-147. Daniel Wang (2022WANG06. Australia. _Oceania) - 0.01s (23.06-23.07) | AR: 168.33s
-147. Laura Ohrndorf (2009OHRN01. Germany. _Europe) - 0.01s (169.78-169.79) | AR: 116.59s
-147. Farid Mikhailov (2015MIKH04. Kazakhstan. _Asia) - 0.01s (106.99-107.00) | AR: 143.16s
-147. Jakub Hamkało (2018HAMK01. Poland. _Europe) - 0.01s (147.36-147.37) | AR: 179.96s
-147. Yiming Liu (刘一鸣) (2025LIUY24. China. _Asia) - 0.01s (21.61-21.62) | AR: 12.27s
-147. Haijun Tan (谭海俊) (2011TANH01. China. _Asia) - 0.01s (39.77-39.78) | AR: 164.45s
-147. Alexander Wheeler (2014WHEE01. USA. _North America) - 0.01s (57.24-57.25) | AR: 141.60s
-147. Declan Mangan-Lamb (2023MANG02. Ireland. _Europe) - 0.01s (93.32-93.33) | AR: 90.74s
-147. Anirudh Sureshram (2014SURE11. India. _Asia) - 0.01s (62.74-62.75) | AR: 309.02s
-147. Maria Zhits (2016ZHIT01. Russia. _Europe) - 0.01s (168.04-168.05) | AR: 246.87s
-147. Cyrill Speiser (2019SPEI01. Switzerland. _Europe) - 0.01s (65.72-65.73) | AR: 203.52s
-147. Oskar Feed Jakobsen (2017JAKO02. Norway. _Europe) - 0.01s (32.39-32.40) | AR: 88.88s
-147. Amitai Ziv (2022ZIVA01. Israel. _Europe) - 0.01s (101.91-101.92) | AR: 189.22s
-147. Oliver Frost (2012FROS01. United Kingdom. _Europe) - 0.01s (44.89-44.90) | AR: 48.51s
-147. Michael Ngan (顏律言) (2016NGAN02. Hong Kong. _Asia) - 0.01s (70.78-70.79) | AR: 151.15s
-147. Luis Antelmo Perez Cabrera (2019CABR09. Mexico. _North America) - 0.01s (116.24-116.25) | AR: 200.37s
-147. Xingyu Zhu (朱星宇) (2023ZHUX01. China. _Asia) - 0.01s (63.51-63.52) | AR: 65.73s
-147. Diasbek Zhuraev (Диасбек Жураев) (2021ZHUR04. Kazakhstan. _Asia) - 0.01s (71.92-71.93) | AR: 119.21s
-147. Ben Royce (2015ROYC01. USA. _North America) - 0.01s (100.99-101.00) | AR: 411.60s
-147. Kajetan Opach (2018OPAC01. Poland. _Europe) - 0.01s (40.79-40.80) | AR: 206.57s
-147. Nikhil Mande (2008MAND01. India. _Asia) - 0.01s (80.33-80.34) | AR: 161.81s
-147. Raghavendra Nagarajan (2022NAGA01. India. _Asia) - 0.01s (167.13-167.14) | AR: 178.60s
-147. Ryan Farish (2015FARI06. USA. _North America) - 0.01s (24.92-24.93) | AR: 231.20s
-147. Víctor Adán Solis Martinez (2017MART94. Mexico. _North America) - 0.01s (54.79-54.80) | AR: 87.71s
-147. Alban Reynaud (2011REYN02. France. _Europe) - 0.01s (105.03-105.04) | AR: 278.55s
-147. Shelley Chang (2004CHAN04. USA. _North America) - 0.01s (130.58-130.59) | AR: 442.95s
-147. Bella Campbell (2018CAMP17. United Kingdom. _Europe) - 0.01s (98.41-98.42) | AR: 207.15s
-147. Etan Huang (2022HUAN26. Canada. _North America) - 0.01s (33.63-33.64) | AR: 275.26s
-147. Raffaele Russo Spena (2023SPEN01. Italy. _Europe) - 0.01s (56.94-56.95) | AR: 127.71s
-147. Balázs Polyák (2017POLY02. Hungary. _Europe) - 0.01s (91.30-91.31) | AR: 114.31s
-147. Colm McCarthy (2018MCCA02. Ireland. _Europe) - 0.01s (25.43-25.44) | AR: 170.28s
-147. Boqin Zhao (赵博钦) (2017ZHAO32. China. _Asia) - 0.01s (31.29-31.30) | AR: 169.43s
-147. Keenan Johnson (2016JOHN30. USA. _North America) - 0.01s (53.65-53.66) | AR: 289.75s
-147. Conlin Alzheimer (2022ALZH01. USA. _North America) - 0.01s (77.33-77.34) | AR: 92.88s
-147. Yunqi Ouyang (欧阳韵奇) (2007YUNQ01. China. _Asia) - 0.01s (98.07-98.08) | AR: 214.83s
-147. Carlo Malagar (2023MALA01. Australia. _Oceania) - 0.01s (70.32-70.33) | AR: 167.09s
-147. Adam Black (2022BLAC01. United Kingdom. _Europe) - 0.01s (79.86-79.87) | AR: 158.72s
-147. Tan Wei Kee (陈伟祺) (2022KEET01. Malaysia. _Asia) - 0.01s (35.13-35.14) | AR: 133.56s
-147. Tim Wong (2007WONG02. USA. _North America) - 0.01s (44.20-44.21) | AR: 98.87s
-147. Kevin Gerhardt (2013GERH01. Germany. _Europe) - 0.01s (146.27-146.28) | AR: 229.77s
-147. Stefan Pochmann (2003POCH01. Germany. _Europe) - 0.01s (270.56-270.57) | AR: 1943.95s
-147. Vishwa Sankar (2017SANK04. USA. _North America) - 0.01s (87.45-87.46) | AR: 488.79s
-147. Lim Hung (林弘) (2016HUNG08. Malaysia. _Asia) - 0.01s (61.24-61.25) | AR: 75.80s
-147. Jakub Turczyk (2022TURC02. Poland. _Europe) - 0.01s (102.77-102.78) | AR: 259.64s
-147. Katharina Schlomberg (2020SCHL01. Germany. _Europe) - 0.01s (64.24-64.25) | AR: 172.69s
-147. Francisco Garrido Valenzuela (2010VALE01. Chile. _South America) - 0.01s (430.43-430.44) | AR: 179.57s
-147. Shane Grogan (2011GROG02. USA. _North America) - 0.01s (189.54-189.55) | AR: 264.98s
-147. Jaden Lim (2017LIMJ02. Philippines. _Asia) - 0.01s (43.61-43.62) | AR: 120.64s
-147. Andrey Ivanov (2012IVAN02. Russia. _Europe) - 0.01s (72.53-72.54) | AR: 406.54s
-147. Federico De Paoli (2019PAOL02. Italy. _Europe) - 0.01s (42.05-42.06) | AR: 64.01s
-147. Artur Miralles Hernàndez (2015HERN17. Spain. _Europe) - 0.01s (78.88-78.89) | AR: 269.47s
-147. Daan Baartmans (2014BAAR01. Netherlands. _Europe) - 0.01s (114.33-114.34) | AR: 215.31s
-147. Marcin Zalewski (2011ZALE02. Poland. _Europe) - 0.01s (37.80-37.81) | AR: 143.00s
-147. Yuji Yoshida (2015YOSH01. Philippines. _Asia) - 0.01s (92.54-92.55) | AR: 256.54s
-147. Laura Holzhauer (2016HOLZ01. Germany. _Europe) - 0.01s (107.41-107.42) | AR: 98.00s
-147. Ben Zoller (2013ZOLL01. USA. _North America) - 0.01s (104.71-104.72) | AR: 373.00s
+147. Timo Günthardt (2019GUNT04. Switzerland. _Europe) - 0.01s (37.20-37.21) | AR: 226.32s
+147. Jiaye Cheng (程嘉烨) (2026CHEN19. China. _Asia) - 0.01s (28.91-28.92) | AR: 42.78s
+147. Aldo Feandri (2009FEAN01. Indonesia. _Asia) - 0.01s (68.85-68.86) | AR: 359.11s
+147. Sébastien Auroux (2008AURO01. Germany. _Europe) - 0.01s (117.21-117.22) | AR: 251.68s
+147. Ryan Wu (2017WURY01. Canada. _North America) - 0.01s (82.42-82.43) | AR: 184.55s
+147. Cary Huang (2015HUAN48. USA. _North America) - 0.01s (61.16-61.17) | AR: 203.18s
+147. Timo Norrkniivilä (2017NORR01. Finland. _Europe) - 0.01s (37.40-37.41) | AR: 142.16s
+147. Putian Ye (叶溥天) (2021YEPU01. China. _Asia) - 0.01s (57.06-57.07) | AR: 432.37s
+147. Kalin Doherty (2021DOHE02. Ireland. _Europe) - 0.01s (42.96-42.97) | AR: 204.42s
+147. Aaron Soley (2017SOLE01. USA. _North America) - 0.01s (114.59-114.60) | AR: 232.14s
+147. Pauline Bonnaudet (2009BONN01. France. _Europe) - 0.01s (153.23-153.24) | AR: 173.85s
+147. Radosław Opoka (2013OPOK01. Poland. _Europe) - 0.01s (24.53-24.54) | AR: 187.08s
+147. Aris Raksamani (อริศม์ รักษมณี) (2017RAKS01. Thailand. _Asia) - 0.01s (49.36-49.37) | AR: 218.61s
+147. Clara Lafourcade (2014LAFO02. France. _Europe) - 0.01s (81.61-81.62) | AR: 198.92s
 147. Alexandru Ignat (2019IGNA02. Romania. _Europe) - 0.01s (100.70-100.71) | AR: 315.82s
-147. Arthur Provot (2018PROV01. France. _Europe) - 0.01s (133.19-133.20) | AR: 256.20s
-147. Jonghyun Kim (김종현) (2024KIMJ11. Korea. _Asia) - 0.01s (38.85-38.86) | AR: 39.11s
-147. Jared Phelps (2008PHEL01. USA. _North America) - 0.01s (231.30-231.31) | AR: 185.78s
-147. Parth Garg (2014GARG01. USA. _North America) - 0.01s (33.64-33.65) | AR: 324.11s
-147. Harvie Partridge (2015PART04. United Kingdom. _Europe) - 0.01s (104.35-104.36) | AR: 153.45s
-147. Hannes Müller (2018MULL07. Germany. _Europe) - 0.01s (75.83-75.84) | AR: 312.03s
-147. Raúl Morales Hidalgo (2013MORA02. Spain. _Europe) - 0.01s (129.94-129.95) | AR: 118.13s
+147. Ilya Tsiareshka (2012TERE01. Belarus. _Europe) - 0.01s (249.64-249.65) | AR: 497.35s
+147. Louis de Mendonça (2013MEND03. United Kingdom. _Europe) - 0.01s (73.39-73.40) | AR: 187.98s
+147. Kevin Matthews (2010MATT02. Canada. _North America) - 0.01s (71.95-71.96) | AR: 252.40s
+147. Šimon Borovský (2019BORO03. Slovakia. _Europe) - 0.01s (26.11-26.12) | AR: 152.60s
+147. Enoch Gray (2012GRAY01. USA. _North America) - 0.01s (39.44-39.45) | AR: 135.54s
+147. Michał Pleskowicz (2009PLES01. Poland. _Europe) - 0.01s (93.46-93.47) | AR: 368.50s
+147. Bohdan Pylypchak (Богдан Пилипчак) (2017PYLY01. Ukraine. _Europe) - 0.01s (51.22-51.23) | AR: 62.78s
+147. Ramses Amaya (2014AMAY01. Colombia. _South America) - 0.01s (32.53-32.54) | AR: 207.37s
+147. Joey Mait (2016MAIT02. USA. _North America) - 0.01s (49.78-49.79) | AR: 348.66s
+147. Henri Gerber (2014GERB01. Germany. _Europe) - 0.01s (50.39-50.40) | AR: 143.89s
+147. Calix Tang (2015TANG04. USA. _North America) - 0.01s (37.32-37.33) | AR: 35.37s
+147. Thiago Han (2022HANT01. Brazil. _South America) - 0.01s (27.31-27.32) | AR: 29.17s
 147. Gavriel Johann Arcilla (2023ARCI02. Philippines. _Asia) - 0.01s (14.98-14.99) | AR: 46.72s
-147. Corentin Thomée (2018THOM07. Belgium. _Europe) - 0.01s (29.58-29.59) | AR: 54.66s
-147. Kamil Michalak (2016MICH01. Poland. _Europe) - 0.01s (38.32-38.33) | AR: 146.42s
-147. Thierry Boisivon (2011BOIS01. France. _Europe) - 0.01s (87.26-87.27) | AR: 359.15s
-147. Silvan Venzin (2021VENZ01. Switzerland. _Europe) - 0.01s (126.21-126.22) | AR: 193.19s
-147. Tyson Mao (毛台勝) (2004MAOT02. USA. _North America) - 0.01s (105.71-105.72) | AR: 156.74s
-147. Thomas Valles (2013VALL03. USA. _North America) - 0.01s (119.78-119.79) | AR: 103.23s
-147. Leo Lindqvist (2017LIND01. Sweden. _Europe) - 0.01s (162.76-162.77) | AR: 175.25s
-147. Glen Goh Wee Zhuan (吴洧全) (2015ZHUA01. Singapore. _Asia) - 0.01s (117.06-117.07) | AR: 1106.01s
-147. Michał Krasowski (2013KRAS02. Poland. _Europe) - 0.01s (105.66-105.67) | AR: 282.75s
-147. Luukas Lempinen (2021LEMP01. Finland. _Europe) - 0.01s (87.55-87.56) | AR: 222.21s
-147. Valentín Fernando Olguín Martínez (2023MART47. Mexico. _North America) - 0.01s (26.05-26.06) | AR: 79.96s
-147. Keaton Ellis (2012ELLI01. USA. _North America) - 0.01s (138.41-138.42) | AR: 228.25s
-147. Adamo Sabbadin (2021SABB01. Switzerland. _Europe) - 0.01s (45.75-45.76) | AR: 235.61s
-147. Hirotaka Ito (伊藤大平) (2008ITOH01. Japan. _Asia) - 0.01s (37.64-37.65) | AR: 73.79s
-147. Krystian Węgrzyn (2021WEGR01. Poland. _Europe) - 0.01s (30.47-30.48) | AR: 111.25s
-147. Jacob Oliver Bruun (2018BRUU01. Norway. _Europe) - 0.01s (49.17-49.18) | AR: 164.87s
-147. Romain Velcin (2023VELC01. France. _Europe) - 0.01s (55.82-55.83) | AR: 134.08s
-147. Emanuel Rheinert (2011RHEI01. Germany. _Europe) - 0.01s (97.61-97.62) | AR: 180.83s
-147. Teruki Tamura (田村旭輝) (2016TAMU01. Japan. _Asia) - 0.01s (44.56-44.57) | AR: 64.01s
-147. Oscar Shapiama (2022SHAP06. Peru. _South America) - 0.01s (100.26-100.27) | AR: 137.16s
-147. Cindy Xiaoyue Huang (黄小越) (2019HUAN73. China. _Asia) - 0.01s (29.72-29.73) | AR: 49.85s
-147. Adam Kędziorski (2019KEDZ01. Poland. _Europe) - 0.01s (81.44-81.45) | AR: 189.18s
-147. Filip Nilsen (2016NILS03. Norway. _Europe) - 0.01s (198.61-198.62) | AR: 213.15s
-147. Benjamin Gottschalk (2016GOTT01. USA. _North America) - 0.01s (149.96-149.97) | AR: 193.72s
-147. Matěj Mužátko (2013MUAT01. Czech Republic. _Europe) - 0.01s (33.42-33.43) | AR: 256.27s
-147. Samuel Martinez Sanchez (2019SANC20. Colombia. _South America) - 0.01s (89.52-89.53) | AR: 75.74s
-147. Xingyan Ding (丁醒炎) (2014DING02. China. _Asia) - 0.01s (44.80-44.81) | AR: 228.10s
-147. Wong Chong Wen (黄崇文) (2014WENW01. Singapore. _Asia) - 0.01s (96.87-96.88) | AR: 187.33s
-147. Valerii Klymenko (2023KLYM02. Ukraine. _Europe) - 0.01s (58.35-58.36) | AR: 95.25s
-147. Ville Vasilis (2024VASI03. Sweden. _Europe) - 0.01s (55.20-55.21) | AR: 246.27s
-147. Xinyun Chen (陈新运) (2017CHEN36. China. _Asia) - 0.01s (60.05-60.06) | AR: 61.28s
-147. Sebastian Werb (2012WERB01. Germany. _Europe) - 0.01s (48.12-48.13) | AR: 248.45s
-147. Dylan Trueblood (2023TRUE02. USA. _North America) - 0.01s (112.03-112.04) | AR: 235.95s
-147. Daniel Schreiber Guimarães (2018GUIM02. Brazil. _South America) - 0.01s (136.61-136.62) | AR: 145.83s
-147. Aaron Spiller (2018SPIL01. Australia. _Oceania) - 0.01s (84.54-84.55) | AR: 233.93s
-147. Håvard Elias Helland (2022HELL03. Norway. _Europe) - 0.01s (74.46-74.47) | AR: 146.94s
-147. Chu Yiu On (朱耀安) (2019ONCH01. Hong Kong. _Asia) - 0.01s (29.49-29.50) | AR: 171.88s
-147. Stepan Kaplinskyi (Степан Каплінський) (2024KAPL01. Ukraine. _Europe) - 0.01s (68.55-68.56) | AR: 307.56s
-147. Yuki Tsuneyoshi (恒吉優紀) (2023TSUN01. Japan. _Asia) - 0.01s (25.31-25.32) | AR: 157.77s
-147. Clancy Caster (2017CAST08. USA. _North America) - 0.01s (337.59-337.60) | AR: 53.05s
-147. Jordan Crippa (2019CRIP01. Italy. _Europe) - 0.01s (184.71-184.72) | AR: 272.64s
-147. Bowen Xiao (肖博文) (2017XIAO09. China. _Asia) - 0.01s (23.81-23.82) | AR: 96.31s
-147. Inbar Segal (2022SEGA01. Israel. _Europe) - 0.01s (105.31-105.32) | AR: 358.68s
-147. Vicente Astroza (2017ASTR01. Chile. _South America) - 0.01s (162.35-162.36) | AR: 38.81s
-147. Michael Young (2008YOUN02. USA. _North America) - 0.01s (118.36-118.37) | AR: 324.38s
-147. Andrew Le (2009LEAN01. USA. _North America) - 0.01s (46.98-46.99) | AR: 146.99s
-147. Łukasz Dubicki (2018DUBI01. Poland. _Europe) - 0.01s (143.14-143.15) | AR: 509.13s
-147. Kabyanil Talukdar (2013TALU01. India. _Asia) - 0.01s (36.45-36.46) | AR: 104.69s
-147. Christopher Sun (2017SUNC02. USA. _North America) - 0.01s (31.65-31.66) | AR: 84.37s
-147. Raphael Riener (2017RIEN01. Austria. _Europe) - 0.01s (115.81-115.82) | AR: 360.71s
-147. DaYeong Kim (김다영) (2016KIMD05. Korea. _Asia) - 0.01s (165.48-165.49) | AR: 349.91s
-147. Wilson Alvis (陈智胜) (2011ALVI01. Indonesia. _Asia) - 0.01s (129.78-129.79) | AR: 184.45s
-147. Greehith Annabathina (2022ANNA01. India. _Asia) - 0.01s (59.41-59.42) | AR: 157.70s
-147. Josh Weimer (2016WEIM01. USA. _North America) - 0.01s (23.56-23.57) | AR: 81.72s
-147. Naufal Shidqi (2010SHID01. Indonesia. _Asia) - 0.01s (165.40-165.41) | AR: 147.25s
-147. Sivakorn Makcharoen (ศิวกร มรรคเจริญ) (2017MAKC01. Thailand. _Asia) - 0.01s (144.96-144.97) | AR: 155.61s
-147. James McCambridge (2019MCCA09. Ireland. _Europe) - 0.01s (65.12-65.13) | AR: 151.83s
-147. Fanny Pousset (2016POUS01. France. _Europe) - 0.01s (159.07-159.08) | AR: 164.81s
+147. Willem Klose (2017KLOS01. Germany. _Europe) - 0.01s (45.67-45.68) | AR: 148.29s
+147. Carlos Pedro Casado de Achával (2012ACHA01. Argentina. _South America) - 0.01s (185.74-185.75) | AR: 239.30s
+147. Angelo Zhang (2014ZHAN01. USA. _North America) - 0.01s (23.17-23.18) | AR: 105.09s
+147. Luca Rizzi (2015RIZZ02. Switzerland. _Europe) - 0.01s (126.71-126.72) | AR: 248.54s
+147. Alexia Plantivaux (2019PLAN02. France. _Europe) - 0.01s (44.80-44.81) | AR: 211.54s
+147. Steven Kearns (2015KEAR01. United Kingdom. _Europe) - 0.01s (40.36-40.37) | AR: 176.20s
+147. Cham J. Chambers (2017CHAM09. United Kingdom. _Europe) - 0.01s (56.32-56.33) | AR: 166.75s
+147. Lennon Hughes (2017HUGH04. Australia. _Oceania) - 0.01s (54.12-54.13) | AR: 300.38s
+147. Xun Zhao (赵洵) (2015ZHAO07. China. _Asia) - 0.01s (79.11-79.12) | AR: 79.85s
+147. Mats Bergsten (2008BERG04. Sweden. _Europe) - 0.01s (116.21-116.22) | AR: 421.58s
+147. Theo Goluboff (2017GOLU01. Argentina. _South America) - 0.01s (32.31-32.32) | AR: 86.21s
+147. Jimbo Cai (2023CAIJ01. Canada. _North America) - 0.01s (25.88-25.89) | AR: 118.92s
+147. Chenhao Sun (孙晨皓) (2018SUNC02. China. _Asia) - 0.01s (30.98-30.99) | AR: 138.54s
+147. Julien Blin (2023BLIN01. France. _Europe) - 0.01s (60.61-60.62) | AR: 234.65s
+147. Luke Garrett (2017GARR05. USA. _North America) - 0.01s (43.48-43.49) | AR: 204.92s
+147. Ole Nikolai Gjerset (2011GJER02. Norway. _Europe) - 0.01s (159.04-159.05) | AR: 370.87s
+147. Masato Fujiwara (藤原正人) (2019FUJI07. Japan. _Asia) - 0.01s (20.15-20.16) | AR: 24.86s
+147. Daniel Gracia Ortiz (2009ORTI01. Spain. _Europe) - 0.01s (63.68-63.69) | AR: 179.51s
+147. Shifei Dai (代时飞) (2015DAIS01. China. _Asia) - 0.01s (128.88-128.89) | AR: 192.70s
+147. AJ Nicholls (2015NICH04. United Kingdom. _Europe) - 0.01s (155.90-155.91) | AR: 249.38s
+147. Benjamin Bjerring Bach (2023BACH04. Denmark. _Europe) - 0.01s (142.06-142.07) | AR: 180.57s
+147. Angel David Alvarado Sandoval (2022SAND19. Colombia. _South America) - 0.01s (31.97-31.98) | AR: 58.87s
+147. Raymos Castillo (2017CAST41. USA. _North America) - 0.01s (74.44-74.45) | AR: 329.29s
+147. Jaye Sloan (2022SLOA01. United Kingdom. _Europe) - 0.01s (21.32-21.33) | AR: 243.41s
+147. Alban Reynaud (2011REYN02. France. _Europe) - 0.01s (189.34-189.35) | AR: 278.55s
+147. Nakai Velasquez (2008VELA01. USA. _North America) - 0.01s (437.83-437.84) | AR: 275.20s
+147. Sora Sato (2018SATO01. Australia. _Oceania) - 0.01s (92.28-92.29) | AR: 294.66s
+147. Stephane Tahon (2018TAHO01. France. _Europe) - 0.01s (192.41-192.42) | AR: 203.92s
 147. Daniel Houghton (2016HOUG03. Switzerland. _Europe) - 0.01s (80.96-80.97) | AR: 258.89s
-147. Maximilian Neitzel (2009NEIT01. Germany. _Europe) - 0.01s (134.08-134.09) | AR: 188.05s
-147. Ansel de Jong (2023JONG01. USA. _North America) - 0.01s (89.72-89.73) | AR: 247.61s
+147. Amanda Sugiharto (2017SUGI03. Indonesia. _Asia) - 0.01s (141.67-141.68) | AR: 159.09s
+147. Jason Ostdiek (2017OSTD02. USA. _North America) - 0.01s (52.53-52.54) | AR: 180.15s
+147. Sinpei Araki (荒木慎平) (2006ARAK01. Japan. _Asia) - 0.01s (101.18-101.19) | AR: 141.47s
+147. Jiachi Han (韩佳池) (2014HANJ02. China. _Asia) - 0.01s (59.54-59.55) | AR: 295.25s
+147. Andrew Tan Jing Bang (2019BANG01. Singapore. _Asia) - 0.01s (33.11-33.12) | AR: 218.82s
+147. James Hildreth (2009HILD01. USA. _North America) - 0.01s (88.27-88.28) | AR: 312.53s
+147. Jason White (2016WHIT16. USA. _North America) - 0.01s (73.70-73.71) | AR: 298.63s
+147. Vidar Norstein Klungre (2008KLUN01. Norway. _Europe) - 0.01s (74.84-74.85) | AR: 322.55s
+147. Oleh Toporovych (2018TOPO01. Ukraine. _Europe) - 0.01s (100.27-100.28) | AR: 205.60s
+147. Alexis Tremellat (2022TREM02. France. _Europe) - 0.01s (76.52-76.53) | AR: 332.49s
+147. Erik Akkersdijk (2005AKKE01. Netherlands. _Europe) - 0.01s (149.58-149.59) | AR: 323.49s
+147. Felix Christian Schmidt (2022SCHM01. Germany. _Europe) - 0.01s (109.31-109.32) | AR: 362.04s
+147. Adrián Ramírez (2013RAMI02. Guatemala. _North America) - 0.01s (307.91-307.92) | AR: 1059.88s
+147. Jaden Lim (2017LIMJ02. Philippines. _Asia) - 0.01s (43.61-43.62) | AR: 120.64s
+147. Valentin Hoffmann (2011HOFF02. France. _Europe) - 0.01s (55.28-55.29) | AR: 506.13s
+147. John Axel B. Gordo (2023GORD04. Philippines. _Asia) - 0.01s (23.01-23.02) | AR: 56.91s
+147. Diego Meneghetti (2012MENE01. Brazil. _South America) - 0.01s (33.00-33.01) | AR: 371.71s
+147. Wojciech Knott (2011KNOT01. Poland. _Europe) - 0.01s (177.12-177.13) | AR: 221.35s
+147. Wojciech Szatanowski (2011SZAT01. Poland. _Europe) - 0.01s (129.39-129.40) | AR: 422.64s
+147. Jakov Srečković (2021SREC01. Croatia. _Europe) - 0.01s (21.42-21.43) | AR: 74.99s
+147. Zicong Liu (刘子聪) (2024LIUZ11. China. _Asia) - 0.01s (19.94-19.95) | AR: 44.02s
+147. Rafael Rodriguez Santana (2012SANT12. Spain. _Europe) - 0.01s (108.49-108.50) | AR: 257.79s
+147. Bruno Lezama (2014LEZA02. Uruguay. _South America) - 0.01s (92.30-92.31) | AR: 448.70s
+147. Chris Chi (2014CHIC01. USA. _North America) - 0.01s (29.19-29.20) | AR: 212.50s
+147. Tim Wong (2007WONG02. USA. _North America) - 0.01s (44.20-44.21) | AR: 98.87s
+147. Carlo Malagar (2023MALA01. Australia. _Oceania) - 0.01s (70.32-70.33) | AR: 167.09s
+147. Raymond Goslow (2014GOSL01. USA. _North America) - 0.01s (68.37-68.38) | AR: 214.64s
+147. Mateusz Szwugier (2014SZWU01. Poland. _Europe) - 0.01s (110.43-110.44) | AR: 200.62s
+147. Ilona Ansel (2016ANSE02. France. _Europe) - 0.01s (21.48-21.49) | AR: 118.68s
+147. Vasco Vasconcelos (2008VASC01. Portugal. _Europe) - 0.01s (66.99-67.00) | AR: 129.79s
+147. Parth Garg (2014GARG01. USA. _North America) - 0.01s (33.64-33.65) | AR: 324.11s
+147. Clément Cherblanc (2014CHER05. France. _Europe) - 0.01s (100.30-100.31) | AR: 253.99s
+147. Antoine Cantin (2010CANT02. Canada. _North America) - 0.01s (23.27-23.28) | AR: 332.87s
+147. David Miguel-Santiago (2022MIGU02. USA. _North America) - 0.01s (93.15-93.16) | AR: 198.13s
+147. Alexander Bóna (2023ALEX03. Hungary. _Europe) - 0.01s (21.33-21.34) | AR: 79.27s
+147. Reto Bubendorf (2012BUBE01. Finland. _Europe) - 0.01s (87.61-87.62) | AR: 233.59s
+147. David Karalli (داود قراعلي) (2020KARA01. USA. _North America) - 0.01s (27.28-27.29) | AR: 153.46s
+147. Balázs Polyák (2017POLY02. Hungary. _Europe) - 0.01s (91.30-91.31) | AR: 114.31s
+147. Gaurav Bachani (2017BACH09. India. _Asia) - 0.01s (63.75-63.76) | AR: 437.94s
+147. Daniel Wang (2022WANG06. Australia. _Oceania) - 0.01s (23.06-23.07) | AR: 168.33s
+147. Kacper Rafalski (2024RAFA06. Poland. _Europe) - 0.01s (26.34-26.35) | AR: 47.00s
+147. Leonardo Ezequiel Cruz (2018CRUZ11. Argentina. _South America) - 0.01s (31.72-31.73) | AR: 65.42s
+147. Silvan Venzin (2021VENZ01. Switzerland. _Europe) - 0.01s (126.21-126.22) | AR: 193.19s
+147. Martin Fröhlich (2023FROH01. Austria. _Europe) - 0.01s (22.47-22.48) | AR: 106.87s
+147. Tim Habermaas (2007HABE01. Germany. _Europe) - 0.01s (121.33-121.34) | AR: 155.28s
+147. Shelley Chang (2004CHAN04. USA. _North America) - 0.01s (98.13-98.14) | AR: 442.95s
+147. Arun Kannan (2014KANN02. India. _Asia) - 0.01s (199.04-199.05) | AR: 260.34s
+147. Daniel Anker Hermansen (2017HERM01. Denmark. _Europe) - 0.01s (31.00-31.01) | AR: 122.81s
+147. Victor Valentin Glyrskov (2014GLYR01. Denmark. _Europe) - 0.01s (60.73-60.74) | AR: 99.26s
+147. Manuel Prieto de Antón (2015ANTO04. Spain. _Europe) - 0.01s (102.04-102.05) | AR: 223.13s
+147. Leo Lindqvist (2017LIND01. Sweden. _Europe) - 0.01s (162.76-162.77) | AR: 175.25s
+147. Dominika Warchoł (2021WARC01. Poland. _Europe) - 0.01s (105.31-105.32) | AR: 145.71s
+147. Jesús Lindo García (2013GARC08. Spain. _Europe) - 0.01s (134.80-134.81) | AR: 726.97s
+147. Ádám Barta (2009BART02. Hungary. _Europe) - 0.01s (26.35-26.36) | AR: 55.51s
+147. Dennis Preciado (2022PREC01. Peru. _South America) - 0.01s (37.92-37.93) | AR: 229.37s
+147. Evan Chin (2017CHIN03. USA. _North America) - 0.01s (46.78-46.79) | AR: 253.08s
+147. Caleb Lalik (2023LALI01. USA. _North America) - 0.01s (47.37-47.38) | AR: 92.75s
+147. Charlie Harrison (2017HARR08. United Kingdom. _Europe) - 0.01s (22.46-22.47) | AR: 119.93s
+147. Enda Loftus (2021LOFT01. Ireland. _Europe) - 0.01s (65.84-65.85) | AR: 523.23s
+147. James Molloy (2011MOLL01. United Kingdom. _Europe) - 0.01s (107.12-107.13) | AR: 334.80s
+147. Grigorii Alekseev (2015ALEK01. Russia. _Europe) - 0.01s (28.55-28.56) | AR: 79.34s
+147. Raúl Cuevas Castillo (2018CAST11. Spain. _Europe) - 0.01s (56.37-56.38) | AR: 417.84s
+147. Marcin Chmielewski (2023CHMI01. Poland. _Europe) - 0.01s (23.34-23.35) | AR: 67.26s
+147. Dušan Zakelšek (2012ZAKE02. Slovenia. _Europe) - 0.01s (100.07-100.08) | AR: 241.69s
+147. Greehith Annabathina (2022ANNA01. India. _Asia) - 0.01s (59.41-59.42) | AR: 157.70s
+147. Andrés Hisashi Suzuki Cabrera (2016SUZU03. Peru. _South America) - 0.01s (86.53-86.54) | AR: 168.78s
+147. Clément Gallet (2004GALL02. France. _Europe) - 0.01s (154.85-154.86) | AR: 365.08s
+147. Timothy Goh (2016GOHT01. USA. _North America) - 0.01s (36.06-36.07) | AR: 129.40s
+147. Bastien Ferraud (2022FERR16. France. _Europe) - 0.01s (93.22-93.23) | AR: 106.91s
+147. Tam Quan (2016QUAN03. Australia. _Oceania) - 0.01s (48.05-48.06) | AR: 244.92s
+147. Riley Dexter (2016DEXT01. Australia. _Oceania) - 0.01s (101.37-101.38) | AR: 174.22s
+147. Renan da Cunha Santos (2017SANT12. Brazil. _South America) - 0.01s (137.71-137.72) | AR: 381.42s
+147. Zain Behzaad (2019BEHZ01. India. _Asia) - 0.01s (33.10-33.11) | AR: 200.04s
+147. Nolan Lata Yiu (2016YIUN01. USA. _North America) - 0.01s (24.94-24.95) | AR: 215.19s
+147. Glen Goh Wee Zhuan (吴洧全) (2015ZHUA01. Singapore. _Asia) - 0.01s (117.06-117.07) | AR: 1106.01s
+147. Ishaan Agrawal (2015AGRA03. USA. _North America) - 0.01s (24.42-24.43) | AR: 58.90s
+147. Cendy Cahyo Rahmat (2010RAHM02. Indonesia. _Asia) - 0.01s (128.73-128.74) | AR: 190.36s
+147. Leo Johansson (2022JOHA08. Sweden. _Europe) - 0.01s (92.01-92.02) | AR: 161.46s
+147. Kit Clement (2008CLEM01. USA. _North America) - 0.01s (77.37-77.38) | AR: 432.56s
+147. Ainesh Sevellaraja (2012SEVE01. Malaysia. _Asia) - 0.01s (37.23-37.24) | AR: 103.31s
+147. Cindy Xiaoyue Huang (黄小越) (2019HUAN73. China. _Asia) - 0.01s (29.72-29.73) | AR: 49.85s
+147. Joshua Gao (2023GAOJ02. USA. _North America) - 0.01s (20.38-20.39) | AR: 87.87s
+147. Kajetan Opach (2018OPAC01. Poland. _Europe) - 0.01s (40.79-40.80) | AR: 206.57s
+147. Sergio Torrijos Santano (2013SANT13. Spain. _Europe) - 0.01s (136.56-136.57) | AR: 197.65s
+147. Jia-Hong Lu (陸嘉宏) (2007LUJI01. Taiwan. _Asia) - 0.01s (32.29-32.30) | AR: 140.09s
+147. Michał Krasowski (2013KRAS02. Poland. _Europe) - 0.01s (92.03-92.04) | AR: 282.75s
+147. Federico De Paoli (2019PAOL02. Italy. _Europe) - 0.01s (42.05-42.06) | AR: 64.01s
+147. Nipun Das (2017DASN01. USA. _North America) - 0.01s (30.96-30.97) | AR: 168.96s
+147. Jules Desjardin (2010DESJ01. France. _Europe) - 0.01s (92.17-92.18) | AR: 191.09s
+147. Zeke Mackay (2015MACK06. USA. _North America) - 0.01s (90.16-90.17) | AR: 304.45s
+147. Serhii Mormul (Сергій Мормуль) (2012MORM01. Ukraine. _Europe) - 0.01s (93.71-93.72) | AR: 139.53s
+147. Matěj Mužátko (2013MUAT01. Czech Republic. _Europe) - 0.01s (33.42-33.43) | AR: 256.27s
+147. Anqi Yu (2018YUAN02. Bulgaria. _Europe) - 0.01s (57.97-57.98) | AR: 201.74s
+147. Jakob Gunnarsson (2015GUNN01. Sweden. _Europe) - 0.01s (24.01-24.02) | AR: 260.54s
+147. Bpaul Paul (2014PAUL05. Australia. _Oceania) - 0.01s (22.17-22.18) | AR: 89.43s
+147. Tomoaki Sakuma (佐久間智章) (2022SAKU01. Japan. _Asia) - 0.01s (26.84-26.85) | AR: 120.55s
+147. Jonathan Blöcher (2018BLOC01. Germany. _Europe) - 0.01s (28.11-28.12) | AR: 239.48s
+147. Lucas Déglise (2015DEGL01. France. _Europe) - 0.01s (63.66-63.67) | AR: 278.76s
+147. Yongtao Sun (孙永涛) (2013SUNY02. China. _Asia) - 0.01s (83.56-83.57) | AR: 193.41s
+147. Corey Sakowski (2011SAKO01. USA. _North America) - 0.01s (69.12-69.13) | AR: 223.65s
+147. Eddie Artze (2020ARTZ01. USA. _North America) - 0.01s (103.09-103.10) | AR: 288.65s
+147. Victor Chenu (2013CHEN22. France. _Europe) - 0.01s (51.54-51.55) | AR: 348.65s
+147. Saiyam Jain (2015JAIN21. India. _Asia) - 0.01s (49.04-49.05) | AR: 682.71s
+147. Yuhei Takagi (高木佑平) (2008TAKA01. Japan. _Asia) - 0.01s (53.57-53.58) | AR: 242.34s
+147. Thomas Reinke (2018REIN04. USA. _North America) - 0.01s (30.70-30.71) | AR: 208.33s
+147. Hongjie Zhang (张鸿杰) (2018ZHAH02. China. _Asia) - 0.01s (28.68-28.69) | AR: 80.71s
+147. Enzo Mattos (2015MATT05. Brazil. _South America) - 0.01s (124.26-124.27) | AR: 368.69s
+147. DongJae Lee (2018LEED01. Korea. _Asia) - 0.01s (28.95-28.96) | AR: 304.94s
+147. Kabyanil Talukdar (2013TALU01. India. _Asia) - 0.01s (36.45-36.46) | AR: 104.69s
+147. Ethan Davis (2016DAVI02. USA. _North America) - 0.01s (21.81-21.82) | AR: 270.83s
+147. Valerio Locatelli (2018LOCA01. Italy. _Europe) - 0.01s (76.98-76.99) | AR: 138.92s
+147. Anonymous (2017ANON13. Poland. _Europe) - 0.01s (29.15-29.16) | AR: 235.32s
+147. Ko Youngjin (고영진) (2007YOUN04. Korea. _Asia) - 0.01s (40.82-40.83) | AR: 219.37s
+147. Piotr Tokarski (2013TOKA01. Poland. _Europe) - 0.01s (135.06-135.07) | AR: 174.48s
+147. Ignacy Samselski (2022SAMS03. Poland. _Europe) - 0.01s (82.07-82.08) | AR: 181.93s
+147. Christopher Morris (2013MORR03. United Kingdom. _Europe) - 0.01s (32.01-32.02) | AR: 308.67s
+147. Oliver Wheat (2016WHEA01. United Kingdom. _Europe) - 0.01s (52.79-52.80) | AR: 321.94s
+147. Zhi Qiao (乔智) (2009QIAO03. China. _Asia) - 0.01s (33.35-33.36) | AR: 213.01s
+147. Tuval Stone (2022STON03. Israel. _Europe) - 0.01s (85.36-85.37) | AR: 365.34s
+147. Michael Conard (2013CONA01. USA. _North America) - 0.01s (108.67-108.68) | AR: 226.31s
+147. Yi Qu (曲熠) (2021QUYI01. China. _Asia) - 0.01s (121.37-121.38) | AR: 198.50s
+147. Matthew Simpson (2017SIMP04. Canada. _North America) - 0.01s (263.92-263.93) | AR: 0.01s
+147. Braden Richards (2017RICH02. USA. _North America) - 0.01s (126.12-126.13) | AR: 164.99s
+147. Natán Riggenbach (2011RIGG03. Peru. _South America) - 0.01s (103.96-103.97) | AR: 263.47s
+147. Nikhil Mande (2008MAND01. India. _Asia) - 0.01s (80.33-80.34) | AR: 161.81s
+147. Raphael Riener (2017RIEN01. Austria. _Europe) - 0.01s (115.81-115.82) | AR: 360.71s
+147. Gonzalo Orellana Barrasa (2010OREL02. Spain. _Europe) - 0.01s (155.57-155.58) | AR: 193.47s
+147. Michel Ye (2012YEMI01. France. _Europe) - 0.01s (156.56-156.57) | AR: 464.94s
+147. Mohamed Bilal (2019BILA03. India. _Asia) - 0.01s (96.26-96.27) | AR: 301.70s
+147. Fabio Schwandt (2014SCHW02. United Kingdom. _Europe) - 0.01s (35.38-35.39) | AR: 210.48s
+147. Leia Jiang (2014JIAN10. USA. _North America) - 0.01s (41.86-41.87) | AR: 159.35s
+147. Hans Lin (2018LINH02. Australia. _Oceania) - 0.01s (20.79-20.80) | AR: 69.34s
+147. Timothy Castle (2016CAST48. USA. _North America) - 0.01s (20.05-20.06) | AR: 267.69s
+147. Kyeongmin Choi (최경민) (2017CHOI07. Korea. _Asia) - 0.01s (83.96-83.97) | AR: 213.22s
+147. Rían Burke (2019BURK05. Ireland. _Europe) - 0.01s (106.90-106.91) | AR: 305.39s
+147. Ben Ridley (2016RIDL01. United Kingdom. _Europe) - 0.01s (61.01-61.02) | AR: 140.70s
+147. Hassan Khanani (2018KHAN26. USA. _North America) - 0.01s (38.01-38.02) | AR: 139.58s
+147. Timothy Huynh (2017HUYN02. USA. _North America) - 0.01s (101.77-101.78) | AR: 368.00s
+147. Myles Jarman (2016JARM01. Australia. _Oceania) - 0.01s (94.53-94.54) | AR: 240.48s
+147. Rodrigo Zarate (2014ZARA01. Peru. _South America) - 0.01s (40.00-40.01) | AR: 482.37s
+147. Brendan Bakker (貝庭笙) (2015BAKK01. USA. _North America) - 0.01s (56.51-56.52) | AR: 64.53s
+147. Brayden Adams (2018ADAM06. USA. _North America) - 0.01s (70.55-70.56) | AR: 82.97s
+147. Adam Bermingham (2020BERM02. Ireland. _Europe) - 0.01s (87.54-87.55) | AR: 171.62s
+147. Feliks Zemdegs (2009ZEMD01. Australia. _Oceania) - 0.01s (62.97-62.98) | AR: 135.59s
+147. Yichuan Xie (谢逸川) (2016XIEY08. China. _Asia) - 0.01s (24.62-24.63) | AR: 54.83s
+147. Ng Jia Quan (黄佳铨) (2015QUAN03. Malaysia. _Asia) - 0.01s (45.37-45.38) | AR: 247.14s
+147. Jael Riggenbach (2011RIGG02. Peru. _South America) - 0.01s (52.24-52.25) | AR: 379.67s
+147. Jacob Ambrose (2010AMBR01. USA. _North America) - 0.01s (88.12-88.13) | AR: 541.12s
+147. Hannes Müller (2018MULL07. Germany. _Europe) - 0.01s (75.83-75.84) | AR: 312.03s
+147. Raghavendra Nagarajan (2022NAGA01. India. _Asia) - 0.01s (167.13-167.14) | AR: 178.60s
+147. Colm McCarthy (2018MCCA02. Ireland. _Europe) - 0.01s (25.43-25.44) | AR: 170.28s
+147. Lim Hung (林弘) (2016HUNG08. Malaysia. _Asia) - 0.01s (61.24-61.25) | AR: 75.80s
+147. Levin Houghton (2016HOUG01. Switzerland. _Europe) - 0.01s (43.82-43.83) | AR: 226.48s
+147. Corentin Thomée (2018THOM07. Belgium. _Europe) - 0.01s (38.72-38.73) | AR: 54.66s
+147. Bowen Xiao (肖博文) (2017XIAO09. China. _Asia) - 0.01s (23.81-23.82) | AR: 96.31s
+147. Muhammad Fitri Hakim Bin Dzulkarnain (2017DZUL02. Malaysia. _Asia) - 0.01s (236.39-236.40) | AR: 203.02s
+147. Bradley Sampson (2008SAMP01. USA. _North America) - 0.01s (86.18-86.19) | AR: 341.85s
+147. Kevin Gerhardt (2013GERH01. Germany. _Europe) - 0.01s (146.27-146.28) | AR: 229.77s
+147. Luis Fernando Aldás Cuestas (2017CUES02. Ecuador. _South America) - 0.01s (94.84-94.85) | AR: 236.30s
+147. Bill Wang (2010WANG68. Canada. _North America) - 0.01s (41.05-41.06) | AR: 157.79s
+147. Charlie Stark (2014STAR05. United Kingdom. _Europe) - 0.01s (133.83-133.84) | AR: 491.12s
+147. Vincent Hartanto Utomo (2010UTOM01. Indonesia. _Asia) - 0.01s (52.47-52.48) | AR: 237.63s
+147. Julian David (2010DAVI06. Canada. _North America) - 0.01s (72.31-72.32) | AR: 177.66s
+147. Matt Prestwich (2016PRES04. United Kingdom. _Europe) - 0.01s (81.93-81.94) | AR: 364.46s
+147. Aaron Spiller (2018SPIL01. Australia. _Oceania) - 0.01s (84.54-84.55) | AR: 233.93s
+147. Henrik Olsson (2009OLSS01. Sweden. _Europe) - 0.01s (88.52-88.53) | AR: 270.76s
+147. Adam Śmigaj (2021SMIG01. Poland. _Europe) - 0.01s (41.00-41.01) | AR: 97.45s
+147. Ben Zoller (2013ZOLL01. USA. _North America) - 0.01s (104.71-104.72) | AR: 373.00s
+147. Vishwanath Jeyaraman (2016JEYA01. India. _Asia) - 0.01s (22.88-22.89) | AR: 186.91s
+147. Damir Zhanataev (2017ZHAD01. Kazakhstan. _Asia) - 0.01s (95.55-95.56) | AR: 232.83s
+147. Jordan Crippa (2019CRIP01. Italy. _Europe) - 0.01s (184.71-184.72) | AR: 272.64s
+147. Daan Baartmans (2014BAAR01. Netherlands. _Europe) - 0.01s (114.33-114.34) | AR: 215.31s
+147. Emmet Hobbs (2016HOBB01. Australia. _Oceania) - 0.01s (79.69-79.70) | AR: 258.89s
+147. Yuheng Wu (吴雨衡) (2018WUYU03. China. _Asia) - 0.01s (108.94-108.95) | AR: 224.01s
+147. Abhinav Agarwal (2025AGAR02. USA. _North America) - 0.01s (75.30-75.31) | AR: 106.41s
+147. Marco Rota (2009ROTA01. Italy. _Europe) - 0.01s (84.10-84.11) | AR: 401.78s
+147. Jakub Drobný (2016DROB01. Slovakia. _Europe) - 0.01s (114.63-114.64) | AR: 134.12s
+147. Matteo Colombo (2009COLO03. Italy. _Europe) - 0.01s (55.40-55.41) | AR: 107.80s
+147. Max Siauw (2017SIAU02. USA. _North America) - 0.01s (43.44-43.45) | AR: 177.93s
+147. Anton Piau (2008PIAU01. France. _Europe) - 0.01s (296.24-296.25) | AR: 293.37s
+147. Jack McDougall (2020MCDO01. New Zealand. _Oceania) - 0.01s (25.41-25.42) | AR: 163.71s
+147. Frederick Zheng (2018ZHEN45. USA. _North America) - 0.01s (71.30-71.31) | AR: 161.83s
+147. Daniel Schreiber Guimarães (2018GUIM02. Brazil. _South America) - 0.01s (136.61-136.62) | AR: 145.83s
+147. Manu Vereecken (2010VERE01. Belgium. _Europe) - 0.01s (62.46-62.47) | AR: 374.20s
+147. Thomas Patterson (2014PATT02. United Kingdom. _Europe) - 0.01s (29.78-29.79) | AR: 308.66s
+147. Bartłomiej Owczarek (2013OWCZ01. Poland. _Europe) - 0.01s (126.14-126.15) | AR: 243.82s
+147. Naoto Kobayashi (小林直登) (2017SHIN02. Japan. _Asia) - 0.01s (32.63-32.64) | AR: 94.46s
+147. Marco Giordano (2019GIOR02. Italy. _Europe) - 0.01s (122.51-122.52) | AR: 227.89s
+147. Tien Tran (2018TRAN09. USA. _North America) - 0.01s (22.68-22.69) | AR: 33.66s
+147. Yuxin Wang (王宇欣) (2009WANG62. China. _Asia) - 0.01s (37.61-37.62) | AR: 169.37s
+147. Sivakorn Makcharoen (ศิวกร มรรคเจริญ) (2017MAKC01. Thailand. _Asia) - 0.01s (144.96-144.97) | AR: 155.61s
+147. Maxim Chechnev (2011CHEC01. Russia. _Europe) - 0.01s (91.12-91.13) | AR: 659.44s
+147. Miles Greco (2022GREC01. USA. _North America) - 0.01s (38.54-38.55) | AR: 307.05s
+147. Komahal Eswaran (2022ESWA01. India. _Asia) - 0.01s (151.94-151.95) | AR: 231.00s
+147. Aditya Arunkumar (2021ARUN01. USA. _North America) - 0.01s (57.06-57.07) | AR: 203.65s
+147. Anthony Gerard Álvarez Ludeña (2018LUDE01. Ecuador. _South America) - 0.01s (75.70-75.71) | AR: 192.18s
+147. Adrien Neveu (2018NEVE02. France. _Europe) - 0.01s (38.92-38.93) | AR: 408.13s
+147. Víctor Adán Solis Martinez (2017MART94. Mexico. _North America) - 0.01s (54.79-54.80) | AR: 87.71s
+147. Auric Cui (2022CUIA01. Australia. _Oceania) - 0.01s (62.84-62.85) | AR: 135.05s
+147. Xinyu Wang (王欣宇) (2017WANX08. China. _Asia) - 0.01s (131.11-131.12) | AR: 24.01s
+147. Chih-Chuan Yang (楊智全) (2018YANG92. Taiwan. _Asia) - 0.01s (20.44-20.45) | AR: 119.81s
+147. Tyler Williams (2017WILL05. Australia. _Oceania) - 0.01s (114.96-114.97) | AR: 223.25s
+147. Samuel Moliver (2017MOLI05. Australia. _Oceania) - 0.01s (46.67-46.68) | AR: 310.29s
+147. Thomas Strasser (2022STRA10. Austria. _Europe) - 0.01s (24.38-24.39) | AR: 235.95s
+147. Leo Guernion (2013GUER03. France. _Europe) - 0.01s (28.86-28.87) | AR: 749.14s
+147. Fanny Pousset (2016POUS01. France. _Europe) - 0.01s (159.07-159.08) | AR: 164.81s
+147. Nathan Benson (2022BENS01. USA. _North America) - 0.01s (99.70-99.71) | AR: 114.47s
+147. Roberto Carcamo (2020CARC01. USA. _North America) - 0.01s (96.30-96.31) | AR: 145.03s
+147. Jayce Li (2019LIJA01. Canada. _North America) - 0.01s (57.20-57.21) | AR: 91.12s
+147. Lorenzo Vigani Poli (2007POLI01. Italy. _Europe) - 0.01s (138.68-138.69) | AR: 325.44s
+147. Anawin Chaichana (อนาวิล ชัยชนะ) (2023CHAI02. Thailand. _Asia) - 0.01s (27.08-27.09) | AR: 99.31s
+147. Yurii Riabov (Юрій Рябов) (2018RIAB01. Ukraine. _Europe) - 0.01s (106.28-106.29) | AR: 151.58s
+147. Yu Nakajima (中島悠) (2007NAKA03. Japan. _Asia) - 0.01s (62.55-62.56) | AR: 164.19s
+147. Naomi Solnick (2024SOLN01. USA. _North America) - 0.01s (44.09-44.10) | AR: 90.57s
+147. Cale Schoon (2014SCHO02. USA. _North America) - 0.01s (35.68-35.69) | AR: 82.68s
+147. Yanyan Zuo (左艳艳) (2019ZUOY01. China. _Asia) - 0.01s (143.62-143.63) | AR: 159.92s
+147. Michael Young (2008YOUN02. USA. _North America) - 0.01s (118.36-118.37) | AR: 324.38s
+147. Matthew Dickman (2013DICK01. USA. _North America) - 0.01s (97.22-97.23) | AR: 221.28s
+147. Laura Holzhauer (2016HOLZ01. Germany. _Europe) - 0.01s (107.41-107.42) | AR: 98.00s
+147. Oleksandr Ivanchak (Олександр Іванчак) (2015IVAN03. Ukraine. _Europe) - 0.01s (28.01-28.02) | AR: 152.99s
+147. Jan Fonš (2017FONS04. Czech Republic. _Europe) - 0.01s (32.89-32.90) | AR: 224.78s
+147. Shikai Jiang (江侍锴) (2012JIAN07. China. _Asia) - 0.01s (132.30-132.31) | AR: 131.97s
+147. Yinghao Wang (王鹰豪) (2010WANG07. China. _Asia) - 0.01s (117.84-117.85) | AR: 220.67s
+147. James McCambridge (2019MCCA09. Ireland. _Europe) - 0.01s (65.12-65.13) | AR: 151.83s
+147. Jared Blanco (2021BLAN02. USA. _North America) - 0.01s (29.83-29.84) | AR: 29.44s
+147. Thor Muto Asmund (2017ASMU01. Denmark. _Europe) - 0.01s (89.43-89.44) | AR: 141.99s
+147. Artur Miralles Hernàndez (2015HERN17. Spain. _Europe) - 0.01s (78.88-78.89) | AR: 269.47s
+147. Simone Bentlage (2014OHLE01. Germany. _Europe) - 0.01s (120.36-120.37) | AR: 260.29s
+147. Adam Black (2022BLAC01. United Kingdom. _Europe) - 0.01s (79.86-79.87) | AR: 158.72s
+147. Haotian Shi (史浩天) (2024SHIH06. China. _Asia) - 0.01s (26.42-26.43) | AR: 39.70s
+147. Alexis Fedeler (2015FEDE01. Germany. _Europe) - 0.01s (115.60-115.61) | AR: 135.02s
+147. Tianyu Zhao (赵天愉) (2014ZHAO12. China. _Asia) - 0.01s (30.32-30.33) | AR: 66.30s
+147. Mohammed Aiman Koli (2017KOLI01. India. _Asia) - 0.01s (55.49-55.50) | AR: 157.98s
+147. David McLean (2017MCLE03. Australia. _Oceania) - 0.01s (106.31-106.32) | AR: 218.64s
+147. Jia-Wei Liu (劉家瑋) (2012LIUJ06. Taiwan. _Asia) - 0.01s (49.75-49.76) | AR: 277.48s
+147. Emanuel Rheinert (2011RHEI01. Germany. _Europe) - 0.01s (97.61-97.62) | AR: 180.83s
+147. Daniel Mullen (2016MULL04. USA. _North America) - 0.01s (116.73-116.74) | AR: 245.79s
+147. Kevin Arturo Huamán Ruiz (2014RUIZ10. Peru. _South America) - 0.01s (101.50-101.51) | AR: 344.85s
+147. Simon Bourigault (2007BOUR01. France. _Europe) - 0.01s (95.40-95.41) | AR: 132.48s
+147. Gabriel Barrios (2014BARR02. Guatemala. _North America) - 0.01s (21.21-21.22) | AR: 225.50s
+147. Oana-Simona Vrabie (2022VRAB01. Romania. _Europe) - 0.01s (150.02-150.03) | AR: 204.44s
+147. Erik Tjong Kim Sang (2018SANG01. Netherlands. _Europe) - 0.01s (145.90-145.91) | AR: 361.72s
+147. Jefferson Durango (2014ARGA02. Colombia. _South America) - 0.01s (25.32-25.33) | AR: 36.04s
+147. Alvin Hiu Yeung Cheng (鄭曉洋) (2019YEUN01. Hong Kong. _Asia) - 0.01s (27.52-27.53) | AR: 78.46s
+147. Tan Wei Kee (陈伟祺) (2022KEET01. Malaysia. _Asia) - 0.01s (35.13-35.14) | AR: 133.56s
+147. Thodoris Iatrou (2022IATR01. Greece. _Europe) - 0.01s (41.10-41.11) | AR: 187.88s
+147. Grzegorz Jałocha (2012JALO01. Poland. _Europe) - 0.01s (31.74-31.75) | AR: 115.66s
+147. Diego Alejandro Casas Jimenez (2014JIME05. Colombia. _South America) - 0.01s (134.58-134.59) | AR: 304.87s
+147. Cedric Meysing (2017MEYS02. Germany. _Europe) - 0.01s (59.33-59.34) | AR: 213.89s
+147. Szymon Ruksza (2013RUKS01. Poland. _Europe) - 0.01s (68.01-68.02) | AR: 180.37s
+147. Raúl Morales Hidalgo (2013MORA02. Spain. _Europe) - 0.01s (129.94-129.95) | AR: 118.13s
+147. Justin Sui (2022SUIJ01. USA. _North America) - 0.01s (79.54-79.55) | AR: 190.76s
+147. Javier Tirado Ortiz (2009TIRA01. Spain. _Europe) - 0.01s (174.08-174.09) | AR: 240.42s
+147. Tias Claeys (2024CLAE02. Belgium. _Europe) - 0.01s (67.21-67.22) | AR: 142.77s
+147. Korakot Inkaew (กรกฎ อิ่นแก้ว) (2017INKA01. Thailand. _Asia) - 0.01s (48.02-48.03) | AR: 186.66s
+147. Ivan Krueger (2016KRUE01. USA. _North America) - 0.01s (119.58-119.59) | AR: 280.45s
+147. Alejandro Isaza (2015ISAZ01. Colombia. _South America) - 0.01s (242.43-242.44) | AR: 218.18s
+147. Jakub Turczyk (2022TURC02. Poland. _Europe) - 0.01s (102.77-102.78) | AR: 259.64s
+147. Dallas McNeil (2017MCNE01. Australia. _Oceania) - 0.01s (131.13-131.14) | AR: 149.76s
+147. Hannah Minas (2017MINA04. Switzerland. _Europe) - 0.01s (56.06-56.07) | AR: 135.29s
+147. Lars Vennike Nielsson (2008NIEL01. Denmark. _Europe) - 0.01s (170.77-170.78) | AR: 201.07s
+147. Riccardo Ripoldi (2022RIPO01. Italy. _Europe) - 0.01s (30.76-30.77) | AR: 95.53s
+147. Bhargav Narasimhan (2011NARA02. India. _Asia) - 0.01s (81.50-81.51) | AR: 164.87s
+147. Zakarya Otair (2021OTAI01. Jordan. _Asia) - 0.01s (21.83-21.84) | AR: 87.39s
+147. Felipe Santamaría Ruiz (2022RUIZ03. Venezuela. _South America) - 0.01s (95.88-95.89) | AR: 431.30s
+147. Sreeram Venkatarao (2008VENK01. USA. _North America) - 0.01s (27.69-27.70) | AR: 326.18s
+147. Victor Tang Yao Jun (湯曜駿) (2015JUNV01. Hong Kong. _Asia) - 0.01s (52.84-52.85) | AR: 134.78s
+147. Albert Garriga Gea (2019GEAA01. Spain. _Europe) - 0.01s (187.40-187.41) | AR: 210.95s
+147. Alexander Olleta del Molino (2008OLLE01. Spain. _Europe) - 0.01s (73.41-73.42) | AR: 142.37s
+147. Tristan Patrick (2016PATR03. USA. _North America) - 0.01s (137.04-137.05) | AR: 437.17s
+147. Jakub Majchrzak (2021MAJC01. Poland. _Europe) - 0.01s (93.66-93.67) | AR: 104.85s
+147. Henrik Buus Aagaard (2006BUUS01. Denmark. _Europe) - 0.01s (110.99-111.00) | AR: 296.29s
+147. Radosław Drozdowicz (2012DROZ02. Poland. _Europe) - 0.01s (141.22-141.23) | AR: 159.26s
+147. Xingyu Zhu (朱星宇) (2023ZHUX01. China. _Asia) - 0.01s (63.51-63.52) | AR: 65.73s
+147. Aharon Campoli Tono (2014TONO01. Brazil. _South America) - 0.01s (232.13-232.14) | AR: 339.60s
+147. Ge Shi (石歌) (2024GESH01. China. _Asia) - 0.01s (69.30-69.31) | AR: 167.52s
+147. Dorian Chan (2023DORI01. Hong Kong. _Asia) - 0.01s (62.29-62.30) | AR: 177.64s
+147. Heejun Kim (김희준) (2018KIMH02. Korea. _Asia) - 0.01s (24.37-24.38) | AR: 82.51s
+147. Valentín Fernando Olguín Martínez (2023MART47. Mexico. _North America) - 0.01s (26.05-26.06) | AR: 79.96s
+147. Andrew Le (2009LEAN01. USA. _North America) - 0.01s (46.98-46.99) | AR: 146.99s
+147. Kristian Holme (2013HOLM01. Norway. _Europe) - 0.01s (43.20-43.21) | AR: 278.88s
+147. Marcus Kamen (2015KAME02. USA. _North America) - 0.01s (196.79-196.80) | AR: 158.13s
+147. Rasmus Händén (2016HAND04. Sweden. _Europe) - 0.01s (198.21-198.22) | AR: 827.30s
+147. Eli Rogers (2022ROGE05. USA. _North America) - 0.01s (55.06-55.07) | AR: 256.62s
+147. Shuto Ueno (上野柊斗) (2008UENO01. Japan. _Asia) - 0.01s (29.57-29.58) | AR: 321.34s
+147. Nicolas Gertner Kilian (2013GERT01. France. _Europe) - 0.01s (75.95-75.96) | AR: 259.81s
+147. Lim Zhe Hsien (林哲贤) (2023HSIE09. Singapore. _Asia) - 0.01s (26.97-26.98) | AR: 222.95s
+147. Thierry Boisivon (2011BOIS01. France. _Europe) - 0.01s (87.26-87.27) | AR: 359.15s
+147. Ben Timmons (2017TIMM01. Ireland. _Europe) - 0.01s (54.22-54.23) | AR: 211.93s
+147. Takuma Shirahase (白波瀬拓磨) (2007SHIR01. Japan. _Asia) - 0.01s (52.27-52.28) | AR: 286.80s
+147. Rodrigo Pueblas Núñez (2014NUNE05. Spain. _Europe) - 0.01s (100.19-100.20) | AR: 268.23s
+147. Pedro Azevedo (2018AZEV03. Portugal. _Europe) - 0.01s (79.11-79.12) | AR: 338.56s
+147. Krystian Węgrzyn (2021WEGR01. Poland. _Europe) - 0.01s (30.47-30.48) | AR: 111.25s
+147. Max Kwok U Sam (郭愉琛) (2018SAMK01. Macau. _Asia) - 0.01s (140.06-140.07) | AR: 199.59s
+147. Jode Brewster (2016JONE04. Australia. _Oceania) - 0.01s (105.88-105.89) | AR: 112.01s
+147. Juan Ignacio Caneppa (2019CANE02. Argentina. _South America) - 0.01s (96.32-96.33) | AR: 176.51s
+147. Hubert Hanusiak (2013HANU01. Poland. _Europe) - 0.01s (271.58-271.59) | AR: 271.63s
+147. Israel Machado Soares (2011SOAR01. Brazil. _South America) - 0.01s (123.38-123.39) | AR: 142.23s
+147. David Vujasić (2015VUJA01. Croatia. _Europe) - 0.01s (101.46-101.47) | AR: 157.56s
+147. Aniketh Arya (2015ARYA03. India. _Asia) - 0.01s (120.76-120.77) | AR: 187.74s
+147. Luchen Zhang (张录辰) (2007LUCH02. China. _Asia) - 0.01s (83.03-83.04) | AR: 177.19s
+147. Knut Skaug Haraldsen (2016HARA02. Norway. _Europe) - 0.01s (98.59-98.60) | AR: 288.39s
+147. Angelo Melera (2022MELE01. Switzerland. _Europe) - 0.01s (109.83-109.84) | AR: 385.24s
+147. Benjamin Buchner (2018BUCH03. Canada. _North America) - 0.01s (83.41-83.42) | AR: 51.58s
+147. Guilherme Santana (2019CAMP10. Brazil. _South America) - 0.01s (85.19-85.20) | AR: 203.54s
+147. Shalem Birzavit Meneses Pérez (2018PERE05. Mexico. _North America) - 0.01s (193.74-193.75) | AR: 444.15s
+147. Pedro Santos Guimarães (2007GUIM01. Brazil. _South America) - 0.01s (67.59-67.60) | AR: 107.06s
+147. Yeon Kyun Park (박연균) (2016PARK10. Korea. _Asia) - 0.01s (24.07-24.08) | AR: 83.59s
+147. Misael Gómez Soria (2014SORI01. Mexico. _North America) - 0.01s (147.53-147.54) | AR: 101.31s
+147. Gabriele Bacchieri (2014BACC01. Italy. _Europe) - 0.01s (70.08-70.09) | AR: 585.96s
+147. Kyra Joiner (2015JOIN01. USA. _North America) - 0.01s (58.55-58.56) | AR: 298.23s
+147. Ruohan Qiu (邱若寒) (2012QIUR01. China. _Asia) - 0.01s (87.94-87.95) | AR: 149.25s
+147. Dennis Rosero (2010ROSE03. Colombia. _South America) - 0.01s (292.62-292.63) | AR: 420.08s
+147. Jakub Hamkało (2018HAMK01. Poland. _Europe) - 0.01s (147.36-147.37) | AR: 179.96s
+147. Chester Lian (2009LIAN03. Malaysia. _Asia) - 0.01s (73.58-73.59) | AR: 88.85s
+147. Gianluca Placenti (2012PLAC01. Italy. _Europe) - 0.01s (137.94-137.95) | AR: 190.26s
+147. Asset Agabekov (2018AGAB03. Kazakhstan. _Asia) - 0.01s (44.44-44.45) | AR: 184.87s
+147. Ethan Jan (2014JANE02. USA. _North America) - 0.01s (27.19-27.20) | AR: 309.30s
+147. Yuki Yamamoto (山本祐輝) (2010YAMA04. Japan. _Asia) - 0.01s (40.32-40.33) | AR: 422.45s
+147. Marcos Ferreira Semolini (2017SEMO02. Brazil. _South America) - 0.01s (27.26-27.27) | AR: 205.37s
+147. Philippe Virouleau (2008VIRO01. France. _Europe) - 0.01s (126.90-126.91) | AR: 341.01s
+147. Marcin Zalewski (2011ZALE02. Poland. _Europe) - 0.01s (37.80-37.81) | AR: 143.00s
+147. Jair José Vicente Rodríguez Zenil (2011ZENI01. Mexico. _North America) - 0.01s (212.75-212.76) | AR: 188.49s
+147. Aiki Yaginuma (柳沼愛輝) (2022YAGI03. Japan. _Asia) - 0.01s (75.10-75.11) | AR: 217.44s
+147. Emilio Alberto Rodríguez Jiménez (2018JIME14. Mexico. _North America) - 0.01s (41.75-41.76) | AR: 213.04s
+147. Jayden McNeill (2012MCNE01. Australia. _Oceania) - 0.01s (83.18-83.19) | AR: 404.26s
+147. Jianing Luo (罗佳宁) (2019LUOJ04. China. _Asia) - 0.01s (21.02-21.03) | AR: 222.79s
+147. Yang Hu (胡扬) (2012HUYA01. China. _Asia) - 0.01s (78.54-78.55) | AR: 250.86s
+147. Alan Żeromski (2018ZERO01. Poland. _Europe) - 0.01s (29.38-29.39) | AR: 105.41s
+147. Christian Sachgau (2018SACH03. Germany. _Europe) - 0.01s (177.13-177.14) | AR: 288.86s
+147. Nathan Seeto (2012SEET01. Australia. _Oceania) - 0.01s (110.08-110.09) | AR: 120.07s
+147. Ida Exner (2017EXNE01. Denmark. _Europe) - 0.01s (165.23-165.24) | AR: 272.42s
+147. Fabrizio Cirnigliaro (2008CIRN01. Italy. _Europe) - 0.01s (142.83-142.84) | AR: 209.42s
+147. Alwin Rölz (2016ROLZ01. Switzerland. _Europe) - 0.01s (168.08-168.09) | AR: 399.35s
+147. Walter Pereira Rodrigues de Souza (2010SOUZ01. Brazil. _South America) - 0.01s (116.00-116.01) | AR: 208.75s
+147. Tomoya Firman (2015FIRM01. Australia. _Oceania) - 0.01s (27.54-27.55) | AR: 122.18s
+147. Vladimir Sergeev (2017SERG03. Russia. _Europe) - 0.01s (32.70-32.71) | AR: 97.31s
+147. Yiwei Liu (刘伊玮) (2012LIUY03. China. _Asia) - 0.01s (33.02-33.03) | AR: 128.71s
+147. Vicente Astroza (2017ASTR01. Chile. _South America) - 0.01s (162.35-162.36) | AR: 38.81s
+147. Joshua Feran (2011FERA01. USA. _North America) - 0.01s (159.38-159.39) | AR: 180.98s
+147. Emanuel Victor Araújo dos Santos (2022SANT05. Brazil. _South America) - 0.01s (315.20-315.21) | AR: 269.00s
+147. Jeremy Benik (2016BENI05. USA. _North America) - 0.01s (81.79-81.80) | AR: 113.96s
+147. Andrey Ivanov (2012IVAN02. Russia. _Europe) - 0.01s (72.53-72.54) | AR: 406.54s
+147. Paweł Duraj (2016DURA09. Poland. _Europe) - 0.01s (80.25-80.26) | AR: 364.49s
+147. Luukas Lempinen (2021LEMP01. Finland. _Europe) - 0.01s (87.55-87.56) | AR: 222.21s
+147. Jake Brown (2020BROW01. United Kingdom. _Europe) - 0.01s (74.65-74.66) | AR: 191.19s
+147. Dylan Trueblood (2023TRUE02. USA. _North America) - 0.01s (112.03-112.04) | AR: 235.95s
+147. Christian Montoya (2018MONT03. Peru. _South America) - 0.01s (59.75-59.76) | AR: 265.17s
+147. Beatriz Hernandes Bernardes (2022BERN01. Brazil. _South America) - 0.01s (67.17-67.18) | AR: 144.07s
+147. Daniel Evans (2016EVAN06. United Kingdom. _Europe) - 0.01s (198.30-198.31) | AR: 359.65s
+147. Taku Yanai (矢内拓) (2012YANA01. Japan. _Asia) - 0.01s (30.77-30.78) | AR: 80.90s
+147. William Carey (2019CARE02. Ireland. _Europe) - 0.01s (75.08-75.09) | AR: 371.45s
+147. Jared Phelps (2008PHEL01. USA. _North America) - 0.01s (231.30-231.31) | AR: 185.78s
+147. Lev Golub (Лев Голуб) (2014HOLU01. Ukraine. _Europe) - 0.01s (53.22-53.23) | AR: 296.74s
+147. Elijah Brown (2015BROW03. USA. _North America) - 0.01s (142.60-142.61) | AR: 361.07s
+147. Hồ Phú Nhật (2023NHAT01. Vietnam. _Asia) - 0.01s (32.87-32.88) | AR: 68.87s
+147. Shane Grogan (2011GROG02. USA. _North America) - 0.01s (189.54-189.55) | AR: 264.98s
+147. Hamza Zaidi (2017ZAID01. India. _Asia) - 0.01s (31.15-31.16) | AR: 124.03s
+147. Yifan Cheng (程依凡) (2018CHEY36. China. _Asia) - 0.01s (58.85-58.86) | AR: 141.78s
+147. Samuel Martinez Sanchez (2019SANC20. Colombia. _South America) - 0.01s (89.52-89.53) | AR: 75.74s
+147. Sean Moran (2016MORA24. United Kingdom. _Europe) - 0.01s (69.65-69.66) | AR: 212.65s
+147. Igor Aipkin (2017AIPK01. Uzbekistan. _Asia) - 0.01s (61.50-61.51) | AR: 182.52s
+147. Christopher Sun (2017SUNC02. USA. _North America) - 0.01s (31.65-31.66) | AR: 84.37s
+147. Mikus Lembergs (2017LEMB02. Latvia. _Europe) - 0.01s (70.43-70.44) | AR: 466.96s
+147. Wong Chong Wen (黄崇文) (2014WENW01. Singapore. _Asia) - 0.01s (96.87-96.88) | AR: 187.33s
+147. Szabolcs Szántai (2016SZAN01. Hungary. _Europe) - 0.01s (81.14-81.15) | AR: 119.62s
+147. Jimmy Kingston (2023KING02. USA. _North America) - 0.01s (57.34-57.35) | AR: 538.87s
+147. Akula Sai Kumar (2012KUMA02. India. _Asia) - 0.01s (312.40-312.41) | AR: 269.43s
+147. Pavlo Bondar (Павло Бондар) (2018BOND03. Ukraine. _Europe) - 0.01s (74.10-74.11) | AR: 277.06s
+147. Vishwa Sankar (2017SANK04. USA. _North America) - 0.01s (87.45-87.46) | AR: 488.79s
+147. Thomas Valles (2013VALL03. USA. _North America) - 0.01s (119.78-119.79) | AR: 103.23s
+147. Kai-Wen Wang (王楷文) (2015WANG09. Taiwan. _Asia) - 0.01s (21.01-21.02) | AR: 320.92s
+147. Alessandro Nicolì (2012NICO02. Italy. _Europe) - 0.01s (136.52-136.53) | AR: 216.55s
+147. Grzegorz Pacewicz (2014PACE01. Poland. _Europe) - 0.01s (72.41-72.42) | AR: 220.04s
+147. Noah Feld (2015FELD01. USA. _North America) - 0.01s (66.25-66.26) | AR: 248.29s
+147. Alex Butera (2021BUTE03. Australia. _Oceania) - 0.01s (75.15-75.16) | AR: 463.42s
+147. Achim Spies (2021SPIE01. Germany. _Europe) - 0.01s (110.80-110.81) | AR: 270.53s
+147. Daniel James (2012JAME04. India. _Asia) - 0.01s (100.10-100.11) | AR: 398.42s
+147. Vicenzo Guerino Cecchini (2015CECC01. Brazil. _South America) - 0.01s (56.80-56.81) | AR: 250.07s
+147. Xavier Courteau-Laing (2021COUR01. New Zealand. _Oceania) - 0.01s (48.45-48.46) | AR: 187.14s
+147. Lucius Leong (2022LEON11. Australia. _Oceania) - 0.01s (81.29-81.30) | AR: 192.80s
+147. Chi-Lun Hung (洪啟倫) (2010HONG01. Taiwan. _Asia) - 0.01s (45.24-45.25) | AR: 195.73s
+147. István Márián (2010MARI02. Hungary. _Europe) - 0.01s (98.01-98.02) | AR: 125.54s
+147. Eddy Deturche (2014DETU01. France. _Europe) - 0.01s (45.94-45.95) | AR: 116.89s
+147. Krishanth Thangarathan (2019THAN05. India. _Asia) - 0.01s (73.79-73.80) | AR: 149.77s
+147. Kai Yamamoto (山本快) (2021YAMA01. Japan. _Asia) - 0.01s (68.61-68.62) | AR: 137.37s
+147. Oscar Shapiama (2022SHAP06. Peru. _South America) - 0.01s (100.26-100.27) | AR: 137.16s
+147. Tyson Mao (毛台勝) (2004MAOT02. USA. _North America) - 0.01s (105.71-105.72) | AR: 156.74s
+147. Artur Udatsnoi (2023UDAT01. Estonia. _Europe) - 0.01s (54.33-54.34) | AR: 286.82s
+147. William Gan Wei Ren (颜伟仁) (2014RENW01. Malaysia. _Asia) - 0.01s (80.57-80.58) | AR: 195.40s
+147. Jimi Naysmith (2022NAYS02. United Kingdom. _Europe) - 0.01s (184.28-184.29) | AR: 137.20s
+147. Ahsanul Insan Hamid (2011HAMI01. Indonesia. _Asia) - 0.01s (27.74-27.75) | AR: 61.12s
+147. Håvard Elias Helland (2022HELL03. Norway. _Europe) - 0.01s (74.46-74.47) | AR: 146.94s
+147. Oskar Feed Jakobsen (2017JAKO02. Norway. _Europe) - 0.01s (28.59-28.60) | AR: 88.88s
+147. Kai Jiptner (2007JIPT01. Germany. _Europe) - 0.01s (59.08-59.09) | AR: 189.08s
+147. Inbar Segal (2022SEGA01. Israel. _Europe) - 0.01s (105.31-105.32) | AR: 358.68s
+147. Tim Reynolds (2005REYN01. USA. _North America) - 0.01s (112.36-112.37) | AR: 364.61s
+147. Adam Marcellus Kelly (2016KELL10. USA. _North America) - 0.01s (28.01-28.02) | AR: 189.55s
+147. Arthur Provot (2018PROV01. France. _Europe) - 0.01s (133.19-133.20) | AR: 256.20s
+147. Ian Guevarra Santos (2024SANT11. Philippines. _Asia) - 0.01s (18.13-18.14) | AR: 15.58s
+147. Yuki Tsuneyoshi (恒吉優紀) (2023TSUN01. Japan. _Asia) - 0.01s (25.31-25.32) | AR: 157.77s
+147. Peter Hugosson-Miller (2021HUGO01. Sweden. _Europe) - 0.01s (327.80-327.81) | AR: 577.04s
+147. Daniel Partridge (2022PART02. United Kingdom. _Europe) - 0.01s (51.64-51.65) | AR: 128.62s
+147. Declan Mangan-Lamb (2023MANG02. Ireland. _Europe) - 0.01s (93.32-93.33) | AR: 90.74s
+147. Kasper Warberg Borg (2020BORG01. Denmark. _Europe) - 0.01s (188.10-188.11) | AR: 545.30s
+147. Anders Berggren (2011BERG02. Sweden. _Europe) - 0.01s (187.30-187.31) | AR: 508.36s
+147. Oliver Castledine (2018CAST08. United Kingdom. _Europe) - 0.01s (83.58-83.59) | AR: 207.92s
+147. Alessio Pandin (2021PAND01. Italy. _Europe) - 0.01s (133.98-133.99) | AR: 187.48s
+147. Mike Hughey (2007HUGH01. USA. _North America) - 0.01s (96.21-96.22) | AR: 246.53s
+147. Timo Forsthofer (2018FORS03. Germany. _Europe) - 0.01s (32.83-32.84) | AR: 69.41s
+147. Jose Sánchez García (2022GARC19. Spain. _Europe) - 0.01s (46.66-46.67) | AR: 93.62s
+147. Jiaji Shi (施家吉) (2025SHIJ05. China. _Asia) - 0.01s (62.47-62.48) | AR: 79.38s
+147. Simon Westlund (2008WEST02. Sweden. _Europe) - 0.01s (85.46-85.47) | AR: 209.33s
+147. Luis Sinhue Medina Salas (2014SALA15. Mexico. _North America) - 0.01s (203.10-203.11) | AR: 265.82s
+147. Anirudh Sureshram (2014SURE11. India. _Asia) - 0.01s (62.74-62.75) | AR: 309.02s
+147. Zak Kenny (2016KENN01. Australia. _Oceania) - 0.01s (102.76-102.77) | AR: 151.05s
+147. James Quinn (2016QUIN01. USA. _North America) - 0.01s (52.06-52.07) | AR: 413.82s
+147. Yiming Liu (刘一鸣) (2025LIUY24. China. _Asia) - 0.01s (21.61-21.62) | AR: 12.27s
+147. Karol Zakrzewski (2014ZAKR01. Poland. _Europe) - 0.01s (120.97-120.98) | AR: 184.83s
+147. Takayuki Ookusa (大艸尊之) (2006OOKU01. Japan. _Asia) - 0.01s (91.58-91.59) | AR: 116.30s
+147. Namuun Natsagdorj (2019NATS02. Mongolia. _Asia) - 0.01s (90.06-90.07) | AR: 112.33s
+147. Thai Bui (2018BUIT01. USA. _North America) - 0.01s (31.83-31.84) | AR: 151.16s
+147. Jamie Otsu (2021OTSU01. Australia. _Oceania) - 0.01s (85.49-85.50) | AR: 158.74s
+147. Bella Campbell (2018CAMP17. United Kingdom. _Europe) - 0.01s (98.41-98.42) | AR: 207.15s
+147. Steve Clarke (2015CLAR13. United Kingdom. _Europe) - 0.01s (120.79-120.80) | AR: 252.59s
+147. Stone Amsbaugh (2018AMSB02. USA. _North America) - 0.01s (68.47-68.48) | AR: 317.73s
+147. Ethan Rusnak (2015RUSN01. Canada. _North America) - 0.01s (82.73-82.74) | AR: 180.81s
+147. Keaton Ellis (2012ELLI01. USA. _North America) - 0.01s (138.41-138.42) | AR: 228.25s
+147. Laura Freitas Martín (2018MART18. Spain. _Europe) - 0.01s (115.95-115.96) | AR: 265.16s
+147. Maksymilian Gala (2022GALA01. Poland. _Europe) - 0.01s (109.15-109.16) | AR: 177.52s
+147. Oliver Frost (2012FROS01. United Kingdom. _Europe) - 0.01s (39.68-39.69) | AR: 48.51s
+147. Hui Cai (蔡辉) (2018CAIH01. China. _Asia) - 0.01s (36.60-36.61) | AR: 60.44s
+147. Simon Kellum (2016KELL12. USA. _North America) - 0.01s (79.97-79.98) | AR: 344.07s
+147. Boqin Zhao (赵博钦) (2017ZHAO32. China. _Asia) - 0.01s (31.29-31.30) | AR: 169.43s
+147. Benjamin Gottschalk (2016GOTT01. USA. _North America) - 0.01s (149.96-149.97) | AR: 193.72s
+147. Zehao Huang (黄泽浩) (2019HUAZ03. China. _Asia) - 0.01s (78.68-78.69) | AR: 35.92s
+147. Tiago Morais (2023MORA20. Portugal. _Europe) - 0.01s (41.06-41.07) | AR: 243.01s
+147. Jolo Endona (2014ENDO01. Philippines. _Asia) - 0.01s (26.79-26.80) | AR: 188.49s
+147. Ziyi Xu (徐梓翼) (2023XUZI01. China. _Asia) - 0.01s (46.17-46.18) | AR: 207.36s
+147. Mattheo de Wit (2015WITM01. Netherlands. _Europe) - 0.01s (25.35-25.36) | AR: 206.97s
+147. Tommy Kiprillis (2014KIPR01. Australia. _Oceania) - 0.01s (104.88-104.89) | AR: 188.34s
+147. DaYeong Kim (김다영) (2016KIMD05. Korea. _Asia) - 0.01s (165.48-165.49) | AR: 349.91s
+147. Raffaele Russo Spena (2023SPEN01. Italy. _Europe) - 0.01s (56.94-56.95) | AR: 127.71s
+147. Clancy Caster (2017CAST08. USA. _North America) - 0.01s (337.59-337.60) | AR: 53.05s
+147. Kévin Ky (2022KYKE01. France. _Europe) - 0.01s (108.75-108.76) | AR: 490.67s
+147. Josh Weimer (2016WEIM01. USA. _North America) - 0.01s (23.56-23.57) | AR: 81.72s
+147. Kate Grahame (2018GRAH05. USA. _North America) - 0.01s (58.15-58.16) | AR: 388.20s
+147. Matheus Casassa (2017VIAN01. Brazil. _South America) - 0.01s (167.13-167.14) | AR: 277.04s
+147. Jesse Arnon (2024ARNO02. Israel. _Europe) - 0.01s (52.27-52.28) | AR: 109.28s
+147. Pankaj More (2013MORE11. India. _Asia) - 0.01s (190.33-190.34) | AR: 362.29s
+147. Austin Reed (2011REED01. USA. _North America) - 0.01s (77.14-77.15) | AR: 271.78s
+147. Dieter Amberger (2016AMBE02. Austria. _Europe) - 0.01s (81.18-81.19) | AR: 165.20s
+147. Luke Meszar (2016MESZ01. USA. _North America) - 0.01s (28.93-28.94) | AR: 174.94s
+147. Yuji Yoshida (2015YOSH01. Philippines. _Asia) - 0.01s (92.54-92.55) | AR: 256.54s
+147. Yoav Atsmon (2022ATSM01. Israel. _Europe) - 0.01s (82.56-82.57) | AR: 287.17s
+147. Muxi Yan (2022YANM02. Spain. _Europe) - 0.01s (58.61-58.62) | AR: 233.62s
+147. James Moore (2016MOOR07. New Zealand. _Oceania) - 0.01s (70.51-70.52) | AR: 125.78s
+147. Brandon Mikel (2011MIKE01. USA. _North America) - 0.01s (103.78-103.79) | AR: 176.21s
+147. Bernhard Brodowsky (2016BROD01. Germany. _Europe) - 0.01s (53.71-53.72) | AR: 373.33s
+147. Linh Son Luu (2021LUUL01. Germany. _Europe) - 0.01s (102.63-102.64) | AR: 449.55s
+147. Akula Pavan Kumar (2011KUMA01. India. _Asia) - 0.01s (173.03-173.04) | AR: 257.23s
+147. David Quispe (2018QUIS04. Peru. _South America) - 0.01s (20.10-20.11) | AR: 34.13s
+147. Nikolai Masson (Николай Массон) (2011MASS01. Russia. _Europe) - 0.01s (86.06-86.07) | AR: 363.04s
+147. Sophie Gilbert (2022GILB05. United Kingdom. _Europe) - 0.01s (48.20-48.21) | AR: 140.01s
+147. Roberto Antonio Ocmin Baráybar (2011BARA01. Peru. _South America) - 0.01s (27.64-27.65) | AR: 330.31s
+147. Kamil Michalak (2016MICH01. Poland. _Europe) - 0.01s (38.32-38.33) | AR: 146.42s
+147. Tomas Kristiansson (2007KRIS01. Sweden. _Europe) - 0.01s (59.41-59.42) | AR: 449.78s
+147. Aleksander Sołonczak (2022SOLO01. Poland. _Europe) - 0.01s (130.75-130.76) | AR: 243.62s
+147. Fabian Settelen (2015SETT01. Switzerland. _Europe) - 0.01s (87.41-87.42) | AR: 398.36s
+147. Delphine Tran (2017TRAN24. France. _Europe) - 0.01s (72.02-72.03) | AR: 168.98s
+147. Neel Gore (2016GORE02. USA. _North America) - 0.01s (27.41-27.42) | AR: 295.34s
+147. Thiago de Oliveira Rodrigues (2019RODR38. Brazil. _South America) - 0.01s (90.41-90.42) | AR: 191.13s
+147. Steven Morrise (2024MORR14. USA. _North America) - 0.01s (92.30-92.31) | AR: 219.32s
+147. Mar Gallego Vicente (2013VICE01. Spain. _Europe) - 0.01s (198.72-198.73) | AR: 283.37s
+147. Daniel Baeza (2023BAEZ06. Guatemala. _North America) - 0.01s (43.89-43.90) | AR: 61.10s
+147. Adam Kędziorski (2019KEDZ01. Poland. _Europe) - 0.01s (81.44-81.45) | AR: 189.18s
+147. Modest Podzolkin (2017PODZ01. Ukraine. _Europe) - 0.01s (51.57-51.58) | AR: 525.55s
+147. Francisco Garrido Valenzuela (2010VALE01. Chile. _South America) - 0.01s (430.43-430.44) | AR: 179.57s
+147. Noémie Delaby (2017THIO01. France. _Europe) - 0.01s (126.00-126.01) | AR: 124.45s
+147. Simone Santarsiero (2009SANT01. Italy. _Europe) - 0.01s (132.33-132.34) | AR: 236.19s
+147. Igor Tarasov (2016TARA04. Ukraine. _Europe) - 0.01s (68.26-68.27) | AR: 177.59s
+147. Łukasz Dubicki (2018DUBI01. Poland. _Europe) - 0.01s (143.14-143.15) | AR: 509.13s
+147. Casey Ngo (2017NGOC03. USA. _North America) - 0.01s (140.14-140.15) | AR: 318.19s
+147. Joey Gouly (2007GOUL01. United Kingdom. _Europe) - 0.01s (108.92-108.93) | AR: 180.40s
+147. Szymon Grodzki (2020GROD01. Poland. _Europe) - 0.01s (43.90-43.91) | AR: 184.05s
+147. Etan Huang (2022HUAN26. Canada. _North America) - 0.01s (33.63-33.64) | AR: 275.26s
+147. Carson Claud (2015CLAU02. USA. _North America) - 0.01s (110.77-110.78) | AR: 382.90s
+147. Amitai Ziv (2022ZIVA01. Israel. _Europe) - 0.01s (101.91-101.92) | AR: 189.22s
+147. Sukh-Erdene Mandakh (2017MAND10. Mongolia. _Asia) - 0.01s (38.45-38.46) | AR: 120.72s
+147. Eric Che (2022CHEE02. USA. _North America) - 0.01s (42.37-42.38) | AR: 141.00s
 147. Meng Chon Kuok (郭明臻) (2023KUOK01. Macau. _Asia) - 0.01s (79.77-79.78) | AR: 125.29s
+147. Xingyan Ding (丁醒炎) (2014DING02. China. _Asia) - 0.01s (44.80-44.81) | AR: 228.10s
+147. Marlon de V. Marques (2014MARQ02. Brazil. _South America) - 0.01s (129.92-129.93) | AR: 538.92s
+147. Mark Rivers (2015RIVE05. United Kingdom. _Europe) - 0.01s (64.77-64.78) | AR: 280.61s
+147. Tiago Eche (2022ECHE01. France. _Europe) - 0.01s (53.18-53.19) | AR: 191.29s
+147. Yunqi Ouyang (欧阳韵奇) (2007YUNQ01. China. _Asia) - 0.01s (98.07-98.08) | AR: 214.83s
+147. Harvie Partridge (2015PART04. United Kingdom. _Europe) - 0.01s (104.35-104.36) | AR: 153.45s
+147. Will Russo (2015RUSS03. USA. _North America) - 0.01s (54.87-54.88) | AR: 184.03s
+147. Yuhang Sun (孙煜航) (2019SUNY09. China. _Asia) - 0.01s (41.17-41.18) | AR: 118.23s
+147. Shaden Smith (2008SMIT01. USA. _North America) - 0.01s (185.59-185.60) | AR: 350.58s
+147. Valerii Klymenko (2023KLYM02. Ukraine. _Europe) - 0.01s (58.35-58.36) | AR: 95.25s
+147. Lucas Garron (2006GARR01. Germany. _Europe) - 0.01s (150.01-150.02) | AR: 470.98s
+147. Ting Sheng Bao Yang (2008BAOY01. Spain. _Europe) - 0.01s (177.67-177.68) | AR: 243.86s
+147. Joshua Chau (2021CHAU01. Australia. _Oceania) - 0.01s (31.77-31.78) | AR: 32.24s
+147. Majk Tomas (2022TOMA05. Poland. _Europe) - 0.01s (36.61-36.62) | AR: 230.09s
+147. Alexander Wheeler (2014WHEE01. USA. _North America) - 0.01s (57.24-57.25) | AR: 141.60s
+147. Ivan Zabrodin (2012ZABR01. Russia. _Europe) - 0.01s (105.34-105.35) | AR: 304.55s
+147. Louis Cormier (2010CORM02. Canada. _North America) - 0.01s (156.14-156.15) | AR: 159.70s
+147. Francisco Huertas Molina (2018MOLI03. Spain. _Europe) - 0.01s (103.36-103.37) | AR: 179.77s
+147. Roberts Dreijers (2018DREI02. Latvia. _Europe) - 0.01s (101.86-101.87) | AR: 206.57s
+147. Zongwen Mu (牟宗文) (2015MUZO01. China. _Asia) - 0.01s (105.78-105.79) | AR: 71.22s
+147. Chunyu Zhang (张春雨) (2011ZHAN24. China. _Asia) - 0.01s (89.46-89.47) | AR: 201.64s
+147. Ping-Yueh Huang (黃品越) (2012HUAN12. Taiwan. _Asia) - 0.01s (19.30-19.31) | AR: 154.67s
+147. Zachary White (2010WHIT05. USA. _North America) - 0.01s (236.10-236.11) | AR: 350.87s
+147. Rasmus Heggvik Aune (2020AUNE01. Norway. _Europe) - 0.01s (20.51-20.52) | AR: 199.93s
+147. Ville Vasilis (2024VASI03. Sweden. _Europe) - 0.01s (55.20-55.21) | AR: 246.27s
+147. Alistair Miller (2017MILL12. United Kingdom. _Europe) - 0.01s (51.82-51.83) | AR: 95.10s
+147. Michael Ngan (顏律言) (2016NGAN02. Hong Kong. _Asia) - 0.01s (40.40-40.41) | AR: 151.15s
+147. Naufal Shidqi (2010SHID01. Indonesia. _Asia) - 0.01s (165.40-165.41) | AR: 147.25s
+147. Akito Takei (武井章人) (2017TAKE01. Japan. _Asia) - 0.01s (27.63-27.64) | AR: 81.17s
+147. Yan Xuan (宣炎) (2009XUAN03. China. _Asia) - 0.01s (113.05-113.06) | AR: 106.17s
+147. Nathan Phillips (2021PHIL05. USA. _North America) - 0.01s (51.49-51.50) | AR: 227.25s
+147. Serban Stelian (2019STEL01. Romania. _Europe) - 0.01s (51.46-51.47) | AR: 172.53s
+147. Lingjie Xia (夏灵洁) (2024XIAL01. China. _Asia) - 0.01s (34.86-34.87) | AR: 30.22s
+147. Weston Mizumoto (2008MIZU01. USA. _North America) - 0.01s (111.16-111.17) | AR: 235.52s
+147. Etienne Vellard (2025VELL02. France. _Europe) - 0.01s (136.42-136.43) | AR: 393.84s
+147. Maxime Lefebvre (2019LEFE02. France. _Europe) - 0.01s (94.34-94.35) | AR: 336.24s
+147. Stepan Kaplinskyi (Степан Каплінський) (2024KAPL01. Ukraine. _Europe) - 0.01s (68.55-68.56) | AR: 307.56s
+147. Alexandre Carlier (2012CARL03. France. _Europe) - 0.01s (212.20-212.21) | AR: 165.43s
+147. Keenan Johnson (2016JOHN30. USA. _North America) - 0.01s (53.65-53.66) | AR: 289.75s
+147. Ben Yu (2011YUBE01. USA. _North America) - 0.01s (66.88-66.89) | AR: 286.20s
+147. Levi André Tallaksen (2015TALL01. Norway. _Europe) - 0.01s (87.83-87.84) | AR: 186.08s
+147. Tyler Rose (2022ROSE07. USA. _North America) - 0.01s (126.93-126.94) | AR: 267.66s
+147. Valérie Le Gall (2023GALL30. France. _Europe) - 0.01s (69.92-69.93) | AR: 88.65s
+147. Georgiy Titov (2013TITO02. Ukraine. _Europe) - 0.01s (118.78-118.79) | AR: 167.84s
+147. Romain Velcin (2023VELC01. France. _Europe) - 0.01s (55.82-55.83) | AR: 134.08s
+147. Chu Yiu On (朱耀安) (2019ONCH01. Hong Kong. _Asia) - 0.01s (29.49-29.50) | AR: 171.88s
+147. Adel Mosallami (2018MOSA01. Philippines. _Asia) - 0.01s (28.33-28.34) | AR: 70.24s
+147. Paolo Marino (2021MARI04. Italy. _Europe) - 0.01s (77.74-77.75) | AR: 236.38s
+147. Cyrill Speiser (2019SPEI01. Switzerland. _Europe) - 0.01s (65.72-65.73) | AR: 203.52s
+147. Gibran Kwan (2019KWAN01. Philippines. _Asia) - 0.01s (112.11-112.12) | AR: 206.66s
+147. Alex Rosado Saez de Langarica (2023LANG03. Spain. _Europe) - 0.01s (82.73-82.74) | AR: 121.84s
+147. Fernando Israel Zúñiga Macedo (2014MACE02. Mexico. _North America) - 0.01s (39.66-39.67) | AR: 116.39s
+147. Nikhil Soares (2015SOAR01. India. _Asia) - 0.01s (72.72-72.73) | AR: 376.97s
+147. Adamo Sabbadin (2021SABB01. Switzerland. _Europe) - 0.01s (45.75-45.76) | AR: 235.61s
+147. Paul Mirza (2020MIRZ01. Germany. _Europe) - 0.01s (106.64-106.65) | AR: 66.26s
+147. Maksymilian Misiak (2017MISI01. Poland. _Europe) - 0.01s (59.83-59.84) | AR: 75.84s
+147. Bowen Deng (邓博文) (2009DENG01. China. _Asia) - 0.01s (99.65-99.66) | AR: 315.86s
+147. Sergio Bulux (2014BULU01. Guatemala. _North America) - 0.01s (83.39-83.40) | AR: 145.57s
+147. Hyeok Yang (양혁) (2017YANG75. Korea. _Asia) - 0.01s (89.82-89.83) | AR: 110.51s
+147. Gert van Hout (2018HOUT01. Netherlands. _Europe) - 0.01s (135.17-135.18) | AR: 162.44s
+147. Johanna Szczesny (2022SZCZ03. Germany. _Europe) - 0.01s (127.69-127.70) | AR: 144.75s
+147. Draco Tong (2020TONG02. USA. _North America) - 0.01s (98.33-98.34) | AR: 277.69s
+147. Cyril Teichmann (2017TEIC01. Czech Republic. _Europe) - 0.01s (63.82-63.83) | AR: 327.09s
+147. Paul Luciw (2015LUCI02. France. _Europe) - 0.01s (111.40-111.41) | AR: 283.65s
+147. Harry Owen (2017OWEN01. United Kingdom. _Europe) - 0.01s (143.26-143.27) | AR: 180.13s
+147. Paul Mahvi (2012MAHV01. USA. _North America) - 0.01s (183.78-183.79) | AR: 209.15s
+147. Daniel Goodman (2013GOOD01. USA. _North America) - 0.01s (75.95-75.96) | AR: 286.52s
+147. Luis Antelmo Perez Cabrera (2019CABR09. Mexico. _North America) - 0.01s (116.24-116.25) | AR: 200.37s
+147. Will Callan (2012CALL01. USA. _North America) - 0.01s (130.02-130.03) | AR: 237.35s
+147. Amy Smith (2019SMIT36. Australia. _Oceania) - 0.01s (26.86-26.87) | AR: 201.70s
+147. Elvin Thorsen (2016THOR08. Sweden. _Europe) - 0.01s (119.46-119.47) | AR: 340.85s
+147. Ryan DeLine (2012DELI01. USA. _North America) - 0.01s (120.45-120.46) | AR: 87.30s
+147. Maria Zhits (2016ZHIT01. Russia. _Europe) - 0.01s (168.04-168.05) | AR: 246.87s
+147. Joris Mühlsteff (2008MHLS01. Netherlands. _Europe) - 0.01s (130.32-130.33) | AR: 96.27s
+147. Katharina Schlomberg (2020SCHL01. Germany. _Europe) - 0.01s (64.24-64.25) | AR: 172.69s
+147. Laura Ohrndorf (2009OHRN01. Germany. _Europe) - 0.01s (169.78-169.79) | AR: 116.59s
+147. Kiagus Ahmad Haikal Hafif Hamidy (2018HAMI06. Indonesia. _Asia) - 0.01s (50.61-50.62) | AR: 90.09s
+147. Nathan Daviaud (2017DAVI29. France. _Europe) - 0.01s (75.33-75.34) | AR: 66.55s
+147. Pavel Yushkevich (2013YUSH01. Belarus. _Europe) - 0.01s (211.00-211.01) | AR: 84.38s
+147. Jonghyun Kim (김종현) (2024KIMJ11. Korea. _Asia) - 0.01s (38.85-38.86) | AR: 39.11s
+147. Jacob Oliver Bruun (2018BRUU01. Norway. _Europe) - 0.01s (49.17-49.18) | AR: 164.87s
+147. Sebastian Werb (2012WERB01. Germany. _Europe) - 0.01s (48.12-48.13) | AR: 248.45s
+147. Sergio Bodega Herráiz (2014HERR08. Spain. _Europe) - 0.01s (110.11-110.12) | AR: 290.17s
+147. Shun-Hsin Chang (張舜欣) (2011JHAN01. Taiwan. _Asia) - 0.01s (121.33-121.34) | AR: 200.70s
+147. Andrey Koposov (Андрей Копосов) (2020KOPO01. Russia. _Europe) - 0.01s (30.49-30.50) | AR: 215.45s
+147. Ben Royce (2015ROYC01. USA. _North America) - 0.01s (100.99-101.00) | AR: 411.60s
+147. Martin Fronescu (2013FRON01. Romania. _Europe) - 0.01s (109.06-109.07) | AR: 220.21s
+147. Ming Dao Ting (2018TING05. Australia. _Oceania) - 0.01s (100.09-100.10) | AR: 189.15s
+147. Simon Lim (林少秋) (2008LIMS01. Philippines. _Asia) - 0.01s (47.21-47.22) | AR: 231.39s
+147. Hiroto Fujita (藤田浩斗) (2012FUJI01. Japan. _Asia) - 0.01s (46.79-46.80) | AR: 58.96s
+147. Keegan Joyce (2024JOYC01. USA. _North America) - 0.01s (118.39-118.40) | AR: 243.30s
+147. Alexander Botz (2013BOTZ01. Germany. _Europe) - 0.01s (47.40-47.41) | AR: 208.66s
+147. Lucas Ichiro Yunomae (2014YUNO01. Brazil. _South America) - 0.01s (154.04-154.05) | AR: 390.26s
+147. Abdullah Gulab (2014GULA02. Pakistan. _Asia) - 0.01s (145.78-145.79) | AR: 169.15s
+147. Arnau Tous Mateu (2016MATE04. Spain. _Europe) - 0.01s (117.41-117.42) | AR: 218.35s
+147. Tiago Zamberlan (2016ZAMB05. Brazil. _South America) - 0.01s (29.52-29.53) | AR: 150.60s
+147. Maximilian Neitzel (2009NEIT01. Germany. _Europe) - 0.01s (134.08-134.09) | AR: 188.05s
+147. Kaius Young (2017YOUN10. USA. _North America) - 0.01s (66.06-66.07) | AR: 99.84s
+147. Wilson Alvis (陈智胜) (2011ALVI01. Indonesia. _Asia) - 0.01s (129.78-129.79) | AR: 184.45s
+147. Alexander Claros (2015CLAR02. Argentina. _South America) - 0.01s (92.23-92.24) | AR: 103.34s
+147. Shenghui Yuan (苑盛辉) (2023YUAN19. China. _Asia) - 0.01s (25.79-25.80) | AR: 64.34s
+147. Shantanu Modak (2014MODA01. Singapore. _Asia) - 0.01s (41.79-41.80) | AR: 267.56s
+147. Jacob Turrubiartes (2018TURR01. USA. _North America) - 0.01s (42.47-42.48) | AR: 116.57s
+147. Diasbek Zhuraev (Диасбек Жураев) (2021ZHUR04. Kazakhstan. _Asia) - 0.01s (71.92-71.93) | AR: 119.21s
+147. Dmitry Karyakin (2010KARY02. Russia. _Europe) - 0.01s (66.40-66.41) | AR: 280.70s
+147. Hirotaka Ito (伊藤大平) (2008ITOH01. Japan. _Asia) - 0.01s (37.64-37.65) | AR: 73.79s
+147. Conlin Alzheimer (2022ALZH01. USA. _North America) - 0.01s (77.33-77.34) | AR: 92.88s
+147. William Phommaha (2015PHOM01. France. _Europe) - 0.01s (48.90-48.91) | AR: 102.51s
+147. Atharva R. Bhat (2017BHAT02. India. _Asia) - 0.01s (159.00-159.01) | AR: 509.62s
+147. Xinyun Chen (陈新运) (2017CHEN36. China. _Asia) - 0.01s (60.05-60.06) | AR: 61.28s
+147. Felix Williams (2023WILL26. Australia. _Oceania) - 0.01s (28.13-28.14) | AR: 58.82s
+147. Matt Mao (2023MAOS01. China. _Asia) - 0.01s (53.91-53.92) | AR: 125.62s
+147. Dhruv Ambastha (2016AMBA02. India. _Asia) - 0.01s (20.81-20.82) | AR: 253.11s
+147. Filip Nilsen (2016NILS03. Norway. _Europe) - 0.01s (198.61-198.62) | AR: 213.15s
+147. Haijun Tan (谭海俊) (2011TANH01. China. _Asia) - 0.01s (39.77-39.78) | AR: 164.45s
+147. Emmett O'Leary-Liu (2019OLEA02. USA. _North America) - 0.01s (107.87-107.88) | AR: 184.55s
+147. Antonie Paterakis (2012PATE01. Netherlands. _Europe) - 0.01s (97.10-97.11) | AR: 274.69s
+147. Ryan Farish (2015FARI06. USA. _North America) - 0.01s (24.92-24.93) | AR: 231.20s
+147. Ansel de Jong (2023JONG01. USA. _North America) - 0.01s (89.72-89.73) | AR: 247.61s
+147. Teruki Tamura (田村旭輝) (2016TAMU01. Japan. _Asia) - 0.01s (44.56-44.57) | AR: 64.01s
+147. Zhihuang Chen (陈志煌) (2013CHEN46. China. _Asia) - 0.01s (56.37-56.38) | AR: 92.82s
+147. Farid Mikhailov (2015MIKH04. Kazakhstan. _Asia) - 0.01s (106.99-107.00) | AR: 143.16s
+147. Stefan Pochmann (2003POCH01. Germany. _Europe) - 0.01s (270.56-270.57) | AR: 1943.95s
+147. Jungwoo Kim (김정우) (2014KIMJ02. Korea. _Asia) - 0.01s (42.82-42.83) | AR: 223.47s
