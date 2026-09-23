@@ -102,8 +102,16 @@
         tr:hover { background-color: var(--hover); }
         
         /* CONTENEDOR DESLIZABLE EXCLUSIVO PARA LA PESTAÑA 2 */
-        .table-wrapper { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 15px; border-radius: 8px; }
-        .table-wrapper table { white-space: nowrap; margin: 0; width: 100%; }
+        /* En PC: La tabla vuelve a verse exactamente como estaba, centrada y normal */
+        .table-wrapper { width: 100%; max-width: 1000px; margin: 0 auto 20px auto; overflow-x: auto; border-radius: 8px; }
+        .table-wrapper table { width: 100%; margin: 0; white-space: normal; }
+
+        /* En MÓVIL: Encogemos la letra y los márgenes para que encaje al ancho de los recuadros */
+        @media (max-width: 768px) {
+            table { font-size: 0.75em; }
+            th, td { padding: 8px 4px; }
+            .rank-badges { line-height: 1.5; }
+        }
         
         a { color: #64b5f6; text-decoration: none; font-weight: bold; }
         a:hover { text-decoration: underline; color: #90caf9; }
