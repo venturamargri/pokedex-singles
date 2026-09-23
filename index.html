@@ -45,7 +45,7 @@
         h1.main-title { color: #4CAF50; margin: 0; cursor: pointer; user-select: none; transition: opacity 0.2s; }
         h1.main-title:hover { opacity: 0.8; }
         
-        #agrupacionSelect { font-size: 1em; padding: 6px 12px; border-radius: 8px; font-weight: bold; background-color: #4CAF50; color: white; border: none; outline: none; cursor: pointer; }
+        #agrupacionSelect, #regionColectiva { font-size: 1em; padding: 6px 12px; border-radius: 8px; font-weight: bold; background-color: #4CAF50; color: white; border: none; outline: none; cursor: pointer; }
         
         #theme-btn { position: absolute; right: 0; background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 1.2em; transition: 0.2s; }
         #theme-btn:hover { transform: scale(1.1); }
@@ -154,6 +154,7 @@
             <option value="Continental">Modo Continental</option>
             <option value="Mundial">Modo Mundial</option>
         </select>
+        <select id="regionColectiva" style="display:none;" onchange="actualizarTodasLasPestanas()"></select>
         <button id="theme-btn" onclick="toggleTheme()" title="Modo Claro/Oscuro">☀️</button>
     </div>
     
@@ -178,11 +179,6 @@
             <div id="ctrl-individual" style="display:inline-block;">
                 <input type="search" id="wcaIdPokedex" placeholder="WCA ID (Ej: 2014LOPE04)" onkeyup="manejarEnter(event, 'btnGenPokedex')">
             </div>
-            
-            <!-- SELECTS COLECTIVOS -->
-            <div id="ctrl-colectivo" style="display:none;">
-                <select id="regionColectiva"></select>
-            </div>
 
             <select id="eventIdPokedex" onchange="actualizarURL()">
                 <option value="333" selected>3x3x3</option>
@@ -201,6 +197,8 @@
             </select>
             <button id="btnGenPokedex" class="action-btn" onclick="generarPokedex()">Generar Pokédex</button>
             <div class="chips-container" id="chips-pokedex"></div>
+            
+            <!-- EL BOTÓN BISAGRA AHORA AFECTA A TODOS LOS MODOS -->
             <div class="opciones-extra" id="opciones-individuales">
                 <input type="checkbox" id="checkBisagra" onchange="if(document.getElementById('resPokedex').innerHTML !== '') generarPokedex()">
                 <label for="checkBisagra">Mostrar Tiempo Bisagra</label>
@@ -229,11 +227,13 @@
                 <option value="444bf">4x4x4 Blindfolded</option>
                 <option value="555bf">5x5x5 Blindfolded</option>
             </select>
-            <select id="countryTop" onchange="filtrarTop()">
-                <option value="Todos" selected>Todos los resultados</option>
-                <optgroup label="--- Continentes ---" id="group-continents"></optgroup>
-                <optgroup label="--- Países ---" id="group-countries"></optgroup>
-            </select>
+            <span id="filtros-ind-top">
+                <select id="countryTop" onchange="filtrarTop()">
+                    <option value="Todos" selected>Todos los resultados</option>
+                    <optgroup label="--- Continentes ---" id="group-continents"></optgroup>
+                    <optgroup label="--- Países ---" id="group-countries"></optgroup>
+                </select>
+            </span>
             <button class="action-btn" onclick="cargarTop1000()">Ver Ranking</button>
             <br>
             <input type="search" id="searchNameTop" placeholder="🔍 Filtrar por nombre o WCA ID" oninput="filtrarTop()" style="margin-top: 15px; width: 60%;">
@@ -244,7 +244,9 @@
     <!-- PESTAÑA 3 -->
     <div id="tab-competidor" class="tab-content">
         <div class="controls">
-            <input type="search" id="wcaIdCompetidor" placeholder="WCA ID (Ej: 2014LOPE04)" onkeyup="manejarEnter(event, 'btnGenCompetidor')">
+            <span id="ctrl-ind-comp">
+                <input type="search" id="wcaIdCompetidor" placeholder="WCA ID (Ej: 2014LOPE04)" onkeyup="manejarEnter(event, 'btnGenCompetidor')">
+            </span>
             <button id="btnGenCompetidor" class="action-btn" onclick="cargarCompetidor()">Ver Todos los Rangos</button>
             <div class="chips-container" id="chips-competidor"></div>
         </div>
@@ -254,11 +256,18 @@
     <!-- PESTAÑA 4 (NUEVA): HALL OF FAME -->
     <div id="tab-fame" class="tab-content">
         <div class="controls" style="text-align: center;">
-            <h2 style="color: #ffb300; margin-top: 0;">Descubridores Originales</h2>
-            <p style="color:var(--text-muted); font-size:1em;">Jugadores que destaparon huecos de la Pokédex colectiva por primera vez en la historia.</p>
+            <select id="eventIdFame" onchange="cargarHallOfFame()">
+                <option value="333" selected>3x3x3</option><option value="222">2x2x2</option><option value="444">4x4x4</option><option value="555">5x5x5</option><option value="666">6x6x6</option><option value="777">7x7x7</option><option value="333bf">3x3x3 Blindfolded</option><option value="333oh">3x3x3 One-Handed</option><option value="clock">Clock</option><option value="minx">Megaminx</option><option value="pyram">Pyraminx</option><option value="skewb">Skewb</option><option value="sq1">Square-1</option>
+            </select>
+            <select id="fameTypeSelect" onchange="cargarHallOfFame()">
+                <option value="individuals" id="fameOptIndiv">🏆 Por Individuos (Mayores Aportadores)</option>
+                <option value="countries" id="fameOptCountries">🏆 Por Países</option>
+                <option value="continents" id="fameOptContinents">🏆 Por Continentes</option>
+            </select>
+            <button class="action-btn" onclick="cargarHallOfFame()">Ver Hall of Fame</button>
         </div>
         <div id="resFame" style="max-width: 800px; margin: 0 auto; background: var(--panel); border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <p style="color:var(--text-muted);">Selecciona un evento y pulsa "Generar Pokédex" en la Pestaña 1 para cargar el Hall of Fame de esa región.</p>
+            <p style="color:var(--text-muted);">Pulsa "Ver Hall of Fame" para cargar los datos.</p>
         </div>
     </div>
 
@@ -304,55 +313,71 @@
             grpCoun.appendChild(opt);
         });
 
-        // --- NUEVA LÓGICA DE AGRUPACIÓN ---
+        // --- NUEVA LÓGICA DE AGRUPACIÓN (AFECTA A TODAS LAS PESTAÑAS) ---
         function cambiarAgrupacion() {
             const modo = document.getElementById('agrupacionSelect').value;
             const ctrlInd = document.getElementById('ctrl-individual');
-            const ctrlCol = document.getElementById('ctrl-colectivo');
+            const ctrlIndComp = document.getElementById('ctrl-ind-comp');
+            const filtrosIndTop = document.getElementById('filtros-ind-top');
             const regionSel = document.getElementById('regionColectiva');
             const btnFame = document.getElementById('btn-tab-fame');
             
-            document.getElementById('resPokedex').innerHTML = '';
+            actualizarTodasLasPestanas();
 
             if (modo === 'individual') {
                 ctrlInd.style.display = 'inline-block';
-                ctrlCol.style.display = 'none';
+                ctrlIndComp.style.display = 'inline-block';
+                filtrosIndTop.style.display = 'inline-block';
+                regionSel.style.display = 'none';
                 btnFame.style.display = 'none';
                 document.getElementById('chips-pokedex').style.display = 'block';
-                document.getElementById('opciones-individuales').style.display = 'block';
+                document.getElementById('chips-competidor').style.display = 'block';
                 
-                // Si estábamos en Hall of fame, volver a pokedex
                 if(document.getElementById('tab-fame').classList.contains('active')) {
                     openTab('tab-pokedex', false);
                 }
             } else {
                 ctrlInd.style.display = 'none';
-                ctrlCol.style.display = 'inline-block';
-                btnFame.style.display = 'block';
+                ctrlIndComp.style.display = 'none';
+                filtrosIndTop.style.display = 'none'; // En colectivo el ranking es total
                 document.getElementById('chips-pokedex').style.display = 'none';
-                document.getElementById('opciones-individuales').style.display = 'none';
+                document.getElementById('chips-competidor').style.display = 'none';
+                btnFame.style.display = 'block';
                 
                 regionSel.innerHTML = '';
                 if (modo === 'Nacional') {
                     regionSel.style.display = 'inline-block';
                     wcaCountries.forEach(c => {
-                        let opt = document.createElement('option');
-                        opt.value = c; opt.textContent = c;
+                        let opt = document.createElement('option'); opt.value = c; opt.textContent = c;
                         if(c === "Spain") opt.selected = true;
                         regionSel.appendChild(opt);
                     });
+                    document.getElementById('fameTypeSelect').value = 'individuals';
+                    document.getElementById('fameOptCountries').style.display = 'none';
+                    document.getElementById('fameOptContinents').style.display = 'none';
                 } else if (modo === 'Continental') {
                     regionSel.style.display = 'inline-block';
                     wcaContinents.forEach(c => {
-                        let opt = document.createElement('option');
-                        opt.value = c; opt.textContent = c.replace('_', '🌍 ');
+                        let opt = document.createElement('option'); opt.value = c; opt.textContent = c.replace('_', '🌍 ');
                         if(c === "_Europe") opt.selected = true;
                         regionSel.appendChild(opt);
                     });
+                    document.getElementById('fameTypeSelect').value = 'individuals';
+                    document.getElementById('fameOptCountries').style.display = 'block';
+                    document.getElementById('fameOptContinents').style.display = 'none';
                 } else if (modo === 'Mundial') {
                     regionSel.style.display = 'none'; 
+                    document.getElementById('fameOptCountries').style.display = 'block';
+                    document.getElementById('fameOptContinents').style.display = 'block';
                 }
             }
+        }
+
+        function actualizarTodasLasPestanas() {
+            document.getElementById('resPokedex').innerHTML = '';
+            document.getElementById('resTop1000').innerHTML = '';
+            document.getElementById('resCompetidor').innerHTML = '';
+            document.getElementById('resFame').innerHTML = `<p style="color:var(--text-muted);">Pulsa "Ver Hall of Fame" para cargar los datos.</p>`;
         }
 
         function toggleTheme() {
@@ -392,7 +417,7 @@
             }
             if(tab === 'top1000') { ev = document.getElementById('eventIdTop').value; }
             if(tab === 'competidor') { wcaid = document.getElementById('wcaIdCompetidor').value; }
-            if(tab === 'fame') { ev = document.getElementById('eventIdPokedex').value; }
+            if(tab === 'fame') { ev = document.getElementById('eventIdFame').value; }
             
             const stateData = { tab, wcaid, ev };
             const newUrl = `?tab=${tab}&wcaid=${wcaid}&ev=${ev}`;
@@ -406,12 +431,13 @@
 
         window.addEventListener('popstate', (e) => {
             if (e.state && e.state.tab) {
-                if (e.state.ev) { document.getElementById('eventIdPokedex').value = e.state.ev; document.getElementById('eventIdTop').value = e.state.ev; }
+                if (e.state.ev) { document.getElementById('eventIdPokedex').value = e.state.ev; document.getElementById('eventIdTop').value = e.state.ev; document.getElementById('eventIdFame').value = e.state.ev; }
                 if (e.state.wcaid) { document.getElementById('wcaIdPokedex').value = e.state.wcaid; document.getElementById('wcaIdCompetidor').value = e.state.wcaid; }
                 openTab('tab-' + e.state.tab, false);
                 if (e.state.wcaid && e.state.tab === 'pokedex') generarPokedex();
                 if (e.state.wcaid && e.state.tab === 'competidor') cargarCompetidor();
                 if (e.state.tab === 'top1000') cargarTop1000();
+                if (e.state.tab === 'fame') cargarHallOfFame();
             }
         });
 
@@ -452,7 +478,7 @@
             
             history.replaceState({ tab, wcaid, ev }, '', window.location.search);
             
-            if (params.get('ev')) { document.getElementById('eventIdPokedex').value = ev; document.getElementById('eventIdTop').value = ev; }
+            if (params.get('ev')) { document.getElementById('eventIdPokedex').value = ev; document.getElementById('eventIdTop').value = ev; document.getElementById('eventIdFame').value = ev;}
             if (params.get('wcaid')) { document.getElementById('wcaIdPokedex').value = wcaid; document.getElementById('wcaIdCompetidor').value = wcaid; }
             
             if (params.get('tab')) {
@@ -460,6 +486,7 @@
                 if (wcaid && tab === 'pokedex') generarPokedex();
                 if (wcaid && tab === 'competidor') cargarCompetidor();
                 if (tab === 'top1000') cargarTop1000();
+                if (tab === 'fame') cargarHallOfFame();
             }
         });
 
@@ -492,7 +519,6 @@
 
         function irAPokedex(wcaId, eventId) {
             openTab('tab-pokedex');
-            // Forzar modo individual si venimos de otra pestaña a ver un perfil
             document.getElementById('agrupacionSelect').value = 'individual';
             cambiarAgrupacion();
             
@@ -556,7 +582,7 @@
             document.getElementById('modal-overlay').style.display = 'flex';
         }
         
-        // --- NUEVO POP-UP COLECTIVO ---
+        // --- POP-UP COLECTIVO ---
         function mostrarPopUpColectivo(tiempo, descubridores, comps) {
             let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank" style="display:inline-block; margin:2px 5px;">${c}</a>`).join(' / ');
             let htmlGente = descubridores.map(d => `<strong style="color: #64b5f6;">${d}</strong>`).join('<br>');
@@ -580,39 +606,25 @@
             const payload = apiCache.get(wcaId);
             if (!payload) return;
             const data = payload.data;
-            
             let tiemposSet = new Set();
             let historial = [];
-            
             let compsCronologicas = data.slice();
             
             for (let comp of compsCronologicas) {
                 if (comp.event_id !== eventId) continue;
-                
                 let intentos = [];
-                if (comp.attempts) {
-                    intentos = comp.attempts.filter(x => x > 0);
-                }
-                if (comp.best > 0 && intentos.length === 0) {
-                    intentos = [comp.best];
-                }
+                if (comp.attempts) { intentos = comp.attempts.filter(x => x > 0); }
+                if (comp.best > 0 && intentos.length === 0) { intentos = [comp.best]; }
                 
                 for (let int of intentos) {
                     if (tiemposSet.has(int)) continue; 
-                    
                     if (tiemposSet.size > 0) {
                         let { bestRango, hingeTimes, maxRangoActual } = calcularHingeTimesAvanzado(tiemposSet);
-                        
                         if (hingeTimes.has(int)) {
                             let aumentoCentesimas = bestRango - maxRangoActual;
-                            
                             if (aumentoCentesimas > 1) {
                                 historial.unshift({
-                                    tiempo: int,
-                                    comp: comp.competition_id,
-                                    rangoAntiguo: maxRangoActual,
-                                    rangoNuevo: bestRango,
-                                    aumento: aumentoCentesimas
+                                    tiempo: int, comp: comp.competition_id, rangoAntiguo: maxRangoActual, rangoNuevo: bestRango, aumento: aumentoCentesimas
                                 });
                             }
                         }
@@ -637,7 +649,6 @@
                 });
                 html += `</div>`;
             }
-            
             document.getElementById('modal-texto').innerHTML = html;
             document.getElementById('modal-overlay').style.display = 'flex';
         }
@@ -659,9 +670,7 @@
             
             const evaluarCandidato = (v, hipoteticoRango) => {
                 if (hipoteticoRango > bestRango) {
-                    bestRango = hipoteticoRango;
-                    hingeTimes.clear();
-                    hingeTimes.add(v);
+                    bestRango = hipoteticoRango; hingeTimes.clear(); hingeTimes.add(v);
                 } else if (hipoteticoRango === bestRango && hipoteticoRango > maxRangoActual) {
                     hingeTimes.add(v);
                 }
@@ -673,13 +682,8 @@
             }
 
             for (let i = 0; i < rachas.length - 1; i++) {
-                let r1 = rachas[i];
-                let r2 = rachas[i+1];
-                let gap = r2.min - r1.max - 1;
-                
-                if (gap === 1) { 
-                    evaluarCandidato(r1.max + 1, (r1.max - r1.min) + (r2.max - r2.min) + 2);
-                }
+                let r1 = rachas[i]; let r2 = rachas[i+1]; let gap = r2.min - r1.max - 1;
+                if (gap === 1) { evaluarCandidato(r1.max + 1, (r1.max - r1.min) + (r2.max - r2.min) + 2); }
             }
             
             return { bestRango, hingeTimes, maxRangoActual };
@@ -699,17 +703,15 @@
             return payload;
         }
 
-        // --- GENERADOR UNIFICADO (INDIVIDUAL Y COLECTIVO) ---
+        // --- CORE: PESTAÑA 1 (POKEDEX UNIFICADA) ---
         async function generarPokedex() {
             const modo = document.getElementById('agrupacionSelect').value;
             const eventId = document.getElementById('eventIdPokedex').value;
             const resDiv = document.getElementById('resPokedex');
+            const mostrarBisagra = document.getElementById('checkBisagra').checked;
 
             if (modo === 'individual') {
-                // LOGICA ORIGINAL INDIVIDUAL INTACTA
                 const wcaId = document.getElementById('wcaIdPokedex').value.trim().toUpperCase();
-                const mostrarBisagra = document.getElementById('checkBisagra').checked;
-
                 if(!wcaId) return;
                 actualizarURL();
                 resDiv.innerHTML = "<p class='loading'>Conectando con la API WCA...</p>";
@@ -719,33 +721,18 @@
                     guardarReciente(wcaId);
                     
                     let tiemposConseguidos = new Map(); 
-                    
                     data.slice().reverse().forEach(comp => {
                         if(comp.event_id === eventId) {
                             let nombreComp = comp.competition_id;
-                            if(comp.attempts) {
-                                comp.attempts.forEach(i => { 
-                                    if(i > 0) {
-                                        if(!tiemposConseguidos.has(i)) tiemposConseguidos.set(i, new Set());
-                                        tiemposConseguidos.get(i).add(nombreComp);
-                                    }
-                                });
-                            }
-                            if(comp.best > 0) {
-                                if(!tiemposConseguidos.has(comp.best)) tiemposConseguidos.set(comp.best, new Set());
-                                tiemposConseguidos.get(comp.best).add(nombreComp);
-                            }
+                            if(comp.attempts) { comp.attempts.forEach(i => { if(i > 0) { if(!tiemposConseguidos.has(i)) tiemposConseguidos.set(i, new Set()); tiemposConseguidos.get(i).add(nombreComp); } }); }
+                            if(comp.best > 0) { if(!tiemposConseguidos.has(comp.best)) tiemposConseguidos.set(comp.best, new Set()); tiemposConseguidos.get(comp.best).add(nombreComp); }
                         }
                     });
 
-                    if(tiemposConseguidos.size === 0) {
-                        resDiv.innerHTML = `<p class='error'>No hay marcas oficiales para ${personName} (${wcaId}) en esta categoría.</p>`;
-                        return;
-                    }
+                    if(tiemposConseguidos.size === 0) { resDiv.innerHTML = `<p class='error'>No hay marcas oficiales para ${personName} (${wcaId}) en esta categoría.</p>`; return; }
 
                     const arrayTiempos = Array.from(tiemposConseguidos.keys()).sort((a, b) => a - b);
                     const racha = calcularRachas(arrayTiempos);
-                    
                     const minVal = arrayTiempos[0], maxVal = arrayTiempos[arrayTiempos.length - 1];
                     const totalPosibles = maxVal - minVal + 1;
                     const porcentaje = ((tiemposConseguidos.size / totalPosibles) * 100).toFixed(1);
@@ -762,12 +749,8 @@
                                 let simArray = [...arrayTiempos, v].sort((a,b) => a-b);
                                 let simRacha = calcularRachas(simArray);
                                 if (simRacha.rango > bestPotentialRango) {
-                                    bestPotentialRango = simRacha.rango;
-                                    hingeTimes.clear();
-                                    hingeTimes.add(v);
-                                } else if (simRacha.rango === bestPotentialRango && simRacha.rango > racha.rango) {
-                                    hingeTimes.add(v);
-                                }
+                                    bestPotentialRango = simRacha.rango; hingeTimes.clear(); hingeTimes.add(v);
+                                } else if (simRacha.rango === bestPotentialRango && simRacha.rango > racha.rango) { hingeTimes.add(v); }
                             }
                         }
                         for (let h of hingeTimes) {
@@ -796,10 +779,8 @@
 
                     for(let v = minVal; v <= maxVal; v++) {
                         let tv = formatCS(v);
-                        
                         let isBisagra = hingeTimes.has(v);
                         let isAffected = affectedTimes.has(v);
-                        
                         let compsArray = tiemposConseguidos.has(v) ? Array.from(tiemposConseguidos.get(v)) : [];
                         let compsStrData = compsArray.join(','); 
                         let tooltipMsg = compsArray.join(', ');
@@ -808,14 +789,7 @@
                         let accionClick = tiemposConseguidos.has(v) ? `onclick="mostrarPopUp('${compsStrData}', '${tv}')"` : `onclick="mostrarPopUpFallo('${tv}')"`;
                         
                         let cssClass = 'miss';
-                        if (isBisagra) {
-                            cssClass = 'bisagra';
-                        } else if (v >= racha.min && v <= racha.max) {
-                            cssClass = isAffected ? 'streak strong' : 'streak';
-                        } else if (tiemposConseguidos.has(v)) {
-                            cssClass = isAffected ? 'got strong' : 'got';
-                        }
-                        
+                        if (isBisagra) { cssClass = 'bisagra'; } else if (v >= racha.min && v <= racha.max) { cssClass = isAffected ? 'streak strong' : 'streak'; } else if (tiemposConseguidos.has(v)) { cssClass = isAffected ? 'got strong' : 'got'; }
                         let scrollClass = (v === racha.min) ? ` inicio-rango` : "";
                         
                         statsHtml += `<div class='card ${cssClass}${scrollClass}' ${tooltip} ${accionClick}>${tv}</div>`;
@@ -824,7 +798,7 @@
                 } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
                 
             } else {
-                // --- NUEVA LÓGICA COLECTIVA (Python JSON) ---
+                // LÓGICA COLECTIVA 
                 resDiv.innerHTML = `<p class='loading'>Consultando archivos de la comunidad...</p>`;
 
                 try {
@@ -852,53 +826,63 @@
                     const minVal = arrayTiempos[0], maxVal = arrayTiempos[arrayTiempos.length - 1];
                     const totalPosibles = maxVal - minVal + 1;
                     const rachaCol = calcularRachas(arrayTiempos);
+                    
+                    let hingeTimes = new Set();
+                    let affectedTimes = new Set();
+
+                    // CÁLCULO DE BISAGRA PARA MODO COLECTIVO
+                    if (mostrarBisagra) {
+                        let bestPotentialRango = rachaCol.rango;
+                        let tiemposConseguidos = new Set(arrayTiempos);
+                        for (let v = minVal; v <= maxVal; v++) {
+                            if (!tiemposConseguidos.has(v)) {
+                                let simArray = [...arrayTiempos, v].sort((a,b) => a-b);
+                                let simRacha = calcularRachas(simArray);
+                                if (simRacha.rango > bestPotentialRango) {
+                                    bestPotentialRango = simRacha.rango; hingeTimes.clear(); hingeTimes.add(v);
+                                } else if (simRacha.rango === bestPotentialRango && simRacha.rango > rachaCol.rango) { hingeTimes.add(v); }
+                            }
+                        }
+                        for (let h of hingeTimes) {
+                            let left = h; while(tiemposConseguidos.has(left - 1)) left--;
+                            let right = h; while(tiemposConseguidos.has(right + 1)) right++;
+                            for (let a = left; a <= right; a++) { if (a !== h) affectedTimes.add(a); }
+                        }
+                    }
 
                     let statsHtml = `
                         <div class="stats">
                             <h2 style="margin:0 0 10px 0; color:#4CAF50;">Pokédex de ${nombreRegion}</h2>
                             <strong>Completado:</strong> ${arrayTiempos.length} / ${totalPosibles} (${((arrayTiempos.length / totalPosibles) * 100).toFixed(1)}%) <br>
                             <strong>Rango Colectivo:</strong> <span style="color: #ce93d8;">${formatCS(rachaCol.rango)}s (${formatCS(rachaCol.min)} - ${formatCS(rachaCol.max)})</span>
+                            <button class="action-btn" style="padding: 4px 10px; font-size: 0.8em; margin-left: 10px;" onclick="scrollToRango()">Mostrar Rango</button>
                         </div>
                         <div class="grid">`;
 
                     for(let v = minVal; v <= maxVal; v++) {
                         let tv = formatCS(v);
+                        let isBisagra = hingeTimes.has(v);
+                        let isAffected = affectedTimes.has(v);
                         
                         if (tiemposObj[v]) {
                             let obj = tiemposObj[v];
                             let descStr = JSON.stringify(obj.descubridores).replace(/"/g, '&quot;');
                             let compStr = JSON.stringify(obj.comps).replace(/"/g, '&quot;');
                             
-                            let cssClass = (v >= rachaCol.min && v <= rachaCol.max) ? 'streak' : 'got';
-                            statsHtml += `<div class='card ${cssClass}' onclick="mostrarPopUpColectivo('${tv}', ${descStr}, ${compStr})">${tv}</div>`;
+                            let cssClass = 'got';
+                            if (v >= rachaCol.min && v <= rachaCol.max) { cssClass = isAffected ? 'streak strong' : 'streak'; } else { cssClass = isAffected ? 'got strong' : 'got'; }
+                            let scrollClass = (v === rachaCol.min) ? ` inicio-rango` : "";
+                            
+                            statsHtml += `<div class='card ${cssClass}${scrollClass}' onclick="mostrarPopUpColectivo('${tv}', ${descStr}, ${compStr})">${tv}</div>`;
                         } else {
-                            statsHtml += `<div class='card miss' onclick="document.getElementById('modal-texto').innerHTML='<h2 style=\\'margin:0 0 10px 0; color:var(--text);\\'>${tv}</h2>❌ Nadie en ${nombreRegion} ha logrado este tiempo jamás.'; document.getElementById('modal-overlay').style.display='flex';">${tv}</div>`;
+                            let cssClass = isBisagra ? 'bisagra' : 'miss';
+                            statsHtml += `<div class='card ${cssClass}' onclick="document.getElementById('modal-texto').innerHTML='<h2 style=\\'margin:0 0 10px 0; color:var(--text);\\'>${tv}</h2>❌ Nadie en ${nombreRegion} ha logrado este tiempo jamás.'; document.getElementById('modal-overlay').style.display='flex';">${tv}</div>`;
                         }
                     }
                     resDiv.innerHTML = statsHtml + `</div>`;
 
-                    // PINTAR HALL OF FAME EN PESTAÑA 4
-                    let htmlFame = "";
-                    let pos = 1;
-                    const fameArray = Object.entries(statsRegion.hall_of_fame).sort((a, b) => b[1] - a[1]);
-                    
-                    if (fameArray.length === 0) {
-                        htmlFame = `<p style="color:var(--text-muted);">Sin datos para mostrar.</p>`;
-                    } else {
-                        for (const [persona, puntos] of fameArray) {
-                            htmlFame += `
-                                <div class="fame-row">
-                                    <div><span class="fame-pos">#${pos}</span> ${persona}</div>
-                                    <div style="color:#4CAF50; font-weight:bold;">${puntos} singles</div>
-                                </div>`;
-                            pos++;
-                        }
-                    }
-                    document.getElementById('resFame').innerHTML = htmlFame;
-
                 } catch (err) {
                     resDiv.innerHTML = `<p class='error'>Error: ${err.message}</p>`;
-                    document.getElementById('resFame').innerHTML = `<p class='error'>Error al cargar Hall of Fame: ${err.message}</p>`;
                 }
             }
         }
@@ -911,41 +895,78 @@
             }
         }
 
+        // --- CORE: PESTAÑA 2 (RANKINGS UNIFICADOS) ---
         async function cargarTop1000() {
+            const modo = document.getElementById('agrupacionSelect').value;
             const eventId = document.getElementById('eventIdTop').value;
             const resDiv = document.getElementById('resTop1000');
             actualizarURL();
-            resDiv.innerHTML = `<p class='loading'>Cargando ranking...</p>`;
+            
+            if (modo === 'Mundial') {
+                resDiv.innerHTML = `<p class='error'>El modo Mundial no tiene divisiones internas para comparar rangos en esta pestaña.</p>`;
+                return;
+            }
 
-            try {
-                const response = await fetch(`ranking_${eventId}.txt?v=${Date.now()}`);
-                if(!response.ok) throw new Error(`Ranking no disponible`);
-                const text = await response.text();
-                
-                datosRankingGlobal = [];
-                const regex = /^(\d+)\.\s+(.*?)\s+\(([A-Z0-9]+)\.\s+(.*?)\.\s+(.*?)\)\s+-\s+([0-9.]+)s\s+\((.*?)\)/i;
+            if (modo === 'individual') {
+                resDiv.innerHTML = `<p class='loading'>Cargando ranking individual...</p>`;
+                try {
+                    const response = await fetch(`ranking_${eventId}.txt?v=${Date.now()}`);
+                    if(!response.ok) throw new Error(`Ranking no disponible`);
+                    const text = await response.text();
+                    
+                    datosRankingGlobal = [];
+                    const regex = /^(\d+)\.\s+(.*?)\s+\(([A-Z0-9]+)\.\s+(.*?)\.\s+(.*?)\)\s+-\s+([0-9.]+)s\s+\((.*?)\)/i;
 
-                text.split('\n').forEach(line => {
-                    let match = line.trim().match(regex);
-                    if(match) {
-                        datosRankingGlobal.push({ posGlobal: match[1], nombre: match[2], wcaId: match[3], pais: match[4], continente: match[5], rangoText: match[6], rangoLimites: match[7] });
+                    text.split('\n').forEach(line => {
+                        let match = line.trim().match(regex);
+                        if(match) {
+                            datosRankingGlobal.push({ posGlobal: match[1], nombre: match[2], wcaId: match[3], pais: match[4], continente: match[5], rangoText: match[6], rangoLimites: match[7] });
+                        }
+                    });
+                    
+                    if(datosRankingGlobal.length === 0) throw new Error("Error en el formato del TXT.");
+                    filtrarTop();
+                } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+            } else {
+                // RANKINGS COLECTIVOS (Paises o Continentes)
+                resDiv.innerHTML = `<p class='loading'>Calculando rankings de la región...</p>`;
+                try {
+                    const req = await fetch(`collective_${eventId}.json?v=${Date.now()}`);
+                    if (!req.ok) throw new Error("No hay datos colectivos.");
+                    const data = await req.json();
+                    
+                    datosRankingGlobal = [];
+                    if (modo === 'Nacional') {
+                        for (let p in data.Nacional) {
+                            let obj = data.Nacional[p];
+                            let arr = Object.keys(obj.tiempos).map(Number).sort((a,b)=>a-b);
+                            let r = calcularRachas(arr);
+                            if(r) datosRankingGlobal.push({ nombre: p, wcaId: "-", pais: p, continente: data.Metadata.paises_continentes[p], rangoText: (r.rango/100).toFixed(2), rangoLimites: `${formatStrSeconds(r.min)} - ${formatStrSeconds(r.max)}`, rawRango: r.rango });
+                        }
+                    } else if (modo === 'Continental') {
+                        for (let c in data.Continental) {
+                            let obj = data.Continental[c];
+                            let arr = Object.keys(obj.tiempos).map(Number).sort((a,b)=>a-b);
+                            let r = calcularRachas(arr);
+                            if(r) datosRankingGlobal.push({ nombre: c.replace('_','🌍 '), wcaId: "-", pais: "-", continente: c, rangoText: (r.rango/100).toFixed(2), rangoLimites: `${formatStrSeconds(r.min)} - ${formatStrSeconds(r.max)}`, rawRango: r.rango });
+                        }
                     }
-                });
-                
-                if(datosRankingGlobal.length === 0) throw new Error("El archivo existe pero el formato es incorrecto. Vuelve a generar el .txt con Python.");
-                filtrarTop();
-            } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+                    
+                    datosRankingGlobal.sort((a,b) => b.rawRango - a.rawRango);
+                    datosRankingGlobal.forEach((d, i) => d.posGlobal = i + 1);
+                    filtrarTop();
+                } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+            }
         }
 
         function filtrarTop() {
-            const eventId = document.getElementById('eventIdTop').value; 
-            const paisFiltro = document.getElementById('countryTop').value;
+            const modo = document.getElementById('agrupacionSelect').value;
+            const paisFiltro = modo === 'individual' ? document.getElementById('countryTop').value : "Todos";
             const searchVal = document.getElementById('searchNameTop').value.toLowerCase().trim();
-            const resDiv = document.getElementById('resTop1000');
             
             let filtradosRegion = datosRankingGlobal;
             
-            if(paisFiltro !== "Todos") {
+            if (modo === 'individual' && paisFiltro !== "Todos") {
                 if(paisFiltro.startsWith('_')) {
                     filtradosRegion = filtradosRegion.filter(d => d.continente === paisFiltro);
                 } else {
@@ -967,40 +988,65 @@
             
             filtradosTop = filtradosRegion;
             if (searchVal) {
-                filtradosTop = filtradosTop.filter(d => d.nombre.toLowerCase().includes(searchVal) || d.wcaId.toLowerCase().includes(searchVal));
+                filtradosTop = filtradosTop.filter(d => d.nombre.toLowerCase().includes(searchVal) || (d.wcaId && d.wcaId.toLowerCase().includes(searchVal)));
             }
 
-            renderLimit = 50; 
+            renderLimit = (modo === 'individual') ? 50 : 9999; // Renderizamos todo de golpe si son paises/continentes
             pintarTablaTop();
         }
 
         function pintarTablaTop() {
             const eventId = document.getElementById('eventIdTop').value; 
-            const paisFiltro = document.getElementById('countryTop').value;
+            const modo = document.getElementById('agrupacionSelect').value;
             const resDiv = document.getElementById('resTop1000');
             
-            let html = `<div class="stats">Mostrando ${filtradosTop.length} resultados para: <strong style="color:var(--text);">${paisFiltro.replace('_','🌍 ')}</strong></div>`;
+            let subtitle = "";
+            if (modo === 'individual') {
+                const paisFiltro = document.getElementById('countryTop').value;
+                subtitle = `Mostrando ${filtradosTop.length} individuos de: <strong style="color:var(--text);">${paisFiltro.replace('_','🌍 ')}</strong>`;
+            } else {
+                subtitle = `Mostrando Rango Colectivo de ${filtradosTop.length} ${modo === 'Nacional' ? 'países' : 'continentes'}.`;
+            }
             
-            html += `<div class="table-wrapper"><table><tr><th># (Global)</th><th>Nombre</th><th>WCA ID</th><th>País</th><th>Rango Actual</th></tr>`;
+            let html = `<div class="stats">${subtitle}</div>`;
+            
+            if (modo === 'individual') {
+                html += `<div class="table-wrapper"><table><tr><th># (Global)</th><th>Nombre</th><th>WCA ID</th><th>País</th><th>Rango Actual</th></tr>`;
+            } else if (modo === 'Nacional') {
+                html += `<div class="table-wrapper"><table><tr><th>#</th><th>País</th><th>Rango Colectivo</th></tr>`;
+            } else {
+                html += `<div class="table-wrapper"><table><tr><th>#</th><th>Continente</th><th>Rango Colectivo</th></tr>`;
+            }
             
             let limit = Math.min(renderLimit, filtradosTop.length);
             for(let i=0; i < limit; i++) {
                 let d = filtradosTop[i];
-                let posDisplay = paisFiltro === "Todos" ? d.posGlobal : `<b>${d.posLocalCalc}</b> <span style="font-size:0.8em; color:var(--text-muted);">(WR: ${d.posGlobal})</span>`;
+                let posDisplay = (modo === 'individual' && document.getElementById('countryTop').value !== "Todos") ? `<b>${d.posLocalCalc}</b> <span style="font-size:0.8em; color:var(--text-muted);">(WR: ${d.posGlobal})</span>` : d.posGlobal;
                 
                 let limitsSplit = d.rangoLimites.split('-');
                 let formattedLimits = limitsSplit.length === 2 ? `${formatStrSeconds(limitsSplit[0])} - ${formatStrSeconds(limitsSplit[1])}` : d.rangoLimites;
 
-                html += `
-                    <tr>
-                        <td>${posDisplay}</td>
-                        <td>${d.nombre}</td>
-                        <td><a href="https://www.worldcubeassociation.org/persons/${d.wcaId}" target="_blank">${d.wcaId}</a></td>
-                        <td>${d.pais}</td>
-                        <td class="clickable-cell" title="Ver Pokédex de ${d.nombre}" onclick="irAPokedex('${d.wcaId}', '${eventId}')">
-                            <span style="color:#ce93d8; font-weight:bold;">${formatStrSeconds(d.rangoText)}s</span> <span style="font-size:0.8em; color:var(--text-muted);">(${formattedLimits})</span>
-                        </td>
-                    </tr>`;
+                if (modo === 'individual') {
+                    html += `
+                        <tr>
+                            <td>${posDisplay}</td>
+                            <td>${d.nombre}</td>
+                            <td><a href="https://www.worldcubeassociation.org/persons/${d.wcaId}" target="_blank">${d.wcaId}</a></td>
+                            <td>${d.pais}</td>
+                            <td class="clickable-cell" title="Ver Pokédex de ${d.nombre}" onclick="irAPokedex('${d.wcaId}', '${eventId}')">
+                                <span style="color:#ce93d8; font-weight:bold;">${formatStrSeconds(d.rangoText)}s</span> <span style="font-size:0.8em; color:var(--text-muted);">(${formattedLimits})</span>
+                            </td>
+                        </tr>`;
+                } else {
+                    html += `
+                        <tr>
+                            <td>${posDisplay}</td>
+                            <td style="font-weight:bold;">${d.nombre}</td>
+                            <td>
+                                <span style="color:#ce93d8; font-weight:bold;">${formatStrSeconds(d.rangoText)}s</span> <span style="font-size:0.8em; color:var(--text-muted);">(${formattedLimits})</span>
+                            </td>
+                        </tr>`;
+                }
             }
             html += `</table></div>`;
             
@@ -1010,116 +1056,222 @@
             resDiv.innerHTML = html;
         }
 
+        // --- CORE: PESTAÑA 3 (RANGOS UNIFICADOS) ---
         async function cargarCompetidor() {
-            const wcaId = document.getElementById('wcaIdCompetidor').value.trim().toUpperCase();
+            const modo = document.getElementById('agrupacionSelect').value;
             const resDiv = document.getElementById('resCompetidor');
             
-            if(!wcaId) return;
-            actualizarURL();
-            resDiv.innerHTML = "<p class='loading'>Escaneando historial completo y cruzando rankings locales...</p>";
-
+            if (modo === 'Mundial') {
+                resDiv.innerHTML = `<p class='error'>Esta pestaña compara regiones con sus superiores. En modo Mundial no hay nada por encima.</p>`;
+                return;
+            }
+            
             const orden = ['333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf'];
 
-            try {
-                const { data, personName } = await fetchWCA(wcaId);
-                guardarReciente(wcaId);
-                
-                let evtMap = {};
-                data.forEach(c => {
-                    let ev = c.event_id;
-                    if(['333fm', '333mbf'].includes(ev)) return;
-                    if(!evtMap[ev]) evtMap[ev] = new Set();
-                    if(c.attempts) c.attempts.forEach(i => { if(i > 0) evtMap[ev].add(i); });
-                    if(c.best > 0) evtMap[ev].add(c.best);
-                });
+            if (modo === 'individual') {
+                const wcaId = document.getElementById('wcaIdCompetidor').value.trim().toUpperCase();
+                if(!wcaId) return;
+                actualizarURL();
+                resDiv.innerHTML = "<p class='loading'>Escaneando historial completo y cruzando rankings locales...</p>";
 
-                let resultados = [];
-                for (let ev of Object.keys(evtMap)) {
-                    let arr = Array.from(evtMap[ev]).sort((a,b) => a-b);
-                    if(arr.length === 0) continue;
-                    let racha = calcularRachas(arr);
-                    resultados.push({ev, racha, global: "-", national: "-", continental: "-", country: "Todos", continent: "Todos"});
-                }
+                try {
+                    const { data, personName } = await fetchWCA(wcaId);
+                    guardarReciente(wcaId);
+                    
+                    let evtMap = {};
+                    data.forEach(c => {
+                        let ev = c.event_id;
+                        if(['333fm', '333mbf'].includes(ev)) return;
+                        if(!evtMap[ev]) evtMap[ev] = new Set();
+                        if(c.attempts) c.attempts.forEach(i => { if(i > 0) evtMap[ev].add(i); });
+                        if(c.best > 0) evtMap[ev].add(c.best);
+                    });
 
-                if(resultados.length === 0) {
-                    resDiv.innerHTML = `<p class='error'>No se encontraron marcas válidas para ${personName} (${wcaId}).</p>`;
-                    return;
-                }
+                    let resultados = [];
+                    for (let ev of Object.keys(evtMap)) {
+                        let arr = Array.from(evtMap[ev]).sort((a,b) => a-b);
+                        if(arr.length === 0) continue;
+                        let racha = calcularRachas(arr);
+                        resultados.push({ev, racha, global: "-", national: "-", continental: "-", country: "Todos", continent: "Todos"});
+                    }
 
-                resultados.sort((a, b) => orden.indexOf(a.ev) - orden.indexOf(b.ev));
+                    if(resultados.length === 0) {
+                        resDiv.innerHTML = `<p class='error'>No se encontraron marcas válidas para ${personName} (${wcaId}).</p>`;
+                        return;
+                    }
 
-                await Promise.all(resultados.map(async (r) => {
-                    if(r.racha.rango === 0) return;
-                    try {
-                        const resArchivo = await fetch(`ranking_${r.ev}.txt?v=${Date.now()}`);
-                        if (resArchivo.ok) {
-                            const txt = await resArchivo.text();
-                            const lines = txt.split('\n');
-                            
-                            let userIndex = lines.findIndex(l => l.includes(`(${wcaId}.`));
-                            
-                            if (userIndex !== -1) {
-                                let match = lines[userIndex].match(/^(\d+)\.\s+(.*?)\s+\(([A-Z0-9]+)\.\s+(.*?)\.\s+(.*?)\)\s+-\s+([0-9.]+)s/i);
-                                if (match) {
-                                    r.global = match[1]; 
-                                    let userCountry = match[4];
-                                    let userContinent = match[5];
-                                    r.country = userCountry; 
-                                    r.continent = userContinent;
-                                    let userRango = parseFloat(match[6]);
-                                    
-                                    let countNat = 1;
-                                    let countCont = 1;
-                                    for (let i = 0; i < userIndex; i++) {
-                                        if (lines[i].includes(`. ${userCountry}.`)) {
-                                            let matchLine = lines[i].match(/-\s+([0-9.]+)s/);
-                                            if (matchLine && parseFloat(matchLine[1]) > userRango) countNat++;
+                    resultados.sort((a, b) => orden.indexOf(a.ev) - orden.indexOf(b.ev));
+
+                    await Promise.all(resultados.map(async (r) => {
+                        if(r.racha.rango === 0) return;
+                        try {
+                            const resArchivo = await fetch(`ranking_${r.ev}.txt?v=${Date.now()}`);
+                            if (resArchivo.ok) {
+                                const txt = await resArchivo.text();
+                                const lines = txt.split('\n');
+                                let userIndex = lines.findIndex(l => l.includes(`(${wcaId}.`));
+                                
+                                if (userIndex !== -1) {
+                                    let match = lines[userIndex].match(/^(\d+)\.\s+(.*?)\s+\(([A-Z0-9]+)\.\s+(.*?)\.\s+(.*?)\)\s+-\s+([0-9.]+)s/i);
+                                    if (match) {
+                                        r.global = match[1]; 
+                                        let userCountry = match[4];
+                                        let userContinent = match[5];
+                                        r.country = userCountry; 
+                                        r.continent = userContinent;
+                                        let userRango = parseFloat(match[6]);
+                                        
+                                        let countNat = 1; let countCont = 1;
+                                        for (let i = 0; i < userIndex; i++) {
+                                            if (lines[i].includes(`. ${userCountry}.`)) {
+                                                let matchLine = lines[i].match(/-\s+([0-9.]+)s/);
+                                                if (matchLine && parseFloat(matchLine[1]) > userRango) countNat++;
+                                            }
+                                            if (lines[i].includes(`. ${userContinent})`)) {
+                                                let matchLine = lines[i].match(/-\s+([0-9.]+)s/);
+                                                if (matchLine && parseFloat(matchLine[1]) > userRango) countCont++;
+                                            }
                                         }
-                                        if (lines[i].includes(`. ${userContinent})`)) {
-                                            let matchLine = lines[i].match(/-\s+([0-9.]+)s/);
-                                            if (matchLine && parseFloat(matchLine[1]) > userRango) countCont++;
-                                        }
+                                        r.national = countNat;
+                                        r.continental = countCont;
                                     }
-                                    r.national = countNat;
-                                    r.continental = countCont;
+                                }
+                            }
+                        } catch (e) {}
+                    }));
+
+                    let tableHtml = `<h2 style="margin-bottom: 15px;">
+                        <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
+                    </h2>`;
+                    
+                    tableHtml += `<table><tr><th>Evento</th><th>Rango Actual</th><th style="text-align:center;">Ranking (🌍 / 🗺️ / 📍)</th></tr>`;
+                    
+                    resultados.forEach(r => {
+                        let rankHtml = "";
+                        if (r.racha.rango === 0) {
+                            rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">Sin rango (0.00s)</span>`;
+                        } else if (r.global !== "-") {
+                            rankHtml = `
+                                <span class="link-rank" onclick="irARanking('${r.ev}', 'Todos')" title="Ir al Top Mundial de ${r.ev.toUpperCase()}">🌍 #${r.global}</span> <br> 
+                                <span class="link-rank" onclick="irARanking('${r.ev}', '${r.continent}')" title="Ir al Ranking de ${r.continent.replace('_','')}">🗺️ #${r.continental}</span> <br>
+                                <span class="link-rank" onclick="irARanking('${r.ev}', '${r.country}')" title="Ir al Ranking Nacional de ${r.country}">📍 #${r.national}</span>
+                            `;
+                        } else {
+                            rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">No indexado</span>`;
+                        }
+                        
+                        tableHtml += `
+                            <tr>
+                                <td class="clickable-cell" onclick="irAPokedex('${wcaId}', '${r.ev}')" title="Ver Pokédex de ${r.ev.toUpperCase()}" style="font-weight:bold; text-transform:uppercase; color: #64b5f6;">${r.ev}</td>
+                                <td class="clickable-cell" onclick="irAPokedex('${wcaId}', '${r.ev}')" title="Ver Pokédex de ${r.ev.toUpperCase()}">
+                                    <span style="color:#ce93d8; font-weight:bold;">${formatCS(r.racha.rango)}s</span> 
+                                    <span style="font-size:0.8em; color:var(--text-muted);">(${formatCS(r.racha.min)} - ${formatCS(r.racha.max)})</span>
+                                </td>
+                                <td class="rank-badges">${rankHtml}</td>
+                            </tr>`;
+                    });
+                    resDiv.innerHTML = tableHtml + `</table>`;
+                } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+            } else {
+                // RANGOS COLECTIVOS CRUZADOS
+                const seleccion = document.getElementById('regionColectiva').value;
+                resDiv.innerHTML = `<p class='loading'>Escaneando los 15 eventos para ${seleccion.replace('_','🌍 ')}...</p>`;
+                
+                try {
+                    let promesas = EVENTOS.map(ev => fetch(`collective_${ev}.json`).then(r=>r.json()).catch(()=>null));
+                    let jsons = await Promise.all(promesas);
+                    
+                    let tableHtml = `<h2 style="margin-bottom: 15px; color:#4CAF50;">Rendimiento Global de ${seleccion.replace('_','')}</h2>`;
+                    tableHtml += `<table><tr><th>Evento</th><th>Rango Colectivo</th><th style="text-align:center;">Ranking (🌍 ${modo === 'Nacional' ? '/ 🗺️' : ''})</th></tr>`;
+                    
+                    let hayDatos = false;
+                    
+                    jsons.forEach((data, i) => {
+                        if (!data) return;
+                        let ev = EVENTOS[i];
+                        let statsRegion = data[modo][seleccion];
+                        if (!statsRegion) return;
+                        
+                        let arr = Object.keys(statsRegion.tiempos).map(Number).sort((a,b)=>a-b);
+                        if (arr.length === 0) return;
+                        hayDatos = true;
+                        let racha = calcularRachas(arr);
+                        
+                        let rankMundial = 1;
+                        let rankCont = 1;
+                        
+                        // Calcular ranking comparando con otras regiones del mismo modo
+                        for (let reg in data[modo]) {
+                            if (reg === seleccion) continue;
+                            let arrReg = Object.keys(data[modo][reg].tiempos).map(Number).sort((a,b)=>a-b);
+                            let rReg = calcularRachas(arrReg);
+                            if (rReg && rReg.rango > racha.rango) {
+                                rankMundial++;
+                                if (modo === 'Nacional' && data.Metadata.paises_continentes[reg] === data.Metadata.paises_continentes[seleccion]) {
+                                    rankCont++;
                                 }
                             }
                         }
-                    } catch (e) {}
-                }));
+                        
+                        let rankBadge = `🌍 #${rankMundial}`;
+                        if (modo === 'Nacional') rankBadge += ` <br> 🗺️ #${rankCont}`;
 
-                let tableHtml = `<h2 style="margin-bottom: 15px;">
-                    <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
-                </h2>`;
-                
-                tableHtml += `<table><tr><th>Evento</th><th>Rango Actual</th><th style="text-align:center;">Ranking (🌍 / 🗺️ / 📍)</th></tr>`;
-                
-                resultados.forEach(r => {
-                    let rankHtml = "";
-                    if (r.racha.rango === 0) {
-                        rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">Sin rango (0.00s)</span>`;
-                    } else if (r.global !== "-") {
-                        rankHtml = `
-                            <span class="link-rank" onclick="irARanking('${r.ev}', 'Todos')" title="Ir al Top Mundial de ${r.ev.toUpperCase()}">🌍 #${r.global}</span> <br> 
-                            <span class="link-rank" onclick="irARanking('${r.ev}', '${r.continent}')" title="Ir al Ranking de ${r.continent.replace('_','')}">🗺️ #${r.continental}</span> <br>
-                            <span class="link-rank" onclick="irARanking('${r.ev}', '${r.country}')" title="Ir al Ranking Nacional de ${r.country}">📍 #${r.national}</span>
-                        `;
-                    } else {
-                        rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">No indexado</span>`;
-                    }
+                        tableHtml += `
+                            <tr>
+                                <td style="font-weight:bold; text-transform:uppercase; color: #64b5f6;">${ev}</td>
+                                <td>
+                                    <span style="color:#ce93d8; font-weight:bold;">${formatCS(racha.rango)}s</span> 
+                                    <span style="font-size:0.8em; color:var(--text-muted);">(${formatCS(racha.min)} - ${formatCS(racha.max)})</span>
+                                </td>
+                                <td class="rank-badges" style="font-size:1.1em; font-weight:bold;">${rankBadge}</td>
+                            </tr>`;
+                    });
                     
-                    tableHtml += `
-                        <tr>
-                            <td class="clickable-cell" onclick="irAPokedex('${wcaId}', '${r.ev}')" title="Ver Pokédex de ${r.ev.toUpperCase()}" style="font-weight:bold; text-transform:uppercase; color: #64b5f6;">${r.ev}</td>
-                            <td class="clickable-cell" onclick="irAPokedex('${wcaId}', '${r.ev}')" title="Ver Pokédex de ${r.ev.toUpperCase()}">
-                                <span style="color:#ce93d8; font-weight:bold;">${formatCS(r.racha.rango)}s</span> 
-                                <span style="font-size:0.8em; color:var(--text-muted);">(${formatCS(r.racha.min)} - ${formatCS(r.racha.max)})</span>
-                            </td>
-                            <td class="rank-badges">${rankHtml}</td>
-                        </tr>`;
-                });
-                resDiv.innerHTML = tableHtml + `</table>`;
-            } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+                    if (!hayDatos) throw new Error("No hay datos cruzados para mostrar.");
+                    resDiv.innerHTML = tableHtml + `</table>`;
+                    
+                } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+            }
+        }
+
+        // --- CORE: PESTAÑA 4 (HALL OF FAME UNIFICADO) ---
+        async function cargarHallOfFame() {
+            const modo = document.getElementById('agrupacionSelect').value;
+            const ev = document.getElementById('eventIdFame').value;
+            const tipoFama = document.getElementById('fameTypeSelect').value;
+            const resDiv = document.getElementById('resFame');
+            
+            resDiv.innerHTML = "<p class='loading'>Cargando Hall of Fame...</p>";
+            try {
+                const req = await fetch(`collective_${ev}.json?v=${Date.now()}`);
+                if(!req.ok) throw new Error("Datos no disponibles");
+                const data = await req.json();
+                
+                let region = modo === 'Mundial' ? 'Mundial' : document.getElementById('regionColectiva').value;
+                let dataset = modo === 'Mundial' ? data.Mundial : data[modo][region];
+                
+                let fameObj = dataset[`hall_of_fame_${tipoFama}`];
+                if(!fameObj || Object.keys(fameObj).length === 0) return resDiv.innerHTML = "<p class='error'>Sin descubridores aún.</p>";
+                
+                let icono = tipoFama === 'individuals' ? '👤' : (tipoFama === 'countries' ? '📍' : '🌍');
+                let html = `<h2 style="color:#ffb300; margin-top:0;">🏆 Top Descubridores en ${region.replace('_','')}</h2>`;
+                
+                // RENDERIZADO COMPLETO (Sin límite)
+                let pos = 1;
+                let lastPoints = -1;
+                let tiePos = 1;
+                
+                for(let [nombre, puntos] of Object.entries(fameObj)) {
+                    if (puntos !== lastPoints) { tiePos = pos; lastPoints = puntos; }
+                    html += `
+                        <div class="fame-row">
+                            <div><span class="fame-pos">#${tiePos}</span> ${icono} ${nombre.replace('_','')}</div>
+                            <div style="color:#4CAF50; font-weight:bold;">${puntos} singles</div>
+                        </div>`;
+                    pos++;
+                }
+                resDiv.innerHTML = html;
+            } catch(e) { resDiv.innerHTML = `<p class='error'>Error: ${e.message}</p>`; }
         }
     </script>
 </body>
