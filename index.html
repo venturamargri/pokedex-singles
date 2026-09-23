@@ -96,6 +96,7 @@
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border); }
         th { background-color: #333; color: #4CAF50; }
         tr:hover { background-color: var(--hover); }
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 15px; }
         
         /* Enlaces normales y perfiles */
         a { color: #64b5f6; text-decoration: none; font-weight: bold; }
@@ -316,6 +317,30 @@
             }
         });
 
+        // --- CONTROLADOR DE SCROLL (Flecha y Carga Infinita) ---
+        window.addEventListener('scroll', () => {
+            const btnScroll = document.getElementById('btn-scrollTop');
+            
+            // 1. Flecha de subir activa en TODAS las pestañas
+            if (window.scrollY > 400) { 
+                btnScroll.style.display = 'block'; 
+            } else { 
+                btnScroll.style.display = 'none'; 
+            }
+
+            // 2. Cargar más resultados infinitos al bajar en la Pestaña 2
+            const isTab2 = document.getElementById('tab-top1000').classList.contains('active');
+            if (isTab2) {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 300) {
+                    if (renderLimit < filtradosTop.length) { 
+                        renderLimit += 50; 
+                        pintarTablaTop(); 
+                    }
+                }
+            }
+        });
+        // --------------------------------------------------------
+        
         window.addEventListener('DOMContentLoaded', () => {
             dibujarRecientes();
             const params = new URLSearchParams(window.location.search);
@@ -662,7 +687,7 @@
                         </td>
                     </tr>`;
             }
-            html += `</table>`;
+            html += `</table></div>`;
             
             if(renderLimit < filtradosTop.length) {
                 html += `<p style="color:var(--text-muted); margin-top:20px;">↓ Haz scroll para cargar más ↓</p>`;
