@@ -1,5 +1,5 @@
 --- RANKING COMPLETO: MAYOR RANGO CONSECUTIVO EN 555BF ---
 
-1. Stanley Chapel (2016CHAP04. USA. _North America) - 0.01s (170.31-170.32) | AR: 570.41s
-1. Graham Siggins (2016SIGG01. USA. _North America) - 0.01s (220.07-220.08) | AR: 828.69s
 1. Shivam Bansal (2011BANS02. India. _Asia) - 0.01s (472.92-472.93) | AR: 2168.10s
+1. Graham Siggins (2016SIGG01. USA. _North America) - 0.01s (220.07-220.08) | AR: 828.69s
+1. Stanley Chapel (2016CHAP04. USA. _North America) - 0.01s (170.31-170.32) | AR: 570.41s
