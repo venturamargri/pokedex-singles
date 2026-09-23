@@ -489,14 +489,18 @@
                         
                         // Si el solve coincide con una bisagra, ¡premio!
                         if (hingeTimes.has(int)) {
-                            // Usamos unshift para que el hito más reciente quede arriba del todo en la lista
-                            historial.unshift({
-                                tiempo: int,
-                                comp: comp.competition_id,
-                                rangoAntiguo: maxRangoActual,
-                                rangoNuevo: bestRango,
-                                aumento: bestRango - maxRangoActual
-                            });
+                            let aumentoCentesimas = bestRango - maxRangoActual;
+                            
+                            // NUEVA REGLA: Filtramos las rutinarias. Solo entra si el salto es mayor a 0.01s (1 centésima)
+                            if (aumentoCentesimas > 1) {
+                                historial.unshift({
+                                    tiempo: int,
+                                    comp: comp.competition_id,
+                                    rangoAntiguo: maxRangoActual,
+                                    rangoNuevo: bestRango,
+                                    aumento: aumentoCentesimas
+                                });
+                            }
                         }
                     }
                     // Actualiza el tablero y pasa al siguiente
