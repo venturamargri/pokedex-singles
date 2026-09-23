@@ -40,7 +40,8 @@
         #theme-btn { position: absolute; top: 20px; right: 20px; background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 1.2em; transition: 0.2s; }
         #theme-btn:hover { transform: scale(1.1); }
 
-        .tab-container { display: flex; justify-content: center; margin-bottom: 20px; background: var(--panel); padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 5px; }
+        .tab-container { display: flex; justify-content: center; margin-bottom: 20px; background: var(--panel); padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 5px; position: sticky; top: 0; z-index: 50; }
+        #wcaIdPokedex, #wcaIdCompetidor { text-transform: uppercase; }
         .tab-btn { background-color: var(--input-bg); color: var(--text); border: 1px solid var(--border); padding: 10px 20px; margin: 0; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.3s; }
         .tab-btn:hover { background-color: var(--hover); }
         .tab-btn.active { background-color: #4CAF50; color: white; border-color: #4CAF50; }
@@ -281,45 +282,59 @@
             document.getElementById('btn-scrollTop').style.display = 'none';
         }
 
-        function actualizarURL() {
+        function actualizarURL(push = true) {
             const tab = document.querySelector('.tab-btn.active').id.replace('btn-tab-', '');
             let wcaid = "", ev = "";
             if(tab === 'pokedex') { wcaid = document.getElementById('wcaIdPokedex').value; ev = document.getElementById('eventIdPokedex').value; }
             if(tab === 'top1000') { ev = document.getElementById('eventIdTop').value; }
             if(tab === 'competidor') { wcaid = document.getElementById('wcaIdCompetidor').value; }
-            history.replaceState(null, '', `?tab=${tab}&wcaid=${wcaid}&ev=${ev}`);
+            
+            const stateData = { tab, wcaid, ev };
+            const newUrl = `?tab=${tab}&wcaid=${wcaid}&ev=${ev}`;
+            
+            if (push) {
+                history.pushState(stateData, '', newUrl); // Añade un nuevo salto al historial del móvil
+            } else {
+                history.replaceState(stateData, '', newUrl);
+            }
         }
+
+        // Escuchar el botón "Atrás" del móvil
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.tab) {
+                // Rellenar las cajas de texto con lo que había
+                if (e.state.ev) { document.getElementById('eventIdPokedex').value = e.state.ev; document.getElementById('eventIdTop').value = e.state.ev; }
+                if (e.state.wcaid) { document.getElementById('wcaIdPokedex').value = e.state.wcaid; document.getElementById('wcaIdCompetidor').value = e.state.wcaid; }
+                
+                // Abrir la pestaña sin crear un bucle infinito en el historial
+                openTab('tab-' + e.state.tab, false);
+                
+                // Cargar los datos de nuevo
+                if (e.state.wcaid && e.state.tab === 'pokedex') generarPokedex();
+                if (e.state.wcaid && e.state.tab === 'competidor') cargarCompetidor();
+                if (e.state.tab === 'top1000') cargarTop1000();
+            }
+        });
 
         window.addEventListener('DOMContentLoaded', () => {
             dibujarRecientes();
             const params = new URLSearchParams(window.location.search);
-            const tab = params.get('tab');
-            const wcaid = params.get('wcaid');
-            const ev = params.get('ev');
+            const tab = params.get('tab') || 'pokedex';
+            const wcaid = params.get('wcaid') || '';
+            const ev = params.get('ev') || '333';
             
-            if (ev) { document.getElementById('eventIdPokedex').value = ev; document.getElementById('eventIdTop').value = ev; }
-            if (wcaid) { document.getElementById('wcaIdPokedex').value = wcaid; document.getElementById('wcaIdCompetidor').value = wcaid; }
+            // Guardar el estado inicial (la portada) en la memoria del móvil nada más abrir
+            history.replaceState({ tab, wcaid, ev }, '', window.location.search);
             
-            if (tab) {
+            if (params.get('ev')) { document.getElementById('eventIdPokedex').value = ev; document.getElementById('eventIdTop').value = ev; }
+            if (params.get('wcaid')) { document.getElementById('wcaIdPokedex').value = wcaid; document.getElementById('wcaIdCompetidor').value = wcaid; }
+            
+            if (params.get('tab')) {
                 openTab('tab-' + tab, false);
                 if (wcaid && tab === 'pokedex') generarPokedex();
                 if (wcaid && tab === 'competidor') cargarCompetidor();
                 if (tab === 'top1000') cargarTop1000();
             }
-        });
-
-        window.addEventListener('scroll', () => {
-            const btnScroll = document.getElementById('btn-scrollTop');
-            const isTab1 = document.getElementById('tab-pokedex').classList.contains('active');
-            const isTab2 = document.getElementById('tab-top1000').classList.contains('active');
-            
-            if (isTab2) {
-                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 300) {
-                    if(renderLimit < filtradosTop.length) { renderLimit += 50; pintarTablaTop(); }
-                }
-            }
-            if ((isTab1 || isTab2) && window.scrollY > 400) { btnScroll.style.display = 'block'; } 
-            else { btnScroll.style.display = 'none'; }
         });
 
         function guardarReciente(wcaId) {
@@ -403,14 +418,14 @@
             return mejorRacha;
         }
 
-        function mostrarPopUp(compsStr) {
+        function mostrarPopUp(compsStr, tiempo) {
             let comps = compsStr.split(',');
             let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank">${c}</a>`).join('');
-            document.getElementById('modal-texto').innerHTML = '🏆 <b>Logrado en:</b><br><br>' + htmlLinks;
+            document.getElementById('modal-texto').innerHTML = `<h2 style="margin: 0 0 10px 0; color: var(--text);">${tiempo}</h2>🏆 <b>Logrado en:</b><br><br>` + htmlLinks;
             document.getElementById('modal-overlay').style.display = 'flex';
         }
-        function mostrarPopUpFallo() {
-            document.getElementById('modal-texto').innerHTML = '❌ Tiempo no conseguido aún';
+        function mostrarPopUpFallo(tiempo) {
+            document.getElementById('modal-texto').innerHTML = `<h2 style="margin: 0 0 10px 0; color: var(--text);">${tiempo}</h2>❌ Tiempo no conseguido aún`;
             document.getElementById('modal-overlay').style.display = 'flex';
         }
         function cerrarPopUp() { document.getElementById('modal-overlay').style.display = 'none'; }
@@ -530,7 +545,7 @@
                     let tooltipMsg = compsArray.join(', ');
 
                     let tooltip = tiemposConseguidos.has(v) ? `title="${tooltipMsg}"` : `title="No conseguido"`;
-                    let accionClick = tiemposConseguidos.has(v) ? `onclick="mostrarPopUp('${compsStrData}')"` : `onclick="mostrarPopUpFallo()"`;
+                    let accionClick = tiemposConseguidos.has(v) ? `onclick="mostrarPopUp('${compsStrData}', '${tv}')"` : `onclick="mostrarPopUpFallo('${tv}')"`;
                     
                     let cssClass = 'miss';
                     if (isBisagra) {
