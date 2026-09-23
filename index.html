@@ -465,31 +465,31 @@
             let tiemposSet = new Set();
             let historial = [];
             
-            // Invertimos los datos para viajar desde el primer campeonato de su vida hasta el actual
-            let compsInversas = data.slice().reverse();
+            // ¡ARREGLADO! Quitamos el .reverse() para viajar en el tiempo estrictamente hacia adelante
+            let compsCronologicas = data.slice();
             
-            for (let comp of compsInversas) {
+            for (let comp of compsCronologicas) {
                 if (comp.event_id !== eventId) continue;
                 
                 let intentos = [];
                 if (comp.attempts) {
                     intentos = comp.attempts.filter(x => x > 0);
                 }
-                // Si la WCA no tiene los intentos de una ronda antigua, usamos al menos el best
                 if (comp.best > 0 && intentos.length === 0) {
                     intentos = [comp.best];
                 }
                 
-                // Procesamos CADA SOLVE en orden cronológico real
+                // Procesamos cada solve en orden cronológico real
                 for (let int of intentos) {
-                    if (tiemposSet.has(int)) continue; // Ya lo tiene de antes
+                    if (tiemposSet.has(int)) continue; // Ya lo consiguió antes
                     
                     if (tiemposSet.size > 0) {
-                        // Calcula las bisagras teóricas justo un segundo ANTES de este solve
+                        // Recálculo exacto del tablero justo ANTES de este solve
                         let { bestRango, hingeTimes, maxRangoActual } = calcularHingeTimesAvanzado(tiemposSet);
                         
-                        // Si el solve que acaba de hacer coincide con la bisagra teórica
+                        // Si el solve coincide con una bisagra, ¡premio!
                         if (hingeTimes.has(int)) {
+                            // Usamos unshift para que el hito más reciente quede arriba del todo en la lista
                             historial.unshift({
                                 tiempo: int,
                                 comp: comp.competition_id,
@@ -499,12 +499,11 @@
                             });
                         }
                     }
-                    // Actualizamos el tablero interno y pasamos al siguiente solve
+                    // Actualiza el tablero y pasa al siguiente
                     tiemposSet.add(int);
                 }
             }
             
-            // Construir el diseño minimalista que pediste
             let html = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Historial de Bisagras</h2>`;
             if (historial.length === 0) {
                 html += `<p style="color: var(--text-muted);"><b>Racha Perfecta</b><br><br>Este competidor es tan consistente que nunca ha necesitado rellenar una bisagra para expandir su rango máximo.</p>`;
@@ -526,7 +525,7 @@
             document.getElementById('modal-overlay').style.display = 'flex';
         }
 
-        // El cerebro matemático ultrarrápido (O(S)) que detecta huecos sin congelar el móvil
+        // --- EL NUEVO CEREBRO MATEMÁTICO (Efecto Dominó Arreglado) ---
         function calcularHingeTimesAvanzado(tiemposSet) {
             let arr = Array.from(tiemposSet).sort((a, b) => a - b);
             let rachas = [];
@@ -542,28 +541,33 @@
             let bestRango = maxRangoActual;
             let hingeTimes = new Set();
             
+            const evaluarCandidato = (v, hipoteticoRango) => {
+                if (hipoteticoRango > bestRango) {
+                    bestRango = hipoteticoRango;
+                    hingeTimes.clear();
+                    hingeTimes.add(v);
+                } else if (hipoteticoRango === bestRango && hipoteticoRango > maxRangoActual) {
+                    hingeTimes.add(v);
+                }
+            };
+
+            // 1. Detectar si un solve amplía los límites de una racha (Ej: Tu caso del 10.61s)
+            for (let r of rachas) {
+                evaluarCandidato(r.min - 1, (r.max - r.min) + 1);
+                evaluarCandidato(r.max + 1, (r.max - r.min) + 1);
+            }
+
+            // 2. Detectar fusiones masivas (huecos perfectos de 1 sola centésima)
             for (let i = 0; i < rachas.length - 1; i++) {
                 let r1 = rachas[i];
                 let r2 = rachas[i+1];
                 let gap = r2.min - r1.max - 1;
                 
-                if (gap === 1) { // Hueco perfecto de 1 centésima (Fusión Masiva)
-                    let v = r1.max + 1;
-                    let nuevoRango = (r1.max - r1.min) + (r2.max - r2.min) + 2;
-                    if (nuevoRango > bestRango) { bestRango = nuevoRango; hingeTimes.clear(); hingeTimes.add(v); } 
-                    else if (nuevoRango === bestRango && nuevoRango > maxRangoActual) { hingeTimes.add(v); }
-                } else if (gap > 1) { // Extensiones de rachas existentes
-                    let vDer = r1.max + 1;
-                    let nRangoDer = (r1.max - r1.min) + 1;
-                    if (nRangoDer > bestRango) { bestRango = nRangoDer; hingeTimes.clear(); hingeTimes.add(vDer); } 
-                    else if (nRangoDer === bestRango && nRangoDer > maxRangoActual) { hingeTimes.add(vDer); }
-                    
-                    let vIzq = r2.min - 1;
-                    let nRangoIzq = (r2.max - r2.min) + 1;
-                    if (nRangoIzq > bestRango) { bestRango = nRangoIzq; hingeTimes.clear(); hingeTimes.add(vIzq); } 
-                    else if (nRangoIzq === bestRango && nRangoIzq > maxRangoActual) { hingeTimes.add(vIzq); }
+                if (gap === 1) { 
+                    evaluarCandidato(r1.max + 1, (r1.max - r1.min) + (r2.max - r2.min) + 2);
                 }
             }
+            
             return { bestRango, hingeTimes, maxRangoActual };
         }
 
