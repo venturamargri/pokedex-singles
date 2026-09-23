@@ -1,7 +1,8 @@
 {
   "name": "Pokedex Singles",
   "short_name": "Pokedex",
-  "start_url": "/",
+  "start_url": "/pokedex-singles/",
+  "scope": "/pokedex-singles/",
   "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#4CAF50",
