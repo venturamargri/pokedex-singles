@@ -512,13 +512,14 @@
             if (historial.length === 0) {
                 html += `<p style="color: var(--text-muted);"><b>Racha Perfecta</b><br><br>Este competidor es tan consistente que nunca ha necesitado rellenar una bisagra para expandir su rango máximo.</p>`;
             } else {
-                html += `<div style="text-align: left; max-height: 60vh; overflow-y: auto; padding-right: 5px;">`;
+                // Eliminamos el doble scroll y añadimos word-break para que los textos largos bajen de línea y nunca fuercen scroll horizontal
+                html += `<div style="text-align: left; word-break: break-word;">`;
                 historial.forEach(h => {
                     html += `
                         <div style="margin-bottom: 20px; border-left: 3px solid #ce93d8; padding-left: 12px;">
                             <strong style="color: #ce93d8; font-size: 1.3em;">${formatCS(h.tiempo)}s</strong><br>
                             <span style="font-size: 1.05em; font-weight: bold; color: var(--text);">${h.comp}</span><br>
-                            <span style="color: var(--text-muted);">Rango: ${formatCS(h.rangoAntiguo)}s &rarr; ${formatCS(h.rangoNuevo)}s <b style="color:#4CAF50;">(+${formatCS(h.aumento)}s)</b></span>
+                            <span style="color: var(--text-muted); display: inline-block;">Rango: ${formatCS(h.rangoAntiguo)}s &rarr; ${formatCS(h.rangoNuevo)}s <b style="color:#4CAF50;">(+${formatCS(h.aumento)}s)</b></span>
                         </div>
                     `;
                 });
