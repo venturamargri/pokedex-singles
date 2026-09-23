@@ -39,11 +39,17 @@
             max-width: 100vw; overflow-x: hidden; box-sizing: border-box; 
         }
         
-        h1.main-title { color: #4CAF50; margin-top: 0; cursor: pointer; user-select: none; transition: opacity 0.2s; }
+        /* --- NUEVO TOP BAR --- */
+        #top-bar { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; position: relative; }
+        
+        h1.main-title { color: #4CAF50; margin: 0; cursor: pointer; user-select: none; transition: opacity 0.2s; }
         h1.main-title:hover { opacity: 0.8; }
         
-        #theme-btn { position: absolute; top: 20px; right: 20px; background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 1.2em; transition: 0.2s; }
+        #agrupacionSelect { font-size: 1em; padding: 6px 12px; border-radius: 8px; font-weight: bold; background-color: #4CAF50; color: white; border: none; outline: none; cursor: pointer; }
+        
+        #theme-btn { position: absolute; right: 0; background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 1.2em; transition: 0.2s; }
         #theme-btn:hover { transform: scale(1.1); }
+        @media (max-width: 768px) { #theme-btn { position: relative; right: auto; margin-left: auto; } #top-bar { justify-content: flex-start; } }
 
         .tab-container { display: flex; justify-content: center; margin-bottom: 20px; background: var(--panel); padding: 10px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 5px; position: sticky; top: 0; z-index: 50; }
         #wcaIdPokedex, #wcaIdCompetidor { text-transform: uppercase; }
@@ -102,11 +108,9 @@
         tr:hover { background-color: var(--hover); }
         
         /* CONTENEDOR DESLIZABLE EXCLUSIVO PARA LA PESTAÑA 2 */
-        /* En PC: La tabla vuelve a verse exactamente como estaba, centrada y normal */
         .table-wrapper { width: 100%; max-width: 1000px; margin: 0 auto 20px auto; overflow-x: auto; border-radius: 8px; }
         .table-wrapper table { width: 100%; margin: 0; white-space: normal; }
 
-        /* En MÓVIL: Encogemos la letra y los márgenes para que encaje al ancho de los recuadros */
         @media (max-width: 768px) {
             table { font-size: 0.75em; }
             th, td { padding: 8px 4px; }
@@ -131,18 +135,33 @@
         #modal-texto a { color: #ffd54f; display: block; margin: 5px 0; }
         #modal-texto a:hover { color: #ffe082; }
         .modal-btn { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1em; margin-top: 15px; }
+        
+        /* ESTILOS HALL OF FAME */
+        .fame-row { display: flex; justify-content: space-between; padding: 12px 15px; border-bottom: 1px solid var(--border); font-size: 1.1em; text-align: left; transition: background 0.2s; }
+        .fame-row:hover { background-color: var(--hover); }
+        .fame-pos { font-weight: bold; color: #ce93d8; width: 40px; display: inline-block; }
     </style>
     <script data-goatcounter="https://venturamargri.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
-    <button id="theme-btn" onclick="toggleTheme()" title="Modo Claro/Oscuro">☀️</button>
     
-    <h1 class="main-title" onclick="window.location.href = window.location.pathname" title="Volver al inicio">Pokédex Singles</h1>
+    <!-- NUEVO TOP BAR -->
+    <div id="top-bar">
+        <h1 class="main-title" onclick="window.location.href = window.location.pathname" title="Volver al inicio">Pokédex Singles</h1>
+        <select id="agrupacionSelect" onchange="cambiarAgrupacion()">
+            <option value="individual" selected>Modo Individual</option>
+            <option value="Nacional">Modo Nacional</option>
+            <option value="Continental">Modo Continental</option>
+            <option value="Mundial">Modo Mundial</option>
+        </select>
+        <button id="theme-btn" onclick="toggleTheme()" title="Modo Claro/Oscuro">☀️</button>
+    </div>
     
     <div class="tab-container">
         <button id="btn-tab-pokedex" class="tab-btn active" onclick="openTab('tab-pokedex')">Pokédex de Singles</button>
         <button id="btn-tab-top1000" class="tab-btn" onclick="openTab('tab-top1000')">Rankings Globales</button>
         <button id="btn-tab-competidor" class="tab-btn" onclick="openTab('tab-competidor')">Rango por Competidor</button>
+        <button id="btn-tab-fame" class="tab-btn" onclick="openTab('tab-fame')" style="display:none; background:#ffb300; color:#000; border-color:#ffb300;">🏆 Hall of Fame</button>
     </div>
 
     <div id="modal-overlay" onclick="cerrarPopUp()">
@@ -155,7 +174,16 @@
     <!-- PESTAÑA 1 -->
     <div id="tab-pokedex" class="tab-content active">
         <div class="controls">
-            <input type="search" id="wcaIdPokedex" placeholder="WCA ID (Ej: 2014LOPE04)" onkeyup="manejarEnter(event, 'btnGenPokedex')">
+            <!-- INPUT INDIVIDUAL -->
+            <div id="ctrl-individual" style="display:inline-block;">
+                <input type="search" id="wcaIdPokedex" placeholder="WCA ID (Ej: 2014LOPE04)" onkeyup="manejarEnter(event, 'btnGenPokedex')">
+            </div>
+            
+            <!-- SELECTS COLECTIVOS -->
+            <div id="ctrl-colectivo" style="display:none;">
+                <select id="regionColectiva"></select>
+            </div>
+
             <select id="eventIdPokedex" onchange="actualizarURL()">
                 <option value="333" selected>3x3x3</option>
                 <option value="222">2x2x2</option>
@@ -173,7 +201,7 @@
             </select>
             <button id="btnGenPokedex" class="action-btn" onclick="generarPokedex()">Generar Pokédex</button>
             <div class="chips-container" id="chips-pokedex"></div>
-            <div class="opciones-extra">
+            <div class="opciones-extra" id="opciones-individuales">
                 <input type="checkbox" id="checkBisagra" onchange="if(document.getElementById('resPokedex').innerHTML !== '') generarPokedex()">
                 <label for="checkBisagra">Mostrar Tiempo Bisagra</label>
             </div>
@@ -223,6 +251,17 @@
         <div id="resCompetidor"></div>
     </div>
 
+    <!-- PESTAÑA 4 (NUEVA): HALL OF FAME -->
+    <div id="tab-fame" class="tab-content">
+        <div class="controls" style="text-align: center;">
+            <h2 style="color: #ffb300; margin-top: 0;">Descubridores Originales</h2>
+            <p style="color:var(--text-muted); font-size:1em;">Jugadores que destaparon huecos de la Pokédex colectiva por primera vez en la historia.</p>
+        </div>
+        <div id="resFame" style="max-width: 800px; margin: 0 auto; background: var(--panel); border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <p style="color:var(--text-muted);">Selecciona un evento y pulsa "Generar Pokédex" en la Pestaña 1 para cargar el Hall of Fame de esa región.</p>
+        </div>
+    </div>
+
     <div style="text-align: center; margin-top: 40px; padding-bottom: 25px; font-size: 0.85em; color: var(--text-muted);">
         Última actualización de datos: <span id="fecha-update">Consultando...</span>
     </div>
@@ -234,7 +273,7 @@
         let datosRankingGlobal = [];
         let renderLimit = 50; 
         let filtradosTop = [];
-        let cargandoMas = false; // Candado para el scroll infinito
+        let cargandoMas = false; 
 
         const wcaContinents = ["_Africa", "_Asia", "_Europe", "_North America", "_Oceania", "_South America"];
         const wcaCountries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bolivia", "Bosnia and Herzegovina", "Brazil", "Brunei", "Bulgaria", "Cambodia", "Canada", "Chile", "China", "Colombia", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Guatemala", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Malaysia", "Malta", "Mauritius", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Myanmar", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Palestine", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "Spain", "Sri Lanka", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Thailand", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam"];
@@ -265,6 +304,57 @@
             grpCoun.appendChild(opt);
         });
 
+        // --- NUEVA LÓGICA DE AGRUPACIÓN ---
+        function cambiarAgrupacion() {
+            const modo = document.getElementById('agrupacionSelect').value;
+            const ctrlInd = document.getElementById('ctrl-individual');
+            const ctrlCol = document.getElementById('ctrl-colectivo');
+            const regionSel = document.getElementById('regionColectiva');
+            const btnFame = document.getElementById('btn-tab-fame');
+            
+            document.getElementById('resPokedex').innerHTML = '';
+
+            if (modo === 'individual') {
+                ctrlInd.style.display = 'inline-block';
+                ctrlCol.style.display = 'none';
+                btnFame.style.display = 'none';
+                document.getElementById('chips-pokedex').style.display = 'block';
+                document.getElementById('opciones-individuales').style.display = 'block';
+                
+                // Si estábamos en Hall of fame, volver a pokedex
+                if(document.getElementById('tab-fame').classList.contains('active')) {
+                    openTab('tab-pokedex', false);
+                }
+            } else {
+                ctrlInd.style.display = 'none';
+                ctrlCol.style.display = 'inline-block';
+                btnFame.style.display = 'block';
+                document.getElementById('chips-pokedex').style.display = 'none';
+                document.getElementById('opciones-individuales').style.display = 'none';
+                
+                regionSel.innerHTML = '';
+                if (modo === 'Nacional') {
+                    regionSel.style.display = 'inline-block';
+                    wcaCountries.forEach(c => {
+                        let opt = document.createElement('option');
+                        opt.value = c; opt.textContent = c;
+                        if(c === "Spain") opt.selected = true;
+                        regionSel.appendChild(opt);
+                    });
+                } else if (modo === 'Continental') {
+                    regionSel.style.display = 'inline-block';
+                    wcaContinents.forEach(c => {
+                        let opt = document.createElement('option');
+                        opt.value = c; opt.textContent = c.replace('_', '🌍 ');
+                        if(c === "_Europe") opt.selected = true;
+                        regionSel.appendChild(opt);
+                    });
+                } else if (modo === 'Mundial') {
+                    regionSel.style.display = 'none'; 
+                }
+            }
+        }
+
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
             const btn = document.getElementById('theme-btn');
@@ -291,11 +381,18 @@
         }
 
         function actualizarURL(push = true) {
-            const tab = document.querySelector('.tab-btn.active').id.replace('btn-tab-', '');
+            const activeTabElement = document.querySelector('.tab-btn.active');
+            if(!activeTabElement) return;
+            const tab = activeTabElement.id.replace('btn-tab-', '');
+            
             let wcaid = "", ev = "";
-            if(tab === 'pokedex') { wcaid = document.getElementById('wcaIdPokedex').value; ev = document.getElementById('eventIdPokedex').value; }
+            if(tab === 'pokedex') { 
+                wcaid = document.getElementById('wcaIdPokedex').value; 
+                ev = document.getElementById('eventIdPokedex').value; 
+            }
             if(tab === 'top1000') { ev = document.getElementById('eventIdTop').value; }
             if(tab === 'competidor') { wcaid = document.getElementById('wcaIdCompetidor').value; }
+            if(tab === 'fame') { ev = document.getElementById('eventIdPokedex').value; }
             
             const stateData = { tab, wcaid, ev };
             const newUrl = `?tab=${tab}&wcaid=${wcaid}&ev=${ev}`;
@@ -322,14 +419,12 @@
         window.addEventListener('scroll', () => {
             const btnScroll = document.getElementById('btn-scrollTop');
             
-            // 1. Flecha de subir sensible
             if (window.scrollY > 150) { 
                 btnScroll.style.display = 'block'; 
             } else { 
                 btnScroll.style.display = 'none'; 
             }
 
-            // 2. Scroll infinito de Pestaña 2
             const isTab2 = document.getElementById('tab-top1000').classList.contains('active');
             if (isTab2 && !cargandoMas) {
                 const scrollPos = window.scrollY + window.innerHeight;
@@ -348,6 +443,8 @@
         
         window.addEventListener('DOMContentLoaded', () => {
             dibujarRecientes();
+            cambiarAgrupacion(); // Inicializa selects
+            
             const params = new URLSearchParams(window.location.search);
             const tab = params.get('tab') || 'pokedex';
             const wcaid = params.get('wcaid') || '';
@@ -383,7 +480,10 @@
         }
 
         function usarReciente(id) {
-            const activeTab = document.querySelector('.tab-btn.active').id;
+            const activeTabElement = document.querySelector('.tab-btn.active');
+            if(!activeTabElement) return;
+            const activeTab = activeTabElement.id;
+            
             if(activeTab === 'btn-tab-pokedex') { document.getElementById('wcaIdPokedex').value = id; generarPokedex(); }
             if(activeTab === 'btn-tab-competidor') { document.getElementById('wcaIdCompetidor').value = id; cargarCompetidor(); }
         }
@@ -392,6 +492,10 @@
 
         function irAPokedex(wcaId, eventId) {
             openTab('tab-pokedex');
+            // Forzar modo individual si venimos de otra pestaña a ver un perfil
+            document.getElementById('agrupacionSelect').value = 'individual';
+            cambiarAgrupacion();
+            
             document.getElementById('wcaIdPokedex').value = wcaId;
             document.getElementById('eventIdPokedex').value = eventId;
             generarPokedex();
@@ -447,10 +551,25 @@
 
         function mostrarPopUp(compsStr, tiempo) {
             let comps = compsStr.split(',');
-            let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank">${c}</a>`).join('');
+            let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank" style="display:block; margin:5px 0;">${c}</a>`).join('');
             document.getElementById('modal-texto').innerHTML = `<h2 style="margin: 0 0 10px 0; color: var(--text);">${tiempo}</h2>🏆 <b>Logrado en:</b><br><br>` + htmlLinks;
             document.getElementById('modal-overlay').style.display = 'flex';
         }
+        
+        // --- NUEVO POP-UP COLECTIVO ---
+        function mostrarPopUpColectivo(tiempo, descubridores, comps) {
+            let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank" style="display:inline-block; margin:2px 5px;">${c}</a>`).join(' / ');
+            let htmlGente = descubridores.map(d => `<strong style="color: #64b5f6;">${d}</strong>`).join('<br>');
+            document.getElementById('modal-texto').innerHTML = `
+                <h2 style="margin: 0 0 10px 0; color: var(--text);">${tiempo}</h2>
+                <div style="font-size:1.1em; line-height:1.6; margin-bottom:15px;">
+                    🎯 <b>Primeros Descubridores:</b><br>${htmlGente}
+                </div>
+                🏆 <b>Logrado en:</b><br>${htmlLinks}
+            `;
+            document.getElementById('modal-overlay').style.display = 'flex';
+        }
+        
         function mostrarPopUpFallo(tiempo) {
             document.getElementById('modal-texto').innerHTML = `<h2 style="margin: 0 0 10px 0; color: var(--text);">${tiempo}</h2>❌ Tiempo no conseguido aún`;
             document.getElementById('modal-overlay').style.display = 'flex';
@@ -465,7 +584,6 @@
             let tiemposSet = new Set();
             let historial = [];
             
-            // ¡ARREGLADO! Quitamos el .reverse() para viajar en el tiempo estrictamente hacia adelante
             let compsCronologicas = data.slice();
             
             for (let comp of compsCronologicas) {
@@ -479,19 +597,15 @@
                     intentos = [comp.best];
                 }
                 
-                // Procesamos cada solve en orden cronológico real
                 for (let int of intentos) {
-                    if (tiemposSet.has(int)) continue; // Ya lo consiguió antes
+                    if (tiemposSet.has(int)) continue; 
                     
                     if (tiemposSet.size > 0) {
-                        // Recálculo exacto del tablero justo ANTES de este solve
                         let { bestRango, hingeTimes, maxRangoActual } = calcularHingeTimesAvanzado(tiemposSet);
                         
-                        // Si el solve coincide con una bisagra, ¡premio!
                         if (hingeTimes.has(int)) {
                             let aumentoCentesimas = bestRango - maxRangoActual;
                             
-                            // NUEVA REGLA: Filtramos las rutinarias. Solo entra si el salto es mayor a 0.01s (1 centésima)
                             if (aumentoCentesimas > 1) {
                                 historial.unshift({
                                     tiempo: int,
@@ -503,7 +617,6 @@
                             }
                         }
                     }
-                    // Actualiza el tablero y pasa al siguiente
                     tiemposSet.add(int);
                 }
             }
@@ -512,13 +625,12 @@
             if (historial.length === 0) {
                 html += `<p style="color: var(--text-muted);"><b>Racha Perfecta</b><br><br>Este competidor es tan consistente que nunca ha necesitado rellenar una bisagra para expandir su rango máximo.</p>`;
             } else {
-                // Eliminamos el doble scroll y añadimos word-break para que los textos largos bajen de línea y nunca fuercen scroll horizontal
                 html += `<div style="text-align: left; word-break: break-word;">`;
                 historial.forEach(h => {
                     html += `
                         <div style="margin-bottom: 20px; border-left: 3px solid #ce93d8; padding-left: 12px;">
                             <strong style="color: #ce93d8; font-size: 1.3em;">${formatCS(h.tiempo)}s</strong><br>
-                            <a href="https://www.worldcubeassociation.org/competitions/${h.comp}" target="_blank" style="font-size: 1.05em; font-weight: bold;">${h.comp}</a>
+                            <a href="https://www.worldcubeassociation.org/competitions/${h.comp}" target="_blank" style="font-size: 1.05em; font-weight: bold; display:block; margin:5px 0;">${h.comp}</a>
                             <span style="color: var(--text-muted); display: inline-block;">Rango: ${formatCS(h.rangoAntiguo)}s &rarr; ${formatCS(h.rangoNuevo)}s <b style="color:#4CAF50;">(+${formatCS(h.aumento)}s)</b></span>
                         </div>
                     `;
@@ -530,7 +642,6 @@
             document.getElementById('modal-overlay').style.display = 'flex';
         }
 
-        // --- EL NUEVO CEREBRO MATEMÁTICO (Efecto Dominó Arreglado) ---
         function calcularHingeTimesAvanzado(tiemposSet) {
             let arr = Array.from(tiemposSet).sort((a, b) => a - b);
             let rachas = [];
@@ -556,13 +667,11 @@
                 }
             };
 
-            // 1. Detectar si un solve amplía los límites de una racha (Ej: Tu caso del 10.61s)
             for (let r of rachas) {
                 evaluarCandidato(r.min - 1, (r.max - r.min) + 1);
                 evaluarCandidato(r.max + 1, (r.max - r.min) + 1);
             }
 
-            // 2. Detectar fusiones masivas (huecos perfectos de 1 sola centésima)
             for (let i = 0; i < rachas.length - 1; i++) {
                 let r1 = rachas[i];
                 let r2 = rachas[i+1];
@@ -590,124 +699,208 @@
             return payload;
         }
 
+        // --- GENERADOR UNIFICADO (INDIVIDUAL Y COLECTIVO) ---
         async function generarPokedex() {
-            const wcaId = document.getElementById('wcaIdPokedex').value.trim().toUpperCase();
+            const modo = document.getElementById('agrupacionSelect').value;
             const eventId = document.getElementById('eventIdPokedex').value;
             const resDiv = document.getElementById('resPokedex');
-            const mostrarBisagra = document.getElementById('checkBisagra').checked;
 
-            if(!wcaId) return;
-            actualizarURL();
-            resDiv.innerHTML = "<p class='loading'>Conectando con la API WCA...</p>";
+            if (modo === 'individual') {
+                // LOGICA ORIGINAL INDIVIDUAL INTACTA
+                const wcaId = document.getElementById('wcaIdPokedex').value.trim().toUpperCase();
+                const mostrarBisagra = document.getElementById('checkBisagra').checked;
 
-            try {
-                const { data, personName } = await fetchWCA(wcaId);
-                guardarReciente(wcaId);
-                
-                let tiemposConseguidos = new Map(); 
-                
-                data.slice().reverse().forEach(comp => {
-                    if(comp.event_id === eventId) {
-                        let nombreComp = comp.competition_id;
-                        if(comp.attempts) {
-                            comp.attempts.forEach(i => { 
-                                if(i > 0) {
-                                    if(!tiemposConseguidos.has(i)) tiemposConseguidos.set(i, new Set());
-                                    tiemposConseguidos.get(i).add(nombreComp);
-                                }
-                            });
-                        }
-                        if(comp.best > 0) {
-                            if(!tiemposConseguidos.has(comp.best)) tiemposConseguidos.set(comp.best, new Set());
-                            tiemposConseguidos.get(comp.best).add(nombreComp);
-                        }
-                    }
-                });
+                if(!wcaId) return;
+                actualizarURL();
+                resDiv.innerHTML = "<p class='loading'>Conectando con la API WCA...</p>";
 
-                if(tiemposConseguidos.size === 0) {
-                    resDiv.innerHTML = `<p class='error'>No hay marcas oficiales para ${personName} (${wcaId}) en esta categoría.</p>`;
-                    return;
-                }
-
-                const arrayTiempos = Array.from(tiemposConseguidos.keys()).sort((a, b) => a - b);
-                const racha = calcularRachas(arrayTiempos);
-                
-                const minVal = arrayTiempos[0], maxVal = arrayTiempos[arrayTiempos.length - 1];
-                const totalPosibles = maxVal - minVal + 1;
-                const porcentaje = ((tiemposConseguidos.size / totalPosibles) * 100).toFixed(1);
-                const nombreEvento = document.getElementById('eventIdPokedex').options[document.getElementById('eventIdPokedex').selectedIndex].text;
-                const antirrango = maxVal - minVal;
-
-                let hingeTimes = new Set();
-                let affectedTimes = new Set();
-
-                if (mostrarBisagra) {
-                    let bestPotentialRango = racha.rango;
-                    for (let v = minVal; v <= maxVal; v++) {
-                        if (!tiemposConseguidos.has(v)) {
-                            let simArray = [...arrayTiempos, v].sort((a,b) => a-b);
-                            let simRacha = calcularRachas(simArray);
-                            if (simRacha.rango > bestPotentialRango) {
-                                bestPotentialRango = simRacha.rango;
-                                hingeTimes.clear();
-                                hingeTimes.add(v);
-                            } else if (simRacha.rango === bestPotentialRango && simRacha.rango > racha.rango) {
-                                hingeTimes.add(v);
+                try {
+                    const { data, personName } = await fetchWCA(wcaId);
+                    guardarReciente(wcaId);
+                    
+                    let tiemposConseguidos = new Map(); 
+                    
+                    data.slice().reverse().forEach(comp => {
+                        if(comp.event_id === eventId) {
+                            let nombreComp = comp.competition_id;
+                            if(comp.attempts) {
+                                comp.attempts.forEach(i => { 
+                                    if(i > 0) {
+                                        if(!tiemposConseguidos.has(i)) tiemposConseguidos.set(i, new Set());
+                                        tiemposConseguidos.get(i).add(nombreComp);
+                                    }
+                                });
+                            }
+                            if(comp.best > 0) {
+                                if(!tiemposConseguidos.has(comp.best)) tiemposConseguidos.set(comp.best, new Set());
+                                tiemposConseguidos.get(comp.best).add(nombreComp);
                             }
                         }
-                    }
-                    for (let h of hingeTimes) {
-                        let left = h; while(tiemposConseguidos.has(left - 1)) left--;
-                        let right = h; while(tiemposConseguidos.has(right + 1)) right++;
-                        for (let a = left; a <= right; a++) { if (a !== h) affectedTimes.add(a); }
-                    }
-                }
+                    });
 
-                let statsHtml = `
-                    <div class="stats">
-                        <div style="margin-bottom: 8px;">
-                            <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
-                            <button class="btn-secondary" style="padding: 4px 8px; font-size: 0.7em; margin-left: 10px;" onclick="irACompetidor('${wcaId}')">Ver todos sus eventos</button>
+                    if(tiemposConseguidos.size === 0) {
+                        resDiv.innerHTML = `<p class='error'>No hay marcas oficiales para ${personName} (${wcaId}) en esta categoría.</p>`;
+                        return;
+                    }
+
+                    const arrayTiempos = Array.from(tiemposConseguidos.keys()).sort((a, b) => a - b);
+                    const racha = calcularRachas(arrayTiempos);
+                    
+                    const minVal = arrayTiempos[0], maxVal = arrayTiempos[arrayTiempos.length - 1];
+                    const totalPosibles = maxVal - minVal + 1;
+                    const porcentaje = ((tiemposConseguidos.size / totalPosibles) * 100).toFixed(1);
+                    const nombreEvento = document.getElementById('eventIdPokedex').options[document.getElementById('eventIdPokedex').selectedIndex].text;
+                    const antirrango = maxVal - minVal;
+
+                    let hingeTimes = new Set();
+                    let affectedTimes = new Set();
+
+                    if (mostrarBisagra) {
+                        let bestPotentialRango = racha.rango;
+                        for (let v = minVal; v <= maxVal; v++) {
+                            if (!tiemposConseguidos.has(v)) {
+                                let simArray = [...arrayTiempos, v].sort((a,b) => a-b);
+                                let simRacha = calcularRachas(simArray);
+                                if (simRacha.rango > bestPotentialRango) {
+                                    bestPotentialRango = simRacha.rango;
+                                    hingeTimes.clear();
+                                    hingeTimes.add(v);
+                                } else if (simRacha.rango === bestPotentialRango && simRacha.rango > racha.rango) {
+                                    hingeTimes.add(v);
+                                }
+                            }
+                        }
+                        for (let h of hingeTimes) {
+                            let left = h; while(tiemposConseguidos.has(left - 1)) left--;
+                            let right = h; while(tiemposConseguidos.has(right + 1)) right++;
+                            for (let a = left; a <= right; a++) { if (a !== h) affectedTimes.add(a); }
+                        }
+                    }
+
+                    let statsHtml = `
+                        <div class="stats">
+                            <div style="margin-bottom: 8px;">
+                                <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
+                                <button class="btn-secondary" style="padding: 4px 8px; font-size: 0.7em; margin-left: 10px;" onclick="irACompetidor('${wcaId}')">Ver todos sus eventos</button>
+                            </div>
+                            <strong>Evento:</strong> ${nombreEvento}<br>
+                            <strong>Completado:</strong> ${tiemposConseguidos.size} / ${totalPosibles} (${porcentaje}%) <br>
+                            <strong>Antirrango:</strong> <span style="color: #4CAF50;">${formatCS(antirrango)}s</span><br>
+                            <div style="margin-top: 5px;">
+                                <strong>Rango:</strong> <span style="color: #ce93d8;">${formatCS(racha.rango)}s (${formatCS(racha.min)} - ${formatCS(racha.max)})</span>
+                                <button class="action-btn" style="padding: 4px 10px; font-size: 0.8em; margin-left: 10px;" onclick="scrollToRango()">Mostrar Rango</button>
+                                <button class="btn-secondary" style="padding: 4px 10px; font-size: 0.8em; margin-left: 5px;" onclick="mostrarHistorialBisagras('${wcaId}', '${eventId}')">📖 Historial</button>
+                            </div>
                         </div>
-                        <strong>Evento:</strong> ${nombreEvento}<br>
-                        <strong>Completado:</strong> ${tiemposConseguidos.size} / ${totalPosibles} (${porcentaje}%) <br>
-                        <strong>Antirrango:</strong> <span style="color: #4CAF50;">${formatCS(antirrango)}s</span><br>
-                        <div style="margin-top: 5px;">
-                            <strong>Rango:</strong> <span style="color: #ce93d8;">${formatCS(racha.rango)}s (${formatCS(racha.min)} - ${formatCS(racha.max)})</span>
-                            <button class="action-btn" style="padding: 4px 10px; font-size: 0.8em; margin-left: 10px;" onclick="scrollToRango()">Mostrar Rango</button>
-                            <button class="btn-secondary" style="padding: 4px 10px; font-size: 0.8em; margin-left: 5px;" onclick="mostrarHistorialBisagras('${wcaId}', '${eventId}')">📖 Historial</button>
-                        </div>
-                    </div>
-                    <div class="grid">`;
+                        <div class="grid">`;
 
-                for(let v = minVal; v <= maxVal; v++) {
-                    let tv = formatCS(v);
-                    
-                    let isBisagra = hingeTimes.has(v);
-                    let isAffected = affectedTimes.has(v);
-                    
-                    let compsArray = tiemposConseguidos.has(v) ? Array.from(tiemposConseguidos.get(v)) : [];
-                    let compsStrData = compsArray.join(','); 
-                    let tooltipMsg = compsArray.join(', ');
+                    for(let v = minVal; v <= maxVal; v++) {
+                        let tv = formatCS(v);
+                        
+                        let isBisagra = hingeTimes.has(v);
+                        let isAffected = affectedTimes.has(v);
+                        
+                        let compsArray = tiemposConseguidos.has(v) ? Array.from(tiemposConseguidos.get(v)) : [];
+                        let compsStrData = compsArray.join(','); 
+                        let tooltipMsg = compsArray.join(', ');
 
-                    let tooltip = tiemposConseguidos.has(v) ? `title="${tooltipMsg}"` : `title="No conseguido"`;
-                    let accionClick = tiemposConseguidos.has(v) ? `onclick="mostrarPopUp('${compsStrData}', '${tv}')"` : `onclick="mostrarPopUpFallo('${tv}')"`;
-                    
-                    let cssClass = 'miss';
-                    if (isBisagra) {
-                        cssClass = 'bisagra';
-                    } else if (v >= racha.min && v <= racha.max) {
-                        cssClass = isAffected ? 'streak strong' : 'streak';
-                    } else if (tiemposConseguidos.has(v)) {
-                        cssClass = isAffected ? 'got strong' : 'got';
+                        let tooltip = tiemposConseguidos.has(v) ? `title="${tooltipMsg}"` : `title="No conseguido"`;
+                        let accionClick = tiemposConseguidos.has(v) ? `onclick="mostrarPopUp('${compsStrData}', '${tv}')"` : `onclick="mostrarPopUpFallo('${tv}')"`;
+                        
+                        let cssClass = 'miss';
+                        if (isBisagra) {
+                            cssClass = 'bisagra';
+                        } else if (v >= racha.min && v <= racha.max) {
+                            cssClass = isAffected ? 'streak strong' : 'streak';
+                        } else if (tiemposConseguidos.has(v)) {
+                            cssClass = isAffected ? 'got strong' : 'got';
+                        }
+                        
+                        let scrollClass = (v === racha.min) ? ` inicio-rango` : "";
+                        
+                        statsHtml += `<div class='card ${cssClass}${scrollClass}' ${tooltip} ${accionClick}>${tv}</div>`;
                     }
+                    resDiv.innerHTML = statsHtml + `</div>`;
+                } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+                
+            } else {
+                // --- NUEVA LÓGICA COLECTIVA (Python JSON) ---
+                resDiv.innerHTML = `<p class='loading'>Consultando archivos de la comunidad...</p>`;
+
+                try {
+                    const req = await fetch(`collective_${eventId}.json?v=${Date.now()}`);
+                    if (!req.ok) throw new Error("Aún no hay datos colectivos subidos por Python para este evento.");
+                    const data = await req.json();
                     
-                    let scrollClass = (v === racha.min) ? ` inicio-rango` : "";
+                    let statsRegion;
+                    let nombreRegion = "";
+                    if (modo === 'Mundial') {
+                        statsRegion = data['Mundial'];
+                        nombreRegion = "el Mundo";
+                    } else if (modo === 'Continental' || modo === 'Nacional') {
+                        const seleccion = document.getElementById('regionColectiva').value;
+                        statsRegion = data[modo][seleccion];
+                        nombreRegion = seleccion.replace('_','');
+                        if(!statsRegion) throw new Error(`No se han indexado datos para ${nombreRegion} en esta categoría.`);
+                    }
+
+                    const tiemposObj = statsRegion.tiempos;
+                    const arrayTiempos = Object.keys(tiemposObj).map(Number).sort((a,b) => a-b);
                     
-                    statsHtml += `<div class='card ${cssClass}${scrollClass}' ${tooltip} ${accionClick}>${tv}</div>`;
+                    if (arrayTiempos.length === 0) throw new Error("No hay tiempos registrados en esta región.");
+                    
+                    const minVal = arrayTiempos[0], maxVal = arrayTiempos[arrayTiempos.length - 1];
+                    const totalPosibles = maxVal - minVal + 1;
+                    const rachaCol = calcularRachas(arrayTiempos);
+
+                    let statsHtml = `
+                        <div class="stats">
+                            <h2 style="margin:0 0 10px 0; color:#4CAF50;">Pokédex de ${nombreRegion}</h2>
+                            <strong>Completado:</strong> ${arrayTiempos.length} / ${totalPosibles} (${((arrayTiempos.length / totalPosibles) * 100).toFixed(1)}%) <br>
+                            <strong>Rango Colectivo:</strong> <span style="color: #ce93d8;">${formatCS(rachaCol.rango)}s (${formatCS(rachaCol.min)} - ${formatCS(rachaCol.max)})</span>
+                        </div>
+                        <div class="grid">`;
+
+                    for(let v = minVal; v <= maxVal; v++) {
+                        let tv = formatCS(v);
+                        
+                        if (tiemposObj[v]) {
+                            let obj = tiemposObj[v];
+                            let descStr = JSON.stringify(obj.descubridores).replace(/"/g, '&quot;');
+                            let compStr = JSON.stringify(obj.comps).replace(/"/g, '&quot;');
+                            
+                            let cssClass = (v >= rachaCol.min && v <= rachaCol.max) ? 'streak' : 'got';
+                            statsHtml += `<div class='card ${cssClass}' onclick="mostrarPopUpColectivo('${tv}', ${descStr}, ${compStr})">${tv}</div>`;
+                        } else {
+                            statsHtml += `<div class='card miss' onclick="document.getElementById('modal-texto').innerHTML='<h2 style=\\'margin:0 0 10px 0; color:var(--text);\\'>${tv}</h2>❌ Nadie en ${nombreRegion} ha logrado este tiempo jamás.'; document.getElementById('modal-overlay').style.display='flex';">${tv}</div>`;
+                        }
+                    }
+                    resDiv.innerHTML = statsHtml + `</div>`;
+
+                    // PINTAR HALL OF FAME EN PESTAÑA 4
+                    let htmlFame = "";
+                    let pos = 1;
+                    const fameArray = Object.entries(statsRegion.hall_of_fame).sort((a, b) => b[1] - a[1]);
+                    
+                    if (fameArray.length === 0) {
+                        htmlFame = `<p style="color:var(--text-muted);">Sin datos para mostrar.</p>`;
+                    } else {
+                        for (const [persona, puntos] of fameArray) {
+                            htmlFame += `
+                                <div class="fame-row">
+                                    <div><span class="fame-pos">#${pos}</span> ${persona}</div>
+                                    <div style="color:#4CAF50; font-weight:bold;">${puntos} singles</div>
+                                </div>`;
+                            pos++;
+                        }
+                    }
+                    document.getElementById('resFame').innerHTML = htmlFame;
+
+                } catch (err) {
+                    resDiv.innerHTML = `<p class='error'>Error: ${err.message}</p>`;
+                    document.getElementById('resFame').innerHTML = `<p class='error'>Error al cargar Hall of Fame: ${err.message}</p>`;
                 }
-                resDiv.innerHTML = statsHtml + `</div>`;
-            } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
+            }
         }
 
         function scrollToRango() {
@@ -788,7 +981,6 @@
             
             let html = `<div class="stats">Mostrando ${filtradosTop.length} resultados para: <strong style="color:var(--text);">${paisFiltro.replace('_','🌍 ')}</strong></div>`;
             
-            // LA TABLA SE ENVUELVE AQUÍ PARA LA PESTAÑA 2
             html += `<div class="table-wrapper"><table><tr><th># (Global)</th><th>Nombre</th><th>WCA ID</th><th>País</th><th>Rango Actual</th></tr>`;
             
             let limit = Math.min(renderLimit, filtradosTop.length);
@@ -900,7 +1092,6 @@
                     <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
                 </h2>`;
                 
-                // LA TABLA SE DEJA INTACTA PARA LA PESTAÑA 3 COMO PEDISTE
                 tableHtml += `<table><tr><th>Evento</th><th>Rango Actual</th><th style="text-align:center;">Ranking (🌍 / 🗺️ / 📍)</th></tr>`;
                 
                 resultados.forEach(r => {
