@@ -41,25 +41,34 @@ def procesar_datos():
         for row in reader:
             paises_continentes[row['id']] = row['continent_id']
 
-    print(f"Procesando resultados...")
+    print(f"Procesando resultados (Escaneando todos los intentos individuales)...")
     resultados_brutos = defaultdict(list)
     with open(RESULTS_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
             if row['event_id'] not in EVENTOS_VALIDOS: continue
-            if int(row['best']) <= 0: continue
             
             wca_id = row['person_id']
             pais = row['person_country_id']
             continente = paises_continentes.get(pais, "Unknown")
             comp_id = row['competition_id']
             fecha = comps.get(comp_id, "9999-99-99")
-            best = int(row['best'])
             
-            resultados_brutos[row['event_id']].append({
-                'time': best, 'wca_id': wca_id, 'pais': pais, 'continente': continente, 
-                'comp_id': comp_id, 'fecha': fecha, 'personName': row['person_name']
-            })
+            # --- ARREGLO GRAVE: Leer todos los intentos de la ronda, no solo el 'best' ---
+            intentos_ronda = set()
+            for col in ['value1', 'value2', 'value3', 'value4', 'value5', 'best']:
+                val = row.get(col, '0')
+                if val.lstrip('-').isdigit(): 
+                    v = int(val)
+                    if v > 0: intentos_ronda.add(v)
+            
+            if not intentos_ronda: continue
+
+            for t in intentos_ronda:
+                resultados_brutos[row['event_id']].append({
+                    'time': t, 'wca_id': wca_id, 'pais': pais, 'continente': continente, 
+                    'comp_id': comp_id, 'fecha': fecha, 'personName': row['person_name']
+                })
 
     for evento, solves in resultados_brutos.items():
         print(f"Calculando {evento}...")
@@ -111,17 +120,17 @@ def procesar_datos():
                 datos_colectivos['Nacional'][p]['tiempos'][t]['comps'].append(s['comp_id'])
                 datos_colectivos['Nacional'][p]['hall_of_fame_individuals'][persona] += 1
 
-        # Ordenar Hall of Fame
-        datos_colectivos['Mundial']['hall_of_fame_individuals'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_individuals'].items(), key=lambda x: x[1], reverse=True)[:100])
+        # --- ARREGLO HALL OF FAME: Ordenamos todos sin borrar a nadie (Sin los limitadores [:50]) ---
+        datos_colectivos['Mundial']['hall_of_fame_individuals'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_individuals'].items(), key=lambda x: x[1], reverse=True))
         datos_colectivos['Mundial']['hall_of_fame_countries'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_countries'].items(), key=lambda x: x[1], reverse=True))
         datos_colectivos['Mundial']['hall_of_fame_continents'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_continents'].items(), key=lambda x: x[1], reverse=True))
         
         for c_key in datos_colectivos['Continental']:
-            datos_colectivos['Continental'][c_key]['hall_of_fame_individuals'] = dict(sorted(datos_colectivos['Continental'][c_key]['hall_of_fame_individuals'].items(), key=lambda x: x[1], reverse=True)[:50])
+            datos_colectivos['Continental'][c_key]['hall_of_fame_individuals'] = dict(sorted(datos_colectivos['Continental'][c_key]['hall_of_fame_individuals'].items(), key=lambda x: x[1], reverse=True))
             datos_colectivos['Continental'][c_key]['hall_of_fame_countries'] = dict(sorted(datos_colectivos['Continental'][c_key]['hall_of_fame_countries'].items(), key=lambda x: x[1], reverse=True))
             
         for p_key in datos_colectivos['Nacional']:
-            datos_colectivos['Nacional'][p_key]['hall_of_fame_individuals'] = dict(sorted(datos_colectivos['Nacional'][p_key]['hall_of_fame_individuals'].items(), key=lambda x: x[1], reverse=True)[:50])
+            datos_colectivos['Nacional'][p_key]['hall_of_fame_individuals'] = dict(sorted(datos_colectivos['Nacional'][p_key]['hall_of_fame_individuals'].items(), key=lambda x: x[1], reverse=True))
 
         with open(f'collective_{evento}.json', 'w', encoding='utf-8') as f:
             json.dump(datos_colectivos, f)
