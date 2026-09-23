@@ -39,7 +39,6 @@
             max-width: 100vw; overflow-x: hidden; box-sizing: border-box; 
         }
         
-        /* --- NUEVO TOP BAR --- */
         #top-bar { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; position: relative; }
         
         h1.main-title { color: #4CAF50; margin: 0; cursor: pointer; user-select: none; transition: opacity 0.2s; }
@@ -107,7 +106,6 @@
         th { background-color: #333; color: #4CAF50; }
         tr:hover { background-color: var(--hover); }
         
-        /* CONTENEDOR DESLIZABLE EXCLUSIVO PARA LA PESTAÑA 2 */
         .table-wrapper { width: 100%; max-width: 1000px; margin: 0 auto 20px auto; overflow-x: auto; border-radius: 8px; }
         .table-wrapper table { width: 100%; margin: 0; white-space: normal; }
 
@@ -136,8 +134,7 @@
         #modal-texto a:hover { color: #ffe082; }
         .modal-btn { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 1em; margin-top: 15px; }
         
-        /* ESTILOS HALL OF FAME */
-        .fame-row { display: flex; justify-content: space-between; padding: 12px 15px; border-bottom: 1px solid var(--border); font-size: 1.1em; text-align: left; transition: background 0.2s; }
+        .fame-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; border-bottom: 1px solid var(--border); font-size: 1.1em; text-align: left; transition: background 0.2s; }
         .fame-row:hover { background-color: var(--hover); }
         .fame-pos { font-weight: bold; color: #ce93d8; width: 40px; display: inline-block; }
     </style>
@@ -145,7 +142,6 @@
 </head>
 <body>
     
-    <!-- NUEVO TOP BAR -->
     <div id="top-bar">
         <h1 class="main-title" onclick="window.location.href = window.location.pathname" title="Volver al inicio">Pokédex Singles</h1>
         <select id="agrupacionSelect" onchange="cambiarAgrupacion()">
@@ -175,30 +171,16 @@
     <!-- PESTAÑA 1 -->
     <div id="tab-pokedex" class="tab-content active">
         <div class="controls">
-            <!-- INPUT INDIVIDUAL -->
             <div id="ctrl-individual" style="display:inline-block;">
                 <input type="search" id="wcaIdPokedex" placeholder="WCA ID (Ej: 2014LOPE04)" onkeyup="manejarEnter(event, 'btnGenPokedex')">
             </div>
 
             <select id="eventIdPokedex" onchange="actualizarURL()">
-                <option value="333" selected>3x3x3</option>
-                <option value="222">2x2x2</option>
-                <option value="444">4x4x4</option>
-                <option value="555">5x5x5</option>
-                <option value="666">6x6x6</option>
-                <option value="777">7x7x7</option>
-                <option value="333bf">3x3x3 Blindfolded</option>
-                <option value="333oh">3x3x3 One-Handed</option>
-                <option value="clock">Clock</option>
-                <option value="minx">Megaminx</option>
-                <option value="pyram">Pyraminx</option>
-                <option value="skewb">Skewb</option>
-                <option value="sq1">Square-1</option>
+                <option value="333" selected>3x3x3</option><option value="222">2x2x2</option><option value="444">4x4x4</option><option value="555">5x5x5</option><option value="666">6x6x6</option><option value="777">7x7x7</option><option value="333bf">3x3x3 Blindfolded</option><option value="333oh">3x3x3 One-Handed</option><option value="clock">Clock</option><option value="minx">Megaminx</option><option value="pyram">Pyraminx</option><option value="skewb">Skewb</option><option value="sq1">Square-1</option>
             </select>
             <button id="btnGenPokedex" class="action-btn" onclick="generarPokedex()">Generar Pokédex</button>
             <div class="chips-container" id="chips-pokedex"></div>
             
-            <!-- EL BOTÓN BISAGRA AHORA AFECTA A TODOS LOS MODOS -->
             <div class="opciones-extra" id="opciones-individuales">
                 <input type="checkbox" id="checkBisagra" onchange="if(document.getElementById('resPokedex').innerHTML !== '') generarPokedex()">
                 <label for="checkBisagra">Mostrar Tiempo Bisagra</label>
@@ -211,21 +193,7 @@
     <div id="tab-top1000" class="tab-content">
         <div class="controls">
             <select id="eventIdTop" onchange="actualizarURL()">
-                <option value="333" selected>3x3x3</option>
-                <option value="222">2x2x2</option>
-                <option value="444">4x4x4</option>
-                <option value="555">5x5x5</option>
-                <option value="666">6x6x6</option>
-                <option value="777">7x7x7</option>
-                <option value="333bf">3x3x3 Blindfolded</option>
-                <option value="333oh">3x3x3 One-Handed</option>
-                <option value="clock">Clock</option>
-                <option value="minx">Megaminx</option>
-                <option value="pyram">Pyraminx</option>
-                <option value="skewb">Skewb</option>
-                <option value="sq1">Square-1</option>
-                <option value="444bf">4x4x4 Blindfolded</option>
-                <option value="555bf">5x5x5 Blindfolded</option>
+                <option value="333" selected>3x3x3</option><option value="222">2x2x2</option><option value="444">4x4x4</option><option value="555">5x5x5</option><option value="666">6x6x6</option><option value="777">7x7x7</option><option value="333bf">3x3x3 Blindfolded</option><option value="333oh">3x3x3 One-Handed</option><option value="clock">Clock</option><option value="minx">Megaminx</option><option value="pyram">Pyraminx</option><option value="skewb">Skewb</option><option value="sq1">Square-1</option><option value="444bf">4x4x4 Blindfolded</option><option value="555bf">5x5x5 Blindfolded</option>
             </select>
             <span id="filtros-ind-top">
                 <select id="countryTop" onchange="filtrarTop()">
@@ -260,7 +228,7 @@
                 <option value="333" selected>3x3x3</option><option value="222">2x2x2</option><option value="444">4x4x4</option><option value="555">5x5x5</option><option value="666">6x6x6</option><option value="777">7x7x7</option><option value="333bf">3x3x3 Blindfolded</option><option value="333oh">3x3x3 One-Handed</option><option value="clock">Clock</option><option value="minx">Megaminx</option><option value="pyram">Pyraminx</option><option value="skewb">Skewb</option><option value="sq1">Square-1</option>
             </select>
             <select id="fameTypeSelect" onchange="cargarHallOfFame()">
-                <option value="individuals" id="fameOptIndiv">🏆 Por Individuos (Mayores Aportadores)</option>
+                <option value="individuals" id="fameOptIndiv">🏆 Por Individuos (Aportadores)</option>
                 <option value="countries" id="fameOptCountries">🏆 Por Países</option>
                 <option value="continents" id="fameOptContinents">🏆 Por Continentes</option>
             </select>
@@ -283,6 +251,11 @@
         let renderLimit = 50; 
         let filtradosTop = [];
         let cargandoMas = false; 
+        
+        let filtradosFame = [];
+        let renderLimitFame = 50;
+
+        let statsColectivosActuales = null; // Almacena el JSON de la Pokédex colectiva generada
 
         const wcaContinents = ["_Africa", "_Asia", "_Europe", "_North America", "_Oceania", "_South America"];
         const wcaCountries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bolivia", "Bosnia and Herzegovina", "Brazil", "Brunei", "Bulgaria", "Cambodia", "Canada", "Chile", "China", "Colombia", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Guatemala", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Malaysia", "Malta", "Mauritius", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Myanmar", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Nigeria", "North Macedonia", "Norway", "Oman", "Pakistan", "Palestine", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "Spain", "Sri Lanka", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Thailand", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam"];
@@ -295,25 +268,13 @@
                     const opciones = { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
                     document.getElementById('fecha-update').innerText = fecha.toLocaleDateString('es-ES', opciones);
                 }
-            })
-            .catch(() => {
-                document.getElementById('fecha-update').innerText = 'Desconocida';
-            });
+            }).catch(() => { document.getElementById('fecha-update').innerText = 'Desconocida'; });
         
         const grpCont = document.getElementById('group-continents');
-        wcaContinents.forEach(c => {
-            let opt = document.createElement('option');
-            opt.value = c; opt.textContent = c.replace('_', '🌍 ');
-            grpCont.appendChild(opt);
-        });
+        wcaContinents.forEach(c => { let opt = document.createElement('option'); opt.value = c; opt.textContent = c.replace('_', '🌍 '); grpCont.appendChild(opt); });
         const grpCoun = document.getElementById('group-countries');
-        wcaCountries.forEach(p => {
-            let opt = document.createElement('option');
-            opt.value = p; opt.textContent = p;
-            grpCoun.appendChild(opt);
-        });
+        wcaCountries.forEach(p => { let opt = document.createElement('option'); opt.value = p; opt.textContent = p; grpCoun.appendChild(opt); });
 
-        // --- NUEVA LÓGICA DE AGRUPACIÓN (AFECTA A TODAS LAS PESTAÑAS) ---
         function cambiarAgrupacion() {
             const modo = document.getElementById('agrupacionSelect').value;
             const ctrlInd = document.getElementById('ctrl-individual');
@@ -333,13 +294,11 @@
                 document.getElementById('chips-pokedex').style.display = 'block';
                 document.getElementById('chips-competidor').style.display = 'block';
                 
-                if(document.getElementById('tab-fame').classList.contains('active')) {
-                    openTab('tab-pokedex', false);
-                }
+                if(document.getElementById('tab-fame').classList.contains('active')) { openTab('tab-pokedex', false); }
             } else {
                 ctrlInd.style.display = 'none';
                 ctrlIndComp.style.display = 'none';
-                filtrosIndTop.style.display = 'none'; // En colectivo el ranking es total
+                filtrosIndTop.style.display = (modo === 'Nacional') ? 'inline-block' : 'none'; // Permite filtrar por continente en Nacional
                 document.getElementById('chips-pokedex').style.display = 'none';
                 document.getElementById('chips-competidor').style.display = 'none';
                 btnFame.style.display = 'block';
@@ -378,22 +337,14 @@
             document.getElementById('resTop1000').innerHTML = '';
             document.getElementById('resCompetidor').innerHTML = '';
             document.getElementById('resFame').innerHTML = `<p style="color:var(--text-muted);">Pulsa "Ver Hall of Fame" para cargar los datos.</p>`;
+            statsColectivosActuales = null;
         }
 
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const btn = document.getElementById('theme-btn');
-            btn.innerText = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
-        }
+        function toggleTheme() { document.body.classList.toggle('light-mode'); document.getElementById('theme-btn').innerText = document.body.classList.contains('light-mode') ? '🌙' : '☀️'; }
 
         function openTab(tabName, shouldUpdateUrl = true) {
-            if (!document.startViewTransition) {
-                ejecutarCambioDePestana(tabName, shouldUpdateUrl);
-                return;
-            }
-            document.startViewTransition(() => {
-                ejecutarCambioDePestana(tabName, shouldUpdateUrl);
-            });
+            if (!document.startViewTransition) { ejecutarCambioDePestana(tabName, shouldUpdateUrl); return; }
+            document.startViewTransition(() => { ejecutarCambioDePestana(tabName, shouldUpdateUrl); });
         }
         
         function ejecutarCambioDePestana(tabName, shouldUpdateUrl) {
@@ -411,10 +362,7 @@
             const tab = activeTabElement.id.replace('btn-tab-', '');
             
             let wcaid = "", ev = "";
-            if(tab === 'pokedex') { 
-                wcaid = document.getElementById('wcaIdPokedex').value; 
-                ev = document.getElementById('eventIdPokedex').value; 
-            }
+            if(tab === 'pokedex') { wcaid = document.getElementById('wcaIdPokedex').value; ev = document.getElementById('eventIdPokedex').value; }
             if(tab === 'top1000') { ev = document.getElementById('eventIdTop').value; }
             if(tab === 'competidor') { wcaid = document.getElementById('wcaIdCompetidor').value; }
             if(tab === 'fame') { ev = document.getElementById('eventIdFame').value; }
@@ -422,11 +370,7 @@
             const stateData = { tab, wcaid, ev };
             const newUrl = `?tab=${tab}&wcaid=${wcaid}&ev=${ev}`;
             
-            if (push) {
-                history.pushState(stateData, '', newUrl);
-            } else {
-                history.replaceState(stateData, '', newUrl);
-            }
+            if (push) { history.pushState(stateData, '', newUrl); } else { history.replaceState(stateData, '', newUrl); }
         }
 
         window.addEventListener('popstate', (e) => {
@@ -441,36 +385,30 @@
             }
         });
 
-        // --- CONTROLADOR DE SCROLL ---
+        // --- CONTROLADORES DE SCROLL INFINITO (Pestaña 2 y 4) ---
         window.addEventListener('scroll', () => {
             const btnScroll = document.getElementById('btn-scrollTop');
-            
-            if (window.scrollY > 150) { 
-                btnScroll.style.display = 'block'; 
-            } else { 
-                btnScroll.style.display = 'none'; 
-            }
+            if (window.scrollY > 150) { btnScroll.style.display = 'block'; } else { btnScroll.style.display = 'none'; }
 
-            const isTab2 = document.getElementById('tab-top1000').classList.contains('active');
-            if (isTab2 && !cargandoMas) {
+            if (!cargandoMas) {
                 const scrollPos = window.scrollY + window.innerHeight;
                 const alturaTotal = document.documentElement.scrollHeight;
                 
                 if (scrollPos >= alturaTotal - 600) {
-                    if (renderLimit < filtradosTop.length) { 
-                        cargandoMas = true; 
-                        renderLimit += 50; 
-                        pintarTablaTop(); 
-                        setTimeout(() => { cargandoMas = false; }, 250); 
+                    const isTab2 = document.getElementById('tab-top1000').classList.contains('active');
+                    const isTab4 = document.getElementById('tab-fame').classList.contains('active');
+                    
+                    if (isTab2 && renderLimit < filtradosTop.length) { 
+                        cargandoMas = true; renderLimit += 50; pintarTablaTop(); setTimeout(() => { cargandoMas = false; }, 250); 
+                    } else if (isTab4 && renderLimitFame < filtradosFame.length) { 
+                        cargandoMas = true; renderLimitFame += 50; pintarFame(); setTimeout(() => { cargandoMas = false; }, 250); 
                     }
                 }
             }
         });
         
         window.addEventListener('DOMContentLoaded', () => {
-            dibujarRecientes();
-            cambiarAgrupacion(); // Inicializa selects
-            
+            dibujarRecientes(); cambiarAgrupacion(); 
             const params = new URLSearchParams(window.location.search);
             const tab = params.get('tab') || 'pokedex';
             const wcaid = params.get('wcaid') || '';
@@ -478,7 +416,7 @@
             
             history.replaceState({ tab, wcaid, ev }, '', window.location.search);
             
-            if (params.get('ev')) { document.getElementById('eventIdPokedex').value = ev; document.getElementById('eventIdTop').value = ev; document.getElementById('eventIdFame').value = ev;}
+            if (params.get('ev')) { document.getElementById('eventIdPokedex').value = ev; document.getElementById('eventIdTop').value = ev; document.getElementById('eventIdFame').value = ev; }
             if (params.get('wcaid')) { document.getElementById('wcaIdPokedex').value = wcaid; document.getElementById('wcaIdCompetidor').value = wcaid; }
             
             if (params.get('tab')) {
@@ -492,25 +430,18 @@
 
         function guardarReciente(wcaId) {
             let recents = JSON.parse(localStorage.getItem('wcaRecents') || '[]');
-            recents = recents.filter(id => id !== wcaId); 
-            recents.unshift(wcaId);
-            if(recents.length > 5) recents.pop();
-            localStorage.setItem('wcaRecents', JSON.stringify(recents));
-            dibujarRecientes();
+            recents = recents.filter(id => id !== wcaId); recents.unshift(wcaId);
+            if(recents.length > 5) recents.pop(); localStorage.setItem('wcaRecents', JSON.stringify(recents)); dibujarRecientes();
         }
 
         function dibujarRecientes() {
             let recents = JSON.parse(localStorage.getItem('wcaRecents') || '[]');
             let html = recents.map(id => `<button class="chip" onclick="usarReciente('${id}')">${id}</button>`).join('');
-            document.getElementById('chips-pokedex').innerHTML = html;
-            document.getElementById('chips-competidor').innerHTML = html;
+            document.getElementById('chips-pokedex').innerHTML = html; document.getElementById('chips-competidor').innerHTML = html;
         }
 
         function usarReciente(id) {
-            const activeTabElement = document.querySelector('.tab-btn.active');
-            if(!activeTabElement) return;
-            const activeTab = activeTabElement.id;
-            
+            const activeTabElement = document.querySelector('.tab-btn.active'); if(!activeTabElement) return; const activeTab = activeTabElement.id;
             if(activeTab === 'btn-tab-pokedex') { document.getElementById('wcaIdPokedex').value = id; generarPokedex(); }
             if(activeTab === 'btn-tab-competidor') { document.getElementById('wcaIdCompetidor').value = id; cargarCompetidor(); }
         }
@@ -521,9 +452,18 @@
             openTab('tab-pokedex');
             document.getElementById('agrupacionSelect').value = 'individual';
             cambiarAgrupacion();
-            
             document.getElementById('wcaIdPokedex').value = wcaId;
             document.getElementById('eventIdPokedex').value = eventId;
+            generarPokedex();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function irAPokedexColectiva(modo, region, ev) {
+            openTab('tab-pokedex');
+            document.getElementById('agrupacionSelect').value = modo;
+            cambiarAgrupacion();
+            document.getElementById('regionColectiva').value = region;
+            document.getElementById('eventIdPokedex').value = ev;
             generarPokedex();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -540,6 +480,8 @@
 
         function irACompetidor(wcaId) {
             openTab('tab-competidor');
+            document.getElementById('agrupacionSelect').value = 'individual';
+            cambiarAgrupacion();
             document.getElementById('wcaIdCompetidor').value = wcaId;
             cargarCompetidor();
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -549,18 +491,14 @@
         
         function formatCS(cs) {
             if (cs < 6000) return (cs / 100).toFixed(2);
-            let m = Math.floor(cs / 6000);
-            let s_val = (cs % 6000) / 100;
-            let s_str = s_val.toFixed(2);
-            if (s_val < 10) s_str = "0" + s_str;
-            return `${m}:${s_str}`;
+            let m = Math.floor(cs / 6000); let s_val = (cs % 6000) / 100; let s_str = s_val.toFixed(2);
+            if (s_val < 10) s_str = "0" + s_str; return `${m}:${s_str}`;
         }
         function formatStrSeconds(secStr) { return formatCS(Math.round(parseFloat(secStr) * 100)); }
 
         function calcularRachas(arrayTiempos) {
             if(arrayTiempos.length === 0) return null;
-            let rachas = [];
-            let rActual = {min: arrayTiempos[0], max: arrayTiempos[0]};
+            let rachas = []; let rActual = {min: arrayTiempos[0], max: arrayTiempos[0]};
             for (let i = 1; i < arrayTiempos.length; i++) {
                 if (arrayTiempos[i] === rActual.max + 1) rActual.max = arrayTiempos[i];
                 else { rachas.push(rActual); rActual = {min: arrayTiempos[i], max: arrayTiempos[i]}; }
@@ -577,15 +515,24 @@
 
         function mostrarPopUp(compsStr, tiempo) {
             let comps = compsStr.split(',');
-            let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank" style="display:block; margin:5px 0;">${c}</a>`).join('');
+            let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank" style="display:block; margin:5px 0; color: #ffd54f;">${c}</a>`).join('');
             document.getElementById('modal-texto').innerHTML = `<h2 style="margin: 0 0 10px 0; color: var(--text);">${tiempo}</h2>🏆 <b>Logrado en:</b><br><br>` + htmlLinks;
             document.getElementById('modal-overlay').style.display = 'flex';
         }
         
-        // --- POP-UP COLECTIVO ---
+        // --- POP-UP COLECTIVO CON QoL ---
         function mostrarPopUpColectivo(tiempo, descubridores, comps) {
-            let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank" style="display:inline-block; margin:2px 5px;">${c}</a>`).join(' / ');
-            let htmlGente = descubridores.map(d => `<strong style="color: #64b5f6;">${d}</strong>`).join('<br>');
+            let htmlLinks = comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank" style="display:inline-block; margin:2px 5px; color: #ffd54f;">${c}</a>`).join(' / ');
+            let evActual = document.getElementById('eventIdPokedex').value;
+            
+            let htmlGente = descubridores.map(d => {
+                let match = d.match(/(.*)\s+\((.*?)\)/);
+                if (match) {
+                    return `<a href="javascript:void(0)" onclick="cerrarPopUp(); irAPokedex('${match[2]}', '${evActual}')" style="color: #64b5f6; font-weight:bold; text-decoration:none;" title="Ver Pokédex de ${match[1]}">${match[1]} (${match[2]})</a>`;
+                }
+                return `<strong style="color: #64b5f6;">${d}</strong>`;
+            }).join('<br>');
+            
             document.getElementById('modal-texto').innerHTML = `
                 <h2 style="margin: 0 0 10px 0; color: var(--text);">${tiempo}</h2>
                 <div style="font-size:1.1em; line-height:1.6; margin-bottom:15px;">
@@ -642,7 +589,7 @@
                     html += `
                         <div style="margin-bottom: 20px; border-left: 3px solid #ce93d8; padding-left: 12px;">
                             <strong style="color: #ce93d8; font-size: 1.3em;">${formatCS(h.tiempo)}s</strong><br>
-                            <a href="https://www.worldcubeassociation.org/competitions/${h.comp}" target="_blank" style="font-size: 1.05em; font-weight: bold; display:block; margin:5px 0;">${h.comp}</a>
+                            <a href="https://www.worldcubeassociation.org/competitions/${h.comp}" target="_blank" style="font-size: 1.05em; font-weight: bold; display:block; margin:5px 0; color: #ffd54f; text-decoration: none;">${h.comp}</a>
                             <span style="color: var(--text-muted); display: inline-block;">Rango: ${formatCS(h.rangoAntiguo)}s &rarr; ${formatCS(h.rangoNuevo)}s <b style="color:#4CAF50;">(+${formatCS(h.aumento)}s)</b></span>
                         </div>
                     `;
@@ -653,10 +600,86 @@
             document.getElementById('modal-overlay').style.display = 'flex';
         }
 
+        // --- HISTORIAL DE BISAGRAS COLECTIVO (NUEVO) ---
+        function mostrarHistorialBisagrasColectivo() {
+            if (!statsColectivosActuales) return;
+            
+            let descubrimientos = [];
+            for (let t in statsColectivosActuales.tiempos) {
+                descubrimientos.push({
+                    tiempo: parseInt(t),
+                    fecha: statsColectivosActuales.tiempos[t].fecha,
+                    desc: statsColectivosActuales.tiempos[t].descubridores,
+                    comps: statsColectivosActuales.tiempos[t].comps
+                });
+            }
+            
+            // Ordenamos por fecha y, si coinciden, por tiempo para reproducir la historia
+            descubrimientos.sort((a, b) => {
+                if (a.fecha !== b.fecha) return a.fecha.localeCompare(b.fecha);
+                return a.tiempo - b.tiempo;
+            });
+            
+            let tiemposSet = new Set();
+            let historial = [];
+            
+            for (let desc of descubrimientos) {
+                let int = desc.tiempo;
+                if (tiemposSet.size > 0) {
+                    let { bestRango, hingeTimes, maxRangoActual } = calcularHingeTimesAvanzado(tiemposSet);
+                    if (hingeTimes.has(int)) {
+                        let aumentoCentesimas = bestRango - maxRangoActual;
+                        if (aumentoCentesimas > 1) {
+                            historial.unshift({
+                                tiempo: int,
+                                fecha: desc.fecha,
+                                desc: desc.desc,
+                                comps: desc.comps,
+                                rangoAntiguo: maxRangoActual,
+                                rangoNuevo: bestRango,
+                                aumento: aumentoCentesimas
+                            });
+                        }
+                    }
+                }
+                tiemposSet.add(int);
+            }
+            
+            let html = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Historial de Bisagras Colectivas</h2>`;
+            if (historial.length === 0) {
+                html += `<p style="color: var(--text-muted);">No se han registrado expansiones de bisagra significativas.</p>`;
+            } else {
+                html += `<div style="text-align: left; word-break: break-word;">`;
+                let evActual = document.getElementById('eventIdPokedex').value;
+                historial.forEach(h => {
+                    let htmlGente = h.desc.map(d => {
+                        let match = d.match(/(.*)\s+\((.*?)\)/);
+                        if (match) {
+                            return `<a href="javascript:void(0)" onclick="cerrarPopUp(); irAPokedex('${match[2]}', '${evActual}')" style="color: #64b5f6; font-weight:bold; text-decoration:none;" title="Ver Pokédex de ${match[1]}">${match[1]}</a>`;
+                        }
+                        return `<strong style="color: #64b5f6;">${d}</strong>`;
+                    }).join(', ');
+                    
+                    let htmlLinks = h.comps.map(c => `<a href="https://www.worldcubeassociation.org/competitions/${c}" target="_blank" style="font-weight: bold; color: #ffd54f; text-decoration: none;">${c}</a>`).join(' / ');
+                    
+                    html += `
+                        <div style="margin-bottom: 20px; border-left: 3px solid #ce93d8; padding-left: 12px;">
+                            <strong style="color: #ce93d8; font-size: 1.3em;">${formatCS(h.tiempo)}s</strong> <span style="color:var(--text-muted); font-size:0.9em;">(${h.fecha})</span><br>
+                            <span style="font-size: 0.95em;">Por ${htmlGente} en ${htmlLinks}</span><br>
+                            <span style="color: var(--text-muted); display: inline-block; margin-top:4px;">Rango: ${formatCS(h.rangoAntiguo)}s &rarr; ${formatCS(h.rangoNuevo)}s <b style="color:#4CAF50;">(+${formatCS(h.aumento)}s)</b></span>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+            
+            document.getElementById('modal-texto').innerHTML = html;
+            document.getElementById('modal-overlay').style.display = 'flex';
+        }
+
         function calcularHingeTimesAvanzado(tiemposSet) {
             let arr = Array.from(tiemposSet).sort((a, b) => a - b);
-            let rachas = [];
-            let rActual = {min: arr[0], max: arr[0]};
+            let rachas = []; let rActual = {min: arr[0], max: arr[0]};
             
             for (let i = 1; i < arr.length; i++) {
                 if (arr[i] === rActual.max + 1) rActual.max = arr[i];
@@ -665,27 +688,18 @@
             rachas.push(rActual);
             
             let maxRangoActual = Math.max(...rachas.map(r => r.max - r.min));
-            let bestRango = maxRangoActual;
-            let hingeTimes = new Set();
+            let bestRango = maxRangoActual; let hingeTimes = new Set();
             
             const evaluarCandidato = (v, hipoteticoRango) => {
-                if (hipoteticoRango > bestRango) {
-                    bestRango = hipoteticoRango; hingeTimes.clear(); hingeTimes.add(v);
-                } else if (hipoteticoRango === bestRango && hipoteticoRango > maxRangoActual) {
-                    hingeTimes.add(v);
-                }
+                if (hipoteticoRango > bestRango) { bestRango = hipoteticoRango; hingeTimes.clear(); hingeTimes.add(v);
+                } else if (hipoteticoRango === bestRango && hipoteticoRango > maxRangoActual) { hingeTimes.add(v); }
             };
 
-            for (let r of rachas) {
-                evaluarCandidato(r.min - 1, (r.max - r.min) + 1);
-                evaluarCandidato(r.max + 1, (r.max - r.min) + 1);
-            }
-
+            for (let r of rachas) { evaluarCandidato(r.min - 1, (r.max - r.min) + 1); evaluarCandidato(r.max + 1, (r.max - r.min) + 1); }
             for (let i = 0; i < rachas.length - 1; i++) {
                 let r1 = rachas[i]; let r2 = rachas[i+1]; let gap = r2.min - r1.max - 1;
                 if (gap === 1) { evaluarCandidato(r1.max + 1, (r1.max - r1.min) + (r2.max - r2.min) + 2); }
             }
-            
             return { bestRango, hingeTimes, maxRangoActual };
         }
 
@@ -696,10 +710,8 @@
                 fetch(`https://www.worldcubeassociation.org/api/v0/persons/${wcaId}`)
             ]);
             if(!resResults.ok || !resPerson.ok) throw new Error("No se pudo encontrar el WCA ID.");
-            const data = await resResults.json();
-            const personData = await resPerson.json();
-            const payload = { data, personName: personData.person.name };
-            apiCache.set(wcaId, payload);
+            const data = await resResults.json(); const personData = await resPerson.json();
+            const payload = { data, personName: personData.person.name }; apiCache.set(wcaId, payload);
             return payload;
         }
 
@@ -712,14 +724,10 @@
 
             if (modo === 'individual') {
                 const wcaId = document.getElementById('wcaIdPokedex').value.trim().toUpperCase();
-                if(!wcaId) return;
-                actualizarURL();
-                resDiv.innerHTML = "<p class='loading'>Conectando con la API WCA...</p>";
+                if(!wcaId) return; actualizarURL(); resDiv.innerHTML = "<p class='loading'>Conectando con la API WCA...</p>";
 
                 try {
-                    const { data, personName } = await fetchWCA(wcaId);
-                    guardarReciente(wcaId);
-                    
+                    const { data, personName } = await fetchWCA(wcaId); guardarReciente(wcaId);
                     let tiemposConseguidos = new Map(); 
                     data.slice().reverse().forEach(comp => {
                         if(comp.event_id === eventId) {
@@ -739,8 +747,7 @@
                     const nombreEvento = document.getElementById('eventIdPokedex').options[document.getElementById('eventIdPokedex').selectedIndex].text;
                     const antirrango = maxVal - minVal;
 
-                    let hingeTimes = new Set();
-                    let affectedTimes = new Set();
+                    let hingeTimes = new Set(); let affectedTimes = new Set();
 
                     if (mostrarBisagra) {
                         let bestPotentialRango = racha.rango;
@@ -748,14 +755,12 @@
                             if (!tiemposConseguidos.has(v)) {
                                 let simArray = [...arrayTiempos, v].sort((a,b) => a-b);
                                 let simRacha = calcularRachas(simArray);
-                                if (simRacha.rango > bestPotentialRango) {
-                                    bestPotentialRango = simRacha.rango; hingeTimes.clear(); hingeTimes.add(v);
+                                if (simRacha.rango > bestPotentialRango) { bestPotentialRango = simRacha.rango; hingeTimes.clear(); hingeTimes.add(v);
                                 } else if (simRacha.rango === bestPotentialRango && simRacha.rango > racha.rango) { hingeTimes.add(v); }
                             }
                         }
                         for (let h of hingeTimes) {
-                            let left = h; while(tiemposConseguidos.has(left - 1)) left--;
-                            let right = h; while(tiemposConseguidos.has(right + 1)) right++;
+                            let left = h; while(tiemposConseguidos.has(left - 1)) left--; let right = h; while(tiemposConseguidos.has(right + 1)) right++;
                             for (let a = left; a <= right; a++) { if (a !== h) affectedTimes.add(a); }
                         }
                     }
@@ -764,7 +769,7 @@
                         <div class="stats">
                             <div style="margin-bottom: 8px;">
                                 <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
-                                <button class="btn-secondary" style="padding: 4px 8px; font-size: 0.7em; margin-left: 10px;" onclick="irACompetidor('${wcaId}')">Ver todos sus eventos</button>
+                                <button class="btn-secondary" style="padding: 4px 8px; font-size: 0.7em; margin-left: 10px;" onclick="irACompetidor('${wcaId}')" title="Ver todos los rangos">📊</button>
                             </div>
                             <strong>Evento:</strong> ${nombreEvento}<br>
                             <strong>Completado:</strong> ${tiemposConseguidos.size} / ${totalPosibles} (${porcentaje}%) <br>
@@ -779,11 +784,9 @@
 
                     for(let v = minVal; v <= maxVal; v++) {
                         let tv = formatCS(v);
-                        let isBisagra = hingeTimes.has(v);
-                        let isAffected = affectedTimes.has(v);
+                        let isBisagra = hingeTimes.has(v); let isAffected = affectedTimes.has(v);
                         let compsArray = tiemposConseguidos.has(v) ? Array.from(tiemposConseguidos.get(v)) : [];
-                        let compsStrData = compsArray.join(','); 
-                        let tooltipMsg = compsArray.join(', ');
+                        let compsStrData = compsArray.join(','); let tooltipMsg = compsArray.join(', ');
 
                         let tooltip = tiemposConseguidos.has(v) ? `title="${tooltipMsg}"` : `title="No conseguido"`;
                         let accionClick = tiemposConseguidos.has(v) ? `onclick="mostrarPopUp('${compsStrData}', '${tv}')"` : `onclick="mostrarPopUpFallo('${tv}')"`;
@@ -798,7 +801,6 @@
                 } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
                 
             } else {
-                // LÓGICA COLECTIVA 
                 resDiv.innerHTML = `<p class='loading'>Consultando archivos de la comunidad...</p>`;
 
                 try {
@@ -806,18 +808,16 @@
                     if (!req.ok) throw new Error("Aún no hay datos colectivos subidos por Python para este evento.");
                     const data = await req.json();
                     
-                    let statsRegion;
-                    let nombreRegion = "";
+                    let statsRegion; let nombreRegion = "";
                     if (modo === 'Mundial') {
-                        statsRegion = data['Mundial'];
-                        nombreRegion = "el Mundo";
+                        statsRegion = data['Mundial']; nombreRegion = "el Mundo";
                     } else if (modo === 'Continental' || modo === 'Nacional') {
                         const seleccion = document.getElementById('regionColectiva').value;
-                        statsRegion = data[modo][seleccion];
-                        nombreRegion = seleccion.replace('_','');
+                        statsRegion = data[modo][seleccion]; nombreRegion = seleccion.replace('_','');
                         if(!statsRegion) throw new Error(`No se han indexado datos para ${nombreRegion} en esta categoría.`);
                     }
 
+                    statsColectivosActuales = statsRegion; // Guardado global para poder calcular el historial colectivo
                     const tiemposObj = statsRegion.tiempos;
                     const arrayTiempos = Object.keys(tiemposObj).map(Number).sort((a,b) => a-b);
                     
@@ -827,25 +827,20 @@
                     const totalPosibles = maxVal - minVal + 1;
                     const rachaCol = calcularRachas(arrayTiempos);
                     
-                    let hingeTimes = new Set();
-                    let affectedTimes = new Set();
+                    let hingeTimes = new Set(); let affectedTimes = new Set();
 
-                    // CÁLCULO DE BISAGRA PARA MODO COLECTIVO
                     if (mostrarBisagra) {
-                        let bestPotentialRango = rachaCol.rango;
-                        let tiemposConseguidos = new Set(arrayTiempos);
+                        let bestPotentialRango = rachaCol.rango; let tiemposConseguidos = new Set(arrayTiempos);
                         for (let v = minVal; v <= maxVal; v++) {
                             if (!tiemposConseguidos.has(v)) {
                                 let simArray = [...arrayTiempos, v].sort((a,b) => a-b);
                                 let simRacha = calcularRachas(simArray);
-                                if (simRacha.rango > bestPotentialRango) {
-                                    bestPotentialRango = simRacha.rango; hingeTimes.clear(); hingeTimes.add(v);
+                                if (simRacha.rango > bestPotentialRango) { bestPotentialRango = simRacha.rango; hingeTimes.clear(); hingeTimes.add(v);
                                 } else if (simRacha.rango === bestPotentialRango && simRacha.rango > rachaCol.rango) { hingeTimes.add(v); }
                             }
                         }
                         for (let h of hingeTimes) {
-                            let left = h; while(tiemposConseguidos.has(left - 1)) left--;
-                            let right = h; while(tiemposConseguidos.has(right + 1)) right++;
+                            let left = h; while(tiemposConseguidos.has(left - 1)) left--; let right = h; while(tiemposConseguidos.has(right + 1)) right++;
                             for (let a = left; a <= right; a++) { if (a !== h) affectedTimes.add(a); }
                         }
                     }
@@ -855,14 +850,16 @@
                             <h2 style="margin:0 0 10px 0; color:#4CAF50;">Pokédex de ${nombreRegion}</h2>
                             <strong>Completado:</strong> ${arrayTiempos.length} / ${totalPosibles} (${((arrayTiempos.length / totalPosibles) * 100).toFixed(1)}%) <br>
                             <strong>Rango Colectivo:</strong> <span style="color: #ce93d8;">${formatCS(rachaCol.rango)}s (${formatCS(rachaCol.min)} - ${formatCS(rachaCol.max)})</span>
-                            <button class="action-btn" style="padding: 4px 10px; font-size: 0.8em; margin-left: 10px;" onclick="scrollToRango()">Mostrar Rango</button>
+                            <div style="margin-top: 5px;">
+                                <button class="action-btn" style="padding: 4px 10px; font-size: 0.8em; margin-left: 10px;" onclick="scrollToRango()">Mostrar Rango</button>
+                                <button class="btn-secondary" style="padding: 4px 10px; font-size: 0.8em; margin-left: 5px;" onclick="mostrarHistorialBisagrasColectivo()">📖 Historial</button>
+                            </div>
                         </div>
                         <div class="grid">`;
 
                     for(let v = minVal; v <= maxVal; v++) {
                         let tv = formatCS(v);
-                        let isBisagra = hingeTimes.has(v);
-                        let isAffected = affectedTimes.has(v);
+                        let isBisagra = hingeTimes.has(v); let isAffected = affectedTimes.has(v);
                         
                         if (tiemposObj[v]) {
                             let obj = tiemposObj[v];
@@ -881,9 +878,7 @@
                     }
                     resDiv.innerHTML = statsHtml + `</div>`;
 
-                } catch (err) {
-                    resDiv.innerHTML = `<p class='error'>Error: ${err.message}</p>`;
-                }
+                } catch (err) { resDiv.innerHTML = `<p class='error'>Error: ${err.message}</p>`; }
             }
         }
 
@@ -895,17 +890,14 @@
             }
         }
 
-        // --- CORE: PESTAÑA 2 (RANKINGS UNIFICADOS) ---
+        // --- CORE: PESTAÑA 2 (RANKINGS UNIFICADOS CON FILTROS DE CONTINENTE) ---
         async function cargarTop1000() {
             const modo = document.getElementById('agrupacionSelect').value;
             const eventId = document.getElementById('eventIdTop').value;
             const resDiv = document.getElementById('resTop1000');
             actualizarURL();
             
-            if (modo === 'Mundial') {
-                resDiv.innerHTML = `<p class='error'>El modo Mundial no tiene divisiones internas para comparar rangos en esta pestaña.</p>`;
-                return;
-            }
+            if (modo === 'Mundial') { resDiv.innerHTML = `<p class='error'>El modo Mundial no tiene divisiones internas para comparar rangos en esta pestaña.</p>`; return; }
 
             if (modo === 'individual') {
                 resDiv.innerHTML = `<p class='loading'>Cargando ranking individual...</p>`;
@@ -913,22 +905,18 @@
                     const response = await fetch(`ranking_${eventId}.txt?v=${Date.now()}`);
                     if(!response.ok) throw new Error(`Ranking no disponible`);
                     const text = await response.text();
-                    
                     datosRankingGlobal = [];
                     const regex = /^(\d+)\.\s+(.*?)\s+\(([A-Z0-9]+)\.\s+(.*?)\.\s+(.*?)\)\s+-\s+([0-9.]+)s\s+\((.*?)\)/i;
 
                     text.split('\n').forEach(line => {
                         let match = line.trim().match(regex);
-                        if(match) {
-                            datosRankingGlobal.push({ posGlobal: match[1], nombre: match[2], wcaId: match[3], pais: match[4], continente: match[5], rangoText: match[6], rangoLimites: match[7] });
-                        }
+                        if(match) datosRankingGlobal.push({ posGlobal: match[1], nombre: match[2], wcaId: match[3], pais: match[4], continente: match[5], rangoText: match[6], rangoLimites: match[7] });
                     });
                     
                     if(datosRankingGlobal.length === 0) throw new Error("Error en el formato del TXT.");
                     filtrarTop();
                 } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
             } else {
-                // RANKINGS COLECTIVOS (Paises o Continentes)
                 resDiv.innerHTML = `<p class='loading'>Calculando rankings de la región...</p>`;
                 try {
                     const req = await fetch(`collective_${eventId}.json?v=${Date.now()}`);
@@ -961,12 +949,12 @@
 
         function filtrarTop() {
             const modo = document.getElementById('agrupacionSelect').value;
-            const paisFiltro = modo === 'individual' ? document.getElementById('countryTop').value : "Todos";
+            const paisFiltro = (modo === 'individual' || modo === 'Nacional') ? document.getElementById('countryTop').value : "Todos";
             const searchVal = document.getElementById('searchNameTop').value.toLowerCase().trim();
             
             let filtradosRegion = datosRankingGlobal;
             
-            if (modo === 'individual' && paisFiltro !== "Todos") {
+            if ((modo === 'individual' || modo === 'Nacional') && paisFiltro !== "Todos") {
                 if(paisFiltro.startsWith('_')) {
                     filtradosRegion = filtradosRegion.filter(d => d.continente === paisFiltro);
                 } else {
@@ -974,24 +962,17 @@
                 }
             }
             
-            let current_nat_rank = 1;
-            let last_rango_val = -1;
-            
+            let current_nat_rank = 1; let last_rango_val = -1;
             filtradosRegion.forEach((d, i) => {
                 let rVal = parseFloat(d.rangoText);
-                if (rVal !== last_rango_val) {
-                    current_nat_rank = i + 1;
-                    last_rango_val = rVal;
-                }
+                if (rVal !== last_rango_val) { current_nat_rank = i + 1; last_rango_val = rVal; }
                 d.posLocalCalc = current_nat_rank; 
             });
             
             filtradosTop = filtradosRegion;
-            if (searchVal) {
-                filtradosTop = filtradosTop.filter(d => d.nombre.toLowerCase().includes(searchVal) || (d.wcaId && d.wcaId.toLowerCase().includes(searchVal)));
-            }
+            if (searchVal) { filtradosTop = filtradosTop.filter(d => d.nombre.toLowerCase().includes(searchVal) || (d.wcaId && d.wcaId.toLowerCase().includes(searchVal))); }
 
-            renderLimit = (modo === 'individual') ? 50 : 9999; // Renderizamos todo de golpe si son paises/continentes
+            renderLimit = (modo === 'individual') ? 50 : 9999; 
             pintarTablaTop();
         }
 
@@ -1005,7 +986,9 @@
                 const paisFiltro = document.getElementById('countryTop').value;
                 subtitle = `Mostrando ${filtradosTop.length} individuos de: <strong style="color:var(--text);">${paisFiltro.replace('_','🌍 ')}</strong>`;
             } else {
-                subtitle = `Mostrando Rango Colectivo de ${filtradosTop.length} ${modo === 'Nacional' ? 'países' : 'continentes'}.`;
+                const paisFiltro = document.getElementById('countryTop').value;
+                let filtroTxt = paisFiltro === "Todos" ? "el Mundo" : paisFiltro.replace('_','🌍 ');
+                subtitle = `Mostrando Rango Colectivo de ${filtradosTop.length} ${modo === 'Nacional' ? 'países' : 'continentes'} (Filtro: ${filtroTxt}).`;
             }
             
             let html = `<div class="stats">${subtitle}</div>`;
@@ -1021,7 +1004,7 @@
             let limit = Math.min(renderLimit, filtradosTop.length);
             for(let i=0; i < limit; i++) {
                 let d = filtradosTop[i];
-                let posDisplay = (modo === 'individual' && document.getElementById('countryTop').value !== "Todos") ? `<b>${d.posLocalCalc}</b> <span style="font-size:0.8em; color:var(--text-muted);">(WR: ${d.posGlobal})</span>` : d.posGlobal;
+                let posDisplay = ((modo === 'individual' || modo === 'Nacional') && document.getElementById('countryTop').value !== "Todos") ? `<b>${d.posLocalCalc}</b> <span style="font-size:0.8em; color:var(--text-muted);">(WR: ${d.posGlobal})</span>` : d.posGlobal;
                 
                 let limitsSplit = d.rangoLimites.split('-');
                 let formattedLimits = limitsSplit.length === 2 ? `${formatStrSeconds(limitsSplit[0])} - ${formatStrSeconds(limitsSplit[1])}` : d.rangoLimites;
@@ -1037,12 +1020,22 @@
                                 <span style="color:#ce93d8; font-weight:bold;">${formatStrSeconds(d.rangoText)}s</span> <span style="font-size:0.8em; color:var(--text-muted);">(${formattedLimits})</span>
                             </td>
                         </tr>`;
-                } else {
+                } else if (modo === 'Nacional') {
                     html += `
                         <tr>
                             <td>${posDisplay}</td>
-                            <td style="font-weight:bold;">${d.nombre}</td>
-                            <td>
+                            <td style="font-weight:bold;" class="clickable-cell" onclick="irAPokedexColectiva('Nacional', '${d.nombre}', '${eventId}')" title="Ver Pokédex de ${d.nombre}"><a href="javascript:void(0)" style="color:var(--text); text-decoration:none;">${d.nombre}</a></td>
+                            <td class="clickable-cell" onclick="irAPokedexColectiva('Nacional', '${d.nombre}', '${eventId}')">
+                                <span style="color:#ce93d8; font-weight:bold;">${formatStrSeconds(d.rangoText)}s</span> <span style="font-size:0.8em; color:var(--text-muted);">(${formattedLimits})</span>
+                            </td>
+                        </tr>`;
+                } else {
+                    let rawCont = d.continente;
+                    html += `
+                        <tr>
+                            <td>${posDisplay}</td>
+                            <td style="font-weight:bold;" class="clickable-cell" onclick="irAPokedexColectiva('Continental', '${rawCont}', '${eventId}')" title="Ver Pokédex de ${d.nombre}"><a href="javascript:void(0)" style="color:var(--text); text-decoration:none;">${d.nombre}</a></td>
+                            <td class="clickable-cell" onclick="irAPokedexColectiva('Continental', '${rawCont}', '${eventId}')">
                                 <span style="color:#ce93d8; font-weight:bold;">${formatStrSeconds(d.rangoText)}s</span> <span style="font-size:0.8em; color:var(--text-muted);">(${formattedLimits})</span>
                             </td>
                         </tr>`;
@@ -1050,9 +1043,7 @@
             }
             html += `</table></div>`;
             
-            if(renderLimit < filtradosTop.length) {
-                html += `<p style="color:var(--text-muted); margin-top:20px;">↓ Haz scroll para cargar más ↓</p>`;
-            }
+            if(renderLimit < filtradosTop.length) { html += `<p style="color:var(--text-muted); margin-top:20px;">↓ Haz scroll para cargar más ↓</p>`; }
             resDiv.innerHTML = html;
         }
 
@@ -1061,23 +1052,17 @@
             const modo = document.getElementById('agrupacionSelect').value;
             const resDiv = document.getElementById('resCompetidor');
             
-            if (modo === 'Mundial') {
-                resDiv.innerHTML = `<p class='error'>Esta pestaña compara regiones con sus superiores. En modo Mundial no hay nada por encima.</p>`;
-                return;
-            }
+            if (modo === 'Mundial') { resDiv.innerHTML = `<p class='error'>Esta pestaña compara regiones con sus superiores. En modo Mundial no hay nada por encima.</p>`; return; }
             
             const orden = ['333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf'];
 
             if (modo === 'individual') {
                 const wcaId = document.getElementById('wcaIdCompetidor').value.trim().toUpperCase();
-                if(!wcaId) return;
-                actualizarURL();
+                if(!wcaId) return; actualizarURL();
                 resDiv.innerHTML = "<p class='loading'>Escaneando historial completo y cruzando rankings locales...</p>";
 
                 try {
-                    const { data, personName } = await fetchWCA(wcaId);
-                    guardarReciente(wcaId);
-                    
+                    const { data, personName } = await fetchWCA(wcaId); guardarReciente(wcaId);
                     let evtMap = {};
                     data.forEach(c => {
                         let ev = c.event_id;
@@ -1095,10 +1080,7 @@
                         resultados.push({ev, racha, global: "-", national: "-", continental: "-", country: "Todos", continent: "Todos"});
                     }
 
-                    if(resultados.length === 0) {
-                        resDiv.innerHTML = `<p class='error'>No se encontraron marcas válidas para ${personName} (${wcaId}).</p>`;
-                        return;
-                    }
+                    if(resultados.length === 0) { resDiv.innerHTML = `<p class='error'>No se encontraron marcas válidas para ${personName} (${wcaId}).</p>`; return; }
 
                     resultados.sort((a, b) => orden.indexOf(a.ev) - orden.indexOf(b.ev));
 
@@ -1107,33 +1089,19 @@
                         try {
                             const resArchivo = await fetch(`ranking_${r.ev}.txt?v=${Date.now()}`);
                             if (resArchivo.ok) {
-                                const txt = await resArchivo.text();
-                                const lines = txt.split('\n');
+                                const txt = await resArchivo.text(); const lines = txt.split('\n');
                                 let userIndex = lines.findIndex(l => l.includes(`(${wcaId}.`));
                                 
                                 if (userIndex !== -1) {
                                     let match = lines[userIndex].match(/^(\d+)\.\s+(.*?)\s+\(([A-Z0-9]+)\.\s+(.*?)\.\s+(.*?)\)\s+-\s+([0-9.]+)s/i);
                                     if (match) {
-                                        r.global = match[1]; 
-                                        let userCountry = match[4];
-                                        let userContinent = match[5];
-                                        r.country = userCountry; 
-                                        r.continent = userContinent;
-                                        let userRango = parseFloat(match[6]);
-                                        
-                                        let countNat = 1; let countCont = 1;
+                                        r.global = match[1]; let userCountry = match[4]; let userContinent = match[5]; r.country = userCountry; r.continent = userContinent;
+                                        let userRango = parseFloat(match[6]); let countNat = 1; let countCont = 1;
                                         for (let i = 0; i < userIndex; i++) {
-                                            if (lines[i].includes(`. ${userCountry}.`)) {
-                                                let matchLine = lines[i].match(/-\s+([0-9.]+)s/);
-                                                if (matchLine && parseFloat(matchLine[1]) > userRango) countNat++;
-                                            }
-                                            if (lines[i].includes(`. ${userContinent})`)) {
-                                                let matchLine = lines[i].match(/-\s+([0-9.]+)s/);
-                                                if (matchLine && parseFloat(matchLine[1]) > userRango) countCont++;
-                                            }
+                                            if (lines[i].includes(`. ${userCountry}.`)) { let matchLine = lines[i].match(/-\s+([0-9.]+)s/); if (matchLine && parseFloat(matchLine[1]) > userRango) countNat++; }
+                                            if (lines[i].includes(`. ${userContinent})`)) { let matchLine = lines[i].match(/-\s+([0-9.]+)s/); if (matchLine && parseFloat(matchLine[1]) > userRango) countCont++; }
                                         }
-                                        r.national = countNat;
-                                        r.continental = countCont;
+                                        r.national = countNat; r.continental = countCont;
                                     }
                                 }
                             }
@@ -1143,22 +1111,18 @@
                     let tableHtml = `<h2 style="margin-bottom: 15px;">
                         <a href="https://www.worldcubeassociation.org/persons/${wcaId}" target="_blank" class="profile-link" title="Ver perfil oficial WCA">${personName} (${wcaId})</a>
                     </h2>`;
-                    
                     tableHtml += `<table><tr><th>Evento</th><th>Rango Actual</th><th style="text-align:center;">Ranking (🌍 / 🗺️ / 📍)</th></tr>`;
                     
                     resultados.forEach(r => {
                         let rankHtml = "";
-                        if (r.racha.rango === 0) {
-                            rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">Sin rango (0.00s)</span>`;
+                        if (r.racha.rango === 0) { rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">Sin rango (0.00s)</span>`;
                         } else if (r.global !== "-") {
                             rankHtml = `
                                 <span class="link-rank" onclick="irARanking('${r.ev}', 'Todos')" title="Ir al Top Mundial de ${r.ev.toUpperCase()}">🌍 #${r.global}</span> <br> 
                                 <span class="link-rank" onclick="irARanking('${r.ev}', '${r.continent}')" title="Ir al Ranking de ${r.continent.replace('_','')}">🗺️ #${r.continental}</span> <br>
                                 <span class="link-rank" onclick="irARanking('${r.ev}', '${r.country}')" title="Ir al Ranking Nacional de ${r.country}">📍 #${r.national}</span>
                             `;
-                        } else {
-                            rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">No indexado</span>`;
-                        }
+                        } else { rankHtml = `<span style="color:var(--text-muted); font-size:0.8em;">No indexado</span>`; }
                         
                         tableHtml += `
                             <tr>
@@ -1173,22 +1137,21 @@
                     resDiv.innerHTML = tableHtml + `</table>`;
                 } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
             } else {
-                // RANGOS COLECTIVOS CRUZADOS
                 const seleccion = document.getElementById('regionColectiva').value;
                 resDiv.innerHTML = `<p class='loading'>Escaneando los 15 eventos para ${seleccion.replace('_','🌍 ')}...</p>`;
                 
                 try {
-                    let promesas = EVENTOS.map(ev => fetch(`collective_${ev}.json`).then(r=>r.json()).catch(()=>null));
+                    let promesas = orden.map(ev => fetch(`collective_${ev}.json?v=${Date.now()}`).then(r=>r.json()).catch(()=>null));
                     let jsons = await Promise.all(promesas);
                     
                     let tableHtml = `<h2 style="margin-bottom: 15px; color:#4CAF50;">Rendimiento Global de ${seleccion.replace('_','')}</h2>`;
-                    tableHtml += `<table><tr><th>Evento</th><th>Rango Colectivo</th><th style="text-align:center;">Ranking (🌍 ${modo === 'Nacional' ? '/ 🗺️' : ''})</th></tr>`;
+                    tableHtml += `<div class="table-wrapper"><table><tr><th>Evento</th><th>Rango Colectivo</th><th style="text-align:center;">Ranking (🌍 ${modo === 'Nacional' ? '/ 🗺️' : ''})</th></tr>`;
                     
                     let hayDatos = false;
                     
                     jsons.forEach((data, i) => {
                         if (!data) return;
-                        let ev = EVENTOS[i];
+                        let ev = orden[i];
                         let statsRegion = data[modo][seleccion];
                         if (!statsRegion) return;
                         
@@ -1197,29 +1160,28 @@
                         hayDatos = true;
                         let racha = calcularRachas(arr);
                         
-                        let rankMundial = 1;
-                        let rankCont = 1;
+                        let rankMundial = 1; let rankCont = 1;
                         
-                        // Calcular ranking comparando con otras regiones del mismo modo
                         for (let reg in data[modo]) {
                             if (reg === seleccion) continue;
                             let arrReg = Object.keys(data[modo][reg].tiempos).map(Number).sort((a,b)=>a-b);
                             let rReg = calcularRachas(arrReg);
                             if (rReg && rReg.rango > racha.rango) {
                                 rankMundial++;
-                                if (modo === 'Nacional' && data.Metadata.paises_continentes[reg] === data.Metadata.paises_continentes[seleccion]) {
-                                    rankCont++;
-                                }
+                                if (modo === 'Nacional' && data.Metadata.paises_continentes[reg] === data.Metadata.paises_continentes[seleccion]) { rankCont++; }
                             }
                         }
                         
-                        let rankBadge = `🌍 #${rankMundial}`;
-                        if (modo === 'Nacional') rankBadge += ` <br> 🗺️ #${rankCont}`;
+                        let rankBadge = `<span class="link-rank" onclick="irARanking('${ev}', 'Todos')" title="Ir al Top Mundial Colectivo">🌍 #${rankMundial}</span>`;
+                        if (modo === 'Nacional') {
+                            let contCode = data.Metadata.paises_continentes[seleccion];
+                            rankBadge += ` <br> <span class="link-rank" onclick="irARanking('${ev}', '${contCode}')" title="Ir al Ranking del Continente">🗺️ #${rankCont}</span>`;
+                        }
 
                         tableHtml += `
                             <tr>
-                                <td style="font-weight:bold; text-transform:uppercase; color: #64b5f6;">${ev}</td>
-                                <td>
+                                <td class="clickable-cell" onclick="irAPokedexColectiva('${modo}', '${seleccion}', '${ev}')" style="font-weight:bold; text-transform:uppercase; color: #64b5f6;">${ev}</td>
+                                <td class="clickable-cell" onclick="irAPokedexColectiva('${modo}', '${seleccion}', '${ev}')">
                                     <span style="color:#ce93d8; font-weight:bold;">${formatCS(racha.rango)}s</span> 
                                     <span style="font-size:0.8em; color:var(--text-muted);">(${formatCS(racha.min)} - ${formatCS(racha.max)})</span>
                                 </td>
@@ -1228,13 +1190,12 @@
                     });
                     
                     if (!hayDatos) throw new Error("No hay datos cruzados para mostrar.");
-                    resDiv.innerHTML = tableHtml + `</table>`;
-                    
+                    resDiv.innerHTML = tableHtml + `</table></div>`;
                 } catch(error) { resDiv.innerHTML = `<p class='error'>Error: ${error.message}</p>`; }
             }
         }
 
-        // --- CORE: PESTAÑA 4 (HALL OF FAME UNIFICADO) ---
+        // --- CORE: PESTAÑA 4 (HALL OF FAME CON SCROLL INFINITO Y ENLACES) ---
         async function cargarHallOfFame() {
             const modo = document.getElementById('agrupacionSelect').value;
             const ev = document.getElementById('eventIdFame').value;
@@ -1253,25 +1214,56 @@
                 let fameObj = dataset[`hall_of_fame_${tipoFama}`];
                 if(!fameObj || Object.keys(fameObj).length === 0) return resDiv.innerHTML = "<p class='error'>Sin descubridores aún.</p>";
                 
-                let icono = tipoFama === 'individuals' ? '👤' : (tipoFama === 'countries' ? '📍' : '🌍');
-                let html = `<h2 style="color:#ffb300; margin-top:0;">🏆 Top Descubridores en ${region.replace('_','')}</h2>`;
+                filtradosFame = [];
+                for(let [nombre, puntos] of Object.entries(fameObj)) { filtradosFame.push({nombre, puntos}); }
                 
-                // RENDERIZADO COMPLETO (Sin límite)
-                let pos = 1;
-                let lastPoints = -1;
-                let tiePos = 1;
-                
-                for(let [nombre, puntos] of Object.entries(fameObj)) {
-                    if (puntos !== lastPoints) { tiePos = pos; lastPoints = puntos; }
-                    html += `
-                        <div class="fame-row">
-                            <div><span class="fame-pos">#${tiePos}</span> ${icono} ${nombre.replace('_','')}</div>
-                            <div style="color:#4CAF50; font-weight:bold;">${puntos} singles</div>
-                        </div>`;
-                    pos++;
-                }
-                resDiv.innerHTML = html;
+                renderLimitFame = 50;
+                pintarFame();
             } catch(e) { resDiv.innerHTML = `<p class='error'>Error: ${e.message}</p>`; }
+        }
+
+        function pintarFame() {
+            const resDiv = document.getElementById('resFame');
+            const modo = document.getElementById('agrupacionSelect').value;
+            const ev = document.getElementById('eventIdFame').value;
+            const tipoFama = document.getElementById('fameTypeSelect').value;
+            let region = modo === 'Mundial' ? 'Mundial' : document.getElementById('regionColectiva').value;
+            
+            let icono = tipoFama === 'individuals' ? '👤' : (tipoFama === 'countries' ? '📍' : '🌍');
+            let html = `<h2 style="color:#ffb300; margin-top:0;">🏆 Top Descubridores en ${region.replace('_','')}</h2>`;
+            
+            let limit = Math.min(renderLimitFame, filtradosFame.length);
+            let lastPoints = -1; let tiePos = 1;
+            
+            for(let i=0; i < limit; i++) {
+                let item = filtradosFame[i];
+                let actualPos = i + 1;
+                if (item.puntos !== lastPoints) { tiePos = actualPos; lastPoints = item.puntos; }
+                
+                let nameDisplay = item.nombre;
+                
+                if (tipoFama === 'individuals') {
+                    let match = item.nombre.match(/(.*)\s+\((.*?)\)/);
+                    if (match) {
+                        let wcaId = match[2];
+                        nameDisplay = `<a href="javascript:void(0)" onclick="irAPokedex('${wcaId}', '${ev}')" style="color:var(--text); text-decoration:none;" class="clickable-cell" title="Ver Pokédex individual">${match[1]} <span style="color:#64b5f6;">(${wcaId})</span></a>
+                        <button class="btn-secondary" style="padding: 2px 6px; font-size: 0.7em; margin-left: 10px;" onclick="irACompetidor('${wcaId}')" title="Ver perfil competidor">📊</button>`;
+                    }
+                } else if (tipoFama === 'countries') {
+                    nameDisplay = `<a href="javascript:void(0)" onclick="irAPokedexColectiva('Nacional', '${item.nombre}', '${ev}')" style="color:var(--text); text-decoration:none;" class="clickable-cell" title="Ver Pokédex de ${item.nombre}">${item.nombre}</a>`;
+                } else if (tipoFama === 'continents') {
+                    nameDisplay = `<a href="javascript:void(0)" onclick="irAPokedexColectiva('Continental', '${item.nombre}', '${ev}')" style="color:var(--text); text-decoration:none;" class="clickable-cell" title="Ver Pokédex de ${item.nombre.replace('_','')}">${item.nombre.replace('_','🌍 ')}</a>`;
+                }
+
+                html += `
+                    <div class="fame-row">
+                        <div><span class="fame-pos">#${tiePos}</span> ${icono} ${nameDisplay}</div>
+                        <div style="color:#4CAF50; font-weight:bold;">${item.puntos} singles</div>
+                    </div>`;
+            }
+            
+            if (renderLimitFame < filtradosFame.length) { html += `<p style="color:var(--text-muted); margin-top:20px;">↓ Haz scroll para cargar más ↓</p>`; }
+            resDiv.innerHTML = html;
         }
     </script>
 </body>
