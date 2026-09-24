@@ -32,6 +32,7 @@
             --input-bg: #fff; --border: #ccc; --hover: #f0f0f0;
         }
         
+        /* BLOQUEO DE ANCHO PARA EVITAR ZOOM OUT */
         body { 
             font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: var(--text); 
             padding: 20px; text-align: center; margin: 0; transition: background 0.3s, color 0.3s; 
@@ -167,6 +168,7 @@
         </div>
     </div>
 
+    <!-- PESTAÑA 1 -->
     <div id="tab-pokedex" class="tab-content active">
         <div class="controls">
             <div id="ctrl-individual" style="display:inline-block;">
@@ -187,6 +189,7 @@
         <div id="resPokedex"></div>
     </div>
 
+    <!-- PESTAÑA 2 -->
     <div id="tab-top1000" class="tab-content">
         <div class="controls">
             <select id="eventIdTop" onchange="actualizarURL()">
@@ -206,6 +209,7 @@
         <div id="resTop1000"></div>
     </div>
 
+    <!-- PESTAÑA 3 -->
     <div id="tab-competidor" class="tab-content">
         <div class="controls">
             <span id="ctrl-ind-comp">
@@ -217,6 +221,7 @@
         <div id="resCompetidor"></div>
     </div>
 
+    <!-- PESTAÑA 4 -->
     <div id="tab-fame" class="tab-content">
         <div class="controls" style="text-align: center;">
             <select id="eventIdFame" onchange="cargarHallOfFame()">
@@ -542,6 +547,45 @@
         }
         function cerrarPopUp() { document.getElementById('modal-overlay').style.display = 'none'; }
 
+        // --- POP-UP DE APORTES DE INDIVIDUOS ---
+        function mostrarAportesPopUp(encodedNombre) {
+            let nombre = decodeURIComponent(encodedNombre);
+            if (!statsColectivosActuales) return;
+            
+            let tiemposObj = statsColectivosActuales.tiempos;
+            let encontrados = [];
+            
+            for (let t in tiemposObj) {
+                let obj = tiemposObj[t];
+                let idx = obj.descubridores.indexOf(nombre);
+                if (idx !== -1) {
+                    encontrados.push({
+                        tiempo: parseInt(t),
+                        comp: obj.comps[idx],
+                        fecha: obj.fecha
+                    });
+                }
+            }
+            
+            // Ordenamos de mejor a peor tiempo (para que sus récords más rápidos salgan arriba)
+            encontrados.sort((a,b) => a.tiempo - b.tiempo); 
+            
+            let htmlList = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Descubrimientos de<br><span style="color:var(--text); font-size:0.8em;">${nombre}</span></h2>`;
+            htmlList += `<p style="color:var(--text-muted); margin-top:-5px; margin-bottom:15px;">Total: ${encontrados.length} singles aportados</p>`;
+            
+            htmlList += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;">';
+            encontrados.forEach(x => {
+                htmlList += `<div style="background: var(--input-bg); padding: 10px; border-radius: 6px; border: 1px solid var(--border); text-align:center;">
+                    <strong style="color:#ce93d8; font-size: 1.2em;">${formatCS(x.tiempo)}s</strong><br>
+                    <a href="https://www.worldcubeassociation.org/competitions/${x.comp}" target="_blank" style="color:#ffd54f; text-decoration:none; font-size: 0.85em; display:block; margin-top:5px;">${x.comp}</a>
+                </div>`;
+            });
+            htmlList += '</div>';
+            
+            document.getElementById('modal-texto').innerHTML = htmlList;
+            document.getElementById('modal-overlay').style.display = 'flex';
+        }
+
         function mostrarHistorialBisagras(wcaId, eventId) {
             const payload = apiCache.get(wcaId);
             if (!payload) return;
@@ -575,7 +619,7 @@
             
             let html = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Historial de Bisagras</h2>`;
             if (historial.length === 0) {
-                html += `<p style="color: var(--text-muted);"><b>Racha Perfecta</b><br><br>Este competidor es tan consistente que nunca ha necesitado rellenar una bisagra para expandir su rango máximo.</p>`;
+                html += `<p style="color: var(--text-muted);"><b>Sin Bisagras</b><br><br>Este competidor nunca ha logrado una bisagra.</p>`;
             } else {
                 html += `<div style="text-align: left; word-break: break-word;">`;
                 historial.forEach(h => {
@@ -593,7 +637,6 @@
             document.getElementById('modal-overlay').style.display = 'flex';
         }
 
-        // --- HISTORIAL DE BISAGRAS COLECTIVO ---
         function mostrarHistorialBisagrasColectivo() {
             if (!statsColectivosActuales) return;
             
@@ -607,7 +650,6 @@
                 });
             }
             
-            // Simular viaje en el tiempo ordenando por fecha exacta
             descubrimientos.sort((a, b) => {
                 if (a.fecha !== b.fecha) return a.fecha.localeCompare(b.fecha);
                 return a.tiempo - b.tiempo;
@@ -880,8 +922,8 @@
                 const y = element.getBoundingClientRect().top + window.scrollY - 150;
                 window.scrollTo({top: y, behavior: 'smooth'});
             }
-        }    
-        
+        }
+
         async function cargarTop1000() {
             const modo = document.getElementById('agrupacionSelect').value;
             const eventId = document.getElementById('eventIdTop').value;
@@ -1200,6 +1242,8 @@
                 let region = modo === 'Mundial' ? 'Mundial' : document.getElementById('regionColectiva').value;
                 let dataset = modo === 'Mundial' ? data.Mundial : data[modo][region];
                 
+                statsColectivosActuales = dataset; 
+                
                 let fameObj = dataset[`hall_of_fame_${tipoFama}`];
                 if(!fameObj || Object.keys(fameObj).length === 0) return resDiv.innerHTML = "<p class='error'>Sin descubridores aún.</p>";
                 
@@ -1230,6 +1274,9 @@
                 if (item.puntos !== lastPoints) { tiePos = actualPos; lastPoints = item.puntos; }
                 
                 let nameDisplay = item.nombre;
+                let safeName = encodeURIComponent(item.nombre);
+                
+                let btnAportes = "";
                 
                 if (tipoFama === 'individuals') {
                     let match = item.nombre.match(/(.*)\s+\((.*?)\)/);
@@ -1237,17 +1284,21 @@
                         let wcaId = match[2];
                         nameDisplay = `<a href="javascript:void(0)" onclick="irAPokedex('${wcaId}', '${ev}')" style="color:var(--text); text-decoration:none;" class="clickable-cell" title="Ver Pokédex individual">${match[1]} <span style="color:#64b5f6;">(${wcaId})</span></a>
                         <button class="btn-secondary" style="padding: 2px 6px; font-size: 0.7em; margin-left: 10px;" onclick="irACompetidor('${wcaId}')" title="Ver perfil competidor">📊</button>`;
+                        
+                        btnAportes = `<div style="color:#4CAF50; font-weight:bold; cursor:pointer;" onclick="mostrarAportesPopUp('${safeName}')" title="Ver lista de aportes en detalle">${item.puntos} singles 🔍</div>`;
                     }
                 } else if (tipoFama === 'countries') {
                     nameDisplay = `<a href="javascript:void(0)" onclick="irAPokedexColectiva('Nacional', '${item.nombre}', '${ev}')" style="color:var(--text); text-decoration:none;" class="clickable-cell" title="Ver Pokédex de ${item.nombre}">${item.nombre}</a>`;
+                    btnAportes = `<div style="color:#4CAF50; font-weight:bold;">${item.puntos} singles</div>`;
                 } else if (tipoFama === 'continents') {
                     nameDisplay = `<a href="javascript:void(0)" onclick="irAPokedexColectiva('Continental', '${item.nombre}', '${ev}')" style="color:var(--text); text-decoration:none;" class="clickable-cell" title="Ver Pokédex de ${item.nombre.replace('_','')}">${item.nombre.replace('_','🌍 ')}</a>`;
+                    btnAportes = `<div style="color:#4CAF50; font-weight:bold;">${item.puntos} singles</div>`;
                 }
 
                 html += `
                     <div class="fame-row">
                         <div><span class="fame-pos">#${tiePos}</span> ${icono} ${nameDisplay}</div>
-                        <div style="color:#4CAF50; font-weight:bold;">${item.puntos} singles</div>
+                        ${btnAportes}
                     </div>`;
             }
             
