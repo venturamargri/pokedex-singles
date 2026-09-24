@@ -1,23 +1,23 @@
 --- RANKING COMPLETO: MAYOR RANGO CONSECUTIVO EN 444BF ---
 
-1. Viktor Zenk (2016ZENK01. Sweden. _Europe) - 0.01s (512.13-512.14) | AR: 1064.13s
-1. Oliver Fritz (2014FRIT02. Germany. _Europe) - 0.01s (122.07-122.08) | AR: 785.82s
-1. Jan Bentlage (2010BENT01. Germany. _Europe) - 0.01s (341.11-341.12) | AR: 1367.69s
-1. Graham Siggins (2016SIGG01. USA. _North America) - 0.01s (112.01-112.02) | AR: 265.61s
-1. Ryan Eckersley (2019ECKE02. United Kingdom. _Europe) - 0.01s (89.05-89.06) | AR: 257.37s
-1. Will Russo (2015RUSS03. USA. _North America) - 0.01s (424.37-424.38) | AR: 319.85s
-1. Chris Hardwick (2003HARD01. USA. _North America) - 0.01s (358.02-358.03) | AR: 658.81s
-1. Grigorii Alekseev (2015ALEK01. Russia. _Europe) - 0.01s (128.08-128.09) | AR: 201.05s
-1. Kaijun Lin (林恺俊) (2013LINK01. China. _Asia) - 0.01s (106.46-106.47) | AR: 189.40s
-1. Oliver Wheat (2016WHEA01. United Kingdom. _Europe) - 0.01s (321.94-321.95) | AR: 410.85s
-1. Daniel Wallin (2013WALL03. Sweden. _Europe) - 0.01s (117.68-117.69) | AR: 970.55s
-1. Jacob Ambrose (2010AMBR01. USA. _North America) - 0.01s (438.38-438.39) | AR: 389.02s
-1. Stanley Chapel (2016CHAP04. USA. _North America) - 0.01s (64.78-64.79) | AR: 229.94s
-1. Ezra Hirschi (2019HIRS01. Switzerland. _Europe) - 0.01s (104.92-104.93) | AR: 140.69s
-1. William Jensen (2016JENS09. Sweden. _Europe) - 0.01s (514.36-514.37) | AR: 523.79s
-1. Firstian Fushada (符逢城) (2015FUSH01. Indonesia. _Asia) - 0.01s (206.31-206.32) | AR: 578.86s
-1. Noah Kraft (2016KRAF01. Germany. _Europe) - 0.01s (153.04-153.05) | AR: 615.25s
-1. Chi-Lun Hung (洪啟倫) (2010HONG01. Taiwan. _Asia) - 0.01s (440.79-440.80) | AR: 226.82s
-1. Sora Wenjie Xu (徐文杰) (2016XUWE02. China. _Asia) - 0.01s (167.08-167.09) | AR: 795.22s
-1. Yucheng Chen (陈裕铖) (2015CHEN49. China. _Asia) - 0.01s (275.81-275.82) | AR: 273.10s
 1. Tom Nelson (2013NELS01. New Zealand. _Oceania) - 0.01s (150.55-150.56) | AR: 402.57s
+1. Stanley Chapel (2016CHAP04. USA. _North America) - 0.01s (64.78-64.79) | AR: 229.94s
+1. Yucheng Chen (陈裕铖) (2015CHEN49. China. _Asia) - 0.01s (275.81-275.82) | AR: 273.10s
+1. Sora Wenjie Xu (徐文杰) (2016XUWE02. China. _Asia) - 0.01s (167.08-167.09) | AR: 795.22s
+1. Chi-Lun Hung (洪啟倫) (2010HONG01. Taiwan. _Asia) - 0.01s (440.79-440.80) | AR: 226.82s
+1. Kaijun Lin (林恺俊) (2013LINK01. China. _Asia) - 0.01s (95.07-95.08) | AR: 189.40s
+1. Jacob Ambrose (2010AMBR01. USA. _North America) - 0.01s (438.38-438.39) | AR: 389.02s
+1. Jan Bentlage (2010BENT01. Germany. _Europe) - 0.01s (341.11-341.12) | AR: 1367.69s
+1. Daniel Wallin (2013WALL03. Sweden. _Europe) - 0.01s (314.44-314.45) | AR: 970.55s
+1. Noah Kraft (2016KRAF01. Germany. _Europe) - 0.01s (153.04-153.05) | AR: 615.25s
+1. Chris Hardwick (2003HARD01. USA. _North America) - 0.01s (358.02-358.03) | AR: 658.81s
+1. Graham Siggins (2016SIGG01. USA. _North America) - 0.01s (100.36-100.37) | AR: 265.61s
+1. Ryan Eckersley (2019ECKE02. United Kingdom. _Europe) - 0.01s (89.05-89.06) | AR: 257.37s
+1. Oliver Wheat (2016WHEA01. United Kingdom. _Europe) - 0.01s (321.94-321.95) | AR: 410.85s
+1. William Jensen (2016JENS09. Sweden. _Europe) - 0.01s (514.36-514.37) | AR: 523.79s
+1. Will Russo (2015RUSS03. USA. _North America) - 0.01s (424.37-424.38) | AR: 319.85s
+1. Ezra Hirschi (2019HIRS01. Switzerland. _Europe) - 0.01s (104.92-104.93) | AR: 140.69s
+1. Firstian Fushada (符逢城) (2015FUSH01. Indonesia. _Asia) - 0.01s (206.31-206.32) | AR: 578.86s
+1. Viktor Zenk (2016ZENK01. Sweden. _Europe) - 0.01s (512.13-512.14) | AR: 1064.13s
+1. Grigorii Alekseev (2015ALEK01. Russia. _Europe) - 0.01s (128.08-128.09) | AR: 201.05s
+1. Oliver Fritz (2014FRIT02. Germany. _Europe) - 0.01s (122.07-122.08) | AR: 785.82s
