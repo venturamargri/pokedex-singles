@@ -547,7 +547,7 @@
         }
         function cerrarPopUp() { document.getElementById('modal-overlay').style.display = 'none'; }
 
-        // --- POP-UP DE APORTES DE INDIVIDUOS ---
+        // --- POP-UP DE APORTES INDIVIDUALES (EN LISTA CRONOLÓGICA) ---
         function mostrarAportesPopUp(encodedNombre) {
             let nombre = decodeURIComponent(encodedNombre);
             if (!statsColectivosActuales) return;
@@ -567,18 +567,28 @@
                 }
             }
             
-            // Ordenamos de mejor a peor tiempo (para que sus récords más rápidos salgan arriba)
-            encontrados.sort((a,b) => a.tiempo - b.tiempo); 
+            // Orden cronológico: Más reciente primero (luego por tiempo si coinciden en fecha)
+            encontrados.sort((a,b) => {
+                if (a.fecha !== b.fecha) return b.fecha.localeCompare(a.fecha);
+                return a.tiempo - b.tiempo; 
+            }); 
             
             let htmlList = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Descubrimientos de<br><span style="color:var(--text); font-size:0.8em;">${nombre}</span></h2>`;
             htmlList += `<p style="color:var(--text-muted); margin-top:-5px; margin-bottom:15px;">Total: ${encontrados.length} singles aportados</p>`;
             
-            htmlList += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;">';
-            encontrados.forEach(x => {
-                htmlList += `<div style="background: var(--input-bg); padding: 10px; border-radius: 6px; border: 1px solid var(--border); text-align:center;">
-                    <strong style="color:#ce93d8; font-size: 1.2em;">${formatCS(x.tiempo)}s</strong><br>
-                    <a href="https://www.worldcubeassociation.org/competitions/${x.comp}" target="_blank" style="color:#ffd54f; text-decoration:none; font-size: 0.85em; display:block; margin-top:5px;">${x.comp}</a>
-                </div>`;
+            htmlList += `<div style="display: flex; flex-direction: column; text-align: left; background: var(--input-bg); padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border); max-height: 50vh; overflow-y: auto;">`;
+            
+            encontrados.forEach((x, index) => {
+                let borderStyle = index === encontrados.length - 1 ? "" : "border-bottom: 1px solid var(--border);";
+                htmlList += `
+                    <div style="padding: 10px 0; ${borderStyle} display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                        <div style="font-size: 1.1em;">
+                            <strong style="color:#ce93d8;">${formatCS(x.tiempo)}s</strong> 
+                            <span style="color: var(--text-muted); margin: 0 4px;">-</span> 
+                            <a href="https://www.worldcubeassociation.org/competitions/${x.comp}" target="_blank" style="color:#ffd54f; text-decoration:none; font-weight:bold;">${x.comp}</a>
+                        </div>
+                        <div style="font-size: 0.85em; color: var(--text-muted); white-space: nowrap;">${x.fecha}</div>
+                    </div>`;
             });
             htmlList += '</div>';
             
@@ -619,7 +629,7 @@
             
             let html = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Historial de Bisagras</h2>`;
             if (historial.length === 0) {
-                html += `<p style="color: var(--text-muted);"><b>Sin Bisagras</b><br><br>Este competidor nunca ha logrado una bisagra.</p>`;
+                html += `<p style="color: var(--text-muted);"><b>Racha Perfecta</b><br><br>Este competidor es tan consistente que nunca ha necesitado rellenar una bisagra para expandir su rango máximo.</p>`;
             } else {
                 html += `<div style="text-align: left; word-break: break-word;">`;
                 historial.forEach(h => {
