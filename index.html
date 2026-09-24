@@ -547,7 +547,7 @@
         }
         function cerrarPopUp() { document.getElementById('modal-overlay').style.display = 'none'; }
 
-        // --- POP-UP DE APORTES INDIVIDUALES (EN LISTA CRONOLÓGICA) ---
+        // --- POP-UP DE APORTES INDIVIDUALES (EN LISTA CRONOLÓGICA SIN DOBLE SCROLL) ---
         function mostrarAportesPopUp(encodedNombre) {
             let nombre = decodeURIComponent(encodedNombre);
             if (!statsColectivosActuales) return;
@@ -576,7 +576,8 @@
             let htmlList = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Descubrimientos de<br><span style="color:var(--text); font-size:0.8em;">${nombre}</span></h2>`;
             htmlList += `<p style="color:var(--text-muted); margin-top:-5px; margin-bottom:15px;">Total: ${encontrados.length} singles aportados</p>`;
             
-            htmlList += `<div style="display: flex; flex-direction: column; text-align: left; background: var(--input-bg); padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border); max-height: 50vh; overflow-y: auto;">`;
+            // Eliminado el max-height y overflow-y de aquí para que solo use el scroll del modal principal
+            htmlList += `<div style="display: flex; flex-direction: column; text-align: left; background: var(--input-bg); padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border);">`;
             
             encontrados.forEach((x, index) => {
                 let borderStyle = index === encontrados.length - 1 ? "" : "border-bottom: 1px solid var(--border);";
@@ -629,7 +630,7 @@
             
             let html = `<h2 style="margin: 0 0 15px 0; color: #4CAF50;">Historial de Bisagras</h2>`;
             if (historial.length === 0) {
-                html += `<p style="color: var(--text-muted);"><b>Racha Perfecta</b><br><br>Este competidor es tan consistente que nunca ha necesitado rellenar una bisagra para expandir su rango máximo.</p>`;
+                html += `<p style="color: var(--text-muted);"><b>Sin Bisagras</b><br><br>Este competidor nunca ha logrado un tiempo bisagra.</p>`;
             } else {
                 html += `<div style="text-align: left; word-break: break-word;">`;
                 historial.forEach(h => {
