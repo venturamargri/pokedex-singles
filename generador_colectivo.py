@@ -3,6 +3,7 @@ import json
 import os
 import glob
 from collections import defaultdict
+import sys
 
 EVENTOS_VALIDOS = {'333', '222', '444', '555', '666', '777', '333bf', '333oh', 'clock', 'minx', 'pyram', 'skewb', 'sq1', '444bf', '555bf'}
 
@@ -32,7 +33,8 @@ def procesar_datos():
     with open(COMPETITIONS_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
-            date_str = f"{row['year']}-{row['month'].zfill(2)}-{row['day'].zfill(2)}"
+            # sys.intern evita duplicar strings en memoria
+            date_str = sys.intern(f"{row['year']}-{row['month'].zfill(2)}-{row['day'].zfill(2)}")
             comps[row['id']] = date_str
 
     paises_continentes = {}
@@ -40,9 +42,9 @@ def procesar_datos():
     with open(COUNTRIES_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
-            paises_continentes[row['id']] = row['continent_id']
+            paises_continentes[row['id']] = sys.intern(row['continent_id'])
 
-    print("Procesando tabla principal de Results...")
+    print("Procesando tabla principal de Results (Optimizada en RAM)...")
     resultados_brutos = defaultdict(list)
     result_info = {}
     
@@ -52,52 +54,47 @@ def procesar_datos():
             ev = row['event_id']
             if ev not in EVENTOS_VALIDOS: continue
             
+            ev = sys.intern(ev)
             res_id = row['id']
-            wca_id = row['person_id']
-            pais = row['person_country_id']
-            continente = paises_continentes.get(pais, "Unknown")
-            comp_id = row['competition_id']
+            wca_id = sys.intern(row['person_id'])
+            pais = sys.intern(row['person_country_id'])
+            continente = sys.intern(paises_continentes.get(pais, "Unknown"))
+            comp_id = sys.intern(row['competition_id'])
             fecha = comps.get(comp_id, "9999-99-99")
-            pname = row['person_name']
+            pname = sys.intern(row['person_name'])
             
-            # Memoria optimizada: Guardamos los datos estructurales del resultado
-            result_info[res_id] = (ev, wca_id, pais, continente, comp_id, fecha, pname)
+            # Guardamos como Tupla compacta en lugar de Diccionario
+            info = (ev, wca_id, pais, continente, comp_id, fecha, pname)
+            result_info[res_id] = info
             
-            # Rescatar el 'best' oficial por si acaso
             b = int(row.get('best', '0'))
             if b > 0:
-                resultados_brutos[ev].append({
-                    'time': b, 'wca_id': wca_id, 'pais': pais, 'continente': continente, 
-                    'comp_id': comp_id, 'fecha': fecha, 'personName': pname
-                })
+                resultados_brutos[ev].append((b, wca_id, pais, continente, comp_id, fecha, pname))
 
-    # --- LA CLAVE MAESTRA: LEER LA TABLA DE INTENTOS ---
     if ATTEMPTS_FILE and os.path.exists(ATTEMPTS_FILE):
         print(f"Procesando tabla secundaria de Intentos ({ATTEMPTS_FILE})...")
         with open(ATTEMPTS_FILE, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f, delimiter='\t')
             for row in reader:
                 res_id = row['result_id']
-                # Cruzamos el intento con la información del competidor y torneo
                 if res_id in result_info:
                     val = row.get('value', '0')
                     if val.lstrip('-').isdigit():
                         v = int(val)
                         if v > 0:
                             info = result_info[res_id]
-                            resultados_brutos[info[0]].append({
-                                'time': v, 'wca_id': info[1], 'pais': info[2], 'continente': info[3],
-                                'comp_id': info[4], 'fecha': info[5], 'personName': info[6]
-                            })
+                            # Agregamos la tupla a la lista
+                            resultados_brutos[info[0]].append((v, info[1], info[2], info[3], info[4], info[5], info[6]))
     else:
         print("AVISO: No se encontró la tabla result_attempts. Faltarán tiempos.")
 
-    # Liberar la RAM 
+    # Vaciamos la variable temporal para liberar la memoria antes de calcular
     result_info.clear()
 
     for evento, solves in resultados_brutos.items():
         print(f"Calculando {evento}...")
-        solves.sort(key=lambda x: x['fecha'])
+        # Ordenar por fecha (índice 5 de la tupla)
+        solves.sort(key=lambda x: x[5])
         
         datos_colectivos = {
             'Metadata': {'paises_continentes': paises_continentes},
@@ -107,45 +104,50 @@ def procesar_datos():
         }
         
         for s in solves:
-            t = s['time']
-            p = s['pais']
-            c = s['continente']
-            persona = f"{s['personName']} ({s['wca_id']})"
+            # Desempaquetamos la tupla
+            t = s[0]
+            wca_id = s[1]
+            p = s[2]
+            c = s[3]
+            comp_id = s[4]
+            fecha = s[5]
+            pname = s[6]
+            
+            persona = f"{pname} ({wca_id})"
             
             # --- MUNDIAL ---
             if t not in datos_colectivos['Mundial']['tiempos']:
-                datos_colectivos['Mundial']['tiempos'][t] = {'fecha': s['fecha'], 'descubridores': [persona], 'comps': [s['comp_id']]}
+                datos_colectivos['Mundial']['tiempos'][t] = {'fecha': fecha, 'descubridores': [persona], 'comps': [comp_id]}
                 datos_colectivos['Mundial']['hall_of_fame_individuals'][persona] += 1
                 datos_colectivos['Mundial']['hall_of_fame_countries'][p] += 1
                 datos_colectivos['Mundial']['hall_of_fame_continents'][c] += 1
-            elif s['fecha'] == datos_colectivos['Mundial']['tiempos'][t]['fecha'] and persona not in datos_colectivos['Mundial']['tiempos'][t]['descubridores']:
+            elif fecha == datos_colectivos['Mundial']['tiempos'][t]['fecha'] and persona not in datos_colectivos['Mundial']['tiempos'][t]['descubridores']:
                 datos_colectivos['Mundial']['tiempos'][t]['descubridores'].append(persona)
-                datos_colectivos['Mundial']['tiempos'][t]['comps'].append(s['comp_id'])
+                datos_colectivos['Mundial']['tiempos'][t]['comps'].append(comp_id)
                 datos_colectivos['Mundial']['hall_of_fame_individuals'][persona] += 1
                 datos_colectivos['Mundial']['hall_of_fame_countries'][p] += 1
                 datos_colectivos['Mundial']['hall_of_fame_continents'][c] += 1
                     
             # --- CONTINENTAL ---
             if t not in datos_colectivos['Continental'][c]['tiempos']:
-                datos_colectivos['Continental'][c]['tiempos'][t] = {'fecha': s['fecha'], 'descubridores': [persona], 'comps': [s['comp_id']]}
+                datos_colectivos['Continental'][c]['tiempos'][t] = {'fecha': fecha, 'descubridores': [persona], 'comps': [comp_id]}
                 datos_colectivos['Continental'][c]['hall_of_fame_individuals'][persona] += 1
                 datos_colectivos['Continental'][c]['hall_of_fame_countries'][p] += 1
-            elif s['fecha'] == datos_colectivos['Continental'][c]['tiempos'][t]['fecha'] and persona not in datos_colectivos['Continental'][c]['tiempos'][t]['descubridores']:
+            elif fecha == datos_colectivos['Continental'][c]['tiempos'][t]['fecha'] and persona not in datos_colectivos['Continental'][c]['tiempos'][t]['descubridores']:
                 datos_colectivos['Continental'][c]['tiempos'][t]['descubridores'].append(persona)
-                datos_colectivos['Continental'][c]['tiempos'][t]['comps'].append(s['comp_id'])
+                datos_colectivos['Continental'][c]['tiempos'][t]['comps'].append(comp_id)
                 datos_colectivos['Continental'][c]['hall_of_fame_individuals'][persona] += 1
                 datos_colectivos['Continental'][c]['hall_of_fame_countries'][p] += 1
                     
             # --- NACIONAL ---
             if t not in datos_colectivos['Nacional'][p]['tiempos']:
-                datos_colectivos['Nacional'][p]['tiempos'][t] = {'fecha': s['fecha'], 'descubridores': [persona], 'comps': [s['comp_id']]}
+                datos_colectivos['Nacional'][p]['tiempos'][t] = {'fecha': fecha, 'descubridores': [persona], 'comps': [comp_id]}
                 datos_colectivos['Nacional'][p]['hall_of_fame_individuals'][persona] += 1
-            elif s['fecha'] == datos_colectivos['Nacional'][p]['tiempos'][t]['fecha'] and persona not in datos_colectivos['Nacional'][p]['tiempos'][t]['descubridores']:
+            elif fecha == datos_colectivos['Nacional'][p]['tiempos'][t]['fecha'] and persona not in datos_colectivos['Nacional'][p]['tiempos'][t]['descubridores']:
                 datos_colectivos['Nacional'][p]['tiempos'][t]['descubridores'].append(persona)
-                datos_colectivos['Nacional'][p]['tiempos'][t]['comps'].append(s['comp_id'])
+                datos_colectivos['Nacional'][p]['tiempos'][t]['comps'].append(comp_id)
                 datos_colectivos['Nacional'][p]['hall_of_fame_individuals'][persona] += 1
 
-        # Sin límites restrictivos para el Hall of Fame
         datos_colectivos['Mundial']['hall_of_fame_individuals'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_individuals'].items(), key=lambda x: x[1], reverse=True))
         datos_colectivos['Mundial']['hall_of_fame_countries'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_countries'].items(), key=lambda x: x[1], reverse=True))
         datos_colectivos['Mundial']['hall_of_fame_continents'] = dict(sorted(datos_colectivos['Mundial']['hall_of_fame_continents'].items(), key=lambda x: x[1], reverse=True))
